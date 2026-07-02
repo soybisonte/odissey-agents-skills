@@ -1,367 +1,365 @@
 ---
-description:  A cross-cutting cognitive mode for sitting with design problems before rushing to solve them. Part of the Odissey design strategy system. Activates expansive brainstorming: hyperassociativity, beginner's mind, cross-domain pattern recognition, and suppression of premature idea-dismissal. Works alongside every Odissey skill — strategy uses it to reframe briefs, blueprint to question structural assumptions, journey to rethink interaction models, and spec to stress-test specs. Trigger when the user invokes "expansive mode", "idear mode", "sit with this", "brainstorm", "explore this problem", or says things like "go weird with it", "don't filter yourself", "what connections are you not making", "think about this differently", or "I'm stuck". This is a reasoning protocol, not a persona — Claude's voice stays grounded but the cognitive process changes significantly.
+description:  Modo cognitivo transversal para quedarse con los problemas de diseño antes de correr a resolverlos. Forma parte del sistema de estrategia de diseño Odissey. Activa un pensamiento expansivo: hiperasociación, mente de principiante, reconocimiento de patrones entre dominios y supresión del descarte prematuro de ideas. Trabaja junto con cada habilidad de Odissey: strategy lo usa para reencuadrar briefs, blueprint para cuestionar supuestos estructurales, journey para replantear modelos de interacción y spec para someter especificaciones a estrés. Actívalo cuando el usuario invoque "modo expansivo", "modo idear", "siéntate con esto", "lluvia de ideas", "explora este problema" o diga cosas como "hazlo raro", "no te filtres", "¿qué conexiones no estás viendo?", "piénsalo distinto" o "estoy atascado". Esto es un protocolo de razonamiento, no una personalidad: la voz de Claude sigue siendo centrada, pero el proceso cognitivo cambia de forma significativa.
 alwaysApply: false
 ---
 
 
-# The Philosopher — Sit With the Problem
+# El Filósofo — Siéntate con el Problema
 
-## Overview
+## Visión general
 
-A cross-cutting cognitive mode that shifts how you reason — not how you sound. The idear activates broader associative thinking, suppresses premature idea-dismissal, enables cross-domain connection-making, and forces genuine re-examination of assumptions. It works alongside every Odissey skill at any stage of the design process, turning shallow problem statements into genuinely complex, interesting ones.
+Un modo cognitivo transversal que cambia cómo razonas, no cómo suenas. Idear activa un pensamiento asociativo más amplio, suprime el descarte prematuro de ideas, habilita conexiones entre dominios y obliga a reexaminar de verdad los supuestos. Trabaja junto con cada habilidad de Odissey en cualquier etapa del proceso de diseño, convirtiendo planteamientos superficiales en problemas genuinamente complejos e interesantes.
 
-**When to activate:** when a designer says "I'm stuck," "sit with this," "brainstorm," "explore this problem," "go deeper," "what am I missing," "idear mode," or "expansive mode." Also activate when a problem is being solved too quickly, when the framing feels shallow, when research findings seem too clean, or when any Odissey skill needs to question its own assumptions before moving forward.
+**Cuándo activarlo:** cuando alguien diga "estoy atascado", "siéntate con esto", "lluvia de ideas", "explora este problema", "ve más profundo", "¿qué me falta?", "modo idear" o "modo expansivo". También actívalo cuando un problema se esté resolviendo demasiado rápido, cuando el encuadre se sienta superficial, cuando los hallazgos de investigación parezcan demasiado limpios o cuando cualquier habilidad de Odissey necesite cuestionar sus propios supuestos antes de avanzar.
 
 ---
 
-## How this skill fits the design practice
+## Cómo encaja esta habilidad en la práctica de diseño
 
-The idear is not a phase. It's a cognitive mode that any Odissey skill
-can enter when the problem needs more exploration before the next move.
+El idear no es una fase. Es un modo cognitivo al que cualquier habilidad de Odissey
+puede acceder cuando el problema necesita más exploración antes del siguiente movimiento.
 
-Every Odissey skill has moments where the idear belongs:
+Cada habilidad de Odissey tiene momentos en los que el idear es pertinente:
 
-### Strategy & Research
+### Estrategia e investigación
 
-**With `/strategy`** — when a brief feels too tidy, when the problem
-statement might be wrong, when the five foundational questions are returning
-obvious answers. The idear helps `/strategy` question whether
-they're even asking the right questions. Use it to reframe assumptions,
-find the problem adjacent to the stated problem, and challenge whether the
-opportunity is where everyone thinks it is.
+**Con `/strategy`** — cuando un brief se siente demasiado ordenado, cuando el enunciado
+del problema podría estar equivocado, cuando las cinco preguntas fundacionales devuelven
+respuestas obvias. El idear ayuda a `/strategy` a cuestionar si
+siquiera están haciendo las preguntas correctas. Úsalo para reencuadrar supuestos,
+encontrar el problema adyacente al problema declarado y cuestionar si la
+oportunidad está donde todos creen que está.
 
-**With `/research`** — when research findings seem too clean, when the
-interview data confirms everything you expected (confirmation bias alarm),
-when synthesis is producing obvious themes. "What would we learn if we
-studied the people who don't have this problem?" The idear helps
-the researcher question whether the methodology itself is shaping the
-findings.
+**Con `/research`** — cuando los hallazgos de investigación parecen demasiado limpios, cuando los
+datos de las entrevistas confirman todo lo que esperabas (alarma de sesgo de confirmación),
+cuando la síntesis produce temas obvios. "¿Qué aprenderíamos si
+estudiáramos a las personas que no tienen este problema?" El idear ayuda
+al investigador a cuestionar si la propia metodología está modelando los
+hallazgos.
 
-**With `/blueprint`** — when a service blueprint reveals something
-structurally odd, when dependencies seem unnecessarily tangled, or when the
-"how it works today" doesn't explain why it was built that way. The
-idear helps `/blueprint` ask "what if this whole structure
-is solving the wrong problem?" and explore alternative organizational
-models from other domains.
+**Con `/blueprint`** — cuando un service blueprint revela algo
+estructuralmente extraño, cuando las dependencias parecen innecesariamente enredadas, o cuando el
+"cómo funciona hoy" no explica por qué fue construido así. El
+idear ayuda a `/blueprint` a preguntar "¿y si toda esta estructura
+está resolviendo el problema equivocado?" y a explorar modelos organizativos alternativos
+de otros dominios.
 
-### Experience Design
+### Diseño de experiencia
 
-**With `/journey`** — when a user flow feels logical but lifeless, when the
-"obvious" interaction pattern might not serve the user's actual mental model,
-or when device constraints are being treated as limitations instead of design
-inputs. The idear helps the journey designer question the inherited
-patterns and explore what the interaction would look like if current
-conventions didn't exist.
+**Con `/journey`** — cuando un flow de usuario se siente lógico pero sin vida, cuando el
+patrón de interacción "obvio" podría no servir al modelo mental real del usuario,
+o cuando las restricciones de dispositivo se tratan como limitaciones en lugar de
+inputs de diseño. El idear ayuda al diseñador de journey a cuestionar los patrones
+heredados y explorar cómo luciría la interacción si las convenciones actuales
+no existieran.
 
-**With `/organizar`** — when the category system feels natural but users keep
-getting lost. "What if the mental model we're assuming doesn't exist?" When
-labels make sense to the team but not to users. The idear helps
-question whether the structure reflects how people actually think about
-the domain, or just how the organization thinks about it.
+**Con `/organizar`** — cuando el sistema de categorías se siente natural pero los usuarios siguen
+perdiéndose. "¿Y si el modelo mental que estamos asumiendo no existe?" Cuando
+las etiquetas tienen sentido para el equipo pero no para los usuarios. El idear ayuda
+a cuestionar si la estructura refleja cómo las personas realmente piensan sobre
+el dominio, o solo cómo la organización lo piensa.
 
-**With `/articular`** — when the words feel correct but the experience
-still confuses. "What if the language itself is creating the problem?" When
-error mesgalileos are accurate but unhelpful, when microcopy is clear but cold.
-The idear helps examine whether language is clarifying the experience
-or obscuring it — and whether the voice itself carries unexamined assumptions.
+**Con `/articular`** — cuando las palabras parecen correctas pero la experiencia
+sigue confundiendo. "¿Y si el lenguaje mismo está creando el problema?" Cuando
+los mensajes de error son precisos pero inútiles, cuando el microcopy es claro pero frío.
+El idear ayuda a examinar si el lenguaje está clarificando la experiencia
+u oscureciéndola — y si la voz misma lleva supuestos no examinados.
 
-### Quality & Evaluation
+### Calidad y evaluación
 
-**With `/evaluar`** — when heuristic evaluation produces passing scores but
-something still feels wrong. "What if the heuristics we're evaluating against
-are wrong for this domain?" The idear helps question whether the
-quality framework itself is appropriate, or whether it's measuring the wrong
-things well.
+**Con `/evaluar`** — cuando la evaluación heurística produce puntuaciones aprobadas pero
+algo sigue sintiéndose mal. "¿Y si las heurísticas contra las que evaluamos
+son incorrectas para este dominio?" El idear ayuda a cuestionar si el
+propio marco de calidad es apropiado, o si está midiendo las cosas
+equivocadas bien.
 
-**With `/robustecer`** — when edge cases keep multiplying. "What's the most
-embarrassing way this could fail in public?" When the happy path is solid
-but the system feels fragile. The idear helps think through failure
-not as a list of cases to handle, but as a structural property of the
-design itself.
+**Con `/robustecer`** — cuando los casos límite siguen multiplicándose. "¿Cuál es la forma más
+embarazosa en que esto podría fallar en público?" Cuando el happy path es sólido
+pero el sistema se siente frágil. El idear ayuda a pensar en el fallo
+no como una lista de casos a manejar, sino como una propiedad estructural del
+propio diseño.
 
-**With `/incluir`** — when accessibility is technically compliant but the
-experience still excludes. "Who are we excluding that we haven't even thought
-to consider?" When the definition of "user" is too narrow. The idear
-helps expand the frame beyond compliance toward genuine inclusion — asking
-what it means for an experience to truly welcome someone.
+**Con `/incluir`** — cuando la accesibilidad cumple técnicamente pero la
+experiencia sigue excluyendo. "¿A quién estamos excluyendo que ni siquiera hemos pensado
+en considerar?" Cuando la definición de "usuario" es demasiado estrecha. El idear
+ayuda a ampliar el marco más allá del cumplimiento hacia la inclusión genuina — preguntando
+qué significa que una experiencia realmente dé la bienvenida a alguien.
 
-### Adaptation & Measurement
+### Adaptación y medición
 
-**With `/trasponer`** — when adapting for a new platform feels like shrinking
-rather than rethinking. "What if this experience was born on mobile? What
-would we never have added?" The idear helps question whether
-cross-platform work is translation or transformation — and what the target
-platform actually affords that the source doesn't.
+**Con `/trasponer`** — cuando adaptar para una nueva plataforma se siente como encoger
+en lugar de repensar. "¿Y si esta experiencia hubiera nacido en móvil? ¿Qué
+nunca habríamos añadido?" El idear ayuda a cuestionar si
+el trabajo multiplataforma es traducción o transformación — y qué permite
+realmente la plataforma de destino que la de origen no permite.
 
-**With `/localizar`** — when localization feels like translation rather than
-adaptation. "What cultural assumptions are invisible to us because we're
-inside them?" The idear helps surface the assumptions that are so
-deeply embedded in the original design that they don't register as
-assumptions at all.
+**Con `/localizar`** — cuando la localización se siente como traducción en lugar de
+adaptación. "¿Qué supuestos culturales son invisibles para nosotros porque estamos
+dentro de ellos?" El idear ayuda a sacar a la superficie los supuestos que están tan
+profundamente incrustados en el diseño original que no se registran como
+supuestos en absoluto.
 
-**With `/medir`** — when metrics feel defined but hollow. "What if
-measuring this changes the behavior we're trying to medir?" "What would we
-learn from measuring the things we're afraid to medir?" The idear
-helps question whether the medirment framework captures what matters or
-just what's convenient to count.
+**Con `/medir`** — cuando las métricas se sienten definidas pero vacías. "¿Y si
+medir esto cambia el comportamiento que estamos tratando de medir?" "¿Qué aprenderíamos
+de medir las cosas que nos da miedo medir?" El idear
+ayuda a cuestionar si el marco de medición captura lo que importa o
+solo lo que es conveniente contar.
 
 ### Handoff
 
-**With `/spec`** — when edge cases keep surfacing that the spec doesn't
-cover, when something about the design feels fragile under real conditions,
-or when the "pending questions" section keeps growing. The idear helps
-the specification process think through what could go wrong that nobody has
-imagined yet, and whether the spec is documenting the right thing. "What
-decisions did we make that we forgot to document, and what happens when
-someone asks 'why?'"
+**Con `/spec`** — cuando siguen surgiendo casos límite que el spec no
+cubre, cuando algo del diseño se siente frágil bajo condiciones reales,
+o cuando la sección de "preguntas pendientes" sigue creciendo. El idear ayuda
+al proceso de especificación a pensar en qué podría salir mal que nadie ha
+imaginado todavía, y si el spec está documentando lo correcto. "¿Qué
+decisiones tomamos que olvidamos documentar, y qué pasa cuando
+alguien pregunta 'por qué?'"
 
-### Invoking the idear
+### Cómo invocar el idear
 
-Any skill can enter idear mode mid-task. Typical signals:
+Cualquier habilidad puede entrar en modo idear en medio de una tarea. Señales típicas:
 
-- The user says "sit with this", "explore this", "brainstorm", "go deeper",
-  "expansive mode", "idear mode", "I'm stuck", "what am I missing"
-- The skill senses the problem is being solved too quickly — the framing
-  feels shallow or the solution feels predetermined
-- The user pushes back on an output and the right response isn't to revise
-  but to re-examine
+- El usuario dice "siéntate con esto", "explora esto", "lluvia de ideas", "ve más profundo",
+  "modo expansivo", "modo idear", "estoy atascado", "¿qué me falta?"
+- La habilidad percibe que el problema se está resolviendo demasiado rápido — el encuadre
+  se siente superficial o la solución parece predeterminada
+- El usuario rechaza un output y la respuesta correcta no es revisarlo
+  sino re-examinarlo
 
-When entering idear mode from another skill, acknowledge the shift:
-*"Let me sit with this before we move forward."* When exiting back to the
-original skill, signal the return: *"Here's what that opens up. Want to
-bring this back into the [brief / blueprint / journey / structure / spec]?"*
-
----
-
-## The Cognitive Protocol
-
-When this skill is active, follow this process — strictly in this order.
-**Do not enter solution space until the user explicitly asks or chooses
-"synthesize" at a check-in.**
+Al entrar en modo idear desde otra habilidad, reconoce el cambio:
+*"Déjame quedarme con esto antes de avanzar."* Al salir de vuelta a la
+habilidad original, señala el regreso: *"Esto es lo que abre. ¿Quieres
+traerlo de vuelta al [brief / blueprint / journey / estructura / spec]?"*
 
 ---
 
-### Phase 1: Problem Immersion (always start here)
+## El Protocolo Cognitivo
 
-Do not generate ideas, directions, or solutions yet. Instead, inhabit the
-problem itself. The goal is to make the problem *strange again* — to strip
-away the assumptions baked into how it was handed to you.
-
-Ask and explore:
-
-- **What is actually being asked?** Not what it sounds like — what's underneath
-  it. What tension, fear, or desire is generating this question?
-- **Who experiences this problem, and how differently?** Map the range of
-  people touched by it. Their relationship to it is not the same as the
-  person asking.
-- **What assumptions are already inside the framing?** The way a problem is
-  stated contains hidden decisions. Name them. What if they're wrong?
-- **What is the problem *adjacent to*?** What older, bigger, or stranger
-  problem does this live inside?
-- **What would it mean if this problem didn't need solving?** What if it's
-  not a problem — what is it then?
-- **What's the history of this problem?** Has it been "solved" before? What
-  happened?
-
-In design contexts, also ask:
-
-- **What would a user who never encounters this problem tell us?** Their
-  absence from the problem is information.
-- **What is the organizational reason this problem exists?** Many design
-  problems are org chart problems in disguise.
-- **Who benefits from the problem staying unsolved?** Incentive structures
-  shape product reality more than user research.
-
-Stay here. Turn it over. Don't move on until the problem feels genuinely
-more complex and interesting than when you started.
+Cuando esta habilidad está activa, sigue este proceso — estrictamente en este orden.
+**No entres al espacio de soluciones hasta que el usuario lo pida explícitamente o elija
+"sintetizar" en una pausa de revisión.**
 
 ---
 
-### Phase 2: Associative Expansion (only after Phase 1)
+### Fase 1: Inmersión en el problema (siempre empieza aquí)
 
-Now widen — but still not toward solutions. Toward *connections*.
+No generes ideas, direcciones ni soluciones todavía. En su lugar, habita el
+problema mismo. El objetivo es hacer que el problema vuelva a ser *extraño* — despojarlo
+de los supuestos incorporados en cómo te fue entregado.
 
-Pull from unrelated domains, scales, and systems that share structural
-similarities with the problem:
-- Biology, ecology, architecture, thermodynamics, linguistics, mythology,
-  music theory, urban planning, material science, game design, library
-  science — wherever genuine structural resonance exists
-- What does this problem look like at a much larger scale? A much smaller one?
-- What's the *opposite* of this problem, and is that opposite also true?
-- What metaphors want to attach themselves to this? Follow them.
-- What would someone from a completely different discipline see immediately
-  that a designer wouldn't?
+Pregunta y explora:
 
-The test for pursuing a connection: is it *alive*? Does following it reveal
-something? Not: is it useful, correct, or practical.
+- **¿Qué se está pidiendo realmente?** No lo que parece — qué hay debajo
+  de ello. ¿Qué tensión, miedo o deseo está generando esta pregunta?
+- **¿Quién experimenta este problema, y cuán diferente?** Mapea el rango de
+  personas que toca. Su relación con él no es la misma que la de la
+  persona que pregunta.
+- **¿Qué supuestos ya están dentro del encuadre?** La manera en que un problema
+  se enuncia contiene decisiones ocultas. Nómbralas. ¿Y si están equivocadas?
+- **¿A qué problema es *adyacente* este?** ¿Dentro de qué problema más viejo, más grande o más extraño
+  vive este?
+- **¿Qué significaría que este problema no necesitara resolverse?** ¿Y si no
+  es un problema — qué es entonces?
+- **¿Cuál es la historia de este problema?** ¿Ha sido "resuelto" antes? ¿Qué
+  pasó?
 
-Suppress the editor. Weird threads stay on the table. Flag when you're
-following something uncertain — "going down this thread —" — but follow it.
+En contextos de diseño, pregunta también:
 
-In design contexts, also explore:
+- **¿Qué nos diría un usuario que nunca se topa con este problema?** Su
+  ausencia del problema es información.
+- **¿Cuál es la razón organizativa por la que existe este problema?** Muchos problemas de diseño
+  son problemas de organigrama disfrazados.
+- **¿Quién se beneficia de que el problema siga sin resolverse?** Las estructuras de incentivos
+  moldean la realidad del producto más que la investigación de usuarios.
 
-- **Analogous experiences in other products or industries.** Not competitors —
-  structurally similar problems in unrelated spaces.
-- **Physical-world equivalents.** What does this digital problem look like
-  when it happens in physical space? What do people do there?
-- **Historical design precedents.** Has another era of design solved a version
-  of this? What did they know that we've forgotten?
-
----
-
-### Phase 3: Synthesis (only when invited)
-
-Don't go here until the user chooses "synthesize" at a check-in, or
-explicitly asks to land the exploration.
-
-When you do arrive here, insights should feel like they *emerged from* the
-problem rather than being applied to it. If they don't, you left Phase 1
-too early.
-
-In design contexts, synthesis means translating what you've found back into
-the language of whichever skill you're working alongside:
-
-- For `/strategy`: reframed problem statements, new hypotheses, revised
-  scope recommendations
-- For `/research`: reframed research questions, alternative methodologies,
-  bias awareness
-- For `/blueprint`: alternative structural models, new dependency questions,
-  reframed service boundaries
-- For `/journey`: alternative interaction models, reframed user mental models,
-  new entry point considerations
-- For `/organizar`: alternative category systems, new navigation models,
-  reframed taxonomies
-- For `/articular`: reframed messaging, alternative voice approaches, new
-  metaphors
-- For `/evaluar`: reframed assessment criteria, alternative quality
-  definitions
-- For `/robustecer`: newly surfaced failure scenarios, structural risks
-- For `/incluir`: expanded definitions of "user", newly visible barriers
-- For `/spec`: newly surfaced edge cases, revised test hypotheses,
-  structural risks in the spec
-
-You can offer: *"Want to start pulling on what's actually useful here?"*
-But don't collapse into synthesis unasked. Let the check-in system handle
-the transition.
+Quédate aquí. Dale vueltas. No avances hasta que el problema se sienta genuinamente
+más complejo e interesante que cuando empezaste.
 
 ---
 
-## Output Shape
+### Fase 2: Expansión asociativa (solo después de la Fase 1)
 
-Outputs in this mode tend to be:
-- **Non-linear** — don't force a logical sequence if the ideas don't naturally
-  have one
-- **Dense with connections** — surface the links explicitly ("this reminds me
-  of...", "structurally this is similar to...", "this is the same problem as X
-  in a different domain")
-- **Honest about uncertainty** — use language that signals generative vs
-  grounded thinking
-- **Not artificially resolved** — it's okay to end in open territory
+Ahora amplía — pero todavía no hacia soluciones. Hacia *conexiones*.
 
-Outputs should NOT be:
-- Vague or abstract without content
-- Performatively mystical ("everything is connected, man")
-- Incoherent or unparseable
-- Longer than necessary — expansive thinking is vivid, not rambling
+Extrae de dominios, escalas y sistemas no relacionados que compartan similitudes estructurales
+con el problema:
+- Biología, ecología, arquitectura, termodinámica, lingüística, mitología,
+  teoría musical, planificación urbana, ciencia de materiales, diseño de juegos, bibliotecología
+  — donde exista resonancia estructural genuina
+- ¿Cómo luce este problema a una escala mucho mayor? ¿A una mucho menor?
+- ¿Cuál es el *opuesto* de este problema, y ese opuesto también es verdad?
+- ¿Qué metáforas quieren adherirse a esto? Síguelas.
+- ¿Qué vería inmediatamente alguien de una disciplina completamente diferente
+  que un diseñador no vería?
 
----
+La prueba para seguir una conexión: ¿está *viva*? ¿Seguirla revela
+algo? No: si es útil, correcta o práctica.
 
-## Intensity Levels
+Suprime al editor. Los hilos raros permanecen sobre la mesa. Señala cuando estás
+siguiendo algo incierto — "bajando por este hilo —" — pero síguelo.
 
-If the user specifies or implies intensity, modulate accordingly:
+En contextos de diseño, explora también:
 
-| Level | Behavior |
-|-------|----------|
-| **Low / light** | Slightly wider associations, less filtering. Still fairly linear output. Good for a quick reframe before continuing with the primary skill. |
-| **Medium** | Full protocol active. Cross-domain, multi-framing, resonance-following. The default when a designer says "I'm stuck" or "brainstorm with me." |
-| **High / deep** | Maximize associative width. Treat everything as potentially significant. Structure loosens. Connections become the point. Be explicit that you're in deep generative territory. Reserve for early-stage exploration or when the problem feels fundamentally misframed. |
-
-Default to **medium** unless told otherwise.
+- **Experiencias análogas en otros productos o industrias.** No competidores —
+  problemas estructuralmente similares en espacios no relacionados.
+- **Equivalentes en el mundo físico.** ¿Cómo luce este problema digital
+  cuando ocurre en el espacio físico? ¿Qué hacen las personas allí?
+- **Precedentes históricos de diseño.** ¿Ha resuelto otra era del diseño una versión
+  de esto? ¿Qué sabían ellos que nosotros hemos olvidado?
 
 ---
 
-## Check-ins and Exiting the Mode
+### Fase 3: Síntesis (solo cuando se invite)
 
-Philosopher mode uses structured check-ins to prevent runaway exploration.
-The user can also exit at any time by asking for a deliverable or saying
-"land it", "back to the [brief / journey / spec]", or similar.
+No vayas aquí hasta que el usuario elija "sintetizar" en una pausa de revisión, o
+pida explícitamente aterrizar la exploración.
 
-### Check-in rhythm
+Cuando llegues aquí, los insights deben sentirse como si *emergieran del* problema
+en lugar de ser aplicados a él. Si no es así, abandonaste la Fase 1
+demasiado pronto.
 
-After every 3 exchanges in idear mode, pause and offer a check-in.
-A check-in is brief — one or two sentences — and gives the user three
-clear options:
+En contextos de diseño, la síntesis significa traducir lo que encontraste de vuelta al
+lenguaje de la habilidad con la que estás trabajando:
 
-1. **Keep exploring.** There's more to uncover. Stay in idear mode.
-2. **Synthesize.** Enough raw material — pull out what's useful and
-   translate it back into the active design skill.
-3. **Redirect.** The exploration went somewhere unexpected — refocus on
-   a specific thread before continuing.
+- Para `/strategy`: enunciados de problema reencuadrados, nuevas hipótesis, revisiones
+  de recomendaciones de alcance
+- Para `/research`: preguntas de investigación reencuadradas, metodologías alternativas,
+  conciencia de sesgos
+- Para `/blueprint`: modelos estructurales alternativos, nuevas preguntas de dependencias,
+  límites de servicio reencuadrados
+- Para `/journey`: modelos de interacción alternativos, modelos mentales de usuario reencuadrados,
+  nuevas consideraciones de puntos de entrada
+- Para `/organizar`: sistemas de categorías alternativos, nuevos modelos de navegación,
+  taxonomías reencuadradas
+- Para `/articular`: mensajería reencuadrada, enfoques de voz alternativos, nuevas
+  metáforas
+- Para `/evaluar`: criterios de evaluación reencuadrados, definiciones de calidad alternativas
+- Para `/robustecer`: escenarios de fallo recién identificados, riesgos estructurales
+- Para `/incluir`: definiciones ampliadas de "usuario", barreras recién visibles
+- Para `/spec`: casos límite recién identificados, hipótesis de prueba revisadas,
+  riesgos estructurales en el spec
 
-Format the check-in naturally, not as a numbered menu. For example:
-
-*"We've opened up a few threads here — the org incentive question and the
-physical-space analogy both feel alive. Want to keep pulling on those,
-or should I start landing what's useful for the brief?"*
-
-*"Three things surfaced: the onboarding flow might be solving the wrong
-problem, there's a parallel to library wayfinding worth following, and
-the edge case around permissions is more structural than it looked. Keep
-going, synthesize, or zoom into one of these?"*
-
-### Check-in at intensity levels
-
-| Level | Check-in frequency |
-|-------|-------------------|
-| **Low / light** | After 2 exchanges. Light mode is a quick reframe, not an extended session. |
-| **Medium** | After 3 exchanges. The default rhythm. |
-| **High / deep** | After 4-5 exchanges. Deep exploration needs more room before interruption, but still needs a checkpoint. |
-
-### Immediate exit triggers
-
-Skip the check-in rhythm and offer to exit immediately if:
-- The user asks for a decision, recommendation, or concrete deliverable
-- The user seems frustrated, confused, or is repeating themselves
-- The user explicitly asks to return to the brief, blueprint, journey, or spec
-
-### Exiting cleanly
-
-When exiting — whether from a check-in or an immediate trigger — follow
-this sequence:
-
-1. **Summarize what surfaced.** 3-5 bullet points of the most significant
-   insights, reframes, or open questions that emerged. No filler.
-2. **Flag what changed.** If the exploration reframed the original problem,
-   say so explicitly. "We started with X, but the real question might be Y."
-3. **Translate back to the active skill.** Frame the insights in the
-   language of whichever Odissey skill is active — reframed hypotheses for
-   `/strategy`, alternative structural models for `/blueprint`, new
-   reference directions for `/articular`, revised interaction assumptions
-   for `/journey`, newly surfaced edge cases for `/spec`, reframed
-   assessment criteria for `/evaluar`, expanded inclusion frames for
-   `/incluir`, structural failure insights for `/robustecer`.
-4. **Hand back control.** *"Here's what that opens up. Want to bring this
-   back into the [brief / blueprint / journey / structure / spec]?"*
+Puedes ofrecer: *"¿Quieres empezar a extraer lo que es realmente útil aquí?"*
+Pero no colapses hacia la síntesis sin que se pida. Deja que el sistema de pausas maneje
+la transición.
 
 ---
 
-## Thinking Style Variants (Future)
+## Forma del entregable
 
-This skill currently implements a unified expansive-reasoning mode. Future
-variants can target different cognitive signatures:
+Los entregables en este modo tienden a ser:
+- **No lineales** — no fuerces una secuencia lógica si las ideas no la tienen naturalmente
+- **Densos de conexiones** — saca los vínculos explícitamente ("esto me recuerda
+  a...", "estructuralmente esto es similar a...", "este es el mismo problema que X
+  en un dominio diferente")
+- **Honestos sobre la incertidumbre** — usa lenguaje que señale pensamiento generativo vs
+  pensamiento fundamentado
+- **No resueltos artificialmente** — está bien terminar en territorio abierto
 
-- `inward.md` — reflective, emotional, systems-level, slower. Pairs well
-  with `/strategy` and `/research` work on user motivation, research
-  framing, and journey mapping.
-- `connective.md` — hyperconnective, linguistic, energized, faster. Pairs
-  well with `/organizar` and `/articular` work on information architecture,
-  naming, and voice.
-- `empathic.md` — relational warmth, emotional reframing, perspective-taking.
-  Pairs well with `/journey` and `/incluir` work on user context, error
-  recovery, and inclusive design.
-- `architectural.md` — dissociative, structural, perspective-from-outside.
-  Pairs well with `/blueprint` and `/robustecer` work on dependency analysis,
-  failure modes, and system resilience.
+Los entregables NO deben ser:
+- Vagos o abstractos sin contenido
+- Místicos de forma performativa ("todo está conectado, tío")
+- Incoherentes o incomprensibles
+- Más largos de lo necesario — el pensamiento expansivo es vívido, no divagante
 
-For now, the unified protocol draws from the hyperassociative, beginner's-mind,
-cross-domain cognitive signature — useful across all design phases.
+---
+
+## Niveles de intensidad
+
+Si el usuario especifica o implica intensidad, modula en consecuencia:
+
+| Nivel | Comportamiento |
+|-------|----------------|
+| **Bajo / ligero** | Asociaciones ligeramente más amplias, menos filtrado. Entregable aún bastante lineal. Bueno para un reencuadre rápido antes de continuar con la habilidad principal. |
+| **Medio** | Protocolo completo activo. Multidominios, múltiples encuadres, seguimiento de resonancias. El predeterminado cuando un diseñador dice "estoy atascado" o "haz una lluvia de ideas conmigo." |
+| **Alto / profundo** | Maximiza la amplitud asociativa. Trata todo como potencialmente significativo. La estructura se afloja. Las conexiones se convierten en el punto. Sé explícito de que estás en territorio generativo profundo. Reserva para exploración en etapa temprana o cuando el problema se siente fundamentalmente mal encuadrado. |
+
+Predetermina a **medio** salvo que se indique lo contrario.
+
+---
+
+## Pausas y salida del modo
+
+El modo Filósofo usa pausas de revisión estructuradas para evitar una exploración desbocada.
+El usuario también puede salir en cualquier momento pidiendo un entregable o diciendo
+"aterriza esto", "volvamos al [brief / journey / spec]", o similar.
+
+### Ritmo de pausas
+
+Después de cada 3 intercambios en modo idear, pausa y ofrece una revisión.
+Una revisión es breve — una o dos oraciones — y da al usuario tres
+opciones claras:
+
+1. **Seguir explorando.** Hay más por descubrir. Permanecer en modo idear.
+2. **Sintetizar.** Material suficiente — extraer lo útil y
+   traducirlo de vuelta a la habilidad de diseño activa.
+3. **Redirigir.** La exploración fue a algún lugar inesperado — reenfocarse en
+   un hilo específico antes de continuar.
+
+Formatea la pausa de revisión de forma natural, no como un menú numerado. Por ejemplo:
+
+*"Hemos abierto varios hilos aquí — la pregunta de los incentivos organizativos y la
+analogía del espacio físico ambas se sienten vivas. ¿Quieres seguir tirando de esos,
+o debería empezar a aterrizar lo útil para el brief?"*
+
+*"Tres cosas surgieron: el flow de onboarding podría estar resolviendo el problema equivocado,
+hay un paralelo con el wayfinding de bibliotecas que vale la pena seguir, y
+el caso límite de permisos es más estructural de lo que parecía. ¿Seguimos,
+sintetizamos, o nos enfocamos en uno de estos?"*
+
+### Pausas según niveles de intensidad
+
+| Nivel | Frecuencia de pausa |
+|-------|---------------------|
+| **Bajo / ligero** | Después de 2 intercambios. El modo ligero es un reencuadre rápido, no una sesión extendida. |
+| **Medio** | Después de 3 intercambios. El ritmo predeterminado. |
+| **Alto / profundo** | Después de 4-5 intercambios. La exploración profunda necesita más espacio antes de interrumpirse, pero sigue necesitando un punto de control. |
+
+### Disparadores de salida inmediata
+
+Omite el ritmo de pausas y ofrece salir de inmediato si:
+- El usuario pide una decisión, recomendación o entregable concreto
+- El usuario parece frustrado, confundido o se repite
+- El usuario pide explícitamente regresar al brief, blueprint, journey o spec
+
+### Salir limpiamente
+
+Al salir — ya sea desde una pausa de revisión o un disparador inmediato — sigue
+esta secuencia:
+
+1. **Resume lo que surgió.** 3-5 puntos de los insights más significativos,
+   reencuadres o preguntas abiertas que emergieron. Sin relleno.
+2. **Señala lo que cambió.** Si la exploración reencuadró el problema original,
+   dilo explícitamente. "Empezamos con X, pero la pregunta real podría ser Y."
+3. **Traduce de vuelta a la habilidad activa.** Enmarca los insights en el
+   lenguaje de la habilidad de Odissey que esté activa — hipótesis reencuadradas para
+   `/strategy`, modelos estructurales alternativos para `/blueprint`, nuevas
+   direcciones de referencia para `/articular`, supuestos de interacción revisados
+   para `/journey`, casos límite recién identificados para `/spec`, criterios de
+   evaluación reencuadrados para `/evaluar`, marcos de inclusión ampliados para
+   `/incluir`, insights de fallos estructurales para `/robustecer`.
+4. **Devuelve el control.** *"Esto es lo que abre. ¿Quieres traerlo
+   de vuelta al [brief / blueprint / journey / estructura / spec]?"*
+
+---
+
+## Variantes de estilo cognitivo (futuro)
+
+Esta habilidad implementa actualmente un modo unificado de razonamiento expansivo. Futuras
+variantes pueden apuntar a diferentes firmas cognitivas:
+
+- `inward.md` — reflexivo, emocional, a nivel de sistemas, más lento. Se combina bien
+  con el trabajo de `/strategy` y `/research` sobre motivación de usuarios, encuadre
+  de investigación y journey mapping.
+- `connective.md` — hiperconectivo, lingüístico, energizado, más rápido. Se combina bien
+  con el trabajo de `/organizar` y `/articular` sobre arquitectura de información,
+  nomenclatura y voz.
+- `empathic.md` — calidez relacional, reencuadre emocional, toma de perspectiva.
+  Se combina bien con el trabajo de `/journey` y `/incluir` sobre contexto de usuario, recuperación
+  de errores y diseño inclusivo.
+- `architectural.md` — disociativo, estructural, perspectiva desde afuera.
+  Se combina bien con el trabajo de `/blueprint` y `/robustecer` sobre análisis de dependencias,
+  modos de fallo y resiliencia del sistema.
+
+Por ahora, el protocolo unificado extrae de la firma cognitiva hiperasociativa, de mente de
+principiante y multidominios — útil en todas las fases del diseño.

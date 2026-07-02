@@ -1,17 +1,16 @@
 ---
 name: localizar
 description: >
-  Adapts experiences across cultures and languages — not just translation,
-  but cultural reconception. Part of the Odissey design strategy system.
-  When a product enters a new market, everything is in play: information
-  density, navigation patterns, color meaning, icon comprehension, date
-  formats, trust signals, payment flows, and the fundamental assumptions
-  about how people make decisions. Trigger when: planning international
-  expansion, auditing i18n readiness, adapting designs for RTL languages,
-  reviewing cultural assumptions in a design, preparing localization
-  test plans, or when someone says "we need to launch in [country]" and
-  the plan is "just translate it." Also trigger for compliance reviews
-  across markets (GDPR, PIPL, accessibility laws).
+  Adapta experiencias entre culturas e idiomas — no solo traducción,
+  sino reconceptualización cultural. Parte del sistema de estrategia de diseño Odissey.
+  Cuando un producto entra en un nuevo mercado, todo entra en juego: densidad de
+  información, patrones de navegación, significado del color, comprensión de iconos,
+  formatos de fecha, señales de confianza, flujos de pago y los supuestos fundamentales
+  sobre cómo las personas toman decisiones. Activa cuando: planifiques expansión
+  internacional, audites la preparación i18n, adaptes diseños para idiomas RTL,
+  revises supuestos culturales en un diseño, prepares planes de prueba de localización,
+  o cuando alguien diga "necesitamos lanzar en [país]" y el plan sea "solo traducirlo".
+  También activa para revisiones de cumplimiento en distintos mercados (GDPR, PIPL, leyes de accesibilidad).
 version: 1.5.0
 user-invocable: true
 ---
@@ -30,274 +29,274 @@ Diseña para la localización desde el principio, o pagarás la deuda después d
 
 ---
 
-## Skill family
+## Familia de habilidades
 
-Localize works alongside the full Odissey skill system:
+Localizar trabaja junto al sistema completo de habilidades Odissey:
 
-- **`/articular`**: Everything they write will be localizard. Content strategy must design for translation from the start — sentence structure, concatenation, tone, humor, idiom. If the English copy is clever, the localizard copy may be incomprehensible. Articulate designs translatable content; localizar ensures it survives translation.
-- **`/organizar`**: Navigation and labeling may need cultural adaptation. Category structures that make sense in one culture may be arbitrary in another. Menu labels that are concise in English may expand to unwieldy lengths in German or Finnish.
-- **`/robustecer`**: i18n technical readiness — text expansion breaking layouts, RTL rendering bugs, date/number format parsing failures, character encoding issues. Fortify maps the failure modes; localizar defines the requirements that prevent them.
-- **`/strategy`**: Market analysis and audience definition per locale. Which markets, in what order, with what level of adaptation? `/strategy` defines the business case; `/localizar` defines the design implications.
-- **`/research`**: Cultural research methods for unfamiliar markets. When your assumptions about a market are based on stereotypes rather than evidence, research plans the research to validate or challenge them.
-- **`/idear`**: A cross-cutting cognitive mode for confronting invisible assumptions. Invoke when: your design team is monocultural and can't see its own biases, the "obvious" user flow is obvious only to people from your culture, or you need the question: "What cultural assumptions are invisible to us because we're inside them?"
+- **`/articular`**: Todo lo que escriban será localizado. La estrategia de contenido debe diseñarse para la traducción desde el inicio — estructura de oraciones, concatenación, tono, humor, expresiones idiomáticas. Si el copy en inglés es ingenioso, el copy localizado puede volverse incomprensible. Articular diseña contenido traducible; localizar garantiza que sobreviva la traducción.
+- **`/organizar`**: La navegación y el etiquetado pueden necesitar adaptación cultural. Las estructuras de categorías que tienen sentido en una cultura pueden ser arbitrarias en otra. Las etiquetas de menú concisas en inglés pueden expandirse hasta longitudes inmanejables en alemán o finlandés.
+- **`/robustecer`**: Preparación técnica i18n — la expansión de texto que rompe layouts, bugs de renderizado RTL, fallos de parseo de formatos de fecha/número, problemas de codificación de caracteres. Robustecer mapea los modos de fallo; localizar define los requisitos que los previenen.
+- **`/strategy`**: Análisis de mercado y definición de audiencia por locale. ¿Qué mercados, en qué orden, con qué nivel de adaptación? `/strategy` define el caso de negocio; `/localizar` define las implicaciones de diseño.
+- **`/research`**: Métodos de investigación cultural para mercados desconocidos. Cuando los supuestos sobre un mercado se basan en estereotipos en lugar de evidencia, research planifica la investigación para validarlos o cuestionarlos.
+- **`/idear`**: Un modo cognitivo transversal para confrontar supuestos invisibles. Activa cuando: el equipo de diseño es monocultural y no puede ver sus propios sesgos, el flujo de usuario "obvio" solo es obvio para personas de tu cultura, o necesitas la pregunta: "¿Qué supuestos culturales son invisibles para nosotros porque estamos dentro de ellos?"
 
 ---
 
-## Core capabilities
+## Capacidades principales
 
-### 1. Cultural dimension analysis for UX
+### 1. Análisis de dimensiones culturales para UX
 
-Cultural frameworks provide starting hypotheses for design adaptation — not stereotypes to design by. Use them to generate questions, then validate with research.
+Los marcos culturales aportan hipótesis de partida para la adaptación del diseño — no estereotipos con los que diseñar. Úsalos para generar preguntas y luego valida con investigación.
 
-**High-context vs. low-context communication:**
-- High-context cultures (Japan, China, Arab countries, Korea): communication is implicit, relationships matter before transactions, visual density is expected (not cluttered), social proof and authority signals carry weight, indirectness is politeness.
-- Low-context cultures (US, Germany, Scandinavia, Netherlands): communication is explicit, task-first flows are preferred, minimal UI is valued, direct calls to action work, users expect to self-serve.
-- UX implications: onboarding flows, help text density, social features, the balance between guidance and autonomy.
+**Comunicación de alto contexto vs. bajo contexto:**
+- Culturas de alto contexto (Japón, China, países árabes, Corea): la comunicación es implícita, las relaciones importan antes que las transacciones, la densidad visual es esperada (no es desorden), las señales de prueba social y autoridad tienen peso, la indirecta es cortesía.
+- Culturas de bajo contexto (EE. UU., Alemania, Escandinavia, Países Bajos): la comunicación es explícita, se prefieren los flujos de tarea primero, se valora la UI minimalista, las llamadas a la acción directas funcionan, los usuarios esperan autoservicio.
+- Implicaciones UX: flujos de onboarding, densidad del texto de ayuda, funcionalidades sociales, el equilibrio entre guía y autonomía.
 
-**Power distance:**
-- High power distance: formal tone, hierarchical navigation, respect for authority in copy ("Approved by Dr. [Name]"), institutional trust signals.
-- Low power distance: informal tone, flat navigation, peer trust signals ("1,000 users like you chose this"), egalitarian messaging.
-- UX implications: form of address, tone of voice, error mesgalileos, authority signals.
+**Distancia al poder:**
+- Alta distancia al poder: tono formal, navegación jerárquica, respeto a la autoridad en el copy ("Aprobado por el Dr. [Nombre]"), señales de confianza institucional.
+- Baja distancia al poder: tono informal, navegación plana, señales de confianza entre pares ("1.000 usuarios como tú eligieron esto"), mensajes igualitarios.
+- Implicaciones UX: forma de dirigirse al usuario, tono de voz, mensajes de error, señales de autoridad.
 
-**Individualism vs. collectivism:**
-- Individualist cultures: personal accounts, individual preferences, "my" dashboard, solo decision-making flows.
-- Collectivist cultures: family/group accounts, shared decision-making, social features, gift-giving flows, group purchase patterns.
-- UX implications: account models, sharing features, decision-making flows, social proof patterns.
+**Individualismo vs. colectivismo:**
+- Culturas individualistas: cuentas personales, preferencias individuales, dashboard "mi", flujos de decisión individual.
+- Culturas colectivistas: cuentas familiares/grupales, toma de decisiones compartida, funcionalidades sociales, flujos de regalo, patrones de compra grupal.
+- Implicaciones UX: modelos de cuenta, funcionalidades de compartir, flujos de toma de decisiones, patrones de prueba social.
 
-**Uncertainty avoidance:**
-- High uncertainty avoidance (Japan, Germany, Greece): detailed explanations, confirmation steps, progress indicators, safety nets, explicit guarantees.
-- Low uncertainty avoidance (Singapore, Denmark, UK): tolerance for ambiguity, fewer confirmation steps, willingness to explore, comfort with uncertainty.
-- UX implications: how much guidance to provide, number of confirmation steps, error prevention vs. error recovery.
+**Aversión a la incertidumbre:**
+- Alta aversión a la incertidumbre (Japón, Alemania, Grecia): explicaciones detalladas, pasos de confirmación, indicadores de progreso, redes de seguridad, garantías explícitas.
+- Baja aversión a la incertidumbre (Singapur, Dinamarca, Reino Unido): tolerancia a la ambigüedad, menos pasos de confirmación, disposición a explorar, comodidad con la incertidumbre.
+- Implicaciones UX: cuánta guía proporcionar, número de pasos de confirmación, prevención vs. recuperación de errores.
 
-**Long-term orientation:**
-- Long-term oriented cultures: loyalty programs resonate, subscription models accepted, trust built gradually, relationship-first onboarding.
-- Short-term oriented cultures: immediate value expected, trial-first models, quick wins, instant gratification patterns.
+**Orientación a largo plazo:**
+- Culturas orientadas al largo plazo: los programas de fidelidad resuenan, los modelos de suscripción son aceptados, la confianza se construye gradualmente, onboarding centrado en la relación.
+- Culturas orientadas al corto plazo: valor inmediato esperado, modelos trial-first, victorias rápidas, patrones de gratificación instantánea.
 
-**IMPORTANT:** These are spectrums and tendencies, not rules. Every individual is different. Every market has subcultures. Never design for a stereotype. Use these dimensions to generate hypotheses, then validate with `/research` research and `/medir` data from real users in the target market.
+**IMPORTANTE:** Estas son tendencias y espectros, no reglas. Cada individuo es diferente. Cada mercado tiene subculturas. Nunca diseñes para un estereotipo. Usa estas dimensiones para generar hipótesis y luego valida con investigación de `/research` y datos de `/medir` de usuarios reales en el mercado objetivo.
 
-### 2. RTL and LTR design
+### 2. Diseño RTL y LTR
 
-Right-to-left layout is not mirroring. It requires understanding what flips, what doesn't, and what needs rethinking.
+El layout de derecha a izquierda no es un espejo. Requiere entender qué cambia de dirección, qué no, y qué necesita replantearse.
 
-**What flips:**
-- Layout direction: content flows right-to-left
-- Text alignment: right-aligned by default
-- Navigation order: back arrow points right, forward points left
-- Progress indicators: fill from right to left
-- Swipe directions: next is left-to-right, previous is right-to-left
-- Slider direction: min on right, max on left
-- Icon direction: icons that imply direction (arrows, reply, share) flip
+**Qué cambia de dirección:**
+- Dirección del layout: el contenido fluye de derecha a izquierda
+- Alineación del texto: alineado a la derecha por defecto
+- Orden de navegación: la flecha de retroceso apunta a la derecha, la de avance a la izquierda
+- Indicadores de progreso: se llenan de derecha a izquierda
+- Direcciones de swipe: siguiente es de izquierda a derecha, anterior de derecha a izquierda
+- Dirección del slider: mínimo a la derecha, máximo a la izquierda
+- Dirección de iconos: los iconos que implican dirección (flechas, responder, compartir) cambian de dirección
 
-**What does NOT flip:**
-- Numbers and phone numbers (always LTR within their container)
-- Media playback controls (play/pause/skip are universal)
-- Clock direction
-- Brand logos
-- Universal icons (play, pause, close, add)
-- Checkmarks and toggles (debated, but generally don't flip)
+**Qué NO cambia de dirección:**
+- Números y números de teléfono (siempre LTR dentro de su contenedor)
+- Controles de reproducción de medios (play/pausa/saltar son universales)
+- Dirección del reloj
+- Logos de marca
+- Iconos universales (play, pausa, cerrar, añadir)
+- Marcas de verificación y toggles (debatido, pero generalmente no cambian)
 
-**Bidirectional text:**
-When RTL and LTR content mix — Arabic text with English brand names, code snippets, URLs, email addresses — the Unicode Bidirectional Algorithm handles most cases, but edge cases require manual intervention with directional markers. Test with real mixed-direction content, not lorem ipsum.
+**Texto bidireccional:**
+Cuando el contenido RTL y LTR se mezclan — texto árabe con nombres de marca en inglés, fragmentos de código, URLs, direcciones de email — el Algoritmo Bidireccional Unicode maneja la mayoría de los casos, pero los casos extremos requieren intervención manual con marcadores direccionales. Prueba con contenido real de dirección mixta, no con lorem ipsum.
 
-**CSS implementation principles:**
-- Use logical properties: `inline-start`/`inline-end` instead of `left`/`right`, `block-start`/`block-end` instead of `top`/`bottom`
-- Use `dir="rtl"` on the root element, not CSS transforms
-- Flexbox and Grid handle direction automatically with logical properties
-- Absolute positioning and transforms need manual attention
+**Principios de implementación CSS:**
+- Usa propiedades lógicas: `inline-start`/`inline-end` en lugar de `left`/`right`, `block-start`/`block-end` en lugar de `top`/`bottom`
+- Usa `dir="rtl"` en el elemento raíz, no transforms CSS
+- Flexbox y Grid manejan la dirección automáticamente con propiedades lógicas
+- El posicionamiento absoluto y los transforms necesitan atención manual
 
-**Testing RTL:**
-- Test with actual RTL users, not just mirrored screenshots
-- Test with real Arabic/Hebrew content, not reversed English
-- Test bidirectional content: Arabic paragraphs with English terms, numbers, URLs
-- Test form inputs: cursor position, text selection, copy-paste behavior
+**Pruebas RTL:**
+- Prueba con usuarios RTL reales, no solo con capturas de pantalla en espejo
+- Prueba con contenido árabe/hebreo real, no inglés invertido
+- Prueba contenido bidireccional: párrafos en árabe con términos en inglés, números, URLs
+- Prueba inputs de formulario: posición del cursor, selección de texto, comportamiento de copiar-pegar
 
-### 3. Content adaptation beyond translation
+### 3. Adaptación de contenido más allá de la traducción
 
-Translation converts words. Content adaptation converts meaning, structure, and formatting.
+La traducción convierte palabras. La adaptación de contenido convierte significado, estructura y formato.
 
-**Text expansion and contraction:**
-- German expands ~30% from English. Finnish ~40%. Some compounds create single words that are 30+ characters.
-- Chinese and Japanese can compress 30-50% from English character count (but may need more vertical space due to character complexity).
-- Layout MUST accommodate expansion without breaking. Test with pseudo-localizard strings at 150% length as a minimum.
+**Expansión y contracción del texto:**
+- El alemán se expande ~30% respecto al inglés. El finlandés ~40%. Algunos compuestos crean palabras únicas de más de 30 caracteres.
+- El chino y el japonés pueden comprimirse un 30-50% respecto al recuento de caracteres en inglés (pero pueden necesitar más espacio vertical por la complejidad de los caracteres).
+- El layout DEBE acomodar la expansión sin romperse. Prueba con cadenas pseudo-localizadas al 150% de longitud como mínimo.
 
-**String concatenation is the enemy:**
-"Hello {name}, you have {n} items in your cart" breaks in almost every language. Word order changes. Pluralization rules differ. Gender agreement is required. Use proper i18n libraries with ICU MesgalileoFormat. Never build sentences by concatenating variables.
+**La concatenación de cadenas es el enemigo:**
+"Hola {nombre}, tienes {n} artículos en tu carrito" se rompe en casi todos los idiomas. El orden de palabras cambia. Las reglas de pluralización difieren. La concordancia de género es obligatoria. Usa bibliotecas i18n adecuadas con ICU MessageFormat. Nunca construyas oraciones concatenando variables.
 
-**Pluralization:**
-- English: 2 forms (1 item, 2 items)
-- Arabic: 6 forms (zero, one, two, few, many, other)
-- Polish: 4 forms with complex rules
-- Chinese/Japanese/Korean: 1 form (no grammatical plural)
-- Use CLDR plural rules, not "if count != 1, add 's'"
+**Pluralización:**
+- Inglés: 2 formas (1 item, 2 items)
+- Árabe: 6 formas (cero, uno, dos, pocos, muchos, otro)
+- Polaco: 4 formas con reglas complejas
+- Chino/japonés/coreano: 1 forma (sin plural gramatical)
+- Usa las reglas de plural CLDR, no "si count != 1, añade 's'"
 
-**Date and time:**
-- MM/DD/YYYY (US) vs. DD/MM/YYYY (most of world) vs. YYYY-MM-DD (ISO/East Asia)
-- 12-hour (US, UK, Australia) vs. 24-hour (most of world)
-- Week starts Monday (ISO, most of world) vs. Sunday (US, Israel, some Middle Eastern countries)
-- Use locale-aware formatting libraries. Never hardcode date formats.
+**Fecha y hora:**
+- MM/DD/YYYY (EE. UU.) vs. DD/MM/YYYY (la mayoría del mundo) vs. YYYY-MM-DD (ISO/Asia Oriental)
+- 12 horas (EE. UU., Reino Unido, Australia) vs. 24 horas (la mayoría del mundo)
+- La semana empieza el lunes (ISO, la mayoría del mundo) vs. domingo (EE. UU., Israel, algunos países de Oriente Medio)
+- Usa bibliotecas de formato conscientes del locale. Nunca codifiques formatos de fecha de forma fija.
 
-**Numbers:**
-- 1,000.00 (US, UK) vs. 1.000,00 (Germany, Brazil) vs. 1 000,00 (France, Sweden)
-- Decimal and thousands separators vary. Use locale-aware number formatting.
+**Números:**
+- 1.000,00 (EE. UU., Reino Unido) vs. 1.000,00 (Alemania, Brasil) vs. 1 000,00 (Francia, Suecia)
+- Los separadores decimales y de miles varían. Usa formato de número consciente del locale.
 
-**Currency:**
-- Symbol position varies: $1,000.00 vs. 1.000,00 EUR vs. 1 000 kr
-- Some currencies have no decimal places (JPY, KRW)
-- Exchange rate display needs careful formatting per locale
+**Moneda:**
+- La posición del símbolo varía: $1.000,00 vs. 1.000,00 EUR vs. 1 000 kr
+- Algunas monedas no tienen decimales (JPY, KRW)
+- La visualización del tipo de cambio necesita formato cuidadoso por locale
 
-**Addresses:**
-- Format varies wildly by country. Japan: postal code, prefecture, city, ward, block, building, room. US: street, city, state, zip. UK: house, street, town, county, postcode.
-- Never assume street/city/state/zip structure. Use locale-aware address forms or flexible freeform input.
+**Direcciones:**
+- El formato varía enormemente por país. Japón: código postal, prefectura, ciudad, barrio, bloque, edificio, habitación. EE. UU.: calle, ciudad, estado, código postal. Reino Unido: número, calle, localidad, condado, código postal.
+- Nunca asumas la estructura calle/ciudad/estado/código postal. Usa formularios de dirección conscientes del locale o input de texto libre flexible.
 
-**Names:**
-- Not everyone has first name + last name
-- Chinese, Japanese, Korean: family name first
-- Icelandic: patronymic, not family name
-- Indonesian: many people have single names
-- Spanish: two family names (paternal + maternal)
-- Don't force Western name structures. Use "full name" as a single field when possible, with optional structured fields.
+**Nombres:**
+- No todos tienen nombre + apellido
+- Chino, japonés, coreano: el apellido va primero
+- Islandés: patronímico, no apellido
+- Indonesio: muchas personas tienen un solo nombre
+- Español: dos apellidos (paterno + materno)
+- No fuerces estructuras de nombre occidentales. Usa "nombre completo" como un único campo cuando sea posible, con campos estructurados opcionales.
 
-### 4. Visual and symbolic adaptation
+### 4. Adaptación visual y simbólica
 
-Visual elements carry cultural meaning that doesn't translate.
+Los elementos visuales transmiten significado cultural que no se traduce.
 
-**Color meaning (starting points, not rules):**
-- Red: luck and prosperity (China), danger and warning (Western), mourning (South Africa), bridal (India)
-- Green: Islam (Middle East), nature/go (Western), jealousy (some Latin American), money (US)
-- White: purity and weddings (Western), mourning and death (East Asian, some South Asian)
-- Yellow: royalty (Thailand), caution (Western), sacred (Hindu)
-- Blue: trust and corporate (near-universal, but depth of association varies)
-- Don't assume your color palette communicates the same emotions everywhere. Test.
+**Significado del color (puntos de partida, no reglas):**
+- Rojo: suerte y prosperidad (China), peligro y advertencia (Occidente), luto (Sudáfrica), nupcial (India)
+- Verde: Islam (Oriente Medio), naturaleza/avanzar (Occidente), celos (algunos países latinoamericanos), dinero (EE. UU.)
+- Blanco: pureza y bodas (Occidente), luto y muerte (Asia Oriental, algunas regiones del sur de Asia)
+- Amarillo: realeza (Tailandia), precaución (Occidente), sagrado (hinduismo)
+- Azul: confianza y corporativo (casi universal, pero la profundidad de la asociación varía)
+- No asumas que tu paleta de colores comunica las mismas emociones en todas partes. Prueba.
 
-**Icons and symbols:**
-- Mailbox icon: varies by country (US mailbox vs. European post box vs. Japanese post mark)
-- Trash can: American-style trash can is not universal
-- Thumbs up: positive in most Western cultures, offensive in parts of Middle East and West Africa
-- Checkmark: correct/yes in Western cultures, can mean "wrong/incorrect" in Japan and Korea (they use circles for correct)
-- Hand gestures: culturally loaded everywhere. Avoid them or test thoroughly.
-- Animals: cultural significance varies enormously (owls = wisdom in West, bad luck in India; pigs problematic in Islamic and Jewish contexts)
+**Iconos y símbolos:**
+- Icono de buzón: varía por país (buzón estadounidense vs. buzón europeo vs. sello japonés)
+- Papelera: el estilo de papelera americano no es universal
+- Pulgar arriba: positivo en la mayoría de las culturas occidentales, ofensivo en partes de Oriente Medio y África Occidental
+- Marca de verificación: correcto/sí en culturas occidentales, puede significar "incorrecto" en Japón y Corea (usan círculos para lo correcto)
+- Gestos con las manos: culturalmente cargados en todas partes. Evítalos o pruébalos exhaustivamente.
+- Animales: el significado cultural varía enormemente (búho = sabiduría en Occidente, mala suerte en India; los cerdos son problemáticos en contextos islámicos y judíos)
 
-**Imagery:**
-- Diverse representation appropriate to the market
-- Contextually appropriate clothing, architecture, food, landscapes
-- Avoid Western-default stock photography for non-Western markets
-- Avoid images that could be politically sensitive in the target market
-- Show local context: local devices, local environments, local people
+**Imágenes:**
+- Representación diversa apropiada para el mercado
+- Ropa, arquitectura, comida y paisajes contextualmente apropiados
+- Evita fotografías de stock con sesgo occidental para mercados no occidentales
+- Evita imágenes que puedan ser políticamente sensibles en el mercado objetivo
+- Muestra contexto local: dispositivos locales, entornos locales, personas locales
 
-### 5. Market-specific compliance
+### 5. Cumplimiento normativo por mercado
 
-Legal requirements that directly affect UX. This is not comprehensive legal advice — it's awareness of compliance requirements that shape design decisions.
+Requisitos legales que afectan directamente a la UX. Esto no es asesoramiento legal exhaustivo — es conciencia de los requisitos de cumplimiento que dan forma a las decisiones de diseño.
 
-**GDPR (EU/EEA):**
-- Consent must be freely given, specific, informed, unambiguous — no prechecked boxes
-- Cookie consent banners with genuine opt-out (not just "accept" buttons)
-- Data portability: users must be able to export their data
-- Right to deletion: users must be able to delete their account and data
-- Privacy by design: data minimization, purpose limitation
+**GDPR (UE/EEE):**
+- El consentimiento debe ser libre, específico, informado e inequívoco — sin casillas premarcadas
+- Banners de consentimiento de cookies con opt-out genuino (no solo botones de "aceptar")
+- Portabilidad de datos: los usuarios deben poder exportar sus datos
+- Derecho al olvido: los usuarios deben poder eliminar su cuenta y datos
+- Privacidad por diseño: minimización de datos, limitación de propósito
 
 **CCPA/CPRA (California):**
-- "Do Not Sell or Share My Personal Information" link required
-- Opt-out must be as easy as opt-in
-- Financial incentive disclosures for data collection
+- Enlace "No vender ni compartir mi información personal" obligatorio
+- El opt-out debe ser tan fácil como el opt-in
+- Declaraciones de incentivos financieros por recopilación de datos
 
 **PIPL (China):**
-- Data localization: personal data of Chinese citizens stored in China
-- Separate consent for each purpose of data processing
-- Cross-border transfer requires security assessment or certification
-- Significant implications for product architecture
+- Localización de datos: datos personales de ciudadanos chinos almacenados en China
+- Consentimiento separado para cada propósito del tratamiento de datos
+- La transferencia transfronteriza requiere evaluación de seguridad o certificación
+- Implicaciones significativas para la arquitectura del producto
 
-**Accessibility laws (selection):**
-- EAA — European Accessibility Act (EU): WCAG 2.1 AA for products and services, enforcement from 2025
-- ADA (US): no explicit digital standard, but WCAG 2.1 AA is the de facto requirement
-- AODA (Canada/Ontario): WCAG 2.0 AA required
-- JIS X 8341-3 (Japan): aligned with WCAG but with Japanese-specific guidance
-- Different standards, different enforcement, different penalties
+**Leyes de accesibilidad (selección):**
+- EAA — Ley Europea de Accesibilidad (UE): WCAG 2.1 AA para productos y servicios, aplicación desde 2025
+- ADA (EE. UU.): sin estándar digital explícito, pero WCAG 2.1 AA es el requisito de facto
+- AODA (Canadá/Ontario): WCAG 2.0 AA obligatorio
+- JIS X 8341-3 (Japón): alineado con WCAG pero con orientación específica para japonés
+- Diferentes estándares, diferente aplicación, diferentes sanciones
 
-**Age verification:**
-- Varies by country and content type
-- COPPA (US): under-13 restrictions
-- UK Age Appropriate Design Code: child-specific data protection
-- Alcohol, gambling, tobacco: age gates vary by jurisdiction
+**Verificación de edad:**
+- Varía por país y tipo de contenido
+- COPPA (EE. UU.): restricciones para menores de 13 años
+- Código de Diseño Apropiado para la Edad del Reino Unido: protección de datos específica para menores
+- Alcohol, juego, tabaco: las verificaciones de edad varían según la jurisdicción
 
-**Payment regulations:**
-- PSD2/SCA (EU): Strong Customer Authentication for online payments
-- Local payment methods: iDEAL (Netherlands), Boleto (Brazil), UPI (India), WeChat Pay/Alipay (China)
-- Installment expectations: Klarna (Europe), Afterpay (Australia), buy-now-pay-later varies by market
+**Regulaciones de pago:**
+- PSD2/SCA (UE): Autenticación Reforzada de Clientes para pagos online
+- Métodos de pago locales: iDEAL (Países Bajos), Boleto (Brasil), UPI (India), WeChat Pay/Alipay (China)
+- Expectativas de pago a plazos: Klarna (Europa), Afterpay (Australia), buy-now-pay-later varía según mercado
 
-### 6. Localization testing
+### 6. Pruebas de localización
 
-Testing localization isn't translating test cases. It's verifying that the experience works for real users in real contexts.
+Probar la localización no es traducir casos de prueba. Es verificar que la experiencia funciona para usuarios reales en contextos reales.
 
-**Pseudo-localization:**
-Run before any real translation. Replace all strings with accented/extended character versions (e.g., "[Ħéĺĺö Ŵöŕĺð!!!]") to find:
-- Hardcoded strings that bypass the i18n system
-- String concatenation that will break in other languages
-- Layout issues from text expansion (pseudo-expand by 30-50%)
-- Truncation where expanded text gets cut off
-- Character encoding issues
+**Pseudo-localización:**
+Ejecuta antes de cualquier traducción real. Reemplaza todas las cadenas con versiones de caracteres acentuados/extendidos (p. ej., "[Ħéĺĺö Ŵöŕĺð!!!]") para encontrar:
+- Cadenas codificadas de forma fija que eluden el sistema i18n
+- Concatenación de cadenas que se romperá en otros idiomas
+- Problemas de layout por expansión del texto (pseudo-expansión del 30-50%)
+- Truncamiento donde el texto expandido se corta
+- Problemas de codificación de caracteres
 
-**Linguistic QA:**
-- Native speakers reviewing translations in context (in the actual UI, not a spreadsheet)
-- Check: meaning preserved, tone appropriate, no machine-translation artifacts, technical terms handled correctly
-- Cultural review: local market experts reviewing flows, imagery, patterns, and metaphors
+**QA lingüística:**
+- Hablantes nativos revisando traducciones en contexto (en la UI real, no en una hoja de cálculo)
+- Verificar: significado preservado, tono apropiado, sin artefactos de traducción automática, términos técnicos manejados correctamente
+- Revisión cultural: expertos del mercado local revisando flujos, imágenes, patrones y metáforas
 
-**Functional testing:**
-- All features work with RTL layout enabled
-- All features work with expanded text (German, Finnish test strings)
-- Date, number, and currency formatting correct per locale
-- Form validation works with local formats (postal codes, phone numbers, addresses)
-- Search works with local character sets (CJK, Arabic, Cyrillic)
-- Sorting works correctly per locale (alphabetical order varies)
+**Pruebas funcionales:**
+- Todas las funcionalidades funcionan con el layout RTL activado
+- Todas las funcionalidades funcionan con texto expandido (cadenas de prueba en alemán y finlandés)
+- Formato de fecha, número y moneda correcto por locale
+- La validación de formularios funciona con formatos locales (códigos postales, números de teléfono, direcciones)
+- La búsqueda funciona con conjuntos de caracteres locales (CJK, árabe, cirílico)
+- El ordenamiento funciona correctamente por locale (el orden alfabético varía)
 
-**Crowd testing:**
-- Real users in target markets testing end-to-end flows
-- Unmoderated testing for broad coverage
-- Moderated testing for cultural insight
-- Device and OS coverage per market (Android-dominant vs. iOS-dominant markets)
-
----
-
-## Output format
-
-### Localization readiness checklist
-Audit of current design and codebase against i18n requirements: string externalization, layout flexibility, format handling, RTL support, cultural assumptions.
-
-### Cultural adaptation brief
-Per target market: cultural dimensions analysis, specific design adaptations needed, imagery and symbolism changes, tone and voice adjustments, compliance requirements.
-
-### Market-specific requirement matrix
-Cross-market comparison: what changes per market (legal, cultural, technical, content) and what stays consistent.
-
-### Localization test plan
-Testing strategy per market: pseudo-localization, linguistic QA, functional testing, crowd testing, compliance verification.
+**Pruebas con crowd:**
+- Usuarios reales en mercados objetivo probando flujos de extremo a extremo
+- Pruebas no moderadas para cobertura amplia
+- Pruebas moderadas para insight cultural
+- Cobertura de dispositivo y SO por mercado (mercados dominados por Android vs. iOS)
 
 ---
 
-## Voice and approach
+## Formato de entregable
 
-Humility first. You are not an expert in every culture — but you can build a framework that respects cultural differences and validates assumptions through research. Cultural frameworks are starting points for inquiry, not design specifications.
+### Checklist de preparación para localización
+Auditoría del diseño y codebase actuales frente a los requisitos i18n: externalización de cadenas, flexibilidad del layout, manejo de formatos, soporte RTL, supuestos culturales.
 
-Never stereotype. Saying "Japanese users prefer dense interfaces" is a hypothesis to test, not a design decision to implement. Always pair cultural dimension analysis with research validation through `/research` and medirment through `/medir`.
+### Brief de adaptación cultural
+Por mercado objetivo: análisis de dimensiones culturales, adaptaciones de diseño específicas necesarias, cambios de imágenes y simbolismo, ajustes de tono y voz, requisitos de cumplimiento.
 
-Be specific about what needs to change and why. Don't say "adapt for the German market" — say which elements need adaptation (text expansion accommodation, formal address tone, comma-as-decimal formatting, GDPR consent flow) and why each matters.
+### Matriz de requisitos por mercado
+Comparación entre mercados: qué cambia por mercado (legal, cultural, técnico, contenido) y qué permanece consistente.
 
-Design for localization from day one. The cost of retrofitting i18n support is orders of magnitude higher than building it in. Every string externalized, every layout flexible, every format locale-aware — from the first commit.
+### Plan de pruebas de localización
+Estrategia de pruebas por mercado: pseudo-localización, QA lingüística, pruebas funcionales, pruebas con crowd, verificación de cumplimiento.
 
 ---
 
-## Scope boundaries
+## Voz y enfoque
 
-### This skill owns:
-- Cultural adaptation strategy and frameworks
-- i18n UX patterns and requirements (RTL, text expansion, format handling)
-- Localization testing methodology and test plans
-- Market-specific compliance awareness (as it affects UX)
-- Cross-market design adaptation guidance
+Humildad ante todo. No eres experto en todas las culturas — pero puedes construir un marco que respete las diferencias culturales y valide los supuestos a través de la investigación. Los marcos culturales son puntos de partida para la indagación, no especificaciones de diseño.
 
-### This skill does NOT own:
-- Actual translation (translation teams and linguists)
-- Technical i18n implementation (engineering)
-- Market research and primary cultural research (`/research` + `/strategy`)
-- Visual adaptation details (visual design)
-- Accessibility implementation per market (`/incluir`)
-- Legal compliance decisions (legal team — this skill flags requirements, not interprets law)
+Nunca estereotipar. Decir "los usuarios japoneses prefieren interfaces densas" es una hipótesis a probar, no una decisión de diseño a implementar. Combina siempre el análisis de dimensiones culturales con validación de investigación a través de `/research` y medición a través de `/medir`.
+
+Ser específico sobre qué necesita cambiar y por qué. No digas "adapta para el mercado alemán" — di qué elementos necesitan adaptación (acomodación de expansión de texto, tono de tratamiento formal, formato de coma como decimal, flujo de consentimiento GDPR) y por qué importa cada uno.
+
+Diseña para la localización desde el primer día. El coste de retrofitar soporte i18n es órdenes de magnitud mayor que incorporarlo desde el principio. Cada cadena externalizada, cada layout flexible, cada formato consciente del locale — desde el primer commit.
+
+---
+
+## Alcance y límites
+
+### Esta habilidad incluye:
+- Estrategia de adaptación cultural y marcos de trabajo
+- Patrones UX i18n y requisitos (RTL, expansión de texto, manejo de formatos)
+- Metodología de pruebas de localización y planes de prueba
+- Conciencia de cumplimiento normativo por mercado (en la medida en que afecta a la UX)
+- Guía de adaptación de diseño entre mercados
+
+### Esta habilidad NO incluye:
+- Traducción real (equipos de traducción y lingüistas)
+- Implementación técnica i18n (ingeniería)
+- Investigación de mercado e investigación cultural primaria (`/research` + `/strategy`)
+- Detalles de adaptación visual (diseño visual)
+- Implementación de accesibilidad por mercado (`/incluir`)
+- Decisiones de cumplimiento legal (equipo legal — esta habilidad señala requisitos, no interpreta la ley)

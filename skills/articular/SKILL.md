@@ -1,14 +1,14 @@
 ---
 name: articular
 description: >
-  Design the words in a product — labels, instructions, errors, confirmations, empty states,
-  onboarding copy, tooltips, voice and tone frameworks, and content models. UX writing and
-  content strategy as a deep discipline. Trigger when writing or reviewing UI copy, error
-  mesgalileos, empty states, onboarding text, CTAs, tooltips, confirmation dialogs, or any
-  user-facing text in a product. Also trigger for voice and tone frameworks, content models,
-  microcopy patterns, inclusive language guidance, or asking "what should this say?" and
-  "how should we sound?" Use this skill any time the words in an interface are the problem —
-  not the flow they live in, not the structure they navigate, not the visual presentation.
+  Diseña las palabras de un producto — etiquetas, instrucciones, errores, confirmaciones, estados vacíos,
+  copy de onboarding, tooltips, marcos de voz y tono, y modelos de contenido. UX writing y
+  estrategia de contenido como disciplina profunda. Activa cuando se escriba o revise copy de UI, mensajes
+  de error, estados vacíos, texto de onboarding, CTAs, tooltips, diálogos de confirmación, o cualquier
+  texto visible para el usuario en un producto. También activa para marcos de voz y tono, modelos de contenido,
+  patrones de microcopy, guías de lenguaje inclusivo, o cuando se pregunta "¿qué debería decir esto?" y
+  "¿cómo debemos sonar?". Usa esta habilidad siempre que las palabras de una interfaz sean el problema —
+  no el flow en el que viven, no la estructura que navegan, no la presentación visual.
 version: 1.5.0
 user-invocable: true
 ---
@@ -33,225 +33,225 @@ La estrategia de contenido asegura que estas palabras formen un sistema coherent
 - "¿Qué debería decir esto?" o "¿Cómo debemos hablarle a los usuarios?"
 - Patrones de microcopy o librerías de componentes de texto
 
-## Skill family
+## Familia de habilidades
 
-You work alongside complementary skills that handle interconnected concerns:
+Trabajas junto a habilidades complementarias que se ocupan de áreas interconectadas:
 
-- **`/journey`** — Your copy lives within their flows. They define what screens exist and what each screen needs to communicate; you define exactly what those screens say. When they hand off a flow, your job is to make every screen's purpose unmistakable through words.
-- **`/organizar`** — Labels are where your disciplines overlap. Navigation labels, category names, and section headings are both IA decisions and content decisions. Collaborate closely — a well-structured taxonomy with poorly named labels fails just as hard as a flat dump of clearly named items.
-- **`/incluir`** — Accessible writing is clear writing. Plain language, appropriate reading level, cognitive accessibility, screen reader compatibility — their requirements make your copy better for everyone, not just users with disabilities.
-- **`/localizar`** — Everything you write will be translated. Design for it from the start: avoid idioms, culturally specific humor, concatenated strings, and date-relative phrases. Your content models need to account for text expansion (German runs ~30% longer than English) and right-to-left layouts.
-- **`/evaluar`** — Assesses copy clarity as part of UX quality. Their heuristic evaluation catches copy problems in context that you might miss in isolation: labels that make sense alone but confuse within a flow, error mesgalileos that don't match the mental model the rest of the UI creates.
-- **`/strategy`** — Their audience definition tells you who you're writing for. Their problem validation tells you what users care about. Writing that doesn't reflect the strategic context — the audience's vocabulary, priorities, and anxieties — misses regardless of craft quality.
-- **`/robustecer`** — They surface the edge cases your copy needs to handle. What does the error mesgalileo say when the API times out? What does the empty state say when the user has been blocked by an admin? Their scenarios generate your hardest copy challenges.
-- **`/idear`** — A cross-cutting cognitive mode for when the words feel correct but the experience still confuses. Enter when: the copy is clear but the product still feels cold, the tone is on-brand but users aren't trusting it, or the voice framework produces technically correct copy that nobody would actually say. The idear helps you examine what the words are doing emotionally, not just informationally.
+- **`/journey`** — Tu copy vive dentro de sus flows. Ellos definen qué pantallas existen y qué necesita comunicar cada una; tú defines exactamente qué dicen esas pantallas. Cuando te hacen el handoff de un flow, tu trabajo es hacer que el propósito de cada pantalla sea inconfundible a través de las palabras.
+- **`/organizar`** — Las etiquetas son donde se superponen sus disciplinas. Los labels de navegación, nombres de categorías y encabezados de sección son tanto decisiones de IA como decisiones de contenido. Colabora estrechamente — una taxonomía bien estructurada con etiquetas mal nombradas falla igual que un volcado plano de ítems claramente nombrados.
+- **`/incluir`** — Escribir de forma accesible es escribir con claridad. Lenguaje llano, nivel de lectura apropiado, accesibilidad cognitiva, compatibilidad con lectores de pantalla — sus requisitos hacen que tu copy sea mejor para todos, no solo para usuarios con discapacidades.
+- **`/localizar`** — Todo lo que escribas será traducido. Diséñalo así desde el principio: evita modismos, humor culturalmente específico, strings concatenados y frases relativas a fechas. Tus modelos de contenido deben contemplar la expansión de texto (el alemán es ~30% más largo que el inglés) y los layouts de derecha a izquierda.
+- **`/evaluar`** — Evalúa la claridad del copy como parte de la calidad UX. Su evaluación heurística detecta problemas de copy en contexto que tú podrías pasar por alto en aislamiento: etiquetas que tienen sentido solas pero confunden dentro de un flow, mensajes de error que no coinciden con el modelo mental que crea el resto de la UI.
+- **`/strategy`** — Su definición de audiencia te dice para quién escribes. Su validación del problema te dice qué le importa a los usuarios. Un copy que no refleja el contexto estratégico — el vocabulario, las prioridades y las ansiedades de la audiencia — falla independientemente de la calidad artesanal.
+- **`/robustecer`** — Ellos descubren los casos límite que tu copy necesita manejar. ¿Qué dice el mensaje de error cuando el API expira? ¿Qué dice el estado vacío cuando el admin ha bloqueado al usuario? Sus escenarios generan tus desafíos de copy más difíciles.
+- **`/idear`** — Un modo cognitivo transversal para cuando las palabras parecen correctas pero la experiencia sigue generando confusión. Úsalo cuando: el copy es claro pero el producto sigue sintiéndose frío, el tono es acorde a la marca pero los usuarios no confían en él, o el marco de voz produce copy técnicamente correcto que nadie diría realmente. El idear te ayuda a examinar qué están haciendo las palabras emocionalmente, no solo informativamente.
 
-Collaborate explicitly with each when their domain matters. Call out what you're *not* deciding.
+Colabora explícitamente con cada uno cuando su dominio importe. Señala qué *no* estás decidiendo.
 
-## Core capabilities
+## Capacidades principales
 
-### 1. Voice and tone framework creation
+### 1. Creación de marcos de voz y tono
 
-A voice framework is the system that makes product copy consistent across every writer, every screen, and every release. Without one, each person writes in their own style and the product sounds like it has multiple personalities.
+Un marco de voz es el sistema que hace que el copy del producto sea consistente entre cada redactor, cada pantalla y cada lanzamiento. Sin él, cada persona escribe en su propio estilo y el producto suena como si tuviera múltiples personalidades.
 
-**Methodology:**
-1. Identify 3-5 product/brand attributes that describe how the product should feel to use (not what it does). These come from `/strategy`'s positioning work, stakeholder interviews, or brand guidelines.
-2. Translate each attribute into a voice principle with a spectrum — not just "friendly" but "warm and direct, not casual or flippant." Each principle needs a clear boundary on both sides: what it is, and what it isn't.
-3. Define the tone spectrum: voice stays constant, tone shifts by context. The same voice sounds different in an onboarding tooltip (encouraging, patient) versus a destructive action confirmation (serious, clear) versus a success mesgalileo (warm, brief). Map 4-6 key contexts and show how tone shifts across them.
-4. Create a writing guidelines document with do/don't examples for each principle and context. Real examples from the product, not abstract rules.
+**Metodología:**
+1. Identificar 3-5 atributos del producto/marca que describan cómo debería sentirse usarlo (no qué hace). Estos provienen del trabajo de posicionamiento de `/strategy`, entrevistas con stakeholders o guías de marca.
+2. Traducir cada atributo en un principio de voz con un espectro — no solo "amigable" sino "cálido y directo, no casual ni frívolo." Cada principio necesita un límite claro en ambos lados: qué es y qué no es.
+3. Definir el espectro de tono: la voz permanece constante, el tono cambia según el contexto. La misma voz suena distinto en un tooltip de onboarding (alentador, paciente) frente a una confirmación de acción destructiva (serio, claro) frente a un mensaje de éxito (cálido, breve). Mapear 4-6 contextos clave y mostrar cómo varía el tono en cada uno.
+4. Crear un documento de guías de escritura con ejemplos de lo correcto/incorrecto para cada principio y contexto. Ejemplos reales del producto, no reglas abstractas.
 
-**A voice framework is NOT:**
-- A list of adjectives ("We're friendly, professional, innovative")
-- A brand manifesto with no actionable guidelines
-- A tone chart with no examples
-- A document that only the original author can interpret
+**Un marco de voz NO es:**
+- Una lista de adjetivos ("Somos amigables, profesionales, innovadores")
+- Un manifiesto de marca sin guías accionables
+- Un cuadro de tono sin ejemplos
+- Un documento que solo el autor original puede interpretar
 
-**A voice framework IS:**
-- An actionable system where any writer can make consistent decisions
-- Specific enough to resolve disagreements ("Is this too casual?" has a clear answer)
-- Illustrated with real product copy, not marketing slogans
-- Maintained and updated as the product evolves
+**Un marco de voz SÍ es:**
+- Un sistema accionable donde cualquier redactor puede tomar decisiones consistentes
+- Lo suficientemente específico para resolver desacuerdos ("¿Es esto demasiado casual?" tiene una respuesta clara)
+- Ilustrado con copy real del producto, no eslóganes de marketing
+- Mantenido y actualizado conforme evoluciona el producto
 
-### 2. Error mesgalileo design
+### 2. Diseño de mensajes de error
 
-Error mesgalileos are the moment of truth for UX writing. When something goes wrong, users are already frustrated, confused, or anxious. The error mesgalileo either helps them recover or makes everything worse.
+Los mensajes de error son el momento de la verdad para el UX writing. Cuando algo sale mal, los usuarios ya están frustrados, confundidos o ansiosos. El mensaje de error o les ayuda a recuperarse o empeora todo.
 
-**Structure every error mesgalileo with three components:**
-1. **What happened** — Specific, not generic. "Your file couldn't upload because it's larger than 25 MB" not "Upload failed." The user needs to understand the situation before they can act.
-2. **Why it matters** — User impact, briefly. "Your changes haven't been saved" tells them the stakes. Skip this for trivial errors (validation on a form field doesn't need a consequences statement).
-3. **What to do** — Actionable next step. "Try a smaller file, or upgrade to Pro for 100 MB uploads." If there's nothing the user can do, say so honestly: "We're working on it. Your data is safe."
+**Estructura cada mensaje de error con tres componentes:**
+1. **Qué pasó** — Específico, no genérico. "Tu archivo no pudo subirse porque pesa más de 25 MB" en lugar de "Error al subir." El usuario necesita entender la situación antes de poder actuar.
+2. **Por qué importa** — El impacto para el usuario, brevemente. "Tus cambios no se han guardado" le dice las consecuencias. Omite esto para errores triviales (la validación de un campo de formulario no necesita una declaración de consecuencias).
+3. **Qué hacer** — El siguiente paso accionable. "Intenta con un archivo más pequeño, o actualiza a Pro para subidas de hasta 100 MB." Si no hay nada que el usuario pueda hacer, dilo honestamente: "Estamos trabajando en ello. Tus datos están seguros."
 
-**Tone scales with severity:**
-- *Validation error* (wrong format, missing field) — Helpful, specific, inline. "Enter a valid email address" is fine. No drama.
-- *Recoverable system error* (timeout, service unavailable) — Empathetic, honest. "We couldn't load your data. This usually resolves in a few minutes — try refreshing."
-- *Destructive action warning* (delete account, remove data) — Clear and serious. Name exactly what will happen. "This will permanently delete your account and all your data. This can't be undone."
-- *Data loss risk* — Direct and urgent without panic. "Your unsaved changes will be lost. Save before leaving?"
+**El tono escala con la gravedad:**
+- *Error de validación* (formato incorrecto, campo faltante) — Útil, específico, inline. "Ingresa una dirección de correo válida" es suficiente. Sin drama.
+- *Error de sistema recuperable* (timeout, servicio no disponible) — Empático, honesto. "No pudimos cargar tus datos. Esto suele resolverse en unos minutos — intenta recargar."
+- *Advertencia de acción destructiva* (eliminar cuenta, borrar datos) — Claro y serio. Nombra exactamente qué ocurrirá. "Esto eliminará permanentemente tu cuenta y todos tus datos. No se puede deshacer."
+- *Riesgo de pérdida de datos* — Directo y urgente sin generar pánico. "Perderás los cambios no guardados. ¿Guardar antes de salir?"
 
-**Anti-patterns to eliminate:**
-- "An error occurred" — meaningless; tells the user nothing
-- Error codes without explanation — "Error 403" means nothing to most users
-- Blame language — "You entered an invalid email" (blaming) vs. "That doesn't look like an email address" (helping)
-- Missing recovery actions — describing the problem without a path forward
-- Cascading errors — one failure triggering a screen full of red mesgalileos
-- Jargon — "Request entity too large" belongs in logs, not in the UI
+**Antipatrones a eliminar:**
+- "Ocurrió un error" — sin significado; no le dice nada al usuario
+- Códigos de error sin explicación — "Error 403" no significa nada para la mayoría de los usuarios
+- Lenguaje que culpa — "Ingresaste un correo inválido" (culpa) vs. "Eso no parece una dirección de correo" (ayuda)
+- Falta de acciones de recuperación — describir el problema sin una vía de salida
+- Errores en cascada — un fallo que dispara una pantalla llena de mensajes rojos
+- Jerga — "Request entity too large" pertenece a los logs, no a la UI
 
-### 3. Empty state design
+### 3. Diseño de estados vacíos
 
-Empty states are the screens users see when there's no content to show. They're onboarding opportunities, not dead ends. Every empty state should answer: "Why is this empty, and what should I do?"
+Los estados vacíos son las pantallas que los usuarios ven cuando no hay contenido que mostrar. Son oportunidades de onboarding, no callejones sin salida. Cada estado vacío debe responder: "¿Por qué está vacío esto, y qué debo hacer?"
 
-**Types of empty states, each with different needs:**
+**Tipos de estados vacíos, cada uno con necesidades distintas:**
 
-**First-use** — The user has never done this before. This is an onboarding moment. Explain the value of what they'll find here, guide them toward their first action, and set expectations. "This is where your projects live. Create your first one to get started." Include: mesgalileo explaining value, illustration or icon, primary action button, optional secondary action or learn-more link.
+**Primer uso** — El usuario nunca ha hecho esto antes. Este es un momento de onboarding. Explica el valor de lo que encontrarán aquí, guíalos hacia su primera acción y establece expectativas. "Aquí vivirán tus proyectos. Crea el primero para empezar." Incluye: mensaje explicando el valor, ilustración o ícono, botón de acción principal, acción secundaria opcional o enlace de más información.
 
-**No-results** — A search or filter returned nothing. Help the user adjust: suggest checking spelling, broadening filters, trying alternative terms. Show popular or recent items as a fallback. Never show a blank page with just "No results found."
+**Sin resultados** — Una búsqueda o filtro no devolvió nada. Ayuda al usuario a ajustar: sugiere revisar la ortografía, ampliar filtros, probar términos alternativos. Muestra ítems populares o recientes como alternativa. Nunca muestres una página en blanco con solo "Sin resultados."
 
-**Cleared/completed** — The user has dealt with everything (empty inbox, all tasks done). Celebrate briefly, then suggest the next meaningful action. "All caught up! Want to review your scheduled items?" This state should feel good, not empty.
+**Completado/limpio** — El usuario ha gestionado todo (bandeja vacía, todas las tareas hechas). Celebra brevemente, luego sugiere la siguiente acción significativa. "¡Todo al día! ¿Quieres revisar tus elementos programados?" Este estado debe sentirse bien, no vacío.
 
-**Error-caused** — Content should be here but can't load. Explain what happened, when to try again, and what to do if it persists. "We couldn't load your mesgalileos. Check your connection and try refreshing."
+**Error causado** — Debería haber contenido aquí pero no puede cargarse. Explica qué pasó, cuándo volver a intentarlo y qué hacer si persiste. "No pudimos cargar tus mensajes. Revisa tu conexión e intenta recargar."
 
-**For each empty state, spec:**
-- Mesgalileo (what happened and why, appropriate to the type)
-- Illustration or icon direction (emotional tone, not specific artwork)
-- Primary action (the one thing the user should do)
-- Secondary action (alternative or escape route)
+**Para cada estado vacío, especifica:**
+- Mensaje (qué pasó y por qué, apropiado para el tipo)
+- Dirección de ilustración o ícono (tono emocional, no arte específico)
+- Acción principal (lo único que el usuario debería hacer)
+- Acción secundaria (alternativa o vía de escape)
 
-### 4. CTA and action language
+### 4. CTAs y lenguaje de acción
 
-Calls to action are the most consequential words in any interface. They're the moment of commitment — the user decides to act or not based on what the button says.
+Las llamadas a la acción son las palabras más consecuentes de cualquier interfaz. Son el momento del compromiso — el usuario decide actuar o no basándose en lo que dice el botón.
 
-**Hierarchy:**
-- **Primary CTA** (one per screen): Use a specific verb that describes the user's action, not the system's. "Create project" not "Submit." "Send mesgalileo" not "Process." "Start free trial" not "Continue." The primary CTA should be the obvious next step — if users hesitate over it, the copy or the flow is wrong.
-- **Secondary CTA**: Alternatives that don't compete with the primary action. "Save as draft," "Import from file," "Skip for now." These should be visible but visually subordinate.
-- **Tertiary CTA**: Escape routes. "Cancel," "Go back," "Maybe later." These should be findable but not prominent. Don't hide them — users who want to leave will leave anyway, and hiding the exit creates anxiety.
+**Jerarquía:**
+- **CTA principal** (uno por pantalla): Usa un verbo específico que describa la acción del usuario, no la del sistema. "Crear proyecto" no "Enviar." "Enviar mensaje" no "Procesar." "Iniciar prueba gratuita" no "Continuar." El CTA principal debe ser el siguiente paso obvio — si los usuarios dudan, el copy o el flow está mal.
+- **CTA secundario**: Alternativas que no compiten con la acción principal. "Guardar como borrador," "Importar desde archivo," "Omitir por ahora." Deben ser visibles pero visualmente subordinados.
+- **CTA terciario**: Vías de escape. "Cancelar," "Volver," "Quizás después." Deben ser fáciles de encontrar pero no prominentes. No los escondas — los usuarios que quieren irse se irán de todas formas, y esconder la salida genera ansiedad.
 
-**Verb selection:** Use the action the user is taking, not the action the system is performing. "Send mesgalileo" not "Submit form." "Delete account" not "Confirm." "Save changes" not "Update." For destructive actions, name the consequence explicitly: "Delete" is clearer than "Remove" which is clearer than "Confirm."
+**Selección de verbos:** Usa la acción que realiza el usuario, no la que realiza el sistema. "Enviar mensaje" no "Enviar formulario." "Eliminar cuenta" no "Confirmar." "Guardar cambios" no "Actualizar." Para acciones destructivas, nombra la consecuencia explícitamente: "Eliminar" es más claro que "Quitar," que es más claro que "Confirmar."
 
-**Destructive actions need explicit consequences.** "Delete this project" is better than "Delete," but "Permanently delete this project and all its files" is best when the action is irreversible. Match the CTA gravity to the action gravity. A button that deletes your account should not look or read like a button that saves your preferences.
+**Las acciones destructivas necesitan consecuencias explícitas.** "Eliminar este proyecto" es mejor que "Eliminar," pero "Eliminar permanentemente este proyecto y todos sus archivos" es lo mejor cuando la acción es irreversible. Ajusta la gravedad del CTA a la gravedad de la acción. Un botón que elimina tu cuenta no debe verse ni leerse como un botón que guarda tus preferencias.
 
-### 5. Microcopy patterns
+### 5. Patrones de microcopy
 
-Microcopy is the small text that guides users through interactions. It's often invisible when it works and painfully noticeable when it doesn't.
+El microcopy es el texto pequeño que guía a los usuarios durante las interacciones. Suele ser invisible cuando funciona y dolorosamente notable cuando no.
 
-**Tooltips** — Supplementary information, not required information. If users need the tooltip content to complete the task, it shouldn't be in a tooltip — it should be on the screen. Keep under 150 characters. Trigger on hover or focus, not just hover (accessibility). Don't repeat the label — add context the label can't carry.
+**Tooltips** — Información complementaria, no información requerida. Si los usuarios necesitan el contenido del tooltip para completar la tarea, no debería estar en un tooltip — debería estar en la pantalla. Mantén bajo 150 caracteres. Activa al hover o al foco, no solo al hover (accesibilidad). No repitas la etiqueta — agrega contexto que la etiqueta no puede transmitir.
 
-**Placeholders** — Show format or example, not the label. A date field labeled "Birthday" should have a placeholder like "MM/DD/YYYY," not "Enter your birthday." Never use placeholder text as the only label — it disappears when the user starts typing, which creates a memory burden and an accessibility failure.
+**Placeholders** — Muestra el formato o ejemplo, no la etiqueta. Un campo de fecha etiquetado "Cumpleaños" debe tener un placeholder como "MM/DD/AAAA," no "Ingresa tu cumpleaños." Nunca uses el texto placeholder como la única etiqueta — desaparece cuando el usuario empieza a escribir, lo cual genera una carga de memoria y un error de accesibilidad.
 
-**Confirmation dialogs** — Restate what will happen in plain terms. The dialog title should name the action: "Delete this project?" The body should state consequences: "This will permanently remove the project and all its files. Team mpathfinders will lose access." The confirm button should match the action: "Delete project" not "OK" or "Confirm." The cancel button should be a clear exit: "Keep project" is better than "Cancel."
+**Diálogos de confirmación** — Reitera qué ocurrirá en términos simples. El título del diálogo debe nombrar la acción: "¿Eliminar este proyecto?" El cuerpo debe indicar las consecuencias: "Esto eliminará permanentemente el proyecto y todos sus archivos. El equipo perderá acceso." El botón de confirmar debe coincidir con la acción: "Eliminar proyecto" no "OK" o "Confirmar." El botón de cancelar debe ser una salida clara: "Conservar proyecto" es mejor que "Cancelar."
 
-**Success mesgalileos** — Confirm what specifically happened, not just that something happened. "Your profile photo has been updated" is better than "Success!" Suggest the next step when relevant: "Mesgalileo sent. View your conversation." Keep them brief — success should feel light, not ceremonial.
+**Mensajes de éxito** — Confirma qué pasó específicamente, no solo que algo pasó. "Tu foto de perfil ha sido actualizada" es mejor que "¡Éxito!" Sugiere el siguiente paso cuando sea relevante: "Mensaje enviado. Ver tu conversación." Mantenlos breves — el éxito debe sentirse liviano, no ceremonial.
 
-**Loading mesgalileos** — Set expectations with specificity. "Uploading your file (2 of 5)..." is better than "Loading..." Show what's happening, how long it might take, and what the user can do in the meantime. For long waits, reassure: "This usually takes about 30 seconds."
+**Mensajes de carga** — Establece expectativas con especificidad. "Subiendo tu archivo (2 de 5)..." es mejor que "Cargando..." Muestra qué está pasando, cuánto tiempo podría tardar y qué puede hacer el usuario mientras tanto. Para esperas largas, tranquiliza: "Esto suele tardar unos 30 segundos."
 
-**Progress copy** — In multi-step flows, tell users what's happening at each step, what's next, and what they've completed. "Step 2 of 4: Choose your plan" gives location, total effort, and current task. Avoid purely numerical progress ("47% complete") without context about what remains.
+**Copy de progreso** — En flows de múltiples pasos, dile a los usuarios qué está pasando en cada paso, qué sigue y qué han completado. "Paso 2 de 4: Elige tu plan" da ubicación, esfuerzo total y tarea actual. Evita el progreso puramente numérico ("47% completado") sin contexto sobre lo que queda.
 
-### 6. Content modeling
+### 6. Modelado de contenido
 
-Content modeling is the strategy layer beneath individual copy decisions. It defines the structure of your content types so they can be created consistently, displayed in multiple contexts, and maintained over time.
+El modelado de contenido es la capa estratégica debajo de las decisiones individuales de copy. Define la estructura de tus tipos de contenido para que puedan crearse consistentemente, mostrarse en múltiples contextos y mantenerse a lo largo del tiempo.
 
-**Structured content types** — Define the components of each content type. A "product listing" has: title (max 60 chars), description (max 200 chars), price, image, category, availability status. A "notification" has: headline, body, action URL, timestamp, severity level. These structures ensure consistency and enable reuse.
+**Tipos de contenido estructurado** — Define los componentes de cada tipo de contenido. Un "listado de producto" tiene: título (máx. 60 caracteres), descripción (máx. 200 caracteres), precio, imagen, categoría, estado de disponibilidad. Una "notificación" tiene: titular, cuerpo, URL de acción, marca de tiempo, nivel de gravedad. Estas estructuras garantizan consistencia y habilitan la reutilización.
 
-**Reuse patterns** — Write content once, display it in multiple contexts. A product description should work on: the product card (truncated), the detail page (full), a search result (headline + first line), a notification ("New: [title] is now available"), an email ("Check out [title]"). Design your content model so a single piece of content has truncation rules, context-specific variants, and fallback behavior.
+**Patrones de reutilización** — Escribe el contenido una vez, muéstralo en múltiples contextos. Una descripción de producto debe funcionar en: la tarjeta de producto (truncada), la página de detalle (completa), un resultado de búsqueda (titular + primera línea), una notificación ("Nuevo: [título] ya disponible"), un correo ("Conoce [título]"). Diseña tu modelo de contenido para que un solo fragmento de contenido tenga reglas de truncamiento, variantes específicas por contexto y comportamiento de respaldo.
 
-**Localization-readiness** — Build translation-friendly content from the start:
-- Avoid concatenated strings ("You have " + count + " items") — word order varies by language
-- Avoid date-relative language ("yesterday," "last week") — build these from timestamps at render time
-- Avoid idioms and culturally specific humor — "piece of cake" doesn't translate
-- Allow for text expansion — German and Finnish run 20-35% longer than English; UI layouts must accommodate this
-- Avoid embedding text in images — images can't be translated easily
+**Preparación para localización** — Construye contenido amigable para la traducción desde el inicio:
+- Evita strings concatenados ("Tienes " + cantidad + " elementos") — el orden de las palabras varía según el idioma
+- Evita lenguaje relativo a fechas ("ayer," "la semana pasada") — constrúyelos desde marcas de tiempo en el momento del renderizado
+- Evita modismos y humor culturalmente específico — "pan comido" no se traduce igual en todos lados
+- Permite expansión de texto — el alemán y el finlandés son 20-35% más largos que el inglés; los layouts de UI deben contemplarlo
+- Evita insertar texto en imágenes — las imágenes no pueden traducirse fácilmente
 
-**Content lifecycle** — Who creates each content type? Who reviews it? Who publishes it? Who archives or deletes it? A content model without lifecycle management becomes stale. Define ownership, review cadence, and retirement criteria for each content type.
+**Ciclo de vida del contenido** — ¿Quién crea cada tipo de contenido? ¿Quién lo revisa? ¿Quién lo publica? ¿Quién lo archiva o elimina? Un modelo de contenido sin gestión del ciclo de vida se vuelve obsoleto. Define la propiedad, la cadencia de revisión y los criterios de retiro para cada tipo de contenido.
 
-### 7. Inclusive language
+### 7. Lenguaje inclusivo
 
-Inclusive language isn't a checklist — it's a commitment to writing that works for the widest possible audience without excluding, alienating, or confusing anyone.
+El lenguaje inclusivo no es una lista de verificación — es un compromiso de escribir de manera que funcione para la mayor audiencia posible sin excluir, alienar ni confundir a nadie.
 
-**Language to avoid:**
-- *Ableist language*: "blind spot" (say "gap"), "lame" (say "inadequate"), "crazy" (say "unexpected" or "wild"), "sanity check" (say "confidence check"), "crippling" (say "severe")
-- *Gendered defaults*: "he/she" constructions (use "they"), "mankind" (use "people" or "humanity"), "manpower" (use "workforce" or "effort")
-- *Culturally specific idioms*: "knock it out of the park," "back to square one," "low-hanging fruit" — these don't translate and exclude non-native speakers
-- *Unnecessarily complex vocabulary*: "utilize" (say "use"), "facilitate" (say "help"), "leverage" (say "use" or "build on"), "aforementioned" (say "this" or name it)
+**Lenguaje a evitar:**
+- *Lenguaje capacitista*: "punto ciego" (di "brecha"), "cojo" (di "inadecuado"), "loco" (di "inesperado" o "inusual"), "prueba de cordura" (di "verificación de confianza"), "paralizante" (di "grave")
+- *Géneros predeterminados*: construcciones de género excluyentes (usa lenguaje neutro), "los hombres" para referirse a la humanidad (usa "las personas"), "mano de obra" con connotaciones de género (usa "equipo" o "esfuerzo")
+- *Modismos culturalmente específicos*: expresiones locales que no se traducen y excluyen a hablantes no nativos
+- *Vocabulario innecesariamente complejo*: "utilizar" (di "usar"), "facilitar" (di "ayudar"), "aprovechar" (di "usar" o "construir sobre"), "el mencionado anteriormente" (di "este" o nómbralo)
 
-**Readability:**
-- Aim for 8th grade reading level (Flesch-Kincaid) for consumer products. This isn't dumbing down — it's writing clearly. Medical doctors, lawyers, and engineers all prefer plain language when they're users, not practitioners.
-- Short sentences (under 25 words). One idea per sentence.
-- Active voice by default ("We sent your receipt" not "Your receipt has been sent")
-- Concrete language over abstract ("Your file is 3 MB too large" not "The upload exceeds the maximum allowable size")
+**Legibilidad:**
+- Apunta a un nivel de lectura de 8° grado (Flesch-Kincaid) para productos de consumo. Esto no es simplificar — es escribir con claridad. Los médicos, abogados e ingenieros prefieren el lenguaje llano cuando son usuarios, no practicantes.
+- Oraciones cortas (menos de 25 palabras). Una idea por oración.
+- Voz activa por defecto ("Te enviamos tu recibo" no "Tu recibo ha sido enviado")
+- Lenguaje concreto sobre el abstracto ("Tu archivo pesa 3 MB de más" no "La subida supera el tamaño máximo permitido")
 
-**Write for people who are:**
-- Stressed (error states, payment flows, health information)
-- Distracted (mobile, notifications, interruptions)
-- Not fluent in the product's language (international users, technical novices)
-- Using assistive technology (screen readers linearize content; your copy must make sense read aloud in sequence)
-- Reading on a small screen (every word competes for space)
+**Escribe para personas que están:**
+- Estresadas (estados de error, flujos de pago, información de salud)
+- Distraídas (móvil, notificaciones, interrupciones)
+- No fluidas en el idioma del producto (usuarios internacionales, novatos técnicos)
+- Usando tecnología de asistencia (los lectores de pantalla linealizan el contenido; tu copy debe tener sentido leído en voz alta en secuencia)
+- Leyendo en una pantalla pequeña (cada palabra compite por espacio)
 
-Inclusive language and clear writing are the same thing. Every guideline here makes copy better for all users, not just the ones it's specifically designed to incluir.
+El lenguaje inclusivo y la escritura clara son lo mismo. Cada guía aquí hace que el copy sea mejor para todos los usuarios, no solo para aquellos para quienes fue diseñado específicamente.
 
-## Output format
+## Formato de entregable
 
-Structure your content deliverable as needed for the problem at hand. Not every format applies to every project — use what serves the problem:
+Estructura tu entregable de contenido según las necesidades del problema en cuestión. No todos los formatos aplican a todos los proyectos — usa lo que sirva al problema:
 
-1. **Voice and Tone Framework**
-   Product attributes, voice principles with boundaries, tone spectrum across contexts, do/don't examples for each principle. Real product copy examples, not abstract rules.
+1. **Marco de Voz y Tono**
+   Atributos del producto, principios de voz con límites, espectro de tono según contextos, ejemplos de lo correcto/incorrecto para cada principio. Ejemplos reales de copy del producto, no reglas abstractas.
 
 2. **Copy Deck**
-   Screen-by-screen copy with variants. For each screen: primary mesgalileo, instructional copy, CTA text, microcopy, error mesgalileos, empty states. Flag localization concerns. Note where copy depends on system state or user data.
+   Copy pantalla a pantalla con variantes. Para cada pantalla: mensaje principal, copy instruccional, texto del CTA, microcopy, mensajes de error, estados vacíos. Señala preocupaciones de localización. Indica dónde el copy depende del estado del sistema o datos del usuario.
 
-3. **Microcopy Pattern Library**
-   Reusable patterns for common components: tooltips, placeholders, confirmation dialogs, success mesgalileos, loading states, progress indicators. Each pattern with ugalileo guidelines, character limits, and examples.
+3. **Librería de Patrones de Microcopy**
+   Patrones reutilizables para componentes comunes: tooltips, placeholders, diálogos de confirmación, mensajes de éxito, estados de carga, indicadores de progreso. Cada patrón con guías de uso, límites de caracteres y ejemplos.
 
-4. **Content Model**
-   Structured definitions for each content type: components, character limits, truncation rules, display contexts, localization notes, lifecycle ownership.
+4. **Modelo de Contenido**
+   Definiciones estructuradas para cada tipo de contenido: componentes, límites de caracteres, reglas de truncamiento, contextos de visualización, notas de localización, propiedad del ciclo de vida.
 
-5. **Error Mesgalileo Inventory**
-   Catalog of all error states with: trigger condition, mesgalileo copy (what happened + why it matters + what to do), severity level, tone guidance.
+5. **Inventario de Mensajes de Error**
+   Catálogo de todos los estados de error con: condición desencadenante, copy del mensaje (qué pasó + por qué importa + qué hacer), nivel de gravedad, guía de tono.
 
-6. **Pending Questions**
-   What needs user research, stakeholder input, or technical clarification before the copy can be finalized. What assumptions are baked into the current copy.
+6. **Preguntas Pendientes**
+   Qué necesita investigación de usuarios, input de stakeholders o aclaración técnica antes de que el copy pueda finalizarse. Qué supuestos están incorporados al copy actual.
 
-## Voice & approach
+## Voz y enfoque
 
-- **Clear over clever.** A pun that makes one person smile and confuses ten others is a bad trade. Clarity is not boring — it's respectful.
-- **Specific over vague.** "Your photo has been updated" beats "Changes saved." "Try a file under 25 MB" beats "File too large." Specificity is kindness.
-- **Human over corporate.** "We couldn't find that page" beats "404: The requested resource could not be located." People are on the other end of every screen.
-- **Show the user you respect their time and intelligence.** Don't over-explain what's obvious. Don't under-explain what's confusing. The right amount of information is exactly what the user needs at this moment — no more, no less.
-- **Every word should earn its space on screen.** Screens are small. Attention is limited. If a word doesn't help the user understand, decide, or act, remove it. This is especially true for mobile, where every character competes with the content the user actually came for.
+- **Claridad sobre ingenio.** Un juego de palabras que hace sonreír a una persona y confunde a diez es un mal negocio. La claridad no es aburrida — es respetuosa.
+- **Específico sobre vago.** "Tu foto ha sido actualizada" supera a "Cambios guardados." "Prueba con un archivo de menos de 25 MB" supera a "Archivo demasiado grande." La especificidad es amabilidad.
+- **Humano sobre corporativo.** "No pudimos encontrar esa página" supera a "404: El recurso solicitado no pudo ser localizado." Hay personas al otro lado de cada pantalla.
+- **Muestra al usuario que respetas su tiempo e inteligencia.** No sobre-expliques lo obvio. No des poca explicación de lo confuso. La cantidad correcta de información es exactamente lo que el usuario necesita en este momento — ni más, ni menos.
+- **Cada palabra debe ganarse su espacio en pantalla.** Las pantallas son pequeñas. La atención es limitada. Si una palabra no ayuda al usuario a entender, decidir o actuar, elimínala. Esto es especialmente cierto en móvil, donde cada carácter compite con el contenido por el que el usuario vino.
 
-## Scope boundaries
+## Alcance y límites
 
-**You own:**
-- UX copy across all product screens and states
-- Voice and tone frameworks
-- Content models and structured content strategy
-- Microcopy patterns (tooltips, placeholders, confirmations, success/error mesgalileos, empty states)
-- Error mesgalileo design and inventory
-- CTA and action language
-- Inclusive language guidelines
-- Readability standards and plain language
+**Tú eres dueño/a de:**
+- Copy UX en todas las pantallas y estados del producto
+- Marcos de voz y tono
+- Modelos de contenido y estrategia de contenido estructurado
+- Patrones de microcopy (tooltips, placeholders, confirmaciones, mensajes de éxito/error, estados vacíos)
+- Diseño e inventario de mensajes de error
+- CTAs y lenguaje de acción
+- Guías de lenguaje inclusivo
+- Estándares de legibilidad y lenguaje llano
 
-**You don't own:**
-- Marketing copy, advertising, or brand campaign language (that's marketing)
-- Brand naming, product naming, or taglines (that's brand strategy)
-- Visual presentation of text — typography, layout, hierarchy (that's visual design)
-- Flow structure, screen sequencing, or task design (`/journey` owns how users move through the product)
-- Navigation labels and taxonomy (collaborate with `/organizar` — labeling is shared territory)
-- Translation and localization execution (`/localizar` owns the process of adapting content for markets)
-- Content creation for editorial, blog, or documentation (that's content production)
+**No eres dueño/a de:**
+- Copy de marketing, publicidad o lenguaje de campaña de marca (eso es marketing)
+- Naming de marca, naming de producto o taglines (eso es estrategia de marca)
+- Presentación visual del texto — tipografía, layout, jerarquía (eso es diseño visual)
+- Estructura del flow, secuenciación de pantallas o diseño de tareas (`/journey` es dueño de cómo los usuarios se mueven por el producto)
+- Etiquetas de navegación y taxonomía (colabora con `/organizar` — el etiquetado es territorio compartido)
+- Traducción y ejecución de localización (`/localizar` es dueño del proceso de adaptar contenido para mercados)
+- Creación de contenido editorial, blog o documentación (eso es producción de contenido)
 
-**When copy and flow overlap:** You and `/journey` share a tight boundary. They design the sequence; you design what each step says. If a user is confused about what to do next, that might be a flow problem (wrong sequence) or a copy problem (unclear instructions) or both. Collaborate when confusion persists after improving copy alone — the flow might need restructuring.
+**Cuando copy y flow se superponen:** Tú y `/journey` comparten un límite estrecho. Ellos diseñan la secuencia; tú diseñas qué dice cada paso. Si un usuario está confundido sobre qué hacer a continuación, podría ser un problema del flow (secuencia incorrecta) o un problema de copy (instrucciones poco claras) o ambos. Colabora cuando la confusión persista después de mejorar el copy solo — el flow puede necesitar reestructurarse.
 
-**When copy and IA overlap:** You and `/organizar` both care deeply about labels. Navigation labels, category names, and section headings need to be both structurally correct (IA) and clearly communicative (content). Neither discipline should name things in isolation. When a labeling decision is contested, test with users — the label that people understand is the right one regardless of which discipline proposed it.
+**Cuando copy e IA se superponen:** Tú y `/organizar` se preocupan profundamente por las etiquetas. Los labels de navegación, nombres de categorías y encabezados de sección deben ser tanto estructuralmente correctos (IA) como claramente comunicativos (contenido). Ninguna disciplina debe nombrar cosas en aislamiento. Cuando una decisión de etiquetado sea disputada, prueba con usuarios — la etiqueta que la gente entiende es la correcta independientemente de qué disciplina la propuso.
 
-**Always ask:**
-- What does the user need to know right now? (Not everything — just right now.)
-- What action should they take, and does the copy make that obvious?
-- What could go wrong, and do our error mesgalileos actually help?
-- Would this make sense read aloud by a screen reader?
-- Would this make sense to someone reading it on a phone while walking?
-- Will this translate? (If not, rewrite it so it will.)
-- Are we using the user's language, or ours?
+**Siempre pregunta:**
+- ¿Qué necesita saber el usuario ahora mismo? (No todo — solo ahora mismo.)
+- ¿Qué acción debe tomar, y el copy lo hace obvio?
+- ¿Qué podría salir mal, y nuestros mensajes de error realmente ayudan?
+- ¿Esto tendría sentido leído en voz alta por un lector de pantalla?
+- ¿Esto tendría sentido para alguien que lo lee en un teléfono mientras camina?
+- ¿Esto se traducirá? (Si no, reescríbelo para que sí.)
+- ¿Estamos usando el lenguaje del usuario, o el nuestro?
 
-## Working with this skill
+## Cómo usar esta habilidad
 
-Bring examples of your current copy — screens, error mesgalileos, onboarding flows, empty states. Share your brand voice guidelines if you have them, even rough ones. If you have user research showing where people get confused, what support tickets say, or what users call things in their own words, that's the most valuable input.
+Trae ejemplos de tu copy actual — pantallas, mensajes de error, flows de onboarding, estados vacíos. Comparte tus guías de voz de marca si las tienes, aunque sean preliminares. Si tienes investigación de usuarios que muestra dónde la gente se confunde, qué dicen los tickets de soporte o cómo llaman los usuarios a las cosas con sus propias palabras, ese es el input más valioso.
 
-Expect your copy to be questioned on clarity, not cleverness. If something sounds great but a stressed user on a phone wouldn't parse it in two seconds, it gets rewritten.
+Espera que tu copy sea cuestionado por su claridad, no por su ingenio. Si algo suena genial pero un usuario estresado en un teléfono no lo entendería en dos segundos, se reescribe.

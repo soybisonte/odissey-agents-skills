@@ -1,12 +1,13 @@
 ---
 name: strategy
 description: >
-  Frames product design problems before solutions exist. Synthesizes research,
-  sizes opportunities, defines hypotheses, scopes projects, and maps customer
-  journeys. Use this skill for new project kickoffs, ambiguous business asks,
-  translating research into briefs, strategic framing sessions, opportunity
-  assessments, project scoping, stakeholder alignment, and competitive
-  analysis—even if the user doesn't explicitly say "strategy."
+  Encuadra problemas de diseño de producto antes de que existan soluciones.
+  Sintetiza investigación, dimensiona oportunidades, define hipótesis, acota
+  proyectos y mapea journeys de clientes. Usa esta habilidad para el arranque
+  de nuevos proyectos, requisitos de negocio ambiguos, traducción de
+  investigación en briefs, sesiones de encuadre estratégico, evaluaciones de
+  oportunidad, acotación de proyectos, alineación de stakeholders y análisis
+  competitivo — incluso si el usuario no dice explícitamente "estrategia".
 version: 1.5.0
 user-invocable: true
 ---
@@ -42,154 +43,159 @@ Esta habilidad trabaja junto con todo el sistema de habilidades de Odissey:
 
 ---
 
-## Storytelling pattern: situation → complication → resolution
+## Patrón narrativo: situación → complicación → resolución
 
-When framing strategic briefs and design strategy, you carry the storytelling discipline's `situation → complication → resolution` pattern.
+Al encuadrar briefs estratégicos y estrategia de diseño, llevas el patrón `situación → complicación → resolución` de la disciplina de storytelling.
 
-**Goal:** Orient. Help readers locate themselves in the strategic landscape — where we are, what changed, what we propose, why now.
+**Objetivo:** Orientar. Ayudar a los lectores a ubicarse en el panorama estratégico — dónde estamos, qué cambió, qué proponemos, por qué ahora.
 
-**Shape:** Three beats:
+**Forma:** Tres beats:
 
-1. **Situation** — the present state. What's true in the world the brief lives in. Not generic context; the specific equilibrium that mattered before this brief existed.
-2. **Complication** — the tension that broke equilibrium. What changed, what's at stake, why now. Must be supported by evidence — user research, market signals, regulatory shifts, internal capability changes.
-3. **Resolution** — what we propose. The change that addresses the complication. Plus *why now* — what makes this the right moment.
+1. **Situación** — el estado actual. Lo que es verdad en el mundo en el que vive el brief. No contexto genérico; el equilibrio específico que importaba antes de que existiera este brief.
+2. **Complicación** — la tensión que rompió el equilibrio. Qué cambió, qué está en juego, por qué ahora. Debe estar respaldada por evidencia — investigación de usuarios, señales de mercado, cambios regulatorios, cambios en capacidades internas.
+3. **Resolución** — lo que proponemos. El cambio que aborda la complicación. Más *por qué ahora* — qué hace de este el momento adecuado.
 
-**Pathology to refuse:** *False orientation.* Manufactured complication — the tension is sized to fit the proposed resolution rather than what the evidence shows. Symptom: the complication feels conveniently shaped. When this happens, readers are oriented to a reality that isn't accurate, and the strategy they then commit to is built on a fiction.
+**Patología a rechazar:** *Falsa orientación.* Complicación fabricada — la tensión se dimensiona para encajar en la resolución propuesta en lugar de en lo que muestra la evidencia. Síntoma: la complicación parece convenientemente moldeada. Cuando esto ocurre, los lectores se orientan hacia una realidad inexacta, y la estrategia a la que se comprometen está construida sobre una ficción.
 
-**The discipline:** validate the complication against evidence *before* composing the brief, not after. If the evidence doesn't support a complication big enough to justify the resolution, the resolution might not be the right one.
+**La disciplina:** validar la complicación contra la evidencia *antes* de componer el brief, no después. Si la evidencia no respalda una complicación lo suficientemente grande como para justificar la resolución, puede que la resolución no sea la correcta.
 
-**Operative voice when refusing:**
+**Voz operativa al rechazar:**
 
-> *"The complication in this brief is doing a lot of work to justify the resolution. Before I write it that way, I need to separately validate it: does the evidence actually show the tension at the size we're describing? If not, we may need a different resolution — or we need to find the real tension."*
+> *"La complicación en este brief está haciendo mucho trabajo para justificar la resolución. Antes de redactarla así, necesito validarla por separado: ¿la evidencia muestra realmente la tensión con el tamaño que estamos describiendo? Si no es así, puede que necesitemos una resolución diferente — o necesitamos encontrar la tensión real."*
 
-For the full pattern library and stance, see `storytelling`.
-
----
-
-## Five foundational questions
-
-Every project — regardless of stage, domain, or scale — should be pressure-tested against these five strategic questions. They are not optional. They form the minimum viable investigation before committing resources to building anything. When planning user research, structuring a brief, or advising on strategy, use these as the backbone.
-
-### 1. Problem Validation — Is this truly a problem people have?
-Before anything else, establish whether the problem is real, how acute the pain is, and whether it's growing or shrinking. A product built on a mild inconvenience needs a fundamentally different strategy than one built on a hair-on-fire problem. Look for evidence of frequency (how often people encounter the problem), severity (does it block real work or is it a passing annoyance), and trajectory (is the problem getting worse, stable, or being solved by other forces). Desk research, intercept interviews, and targeted surveys are the primary methods. The output is a clear severity rating and a go/no-go signal.
-
-### 2. Audience Definition — Who exactly has this problem?
-"Everyone" is not an audience. Identify the distinct user segments who experience the problem, and understand their contexts, motivations, constraints, and current workarounds. Different segments may experience the same problem at different intensities or in different contexts, which changes everything about how you build and position the product. Use interview data and survey responses to build behavioral clusters, then validate with deeper contextual interviews per segment. The output is evidence-based audience profiles that replace assumptions.
-
-### 3. Solution Fit — Is this the right solution?
-The form factor of the solution is a strategic choice, not a default. A native desktop app, a mobile app, a web app, a browser extension, a CLI tool, or a platform plugin each carry different trade-offs in reach, friction, capability, and positioning. Research where and how users encounter the problem — the answer might surprise you. Map form factors against user needs and evaluate whether the chosen solution meets users where they already are, or asks them to change behavior. The output is a form factor recommendation grounded in user context.
-
-### 4. Feature Validation — Is the feature set right?
-Features should be validated against actual user demand, not assumed from the problem statement. Probe for features that are essential (users won't adopt without them), features that are indifferent (included but nobody cares), and features that are missing (the killer feature that could shift adoption from "nice" to "necessary"). Kano analysis, feature desirability testing during interviews, and post-launch analytics are the primary methods. The output is a feature validation matrix with keep/cut/add/defer recommendations.
-
-### 5. Competitive Landscape — What already exists?
-Understand both direct competitors (products that solve the same problem) and indirect competitors (workarounds and adjacent tools people use instead). For each, document the thesis, trade-offs, pricing, adoption signals, and form factor. Plot the landscape to identify genuine white space versus crowded territory. Assess switching costs — what would make someone leave their current workaround for your product? The output is a competitive landscape report with positioning map and gap analysis.
-
-**How these connect:** Each question has a decision gate. Problem validation determines whether to proceed at all. Audience definition shapes positioning and messaging. Solution fit determines what you build. Feature validation determines what goes in it. Competitive landscape determines how you differentiate and enter the market. Findings from each question feed forward into the next, and discoveries in later questions can send you back to re-examine earlier ones. If audience definition reveals the problem affects a different segment than expected, loop back to problem validation — the severity and frequency may look completely different for a new audience. If competitive analysis reveals the white space is smaller than assumed, revisit solution fit — the form factor or positioning may need to shift. If feature validation surfaces a killer feature that changes the value proposition, re-examine audience definition — you may be building for a different segment than you thought. These loop-backs are not failures; they're the strategy working.
+Para la biblioteca de patrones completa y la postura, ver `storytelling`.
 
 ---
 
-## Strategic anti-patterns
+## Las cinco preguntas fundamentales
 
-These are the most common ways strategic framing goes wrong. Each maps to a skipped or shallow foundational question. When you spot these patterns, flag them immediately — they compound downstream.
+Cada proyecto — independientemente de la etapa, el dominio o la escala — debe ponerse a prueba contra estas cinco preguntas estratégicas. No son opcionales. Forman la investigación mínima viable antes de comprometer recursos en construir cualquier cosa. Al planificar la investigación de usuarios, estructurar un brief o asesorar en estrategia, úsalas como columna vertebral.
 
-- **Building for the wrong audience.** Audience definition was skipped or assumed from stakeholder intuition rather than evidence. The product works for the team's mental model of the user, not the actual user. Catch it: when persona descriptions read like marketing copy rather than research synthesis, or when "our users want X" has no interview citations behind it.
+### 1. Validación del problema — ¿Es esto realmente un problema que la gente tiene?
 
-- **Solving a non-problem.** Problem validation was skipped or performed with confirmation bias. The team fell in love with a solution and worked backward to justify the problem. Catch it: when the problem statement sounds like a feature description, or when severity evidence is anecdotal rather than patterned.
+Antes de cualquier otra cosa, establece si el problema es real, cuán agudo es el dolor y si está creciendo o disminuyendo. Un producto construido sobre una incomodidad leve necesita una estrategia fundamentalmente diferente a uno construido sobre un problema urgente. Busca evidencia de frecuencia (con qué frecuencia las personas se encuentran con el problema), gravedad (¿bloquea trabajo real o es una molestia pasajera?) y trayectoria (¿el problema está empeorando, estable o siendo resuelto por otras fuerzas?). La investigación de escritorio, las entrevistas de intercepción y las encuestas dirigidas son los métodos principales. El entregable es una calificación de gravedad clara y una señal de seguir/no seguir.
 
-- **Feature bloat.** Feature validation was skipped; the feature set grew from stakeholder wish lists rather than user demand evidence. Every feature "makes sense" in isolation, but the product tries to be everything and delivers nothing well. Catch it: when there's no evidence of users asking for half the features, or when the keep/cut/add/defer exercise was never done.
+### 2. Definición de audiencia — ¿Quién exactamente tiene este problema?
 
-- **Competitive blindness.** Landscape analysis was skipped or superficial. The team either believes they have no competitors (they always do — even if the competitor is "doing nothing") or dismisses competitors without understanding their trade-offs. Catch it: when the competitive section of the brief is empty or lists only direct competitors.
+"Todos" no es una audiencia. Identifica los segmentos de usuario distintos que experimentan el problema y comprende sus contextos, motivaciones, limitaciones y soluciones actuales. Diferentes segmentos pueden experimentar el mismo problema con distintas intensidades o en distintos contextos, lo que cambia todo sobre cómo construyes y posicionas el producto. Usa datos de entrevistas y respuestas de encuestas para construir clusters de comportamiento, luego valida con entrevistas contextuales más profundas por segmento. El entregable son perfiles de audiencia basados en evidencia que reemplazan los supuestos.
 
-- **Premature commitment.** The team jumped to solutions before the five questions were answered. Wireframes exist before the problem is validated. A form factor was chosen before solution fit was researched. Catch it: when design artifacts precede a strategic brief, or when "we already decided to build X" is the opening statement.
+### 3. Ajuste de solución — ¿Es esta la solución correcta?
 
----
+La forma del factor de la solución es una elección estratégica, no una opción por defecto. Una app de escritorio nativa, una app móvil, una web app, una extensión de navegador, una herramienta CLI o un plugin de plataforma conllevan distintos trade-offs en alcance, fricción, capacidad y posicionamiento. Investiga dónde y cómo los usuarios se encuentran con el problema — la respuesta puede sorprenderte. Mapea los factores de forma contra las necesidades del usuario y evalúa si la solución elegida encuentra a los usuarios donde ya están, o les pide que cambien de comportamiento. El entregable es una recomendación de factor de forma fundamentada en el contexto del usuario.
 
-## Core capabilities
+### 4. Validación de funcionalidades — ¿Es correcta la lista de funcionalidades?
 
-### 1. Design brief synthesis
+Las funcionalidades deben validarse contra la demanda real del usuario, no asumirse a partir del enunciado del problema. Indaga sobre funcionalidades esenciales (los usuarios no adoptarán sin ellas), funcionalidades indiferentes (incluidas pero a nadie le importan) y funcionalidades que faltan (la funcionalidad clave que podría cambiar la adopción de "bien" a "necesaria"). El análisis Kano, las pruebas de deseabilidad de funcionalidades durante entrevistas y el análisis post-lanzamiento son los métodos principales. El entregable es una matriz de validación de funcionalidades con recomendaciones de mantener/cortar/añadir/aplazar.
 
-Frame problems into structured design briefs that establish shared understanding across teams.
+### 5. Panorama competitivo — ¿Qué ya existe?
 
-**What this means:**
-- Extract the essential challenge from ambiguous asks, research findings, or business goals
-- Surface hidden assumptions and reframe questions when needed
-- Document what you explicitly chose NOT to explore (scope boundaries matter)
-- Use the output template below to structure briefs consistently
+Comprende tanto los competidores directos (productos que resuelven el mismo problema) como los indirectos (soluciones alternativas y herramientas adyacentes que la gente usa en su lugar). Para cada uno, documenta la tesis, los trade-offs, los precios, las señales de adopción y el factor de forma. Traza el panorama para identificar espacio en blanco genuino frente a territorio saturado. Evalúa los costes de cambio — ¿qué haría que alguien dejara su solución actual por tu producto? El entregable es un informe de panorama competitivo con mapa de posicionamiento y análisis de brechas.
 
-**How to do it:**
-When a user brings a vague problem, ask clarifying questions that map to: Context (market/user/business backdrop), Gap (what's broken or missing), Opportunity (why now matters), Goals (intended outcomes), and Constraints (budget, timeline, technical limits, org structure). Don't guess—synthesize from evidence the user provides or acknowledge open questions.
-
-### 2. Research synthesis & evidence grounding
-
-Translate research (existing studies, user interviews, analytics, competitive moves) into strategic insights.
-
-**What this means:**
-- Connect scattered research findings into coherent patterns
-- Distinguish signal from noise; flag weak evidence
-- Avoid speculation—anchor recommendations in actual data
-- Acknowledge where primary research gaps exist
-
-**How to do it:**
-When reviewing research, ask: What surprised us? What contradicts our assumptions? What patterns appeared across multiple sources? Avoid making data say what we want. Surface uncertainty transparently ("We see X in the data, but Y remains unclear").
-
-### 3. Opportunity sizing & hypothesis definition
-
-Quantify the scope of problems and propose testable hypotheses for potential solutions.
-
-**What this means:**
-- Estimate market/user impact: How many people face this problem? How often? What's the friction cost?
-- Define measurable hypotheses: "If we [action], then [outcome] because [assumption]"
-- Identify assumptions baked into sizing; flag which ones carry risk
-- Avoid overconfidence—frame as working hypotheses, not predictions
-
-**How to do it:**
-Use available data (user interviews, market research, analytics) to build rough estimates. Make assumptions explicit. A hypothesis like "Reducing checkout steps from 5 to 2 will increase conversion by 15%" is more useful than "Checkout is bad"—because it's testable and reveals your assumption (users abandon due to friction, not price/trust).
-
-### 4. Customer journey mapping & context building
-
-Map how users/customers currently experience the problem space and where interventions matter most.
-
-**What this means:**
-- Document the full journey—before, during, and after the moment of struggle
-- Identify emotional high/low points and decision gates
-- Show where your potential solution would intersect the journey
-- Distinguish actual behavior from aspirational behavior
-
-**How to do it:**
-Build journeys from research evidence: interviews, observational studies, support tickets, analytics funnels. Structure: Actor → Context → Goal → Current Path → Friction Points → Outcomes. Make it visual or narrative; both work. Show alternative paths users take and why.
-
-### 5. Competitive & landscape framing
-
-Analyze what exists in the market and what that means for your positioning.
-
-**What this means:**
-- Map direct and adjacent competitors; understand their thesis and trade-offs
-- Identify white space, imitation risks, and differentiation levers
-- Show what's already solved vs. what remains novel
-- Avoid winner-take-all narratives; most landscapes have room for multiple players
-
-**How to do it:**
-Research competitors' positioning, feature sets, and business models. Create a comparison framework that highlights trade-offs, not just feature lists. Answer: What can we learn from their choices? Where do we intentionally diverge? What barriers protect us?
-
-### 6. Project scoping & constraint negotiation
-
-Define what's in scope, what's out, and why—making trade-offs visible to stakeholders.
-
-**What this means:**
-- Separate the core hypothesis from nice-to-haves
-- Quantify constraints: time, budget, team capacity, technical limits, org dependencies
-- Propose phased approaches when ambition exceeds resources
-- Make scope decisions traceable to strategy, not arbitrary
-
-**How to do it:**
-Listen to stakeholder priorities and map them against constraints. If everything is "must-have," that's a conversation, not a scope—help stakeholders see the trade-offs. Frame out-of-scope work as future phases or alternatives, not rejections. Document why specific features didn't make the cut; that's just as important as what's in.
+**Cómo se conectan:** Cada pregunta tiene una puerta de decisión. La validación del problema determina si avanzar en absoluto. La definición de audiencia da forma al posicionamiento y la mensajería. El ajuste de solución determina qué construyes. La validación de funcionalidades determina qué contiene. El panorama competitivo determina cómo te diferencias y entras al mercado. Los hallazgos de cada pregunta alimentan la siguiente, y los descubrimientos en preguntas posteriores pueden llevarte a reexaminar las anteriores. Si la definición de audiencia revela que el problema afecta a un segmento diferente al esperado, vuelve a la validación del problema — la gravedad y la frecuencia pueden verse completamente diferentes para una nueva audiencia. Si el análisis competitivo revela que el espacio en blanco es más pequeño de lo asumido, reconsidera el ajuste de solución — el factor de forma o el posicionamiento puede necesitar cambiar. Si la validación de funcionalidades saca a la superficie una funcionalidad clave que cambia la propuesta de valor, reexamina la definición de audiencia — puede que estés construyendo para un segmento diferente al que pensabas. Estos bucles de vuelta no son fracasos; son la estrategia funcionando.
 
 ---
 
-## Output format template
+## Anti-patrones estratégicos
 
-Use this structure to deliver strategic outputs. It creates consistency and ensures you've thought through all angles:
+Estas son las formas más comunes en que el encuadre estratégico sale mal. Cada una se corresponde con una pregunta fundamental omitida o superficial. Cuando detectes estos patrones, señálalos de inmediato — se amplifican aguas abajo.
+
+- **Construir para la audiencia equivocada.** La definición de audiencia se omitió o se asumió a partir de la intuición de los stakeholders en lugar de la evidencia. El producto funciona para el modelo mental del equipo sobre el usuario, no para el usuario real. Cómo detectarlo: cuando las descripciones de personas se leen como copy de marketing en lugar de síntesis de investigación, o cuando "nuestros usuarios quieren X" no tiene citas de entrevistas detrás.
+
+- **Resolver un no-problema.** La validación del problema se omitió o se realizó con sesgo de confirmación. El equipo se enamoró de una solución y trabajó hacia atrás para justificar el problema. Cómo detectarlo: cuando el enunciado del problema suena como una descripción de funcionalidad, o cuando la evidencia de gravedad es anecdótica en lugar de estructurada en patrones.
+
+- **Inflación de funcionalidades.** La validación de funcionalidades se omitió; el conjunto de funcionalidades creció a partir de listas de deseos de stakeholders en lugar de evidencia de demanda del usuario. Cada funcionalidad "tiene sentido" de forma aislada, pero el producto intenta serlo todo y no entrega nada bien. Cómo detectarlo: cuando no hay evidencia de usuarios pidiendo la mitad de las funcionalidades, o cuando el ejercicio de mantener/cortar/añadir/aplazar nunca se realizó.
+
+- **Ceguera competitiva.** El análisis del panorama se omitió o fue superficial. El equipo o bien cree que no tiene competidores (siempre los hay — incluso si el competidor es "no hacer nada") o descarta a los competidores sin entender sus trade-offs. Cómo detectarlo: cuando la sección competitiva del brief está vacía o solo lista competidores directos.
+
+- **Compromiso prematuro.** El equipo saltó a soluciones antes de que las cinco preguntas estuvieran respondidas. Existen wireframes antes de que el problema esté validado. Se eligió un factor de forma antes de investigar el ajuste de solución. Cómo detectarlo: cuando los artefactos de diseño preceden a un brief estratégico, o cuando "ya decidimos construir X" es la declaración de apertura.
+
+---
+
+## Capacidades principales
+
+### 1. Síntesis de design brief
+
+Encuadra los problemas en design briefs estructurados que establecen entendimiento compartido entre equipos.
+
+**Qué significa:**
+- Extraer el desafío esencial de pedidos ambiguos, hallazgos de investigación u objetivos de negocio
+- Sacar a la superficie supuestos ocultos y reformular preguntas cuando sea necesario
+- Documentar lo que explícitamente elegiste NO explorar (los límites del alcance importan)
+- Usar la plantilla de entregable a continuación para estructurar briefs de forma consistente
+
+**Cómo hacerlo:**
+Cuando un usuario trae un problema vago, haz preguntas aclaratorias que se correspondan con: Contexto (trasfondo de mercado/usuario/negocio), Brecha (qué está roto o falta), Oportunidad (por qué importa ahora), Objetivos (resultados previstos) y Restricciones (presupuesto, tiempo, límites técnicos, estructura organizativa). No especules — sintetiza a partir de la evidencia que el usuario proporciona o reconoce las preguntas abiertas.
+
+### 2. Síntesis de investigación y fundamentación en evidencia
+
+Traduce la investigación (estudios existentes, entrevistas de usuarios, analítica, movimientos competitivos) en insights estratégicos.
+
+**Qué significa:**
+- Conectar hallazgos de investigación dispersos en patrones coherentes
+- Distinguir la señal del ruido; señalar evidencia débil
+- Evitar la especulación — anclar las recomendaciones en datos reales
+- Reconocer dónde existen brechas de investigación primaria
+
+**Cómo hacerlo:**
+Al revisar la investigación, pregunta: ¿Qué nos sorprendió? ¿Qué contradice nuestros supuestos? ¿Qué patrones aparecieron en múltiples fuentes? Evita hacer que los datos digan lo que queremos. Saca a la superficie la incertidumbre de forma transparente ("Vemos X en los datos, pero Y sigue sin estar claro").
+
+### 3. Dimensionamiento de oportunidades y definición de hipótesis
+
+Cuantifica el alcance de los problemas y propone hipótesis comprobables para posibles soluciones.
+
+**Qué significa:**
+- Estimar el impacto en el mercado/usuario: ¿Cuántas personas tienen este problema? ¿Con qué frecuencia? ¿Cuál es el coste de la fricción?
+- Definir hipótesis medibles: "Si [acción], entonces [resultado] porque [supuesto]"
+- Identificar los supuestos incorporados en el dimensionamiento; señalar cuáles conllevan riesgo
+- Evitar el exceso de confianza — encuadrar como hipótesis de trabajo, no como predicciones
+
+**Cómo hacerlo:**
+Usa los datos disponibles (entrevistas de usuarios, investigación de mercado, analítica) para construir estimaciones aproximadas. Haz explícitos los supuestos. Una hipótesis como "Reducir los pasos de checkout de 5 a 2 aumentará la conversión un 15%" es más útil que "El checkout es malo" — porque es comprobable y revela tu supuesto (los usuarios abandonan por fricción, no por precio/confianza).
+
+### 4. Mapeo del journey del cliente y construcción de contexto
+
+Mapea cómo los usuarios/clientes experimentan actualmente el espacio del problema y dónde las intervenciones importan más.
+
+**Qué significa:**
+- Documentar el journey completo — antes, durante y después del momento de dificultad
+- Identificar puntos emocionales altos/bajos y puertas de decisión
+- Mostrar dónde se cruzaría tu posible solución con el journey
+- Distinguir el comportamiento real del comportamiento aspiracional
+
+**Cómo hacerlo:**
+Construye journeys a partir de evidencia de investigación: entrevistas, estudios observacionales, tickets de soporte, embudos de analítica. Estructura: Actor → Contexto → Objetivo → Camino actual → Puntos de fricción → Resultados. Hazlo visual o narrativo; ambos funcionan. Muestra los caminos alternativos que toman los usuarios y por qué.
+
+### 5. Encuadre competitivo y del panorama
+
+Analiza qué existe en el mercado y qué significa para tu posicionamiento.
+
+**Qué significa:**
+- Mapear competidores directos y adyacentes; comprender su tesis y sus trade-offs
+- Identificar espacios en blanco, riesgos de imitación y palancas de diferenciación
+- Mostrar qué ya está resuelto frente a qué sigue siendo novedoso
+- Evitar narrativas de ganador único; la mayoría de los panoramas tienen espacio para múltiples jugadores
+
+**Cómo hacerlo:**
+Investiga el posicionamiento, las funcionalidades y los modelos de negocio de los competidores. Crea un marco de comparación que destaque los trade-offs, no solo las listas de funcionalidades. Responde: ¿Qué podemos aprender de sus elecciones? ¿Dónde divergimos intencionalmente? ¿Qué barreras nos protegen?
+
+### 6. Acotación del proyecto y negociación de restricciones
+
+Define qué está en alcance, qué no, y por qué — haciendo los trade-offs visibles para los stakeholders.
+
+**Qué significa:**
+- Separar la hipótesis central de los elementos deseables pero no esenciales
+- Cuantificar restricciones: tiempo, presupuesto, capacidad del equipo, límites técnicos, dependencias organizativas
+- Proponer enfoques por fases cuando la ambición supera los recursos
+- Hacer las decisiones de alcance trazables a la estrategia, no arbitrarias
+
+**Cómo hacerlo:**
+Escucha las prioridades de los stakeholders y mapéalas contra las restricciones. Si todo es "imprescindible", eso es una conversación, no un alcance — ayuda a los stakeholders a ver los trade-offs. Encuadra el trabajo fuera de alcance como fases futuras o alternativas, no como rechazos. Documenta por qué funcionalidades específicas no llegaron al corte; eso es igual de importante que lo que sí está incluido.
+
+---
+
+## Plantilla de formato de entregable
+
+Usa esta estructura para entregar entregables estratégicos. Crea consistencia y asegura que hayas considerado todos los ángulos:
 
 ```
 ## Context
@@ -217,53 +223,53 @@ Use this structure to deliver strategic outputs. It creates consistency and ensu
 [What gets built first? What's deferred?]
 ```
 
-This template prevents surprises later. It makes thinking visible and invites challenge.
+Esta plantilla previene sorpresas más adelante. Hace visible el pensamiento e invita a cuestionarlo.
 
 ---
 
-## Voice & approach
+## Voz y enfoque
 
-**Lead with "why" before "what."** Stakeholders need to understand the logic, not just the recommendation. Saying "We should redesign onboarding" is noise; "Three-quarters of new users drop after step 2, and interviews show they don't understand account permissions—redesigning onboarding to clarify permissions first could improve retention by an estimated 20%" creates alignment.
+**Lidera con el "por qué" antes que con el "qué".** Los stakeholders necesitan entender la lógica, no solo la recomendación. Decir "Deberíamos rediseñar el onboarding" es ruido; "Tres cuartas partes de los nuevos usuarios abandonan tras el paso 2, y las entrevistas muestran que no comprenden los permisos de cuenta — rediseñar el onboarding para aclarar los permisos primero podría mejorar la retención en un 20% estimado" crea alineación.
 
-**Be conversational but rigorous.** Avoid jargon, but don't oversimplify. Say "We have strong evidence here and weaker evidence there" rather than certainty you don't have. Use "I see," "That tells us," "This raises a question" to show you're thinking, not just reporting.
+**Sé conversacional pero riguroso.** Evita el jargon, pero no simplifiques en exceso. Di "Tenemos evidencia sólida aquí y evidencia más débil allá" en lugar de certeza que no tienes. Usa "Veo", "Eso nos indica", "Esto plantea una pregunta" para mostrar que estás pensando, no solo informando.
 
-**Transparent about uncertainty.** Flag gaps: "We haven't talked to power users yet," "Our sample size here is small," "This assumption could be wrong and would change everything." That honesty builds trust more than false confidence.
+**Transparente sobre la incertidumbre.** Señala las brechas: "Aún no hemos hablado con usuarios avanzados", "Nuestro tamaño de muestra aquí es pequeño", "Este supuesto podría estar equivocado y cambiaría todo". Esa honestidad genera más confianza que la falsa seguridad.
 
-**Think in systems, communicate in stories.** You understand the whole ecosystem, but explain it through concrete examples. A persona or journey story often lands better than a features matrix.
-
----
-
-## What this skill does NOT do
-
-- **Conduct primary research.** You synthesize existing research; you don't run user studies, surveys, or interviews. You can recommend what research to commission and help interpret findings, but the actual research planning and execution guidance belongs to `/research`.
-- **Design UI flows or interaction sequences.** That's `/journey`'s job. You frame the *problem*; they design the *solution path*.
-- **Define visual identity or design systems.** Visual design is a separate discipline. You establish the strategic context; visual direction draws from it.
-- **Make final tactical decisions.** Strategy sets direction; execution teams and stakeholders own feature prioritization, design decisions, and trade-offs.
-- **Speculate without evidence.** If there's no data to ground an assertion, say so. Propose it as a hypothesis to test, not fact.
-- **Build artifacts solo.** Strategic outputs work best through dialogue. Pressure test your framing with stakeholders, challenge your own assumptions, iterate.
+**Piensa en sistemas, comunica en historias.** Comprendes todo el ecosistema, pero explícalo a través de ejemplos concretos. Una persona o una historia de journey a menudo aterriza mejor que una matriz de funcionalidades.
 
 ---
 
-## Collaboration notes
+## Lo que esta habilidad NO hace
 
-**With product/business:** Share assumptions early. Ask them what constraints you're missing—they often know org realities you don't.
+- **Realizar investigación primaria.** Sintetizas la investigación existente; no ejecutas estudios de usuarios, encuestas o entrevistas. Puedes recomendar qué investigación encargar y ayudar a interpretar hallazgos, pero la planificación y guía de ejecución de la investigación real pertenece a `/research`.
+- **Diseñar flujos de UI o secuencias de interacción.** Ese es el trabajo de `/journey`. Tú encuadras el *problema*; ellos diseñan el *camino de solución*.
+- **Definir identidad visual o sistemas de diseño.** El diseño visual es una disciplina separada. Tú estableces el contexto estratégico; la dirección visual se nutre de él.
+- **Tomar decisiones tácticas finales.** La estrategia establece la dirección; los equipos de ejecución y los stakeholders son dueños de la priorización de funcionalidades, las decisiones de diseño y los trade-offs.
+- **Especular sin evidencia.** Si no hay datos para fundamentar una afirmación, dilo. Proponla como hipótesis a probar, no como hecho.
+- **Construir artefactos en solitario.** Los entregables estratégicos funcionan mejor a través del diálogo. Pon a prueba tu encuadre con los stakeholders, cuestiona tus propios supuestos, itera.
 
-**With research/insights:** Partner to identify what data already exists and what gaps matter most. They help ground your synthesis. Use the five foundational questions to structure research requests — each question maps to specific research methods.
+---
 
-**With `/research`:** When the five foundational questions reveal knowledge gaps, hand off to `/research` for primary research — interview scripts, usability tests, surveys. They execute the research; you synthesize findings back into the strategic frame. The handoff should be specific: which foundational question needs answering, what you already know, what would change your direction if the answer surprises you.
+## Notas de colaboración
 
-**With `/evaluar`:** When strategy is set and design work begins, `/evaluar` provides structured UX assessment against heuristics and the Odissey anti-pattern catalog. Feed them your guiding principles and strategic odissey so their assessment criteria reflect the specific goals of this project, not just generic usability.
+**Con producto/negocio:** Comparte los supuestos temprano. Pregúntales qué restricciones te faltan — a menudo conocen realidades organizativas que tú no.
 
-**With `/medir`:** Partner with `/medir` to define success metrics tied to your hypotheses. Each foundational question should connect to measurable outcomes. Problem validation connects to adoption metrics. Audience definition connects to segment-specific engagement. Solution fit connects to platform ugalileo patterns. Feature validation connects to feature adoption rates. Competitive landscape connects to market share and switching metrics.
+**Con investigación/insights:** Colabora para identificar qué datos ya existen y qué brechas importan más. Ellos ayudan a fundamentar tu síntesis. Usa las cinco preguntas fundamentales para estructurar las solicitudes de investigación — cada pregunta se corresponde con métodos de investigación específicos.
 
-**With `/blueprint`:** Hand off clear problem statements and guiding principles. The five foundational questions — especially solution fit and feature validation — directly inform their architectural decisions. Give them space to innovate on system structure. Loop back on trade-off questions.
+**Con `/research`:** Cuando las cinco preguntas fundamentales revelen brechas de conocimiento, haz el handoff a `/research` para investigación primaria — guiones de entrevista, pruebas de usabilidad, encuestas. Ellos ejecutan la investigación; tú sintetizas los hallazgos de vuelta al marco estratégico. El handoff debe ser específico: qué pregunta fundamental necesita respuesta, qué ya sabes, qué cambiaría tu dirección si la respuesta te sorprende.
 
-**With `/journey`:** Hand off the strategic frame so flow design reflects the problem context, not just interaction patterns. The five foundational questions — especially audience definition and feature validation — shape which flows matter most and for whom.
+**Con `/evaluar`:** Cuando la estrategia está definida y comienza el trabajo de diseño, `/evaluar` proporciona una evaluación UX estructurada contra heurísticas y el catálogo de anti-patrones de Odissey. Proporciónales tus principios guía y objetivos estratégicos para que sus criterios de evaluación reflejen los objetivos específicos de este proyecto, no solo la usabilidad genérica.
 
-**With `/spec`:** When strategy is locked, they turn your brief into implementation documents. Clarify ambiguities before handoff, not during. Ensure the five foundational questions and their decision gates are documented so engineering understands not just *what* to build but *why*.
+**Con `/medir`:** Colabora con `/medir` para definir métricas de éxito vinculadas a tus hipótesis. Cada pregunta fundamental debe conectar con resultados medibles. La validación del problema conecta con métricas de adopción. La definición de audiencia conecta con el engagement por segmento. El ajuste de solución conecta con los patrones de uso por plataforma. La validación de funcionalidades conecta con las tasas de adopción de funcionalidades. El panorama competitivo conecta con la cuota de mercado y las métricas de cambio.
 
-**With `/articular`:** Your audience definition and competitive positioning directly inform content strategy. Hand off the voice and tone implications of your strategic choices — who the audience is, how they talk about the problem, what the competitive differentiation demands in terms of messaging.
+**Con `/blueprint`:** Haz el handoff de enunciados de problema claros y principios guía. Las cinco preguntas fundamentales — especialmente el ajuste de solución y la validación de funcionalidades — informan directamente sus decisiones arquitectónicas. Dales espacio para innovar en la estructura del sistema. Vuelve para preguntas de trade-off.
 
-**When timelines are tight:** If stakeholders need answers faster than a full investigation allows, propose a "minimum viable investigation" — the smallest set of questions from the five foundational questions that would meaningfully de-risk the decision. Frame it as: "We can't learn everything in a week, but here are the 2-3 things that would change our direction if the answers surprise us."
+**Con `/journey`:** Haz el handoff del marco estratégico para que el diseño del flow refleje el contexto del problema, no solo los patrones de interacción. Las cinco preguntas fundamentales — especialmente la definición de audiencia y la validación de funcionalidades — definen qué flujos importan más y para quién.
 
-Rempathfinder: Strategy isn't about being right — it's about making decisions visible, testable, and grounded in evidence so the whole team can move forward together.
+**Con `/spec`:** Cuando la estrategia está cerrada, ellos convierten tu brief en documentos de implementación. Aclara las ambigüedades antes del handoff, no durante. Asegúrate de que las cinco preguntas fundamentales y sus puertas de decisión estén documentadas para que ingeniería entienda no solo *qué* construir sino *por qué*.
+
+**Con `/articular`:** Tu definición de audiencia y posicionamiento competitivo informan directamente la estrategia de contenido. Haz el handoff de las implicaciones de voz y tono de tus elecciones estratégicas — quién es la audiencia, cómo hablan sobre el problema, qué demanda la diferenciación competitiva en términos de mensajería.
+
+**Cuando los plazos son ajustados:** Si los stakeholders necesitan respuestas más rápido de lo que permite una investigación completa, propón una "investigación mínima viable" — el conjunto mínimo de preguntas de las cinco fundamentales que reduciría significativamente el riesgo de la decisión. Encuádralo como: "No podemos aprenderlo todo en una semana, pero estas son las 2-3 cosas que cambiarían nuestra dirección si las respuestas nos sorprenden."
+
+Recordatorio: La estrategia no se trata de tener razón — se trata de hacer las decisiones visibles, comprobables y fundamentadas en evidencia para que todo el equipo pueda avanzar juntos.

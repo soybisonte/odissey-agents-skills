@@ -1,291 +1,291 @@
 ---
 name: medir
 description: >
-  Defines and tracks UX success through metrics, medirment frameworks,
-  and experimentation. Part of the Odissey design strategy system.
-  Connects design decisions to observable evidence — did the thing we
-  built actually help? Guards against medirment becoming manipulation.
-  Trigger when: defining success metrics, designing A/B tests, building
-  medirment frameworks, analyzing funnels, reviewing metric dashboards,
-  questioning whether the right things are being medird, or when someone
-  says "how do we know if this worked," "what should we medir,"
-  "let's run a test," or "the numbers look good but something feels off."
-  Also trigger for ethical medirment reviews and counter-metric definition.
+  Define y realiza seguimiento del éxito UX mediante métricas, marcos de medición
+  y experimentación. Parte del sistema de estrategia de diseño Odissey.
+  Conecta las decisiones de diseño con evidencia observable — ¿lo que construimos
+  realmente ayudó? Protege contra que la medición se convierta en manipulación.
+  Activa cuando: defines criterios de éxito, diseñas A/B tests, construyes
+  marcos de medición, analizas funnels, revisas dashboards de métricas,
+  cuestionas si se están midiendo las cosas correctas, o cuando alguien dice
+  "¿cómo sabemos si esto funcionó?", "¿qué deberíamos medir?",
+  "lancemos un test" o "los números se ven bien pero algo no cuadra".
+  También activa para revisiones de medición ética y definición de contra-métricas.
 version: 1.5.0
 user-invocable: true
 ---
 
-# Measure — Define and Track Success
+# Medir — Definir y Seguir el Éxito
 
-## Overview
+## Visión general
 
-If you can't define success, you can't design for it. And if you medir the wrong thing, you'll optimize for the wrong outcome.
+Si no puedes definir el éxito, no puedes diseñar para él. Y si mides la cosa equivocada, optimizarás el resultado equivocado.
 
-UX medirment connects design decisions to observable evidence — did the thing we built actually help? This skill defines what to medir, how to medir it, and how to make decisions from what you learn. It bridges the gap between "we shipped it" and "it worked."
+La medición UX conecta las decisiones de diseño con evidencia observable: ¿lo que construimos realmente ayudó? Esta habilidad define qué medir, cómo medirlo y cómo tomar decisiones a partir de lo que aprendes. Cierra la brecha entre "lo lanzamos" y "funcionó".
 
-But medirment is not neutral. Every metric you choose shapes what gets optimized. Measure time-on-site and you'll get infinite scroll. Measure clicks and you'll get clickbait. Measure conversion and you'll get dark patterns — unless you also medir what those metrics cost the user. This skill guards against medirment becoming manipulation, ensuring that metrics incentivize genuine value, not engineered engagement.
+Pero la medición no es neutral. Cada métrica que eliges moldea lo que se optimiza. Mide tiempo en el sitio y obtendrás scroll infinito. Mide clics y obtendrás clickbait. Mide conversión y obtendrás dark patterns, a menos que también midas lo que esas métricas le cuestan al usuario. Esta habilidad evita que la medición se convierta en manipulación y asegura que las métricas incentiven valor genuino, no engagement fabricado.
 
-**When to activate this skill:** Defining success criteria for a new feature, designing experiments, building medirment frameworks, analyzing funnel performance, reviewing whether existing metrics are measuring the right things, or anytime "the numbers look good" but the experience feels wrong.
-
----
-
-## Skill family
-
-Measure works alongside the full Odissey skill system:
-
-- **`/strategy`**: Their hypotheses need measurable success criteria. Every strategic bet should connect to a metric that tells you whether the bet paid off. `/strategy` defines "we believe X"; `/medir` defines "we'll know X is true when Y." When metrics contradict a strategic assumption, medir loops back to reopen strategy — with guardrails (see "When medirment points back to strategy" below).
-- **`/research`**: Qualitative research complements quantitative medirment. When the numbers say users drop off at step 3, research tells you why. When satisfaction scores drop after a redesign, research interviews users to understand the experience behind the number. Never make major design decisions from metrics alone.
-- **`/evaluar`**: UX assessment produces scores and findings that inform what to medir. Evaluation identifies usability issues; medirment tracks whether fixes actually resolved them.
-- **`/spec`**: Test plans and success metrics go into handoff specs. Every feature spec should incluir what success looks like and how to medir it, so engineering can instrument accordingly.
-- **`/idear`**: A cross-cutting cognitive mode for questioning your metrics before they become targets. Invoke when: a metric feels too easy to game, the dashboard looks green but users are complaining, you're not sure whether you're measuring user success or business extraction, or you need the question: "What if measuring this changes the behavior we're trying to medir?"
+**Activa esta habilidad cuando haya:** definición de criterios de éxito para una nueva funcionalidad, diseño de experimentos, construcción de marcos de medición, análisis de funnels, revisión de dashboards de métricas, cuestionamiento de si se está midiendo lo correcto o cualquier momento en que "los números se ven bien" pero la experiencia se siente mal.
 
 ---
 
-## Core capabilities
+## Familia de habilidades
 
-### 1. Metric selection: HEART framework
+Medir trabaja junto al sistema completo de habilidades Odissey:
 
-Google's HEART framework provides a structured approach to selecting UX metrics. Apply it per feature, not globally — different features need different metrics.
+- **`/strategy`**: Sus hipótesis necesitan criterios de éxito medibles. Cada apuesta estratégica debe conectarse a una métrica que indique si la apuesta dio resultado. `/strategy` define "creemos que X"; `/medir` define "sabremos que X es cierto cuando Y." Cuando las métricas contradicen un supuesto estratégico, medir vuelve a abrir strategy — con salvaguardas (ver "Cuando la medición apunta de vuelta a la estrategia" a continuación).
+- **`/research`**: La investigación cualitativa complementa la medición cuantitativa. Cuando los números muestran una caída en el paso 3, research te dice por qué. Cuando los scores de satisfacción caen tras un rediseño, research entrevista a usuarios para entender la experiencia detrás del número. Nunca tomes decisiones de diseño importantes solo a partir de métricas.
+- **`/evaluar`**: La evaluación UX produce scores y hallazgos que informan qué medir. La evaluación identifica problemas de usabilidad; la medición rastrea si las correcciones realmente los resolvieron.
+- **`/spec`**: Los planes de prueba y los criterios de éxito van en los specs de handoff. Cada spec de funcionalidad debería incluir cómo se ve el éxito y cómo medirlo, para que ingeniería pueda instrumentar en consecuencia.
+- **`/idear`**: Un modo cognitivo transversal para cuestionar tus métricas antes de que se conviertan en objetivos. Activa cuando: una métrica parece demasiado fácil de manipular, el dashboard luce verde pero los usuarios se están quejando, no estás seguro de si estás midiendo el éxito del usuario o la extracción del negocio, o necesitas la pregunta: "¿Qué pasa si medir esto cambia el comportamiento que intentamos medir?"
 
-**Happiness — subjective satisfaction:**
-- NPS (Net Promoter Score): likelihood to recommend, 0-10 scale. Blunt but useful for trending.
-- CSAT (Customer Satisfaction): satisfaction with specific interaction, usually 1-5 scale. More actionable than NPS for feature-level decisions.
-- SUS (System Usability Scale): 10-question standardized usability questionnaire. Good for benchmarking across releases.
-- Custom surveys: specific questions tied to specific features. "How easy was it to find what you were looking for?" is more useful than "How satisfied are you?"
+---
 
-**Engagement — behavioral depth:**
-- Frequency: how often users return (daily, weekly, monthly active users)
-- Intensity: depth of ugalileo per session (features used, content consumed, actions taken)
-- Breadth: how many features a user touches (adoption breadth, not just depth)
-- Recency: when was the last interaction (early warning for churn)
+## Capacidades principales
 
-**Adoption — new ugalileo:**
-- New user activation: percentage completing key onboarding milestones
-- Feature adoption: percentage of eligible users who try a new feature
-- Onboarding completion: funnel through first-use experience
-- Time-to-value: how quickly new users reach their first meaningful outcome
+### 1. Selección de métricas: marco HEART
 
-**Retention — continued ugalileo:**
-- Return rate: D1, D7, D30 retention (percentage returning after 1, 7, 30 days)
-- Churn rate: percentage of users who stop using the product in a period
-- Reactivation: users who left and came back (what brought them back?)
-- Cohort retention: retention curves by signup cohort (are newer users retaining better?)
+El marco HEART de Google proporciona un enfoque estructurado para seleccionar métricas UX. Aplícalo por funcionalidad, no globalmente — diferentes funcionalidades necesitan diferentes métricas.
 
-**Task success — effectiveness:**
-- Completion rate: percentage of users who finish the task they started
-- Error rate: percentage of attempts that result in errors
-- Time-on-task: how long the task takes (shorter is usually better, but not always)
-- Efficiency: task completion relative to optimal path length
+**Happiness (Satisfacción subjetiva):**
+- NPS (Net Promoter Score): probabilidad de recomendar, escala 0-10. Contundente pero útil para tendencias.
+- CSAT (Satisfacción del cliente): satisfacción con una interacción específica, habitualmente escala 1-5. Más accionable que NPS para decisiones a nivel de funcionalidad.
+- SUS (System Usability Scale): cuestionario estandarizado de usabilidad de 10 preguntas. Bueno para benchmarking entre versiones.
+- Encuestas personalizadas: preguntas específicas vinculadas a funcionalidades específicas. "¿Qué tan fácil fue encontrar lo que buscabas?" es más útil que "¿Qué tan satisfecho estás?"
 
-**Not every feature needs all five.** Select the 2-3 dimensions that matter most for the feature's odissey. A checkout flow cares most about task success and happiness. A content feed cares most about engagement and retention. A new feature launch cares most about adoption.
+**Engagement (Profundidad de uso):**
+- Frecuencia: con qué frecuencia regresan los usuarios (usuarios activos diarios, semanales, mensuales)
+- Intensidad: profundidad de uso por sesión (funcionalidades usadas, contenido consumido, acciones realizadas)
+- Amplitud: cuántas funcionalidades toca un usuario (amplitud de adopción, no solo profundidad)
+- Recencia: cuándo fue la última interacción (señal temprana de churn)
 
-**Counter-metrics:** For every metric you optimize, name the metric that could suffer. If engagement goes up but satisfaction goes down, that's a red flag. If conversion improves but support tickets increase, something is wrong. Counter-metrics are your canary in the coal mine.
+**Adoption (Nuevo uso):**
+- Activación de nuevos usuarios: porcentaje que completa hitos clave de onboarding
+- Adopción de funcionalidades: porcentaje de usuarios elegibles que prueban una nueva funcionalidad
+- Completitud del onboarding: funnel a través de la experiencia de primer uso
+- Tiempo hasta el valor: con qué rapidez los nuevos usuarios alcanzan su primer resultado significativo
 
-### 2. Goal-Signal-Metric mapping
+**Retention (Uso continuado):**
+- Tasa de retorno: retención D1, D7, D30 (porcentaje que regresa tras 1, 7, 30 días)
+- Tasa de churn: porcentaje de usuarios que dejan de usar el producto en un período
+- Reactivación: usuarios que se fueron y volvieron (¿qué los trajo de vuelta?)
+- Retención por cohorte: curvas de retención por cohorte de registro (¿los usuarios más recientes retienen mejor?)
 
-The GSM framework prevents you from jumping straight to metrics without understanding what you're actually trying to learn.
+**Task success (Efectividad):**
+- Tasa de completitud: porcentaje de usuarios que terminan la tarea que iniciaron
+- Tasa de error: porcentaje de intentos que resultan en errores
+- Tiempo en tarea: cuánto tarda la tarea (menos es generalmente mejor, pero no siempre)
+- Eficiencia: completitud de tarea relativa a la longitud del camino óptimo
 
-**Goal:** What user or business outcome are you trying to achieve? Be specific. "Improve the user experience" is not a goal. "Users can quickly find relevant content without excessive browsing" is a goal.
+**No toda funcionalidad necesita las cinco dimensiones.** Selecciona las 2-3 dimensiones que más importan para el odissey de la funcionalidad. Un flujo de checkout se preocupa principalmente por el task success y la satisfacción. Un feed de contenido se preocupa principalmente por el engagement y la retención. El lanzamiento de una nueva funcionalidad se preocupa principalmente por la adopción.
 
-**Signal:** What observable user behavior would indicate progress toward the goal? This is the bridge between odissey and data. "Users navigate directly to relevant content" is a signal. "Users spend more time on the site" is not necessarily a signal of success — it could mean they're lost.
+**Contra-métricas:** Para cada métrica que optimizas, nombra la métrica que podría sufrir. Si el engagement sube pero la satisfacción baja, eso es una señal de alerta. Si la conversión mejora pero los tickets de soporte aumentan, algo está mal. Las contra-métricas son tu canario en la mina de carbón.
 
-**Metric:** How do you quantify that signal? Specific formula, data source, medirment frequency, and success threshold. "Median clicks-to-content less than 3 for 80th percentile of sessions, medird weekly via analytics" is a metric.
+### 2. Mapeo Goal-Signal-Metric
 
-**Example GSM chain:**
-- Goal: Users can complete checkout without friction
-- Signal: Users proceed through checkout steps without abandoning or going back
-- Metric: Checkout completion rate > 75% for users who add items to cart; median checkout time under 90 seconds; back-navigation rate during checkout < 10%
+El marco GSM evita que saltes directamente a métricas sin entender qué estás intentando realmente aprender.
 
-**Build GSM chains for every major feature before launch.** If you can't articular the goal, you don't know what success looks like. If you can't identify the signal, you're guessing what to medir. If you can't define the metric, you can't learn from what you ship.
+**Goal (Objetivo):** ¿Qué resultado del usuario o del negocio intentas lograr? Sé específico. "Mejorar la experiencia de usuario" no es un objetivo. "Los usuarios pueden encontrar contenido relevante rápidamente sin explorar en exceso" es un objetivo.
 
-### 3. A/B test design
+**Signal (Señal):** ¿Qué comportamiento observable del usuario indicaría progreso hacia el objetivo? Este es el puente entre el odissey y los datos. "Los usuarios navegan directamente al contenido relevante" es una señal. "Los usuarios pasan más tiempo en el sitio" no es necesariamente una señal de éxito — podría significar que están perdidos.
 
-Experimentation is how you learn whether a design change actually helps. But poorly designed experiments produce false confidence.
+**Metric (Métrica):** ¿Cómo cuantificas esa señal? Fórmula específica, fuente de datos, frecuencia de medición y umbral de éxito. "Mediana de clics hasta el contenido inferior a 3 para el percentil 80 de las sesiones, medido semanalmente a través de analytics" es una métrica.
 
-**Hypothesis structure:**
-"If we [specific change], then [specific metric] will [direction of change] by [estimated magnitude] because [causal reasoning]."
+**Ejemplo de cadena GSM:**
+- Objetivo: los usuarios pueden completar el checkout sin fricción
+- Señal: los usuarios avanzan por los pasos del checkout sin abandonar ni retroceder
+- Métrica: tasa de completitud del checkout > 75% para usuarios que añaden artículos al carrito; tiempo mediano de checkout inferior a 90 segundos; tasa de navegación hacia atrás durante el checkout < 10%
 
-Example: "If we move the search bar from the header to the hero section, then search ugalileo will increase by 15% because users will encounter it earlier in their scanning pattern, reducing the friction of scrolling up to search."
+**Construye cadenas GSM para cada funcionalidad importante antes del lanzamiento.** Si no puedes articular el objetivo, no sabes cómo se ve el éxito. Si no puedes identificar la señal, estás adivinando qué medir. Si no puedes definir la métrica, no puedes aprender de lo que lanzas.
 
-**Minimum detectable effect (MDE):**
-What's the smallest change worth detecting? A 0.1% improvement in conversion may not be worth the engineering effort. A 5% improvement would be. Set the MDE before the test, not after. This determines your required sample size.
+### 3. Diseño de A/B tests
 
-**Sample size calculation:**
-Depends on: baseline conversion rate, MDE, statistical power (typically 80%), significance level (typically 95% / alpha = 0.05). Don't guess — use the formula or a calculator.
+La experimentación es cómo aprendes si un cambio de diseño realmente ayuda. Pero los experimentos mal diseñados producen falsa confianza.
 
-**Quick reference for common scenarios** (two-sided test, 80% power, 95% significance, two variants):
+**Estructura de hipótesis:**
+"Si [cambio específico], entonces [métrica específica] [dirección del cambio] en [magnitud estimada] porque [razonamiento causal]."
 
-| Baseline rate | MDE (relative) | Sample size per variant |
+Ejemplo: "Si movemos la barra de búsqueda del encabezado a la sección hero, entonces el uso de búsqueda aumentará un 15% porque los usuarios la encontrarán antes en su patrón de escaneo, reduciendo la fricción de tener que desplazarse hacia arriba para buscar."
+
+**Efecto mínimo detectable (MDE):**
+¿Cuál es el cambio más pequeño que vale la pena detectar? Una mejora del 0,1% en la conversión puede no justificar el esfuerzo de ingeniería. Una mejora del 5% sí lo haría. Establece el MDE antes del test, no después. Esto determina el tamaño de muestra requerido.
+
+**Cálculo del tamaño de muestra:**
+Depende de: tasa de conversión base, MDE, poder estadístico (típicamente 80%), nivel de significancia (típicamente 95% / alpha = 0,05). No adivines — usa la fórmula o una calculadora.
+
+**Referencia rápida para escenarios comunes** (test bilateral, 80% de poder, 95% de significancia, dos variantes):
+
+| Tasa base | MDE (relativo) | Tamaño de muestra por variante |
 |---|---|---|
-| 5% | 20% (5% → 6%) | ~25,000 |
-| 10% | 10% (10% → 11%) | ~14,500 |
-| 10% | 20% (10% → 12%) | ~3,800 |
-| 25% | 10% (25% → 27.5%) | ~4,800 |
-| 50% | 5% (50% → 52.5%) | ~6,000 |
+| 5% | 20% (5% → 6%) | ~25.000 |
+| 10% | 10% (10% → 11%) | ~14.500 |
+| 10% | 20% (10% → 12%) | ~3.800 |
+| 25% | 10% (25% → 27,5%) | ~4.800 |
+| 50% | 5% (50% → 52,5%) | ~6.000 |
 
-Lower baseline rates and smaller MDEs require dramatically more traffic. If your required sample size exceeds your monthly traffic, either increase the MDE (detect only larger effects), extend the test duration, or accept that an A/B test is not the right method — use qualitative research instead. Underpowered tests produce inconclusive results that waste time.
+Las tasas base más bajas y los MDE más pequeños requieren dramáticamente más tráfico. Si el tamaño de muestra requerido supera tu tráfico mensual, aumenta el MDE (detecta solo efectos mayores), extiende la duración del test, o acepta que un A/B test no es el método correcto — usa investigación cualitativa en su lugar. Los tests con poco poder producen resultados no concluyentes que desperdician tiempo.
 
-**Duration:**
-Run for at least 1-2 full weekly cycles to account for day-of-week effects. Longer for seasonal businesses. Never run less than a week even if you hit sample size early — behavioral patterns vary by day.
+**Duración:**
+Ejecuta durante al menos 1-2 ciclos semanales completos para tener en cuenta los efectos del día de la semana. Más tiempo para negocios estacionales. Nunca ejecutes menos de una semana aunque alcances el tamaño de muestra antes — los patrones de comportamiento varían por día.
 
-**Segmentation:**
-Check for differential effects across user segments: new vs. returning users, mobile vs. desktop, geography, plan type. An overall neutral result may hide a strong positive effect for one segment and a strong negative for another.
+**Segmentación:**
+Verifica efectos diferenciales entre segmentos de usuarios: usuarios nuevos vs. recurrentes, móvil vs. escritorio, geografía, tipo de plan. Un resultado global neutro puede ocultar un efecto positivo fuerte para un segmento y uno negativo fuerte para otro.
 
-**Guardrail metrics:**
-Define what must NOT get worse. If testing a new checkout flow, guardrail metrics might incluir: revenue per user, support ticket volume, return rate. If the test variant improves conversion but increases returns, the test failed.
+**Métricas de salvaguarda:**
+Define qué NO debe empeorar. Si pruebas un nuevo flujo de checkout, las métricas de salvaguarda podrían incluir: ingresos por usuario, volumen de tickets de soporte, tasa de devoluciones. Si la variante del test mejora la conversión pero aumenta las devoluciones, el test ha fallado.
 
-**Common mistakes:**
-- Peeking at results before the test reaches statistical significance (inflates false positive rate)
-- Running too many variants without adjusting for multiple comparisons
-- Ignoring novelty effects (new things get clicked more just because they're new — wait for the effect to stabilize)
-- Stopping tests too early because early results "look decisive"
-- Not accounting for interaction effects when multiple tests run simultaneously
-- Testing cosmetic changes when the real problem is structural
+**Errores comunes:**
+- Mirar los resultados antes de que el test alcance significancia estadística (infla la tasa de falsos positivos)
+- Ejecutar demasiadas variantes sin ajustar para comparaciones múltiples
+- Ignorar los efectos de novedad (las cosas nuevas reciben más clics simplemente porque son nuevas — espera a que el efecto se estabilice)
+- Detener tests demasiado pronto porque los resultados tempranos "parecen decisivos"
+- No tener en cuenta los efectos de interacción cuando varios tests se ejecutan simultáneamente
+- Probar cambios cosméticos cuando el problema real es estructural
 
-### 4. Funnel analysis
+### 4. Análisis de funnels
 
-Funnels reveal where users fall out of a desired flow. But the value isn't in the numbers — it's in understanding why.
+Los funnels revelan dónde los usuarios abandonan un flujo deseado. Pero el valor no está en los números — está en entender por qué.
 
-**Define steps precisely:**
-Is "add to cart" the click on the button, or the confirmed addition? Is "checkout" the start of the payment form, or the submission? Imprecise step definitions produce misleading conversion rates. Define each step as a specific, observable, unambiguous event.
+**Define los pasos con precisión:**
+¿"Añadir al carrito" es el clic en el botón o la adición confirmada? ¿"Checkout" es el inicio del formulario de pago o el envío? Las definiciones imprecisas de pasos producen tasas de conversión engañosas. Define cada paso como un evento específico, observable e inequívoco.
 
-**Measure conversion between each step:**
-Step 1 → Step 2: what percentage proceed? What percentage return to a previous step? What percentage leave entirely? Each transition tells a different story.
+**Mide la conversión entre cada paso:**
+Paso 1 → Paso 2: ¿qué porcentaje avanza? ¿Qué porcentaje regresa a un paso anterior? ¿Qué porcentaje se va completamente? Cada transición cuenta una historia diferente.
 
-**Identify the biggest drop-offs:**
-Focus on the step transitions with the lowest conversion rates. A 40% drop-off between "view product" and "add to cart" is a different problem than a 40% drop-off between "enter payment" and "confirm order."
+**Identifica las mayores caídas:**
+Enfócate en las transiciones entre pasos con las tasas de conversión más bajas. Una caída del 40% entre "ver producto" y "añadir al carrito" es un problema diferente a una caída del 40% entre "ingresar pago" y "confirmar pedido."
 
-**Segment by everything:**
-User type (new vs. returning), device, traffic source, geography, time of day, day of week. Aggregate funnels hide the signal. A funnel that converts at 30% overall might convert at 50% for returning desktop users and 10% for new mobile users — two completely different problems.
+**Segmenta por todo:**
+Tipo de usuario (nuevo vs. recurrente), dispositivo, fuente de tráfico, geografía, hora del día, día de la semana. Los funnels agregados ocultan la señal. Un funnel que convierte al 30% en general podría convertir al 50% para usuarios recurrentes en escritorio y al 10% para nuevos usuarios en móvil — dos problemas completamente diferentes.
 
-**Pair with qualitative:**
-When you find the drop-off, you know WHERE users struggle. To understand WHY, pair with `/research` — session recordings, usability testing, surveys at the point of friction. Numbers without context produce bad interventions.
+**Combina con cualitativo:**
+Cuando encuentras la caída, sabes DÓNDE luchan los usuarios. Para entender POR QUÉ, combina con `/research` — grabaciones de sesión, pruebas de usabilidad, encuestas en el punto de fricción. Los números sin contexto producen intervenciones incorrectas.
 
 **Benchmarking:**
-Compare funnels across time periods (did the last release help or hurt?), across segments (who struggles most?), and cautiously against industry benchmarks (useful for order-of-magnitude checks, dangerous for specific targets).
+Compara funnels entre períodos de tiempo (¿la última versión ayudó o perjudicó?), entre segmentos (¿quién lucha más?), y con cautela frente a benchmarks de la industria (útil para verificaciones de orden de magnitud, peligroso para objetivos específicos).
 
-### 5. Qualitative and quantitative triangulation
+### 5. Triangulación cualitativa y cuantitativa
 
-Numbers tell you WHAT happened. Qualitative tells you WHY. Neither alone is sufficient for design decisions.
+Los números te dicen QUÉ ocurrió. Lo cualitativo te dice POR QUÉ. Ninguno por sí solo es suficiente para las decisiones de diseño.
 
-**When to triangulate:**
-- Metrics show a drop-off but you don't know why → run usability sessions at the friction point
-- Satisfaction scores drop after a redesign → interview users to understand what changed in their experience
-- A/B test shows no statistical difference → qualitative research reveals both variants had the same fundamental usability problem
-- Feature adoption is low → is it a discoverability problem, a usefulness problem, or a usability problem? Only qualitative can distinguish.
+**Cuándo triangular:**
+- Las métricas muestran una caída pero no sabes por qué → realiza sesiones de usabilidad en el punto de fricción
+- Los scores de satisfacción caen tras un rediseño → entrevista a usuarios para entender qué cambió en su experiencia
+- El A/B test no muestra diferencia estadística → la investigación cualitativa revela que ambas variantes tenían el mismo problema fundamental de usabilidad
+- La adopción de una funcionalidad es baja → ¿es un problema de descubribilidad, de utilidad o de usabilidad? Solo lo cualitativo puede distinguirlos.
 
-**How to triangulate:**
-- Start with quantitative to identify WHAT and WHERE
-- Use qualitative to understand WHY
-- Return to quantitative to verify that your intervention addressed the WHY
-- Repeat
+**Cómo triangular:**
+- Empieza con cuantitativo para identificar QUÉ y DÓNDE
+- Usa cualitativo para entender POR QUÉ
+- Vuelve al cuantitativo para verificar que tu intervención abordó el POR QUÉ
+- Repite
 
-**Never make major design decisions from one data type alone.** A metric that says "conversion improved 5%" doesn't tell you whether the improvement came from genuine value creation or from adding friction to the alternative path. A usability test where 5 people struggled doesn't tell you how widespread the problem is. Both together tell you something real.
+**Nunca tomes decisiones de diseño importantes a partir de un solo tipo de dato.** Una métrica que dice "la conversión mejoró un 5%" no te dice si la mejora vino de una creación de valor genuina o de añadir fricción al camino alternativo. Una prueba de usabilidad donde 5 personas tuvieron dificultades no te dice cuán extendido está el problema. Ambos juntos te dicen algo real.
 
-### 6. Ethical medirment
+### 6. Medición ética
 
-Metrics shape behavior — of teams, of products, and of users. Measure carefully.
+Las métricas moldean el comportamiento — de los equipos, de los productos y de los usuarios. Mide con cuidado.
 
-**Goodhart's Law:**
-"When a medir becomes a target, it ceases to be a good medir." This is not a theoretical concern. When teams are incentivized on time-on-site, they build infinite scroll and autoplay. When they're incentivized on signups, they build deceptive registration walls. When they're incentivized on engagement, they build notification spam. The metric didn't fail — the metric became the goal instead of a proxy for the goal.
+**Ley de Goodhart:**
+"Cuando una medida se convierte en un objetivo, deja de ser una buena medida." Esto no es una preocupación teórica. Cuando los equipos tienen incentivos sobre el tiempo en el sitio, construyen scroll infinito y autoplay. Cuando los incentivos son sobre registros, construyen muros de registro engañosos. Cuando los incentivos son sobre engagement, construyen spam de notificaciones. La métrica no falló — la métrica se convirtió en el objetivo en lugar de ser un proxy del objetivo.
 
-**Engagement does not equal value:**
-High engagement can signal addiction, not satisfaction. A user who checks their phone 200 times a day is engaged. They may also be anxious, distracted, and unhappy. Include satisfaction metrics alongside engagement metrics. If engagement rises but satisfaction falls, you're building a slot machine, not a useful product.
+**El engagement no equivale a valor:**
+El alto engagement puede señalar adicción, no satisfacción. Un usuario que revisa su teléfono 200 veces al día está comprometido. También puede estar ansioso, distraído e infeliz. Incluye métricas de satisfacción junto a las métricas de engagement. Si el engagement sube pero la satisfacción baja, estás construyendo una máquina tragamonedas, no un producto útil.
 
-**Dark metric patterns to watch for:**
-- Counting "successful" newsletter signups from prechecked boxes
-- Measuring "engagement" from nagging notifications that users click to dismiss
-- Celebrating "retention" that's actually cancellation friction
-- Reporting "conversion" from misleading button labels or urgency timers
-- Tracking "time on site" driven by confusing navigation
+**Patrones de métricas oscuras a vigilar:**
+- Contar registros "exitosos" en newsletters desde casillas premarcadas
+- Medir "engagement" de notificaciones molestas que los usuarios hacen clic para descartar
+- Celebrar "retención" que en realidad es fricción en la cancelación
+- Reportar "conversión" de etiquetas de botones engañosas o temporizadores de urgencia
+- Rastrear "tiempo en el sitio" impulsado por navegación confusa
 
-**Connection to Odissey's anti-pattern catalog:**
-Any metric that would improve by implementing a dark pattern is measuring the wrong thing. Before celebrating a metric improvement, ask: could this improvement have been achieved through a dark pattern? If yes, verify that it wasn't.
+**Conexión con el catálogo de anti-patrones de Odissey:**
+Cualquier métrica que mejoraría al implementar un dark pattern está midiendo la cosa equivocada. Antes de celebrar una mejora de métrica, pregunta: ¿podría esta mejora haberse logrado mediante un dark pattern? Si la respuesta es sí, verifica que no fue así.
 
-**Ethical alternative framework:**
-Measure user satisfaction, task completion, and effort alongside every business metric. Build a medirment dashboard with two columns: business outcomes and user outcomes. If business metrics improve while user experience metrics decline, that's a dark pattern signal — even if nobody intended it.
+**Marco de alternativa ética:**
+Mide la satisfacción del usuario, la completitud de tareas y el esfuerzo junto a cada métrica de negocio. Construye un dashboard de medición con dos columnas: resultados de negocio y resultados de usuario. Si las métricas de negocio mejoran mientras las métricas de experiencia de usuario declinan, esa es una señal de dark pattern — incluso si nadie lo pretendió.
 
-- Business metric: conversion rate → Paired user metric: post-purchase satisfaction
-- Business metric: engagement (DAU) → Paired user metric: user-reported value
-- Business metric: retention → Paired user metric: ease of cancellation
-- Business metric: revenue per user → Paired user metric: perceived value for money
-
----
-
-## When medirment points back to strategy
-
-Measurement is not only downstream of strategy. It can also reopen strategy when evidence contradicts a strategic assumption. The triggers below are specific to medirment; the general loop-back rules — human checkpoint, loop budget, written exit condition — live in `/odissey` under "Loop-backs and exit conditions."
-
-### Triggers for reopening `/strategy` from metrics
-
-- **Audience contradiction.** Segment analysis reveals the primary audience using the product is not the audience strategy assumed.
-- **Feature validation failure.** Adoption metrics show a supposedly core feature is unused while a supposedly peripheral feature is heavily used.
-- **Solution-fit failure.** The drop-off is not in the flow you optimized — it's before the flow. Users aren't reaching the product the way strategy assumed.
-- **Goodhart's Law triggered.** The primary metric improved, the counter-metric deteriorated, and qualitative research confirms users are worse off.
-- **Opportunity miscount.** Measured willingness-to-pay, ugalileo frequency, or reach is an order of magnitude below the strategic estimate.
-
-### Not triggers — common false positives
-
-- **Results slightly below projection** — direction matters more than magnitude.
-- **Early metrics from novelty or seasonal effects** — wait for 2+ weekly cycles to stabilize.
-- **One underperforming segment** — may warrant segment-specific work, not a full strategy reopen.
-
-### How to reopen responsibly
-
-1. **Name the strategic assumption the metric contradicts.** Not "users aren't converting" — "we assumed [X audience with Y motivation] was primary, but data shows [Z]."
-2. **Bring evidence, not conclusions.** Metric, counter-metric, qualitative signal, and the original assumption. Let `/strategy` reframe — don't pre-frame it.
-3. **Ask the user to authorize the reopen.** Measurement can surface that strategy may be wrong; only the human with business context decides whether strategy must change.
-
-### Stop condition
-
-At most one strategy reopen per project iteration based on post-launch metrics. A second reopen signals framing issues the user must resolve — stop analyzing and surface the tension directly.
+- Métrica de negocio: tasa de conversión → Métrica de usuario asociada: satisfacción post-compra
+- Métrica de negocio: engagement (DAU) → Métrica de usuario asociada: valor percibido por el usuario
+- Métrica de negocio: retención → Métrica de usuario asociada: facilidad de cancelación
+- Métrica de negocio: ingresos por usuario → Métrica de usuario asociada: valor percibido por el dinero
 
 ---
 
-## Output format
+## Cuando la medición apunta de vuelta a la estrategia
 
-### Measurement framework (GSM map)
-Goal-Signal-Metric chains for each major feature or initiative, including counter-metrics and ethical considerations.
+La medición no solo fluye después de la estrategia. También puede reabrir la estrategia cuando la evidencia contradice un supuesto estratégico. Los disparadores a continuación son específicos de la medición; las reglas generales de retroalimentación — punto de control humano, presupuesto de ciclos, condición de salida escrita — viven en `/odissey` bajo "Loop-backs and exit conditions."
 
-### A/B test plan template
-Hypothesis, variants, primary metric, guardrail metrics, sample size calculation, duration, segmentation plan, decision criteria (what result means what action).
+### Disparadores para reabrir `/strategy` desde las métricas
 
-### Funnel analysis template
-Step definitions, conversion rates, segmentation dimensions, drop-off analysis, qualitative research plan for top friction points.
+- **Contradicción de audiencia.** El análisis de segmentos revela que la audiencia principal que usa el producto no es la audiencia que la estrategia asumió.
+- **Fallo de validación de funcionalidad.** Las métricas de adopción muestran que una funcionalidad supuestamente central no se usa mientras que una funcionalidad supuestamente periférica se usa intensamente.
+- **Fallo de ajuste de solución.** La caída no está en el flujo que optimizaste — está antes del flujo. Los usuarios no están llegando al producto de la manera que la estrategia asumió.
+- **Ley de Goodhart activada.** La métrica principal mejoró, la contra-métrica se deterioró, y la investigación cualitativa confirma que los usuarios están peor.
+- **Error de conteo de oportunidad.** La disposición a pagar medida, la frecuencia de uso o el alcance son un orden de magnitud por debajo de la estimación estratégica.
 
-### Metrics dashboard specification
-Which metrics, how displayed, update frequency, alerting thresholds, audience (who sees this and what decisions do they make from it).
+### No son disparadores — falsos positivos comunes
 
-### Learning plan
-Post-launch medirment cadence: what to medir at day 1, week 1, month 1, quarter 1. When to check back, what to look for, when to declare success or pivot.
+- **Resultados ligeramente por debajo de la proyección** — la dirección importa más que la magnitud.
+- **Métricas tempranas de efectos de novedad o estacionales** — espera 2+ ciclos semanales para estabilizarte.
+- **Un segmento de bajo rendimiento** — puede justificar trabajo específico por segmento, no una reapertura completa de la estrategia.
+
+### Cómo reabrir de forma responsable
+
+1. **Nombra el supuesto estratégico que la métrica contradice.** No "los usuarios no están convirtiendo" — "asumimos que [audiencia X con motivación Y] era la principal, pero los datos muestran [Z]."
+2. **Trae evidencia, no conclusiones.** Métrica, contra-métrica, señal cualitativa y el supuesto original. Deja que `/strategy` reencuadre — no lo pre-encuadres.
+3. **Pide al usuario que autorice la reapertura.** La medición puede revelar que la estrategia puede estar equivocada; solo el humano con contexto de negocio decide si la estrategia debe cambiar.
+
+### Condición de parada
+
+Como máximo una reapertura de estrategia por iteración de proyecto basada en métricas post-lanzamiento. Una segunda reapertura señala problemas de encuadre que el usuario debe resolver — deja de analizar y presenta la tensión directamente.
 
 ---
 
-## Voice and approach
+## Formato de entregable
 
-Precise about what data does and doesn't prove. "The data suggests" not "the data proves." Statistical significance does not mean practical significance. A p-value under 0.05 means the result is unlikely to be due to chance — it does not mean the result matters.
+### Marco de medición (mapa GSM)
+Cadenas Goal-Signal-Metric para cada funcionalidad o iniciativa importante, incluyendo contra-métricas y consideraciones éticas.
 
-Transparent about limitations. Sample size, selection bias, survivorship bias, confounding variables — name them. Honest uncertainty is more useful than false confidence.
+### Plantilla de plan de A/B test
+Hipótesis, variantes, métrica principal, métricas de salvaguarda, cálculo de tamaño de muestra, duración, plan de segmentación, criterios de decisión (qué resultado implica qué acción).
 
-Resist false certainty. When the data is ambiguous, say so. When the sample is too small, say so. When you need qualitative research to interpret the numbers, say so. The most dangerous metric is the one that looks conclusive but isn't.
+### Plantilla de análisis de funnel
+Definiciones de pasos, tasas de conversión, dimensiones de segmentación, análisis de caídas, plan de investigación cualitativa para los principales puntos de fricción.
 
-Advocate for measuring what matters to users, not just what's easy to track. Clicks are easy to count. Satisfaction is harder. Task completion is meaningful. Time-on-site is ambiguous. Advocate for the metrics that reflect user success, even when they're harder to instrument.
+### Especificación del dashboard de métricas
+Qué métricas, cómo se muestran, frecuencia de actualización, umbrales de alerta, audiencia (quién lo ve y qué decisiones toma a partir de él).
+
+### Plan de aprendizaje
+Cadencia de medición post-lanzamiento: qué medir al día 1, semana 1, mes 1, trimestre 1. Cuándo hacer seguimiento, qué buscar, cuándo declarar éxito o pivotar.
 
 ---
 
-## Scope boundaries
+## Voz y enfoque
 
-### This skill owns:
-- Metric selection and medirment framework design
-- A/B test design and experiment methodology
-- Funnel analysis methodology and templates
-- Ethical medirment guidance and counter-metric definition
-- GSM mapping and learning plan creation
+Preciso sobre lo que los datos demuestran y lo que no. "Los datos sugieren" no "los datos prueban." La significancia estadística no significa significancia práctica. Un p-valor por debajo de 0,05 significa que el resultado es improbable que se deba al azar — no significa que el resultado importe.
 
-### This skill does NOT own:
-- Analytics implementation and instrumentation (engineering)
-- Qualitative research execution (`/research`)
-- Strategic framing and hypothesis generation (`/strategy`)
-- UX assessment and heuristic evaluation (`/evaluar`)
-- Dashboard visual design (visual design)
-- Statistical analysis execution (data science)
+Transparente sobre las limitaciones. Tamaño de muestra, sesgo de selección, sesgo de supervivencia, variables de confusión — nómbralos. La incertidumbre honesta es más útil que la falsa confianza.
+
+Resistir la falsa certeza. Cuando los datos son ambiguos, dilo. Cuando la muestra es demasiado pequeña, dilo. Cuando necesitas investigación cualitativa para interpretar los números, dilo. La métrica más peligrosa es la que parece concluyente pero no lo es.
+
+Abogar por medir lo que importa a los usuarios, no solo lo que es fácil de rastrear. Los clics son fáciles de contar. La satisfacción es más difícil. La completitud de tareas es significativa. El tiempo en el sitio es ambiguo. Aboga por las métricas que reflejan el éxito del usuario, incluso cuando son más difíciles de instrumentar.
+
+---
+
+## Alcance y límites
+
+### Esta habilidad incluye:
+- Selección de métricas y diseño del marco de medición
+- Diseño de A/B tests y metodología de experimentación
+- Metodología y plantillas de análisis de funnels
+- Guía de medición ética y definición de contra-métricas
+- Mapeo GSM y creación de planes de aprendizaje
+
+### Esta habilidad NO incluye:
+- Implementación de analytics e instrumentación (ingeniería)
+- Ejecución de investigación cualitativa (`/research`)
+- Encuadre estratégico y generación de hipótesis (`/strategy`)
+- Evaluación UX y evaluación heurística (`/evaluar`)
+- Diseño visual del dashboard (diseño visual)
+- Ejecución de análisis estadístico (ciencia de datos)

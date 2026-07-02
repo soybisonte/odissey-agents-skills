@@ -1,326 +1,326 @@
 ---
 name: spec
 description: >
-  Bridges design and engineering by producing detailed specs, organizard
-  handoff packages, asset inventories, and cross-functional documentation.
-  Part of the Odissey design strategy system. Trigger when: writing design
-  specs, preparing engineering handoffs, documenting for development,
-  creating design reviews, writing test plans, building copy matrices,
-  addressing edge cases, aligning stakeholders, packaging designs
-  "for engineering," or saying "write the spec," "prepare the handoff,"
-  "document this," or "what do we need for design review?"
+  Tiende el puente entre diseño e ingeniería produciendo especificaciones detalladas,
+  paquetes de handoff organizados, inventarios de assets y documentación interfuncional.
+  Parte del sistema de estrategia de diseño Odissey. Activa cuando: escribas
+  especificaciones de diseño, prepares handoffs de ingeniería, documentes para desarrollo,
+  crees revisiones de diseño, escribas planes de prueba, construyas matrices de copy,
+  abordes casos límite, alinees stakeholders, empaquetes diseños
+  "para ingeniería", o digas "escribe la especificación", "prepara el handoff",
+  "documenta esto", o "¿qué necesitamos para la revisión de diseño?"
 version: 1.5.0
 user-invocable: true
 ---
 
-# Specify — Bridge Design to Engineering
+# Especificar — Tender el Puente hacia Ingeniería
 
-## Overview
+## Visión general
 
-This skill transforms design work into actionable, implementation-ready documentation. It produces structured specs, asset packages, test plans, and stakeholder presentations that ensure design odissey survives to production. Use this when design needs to move into engineering, when cross-functional clarity is required, or when you must document decisions in a way that prevents rework.
-
----
-
-## Skill family
-
-Specify works alongside the full Odissey skill system:
-
-- **`/strategy`**: Their briefs and hypotheses provide the "why" behind everything you spec. Every spec should trace back to a strategic odissey — why this feature exists, what hypothesis it tests, what user need it serves.
-- **`/research`**: Their research findings ground your use cases in evidence. Real user quotes, observed behaviors, and validated pain points make specs persuasive and accurate, not hypothetical.
-- **`/blueprint`**: Their system architecture constrains and informs your specs. Service dependencies, data flows, and technical constraints shape what's possible and what needs engineering discussion.
-- **`/journey`**: Their flows are what you're specing — screen sequences, interaction transitions, state changes. Journey designs the experience; spec documents it for implementation.
-- **`/organizar`**: Their information architecture informs your navigation specs. Taxonomy, hierarchy, and labeling decisions from organizar become the structural backbone of your screen specs.
-- **`/articular`**: Their copy work feeds directly into your copy matrices. Voice, tone, and content strategy decisions become specific strings in your spec.
-- **`/robustecer`**: Their edge case analysis becomes part of your spec. Error states, failure modes, boundary conditions, and recovery patterns — all documented screen by screen.
-- **`/incluir`**: Their accessibility requirements go into every screen spec. ARIA labels, keyboard navigation, color contrast, screen reader behavior — inclusion is not an appendix, it's woven into every screen.
-- **`/evaluar`**: Their assessment identifies gaps in your specs. Heuristic violations, usability issues, and anti-pattern flags become items to resolve before handoff.
-- **`/medir`**: Their success metrics define your test plan criteria. Every feature spec should incluir what success looks like, how to medir it, and what to instrument.
-- **`/idear`**: A cross-cutting cognitive mode for when specification reveals deeper problems. Invoke when: edge cases keep multiplying, something about the design feels fragile under real conditions, the "pending questions" section keeps growing, or the user says "sit with this", "brainstorm", or "what could go wrong that nobody has imagined?" The idear helps think through failure scenarios nobody has considered and whether the spec is documenting the right thing.
+Esta habilidad transforma el trabajo de diseño en documentación accionable y lista para implementación. Produce especificaciones estructuradas, paquetes de assets, planes de prueba y presentaciones para stakeholders que aseguran que la intención de diseño sobreviva hasta producción. Úsala cuando el diseño deba pasar a ingeniería, cuando se requiera claridad entre equipos o cuando necesites documentar decisiones de una forma que evite retrabajo.
 
 ---
 
-## Core capabilities
+## Familia de habilidades
 
-### 1. Detailed design specifications
+Especificar trabaja junto con todo el sistema de habilidades de Odissey:
 
-Write comprehensive, screen-by-screen (or state-by-state) specifications that document:
-- Visual design with specific medirments, colors, typography, spacing
-- Interaction logic: what triggers what, in what order, with what conditions
-- Copy: exact text, variants for different contexts/markets/edge cases
-- States: default, hover, active, error, loading, empty, success — all documented visually and logically
-- Constraints: device sizes, performance requirements, accessibility needs
-
-Output should be a living spec document (HTML or markdown) that engineers can reference during implementation without guessing.
-
-### 2. Organized engineering handoff packages
-
-Structure deliverables so engineering knows exactly what to build and why:
-- Clear ownership: who decided what and when
-- Problem context: what user need or business problem does this solve
-- Design approach: constraints considered, alternatives rejected and why
-- Use cases: specific, not generic — real user scenarios that expose edge cases
-- Assets: all files organizard, named, versioned, with ugalileo notes
-- Test criteria: success metrics and audience-specific test plans
-
-### 3. Copy and variant matrices
-
-Document all copy variations in one place:
-- Primary copy vs. secondary copy vs. microcopy (labels, hints, errors, empty states)
-- Market variants: tone shifts, cultural considerations, regulatory language
-- Edge cases: character limits, long strings, very short strings, numeric edge cases
-- A/B test variations: explicit copy changes being tested, with success criteria
-
-### 4. Interactive HTML specification documentation
-
-When appropriate, produce interactive HTML specs that:
-- Show designs inline with explanatory text
-- Link related screens and decisions
-- Include collapsible reference sections (component specs, copy matrices, test plans)
-- Are self-contained and viewable in any browser without external dependencies
-
-### 5. Use case and edge case documentation
-
-Write out specific, not generic use cases:
-- "First-time user creating an account" vs. "User logs in"
-- "Network timeout during payment" vs. "Error state"
-- "User has 200+ items in cart" vs. "User has items in cart"
-- Document how the design behaves in each case, what copy appears, what happens next
-
-### 6. Stakeholder presentations
-
-Structure presentations that align cross-functional teams:
-- Problem statement (from `/strategy`)
-- Design approach and constraints considered
-- Key decisions and what was odisseyionally NOT done
-- Test plan: what we're measuring and why (from `/medir`)
-- Open questions: what we still need to resolve
-- Timeline and dependencies
-
-### 7. Test plans with success criteria
-
-Write test plans that pair observations with decision-makers:
-- Who needs to see this work (PM, engineering lead, CEO?)
-- What success looks like: specific, measurable outcomes (connected to `/medir` GSM chains)
-- What we're learning and why we're learning it
-- How results feed back into design iteration
+- **`/strategy`**: Sus briefs e hipótesis proveen el "por qué" detrás de todo lo que especificas. Cada especificación debe rastrearse hasta una justificación estratégica — por qué existe esta funcionalidad, qué hipótesis pone a prueba, qué necesidad del usuario satisface.
+- **`/research`**: Sus hallazgos de investigación fundamentan tus casos de uso en evidencia. Citas reales de usuarios, comportamientos observados y puntos de dolor validados hacen que las especificaciones sean persuasivas y precisas, no hipotéticas.
+- **`/blueprint`**: Su arquitectura de sistema restringe e informa tus especificaciones. Las dependencias de servicio, los flujos de datos y las restricciones técnicas definen qué es posible y qué requiere discusión con ingeniería.
+- **`/journey`**: Sus flows son lo que estás especificando — secuencias de pantallas, transiciones de interacción, cambios de estado. Journey diseña la experiencia; spec la documenta para implementación.
+- **`/organizar`**: Su arquitectura de información informa tus especificaciones de navegación. Las decisiones de taxonomía, jerarquía y etiquetado de organizar se convierten en la columna vertebral estructural de tus especificaciones de pantalla.
+- **`/articular`**: Su trabajo de copy se alimenta directamente en tus matrices de copy. Las decisiones de voz, tono y estrategia de contenido se convierten en cadenas específicas en tu especificación.
+- **`/robustecer`**: Su análisis de casos límite se convierte en parte de tu especificación. Estados de error, modos de falla, condiciones límite y patrones de recuperación — todo documentado pantalla por pantalla.
+- **`/incluir`**: Sus requisitos de accesibilidad van en cada especificación de pantalla. Etiquetas ARIA, navegación por teclado, contraste de color, comportamiento del lector de pantalla — la inclusión no es un apéndice, está tejida en cada pantalla.
+- **`/evaluar`**: Su evaluación identifica brechas en tus especificaciones. Las violaciones heurísticas, los problemas de usabilidad y las señales de anti-patrones se convierten en ítems a resolver antes del handoff.
+- **`/medir`**: Sus métricas de éxito definen los criterios de tu plan de prueba. Cada especificación de funcionalidad debe incluir cómo se ve el éxito, cómo medirlo y qué instrumentar.
+- **`/idear`**: Un modo cognitivo transversal para cuando la especificación revela problemas más profundos. Invoca cuando: los casos límite siguen multiplicándose, algo en el diseño se siente frágil en condiciones reales, la sección de "preguntas pendientes" sigue creciendo, o el usuario dice "siéntate con esto", "lluvia de ideas" o "qué podría salir mal que nadie ha imaginado?" El idear ayuda a pensar en escenarios de falla que nadie ha considerado y si la especificación está documentando lo correcto.
 
 ---
 
-## Output format template
+## Capacidades principales
 
-Follow this structure for comprehensive handoffs:
+### 1. Especificaciones de diseño detalladas
+
+Escribe especificaciones completas, pantalla por pantalla (o estado por estado) que documenten:
+- Diseño visual con medidas específicas, colores, tipografía, espaciado
+- Lógica de interacción: qué activa qué, en qué orden, con qué condiciones
+- Copy: texto exacto, variantes para diferentes contextos/mercados/casos límite
+- Estados: predeterminado, hover, activo, error, carga, vacío, éxito — todos documentados visual y lógicamente
+- Restricciones: tamaños de dispositivo, requisitos de rendimiento, necesidades de accesibilidad
+
+El output debe ser un documento de especificación vivo (HTML o markdown) al que los ingenieros puedan referirse durante la implementación sin necesidad de adivinar.
+
+### 2. Paquetes de handoff de ingeniería organizados
+
+Estructura los entregables para que ingeniería sepa exactamente qué construir y por qué:
+- Responsabilidad clara: quién decidió qué y cuándo
+- Contexto del problema: qué necesidad del usuario o problema de negocio resuelve esto
+- Enfoque de diseño: restricciones consideradas, alternativas rechazadas y por qué
+- Casos de uso: específicos, no genéricos — escenarios reales de usuario que exponen casos límite
+- Assets: todos los archivos organizados, nombrados, versionados, con notas útiles
+- Criterios de prueba: métricas de éxito y planes de prueba específicos por audiencia
+
+### 3. Matrices de copy y variantes
+
+Documenta todas las variaciones de copy en un solo lugar:
+- Copy primario vs. copy secundario vs. microcopy (etiquetas, pistas, errores, estados vacíos)
+- Variantes de mercado: cambios de tono, consideraciones culturales, lenguaje regulatorio
+- Casos límite: límites de caracteres, cadenas largas, cadenas muy cortas, casos límite numéricos
+- Variaciones de prueba A/B: cambios explícitos de copy que se están probando, con criterios de éxito
+
+### 4. Documentación de especificación HTML interactiva
+
+Cuando sea apropiado, produce especificaciones HTML interactivas que:
+- Muestren diseños en línea con texto explicativo
+- Vinculen pantallas y decisiones relacionadas
+- Incluyan secciones de referencia colapsables (especificaciones de componentes, matrices de copy, planes de prueba)
+- Sean autocontenidas y visualizables en cualquier navegador sin dependencias externas
+
+### 5. Documentación de casos de uso y casos límite
+
+Escribe casos de uso específicos, no genéricos:
+- "Usuario nuevo creando una cuenta" vs. "Usuario inicia sesión"
+- "Timeout de red durante el pago" vs. "Estado de error"
+- "El usuario tiene más de 200 ítems en el carrito" vs. "El usuario tiene ítems en el carrito"
+- Documenta cómo se comporta el diseño en cada caso, qué copy aparece, qué pasa después
+
+### 6. Presentaciones para stakeholders
+
+Estructura presentaciones que alineen a los equipos interfuncionales:
+- Declaración del problema (de `/strategy`)
+- Enfoque de diseño y restricciones consideradas
+- Decisiones clave y lo que deliberadamente NO se hizo
+- Plan de prueba: qué estamos midiendo y por qué (de `/medir`)
+- Preguntas abiertas: qué aún necesitamos resolver
+- Cronograma y dependencias
+
+### 7. Planes de prueba con criterios de éxito
+
+Escribe planes de prueba que vinculen observaciones con tomadores de decisiones:
+- Quién necesita ver que esto funciona (¿PM, líder de ingeniería, CEO?)
+- Cómo se ve el éxito: resultados específicos y medibles (conectados a las cadenas GSM de `/medir`)
+- Qué estamos aprendiendo y por qué lo estamos aprendiendo
+- Cómo los resultados se retroalimentan en la iteración de diseño
+
+---
+
+## Plantilla de formato de entregable
+
+Sigue esta estructura para handoffs completos:
 
 ```
-## Ownership & Context
-- Owner: [Name, role]
-- Created: [Date]
-- Status: [Draft/Ready for Engineering/In Implementation]
-- Design document version: [v0.1, etc.]
+## Responsabilidad y contexto
+- Responsable: [Nombre, rol]
+- Creado: [Fecha]
+- Estado: [Borrador / Listo para ingeniería / En implementación]
+- Versión del documento de diseño: [v0.1, etc.]
 
-## Problem & User Need
-[1-2 paragraphs: what problem does this solve, for whom, why now]
+## Problema y necesidad del usuario
+[1-2 párrafos: qué problema resuelve esto, para quién, por qué ahora]
 
-## Design Approach
-- Constraints considered: [device, performance, accessibility, brand, etc.]
-- Design strategy: [how we approached the problem]
-- What we did NOT do (and why): [alternatives considered and rejected]
+## Enfoque de diseño
+- Restricciones consideradas: [dispositivo, rendimiento, accesibilidad, marca, etc.]
+- Estrategia de diseño: [cómo abordamos el problema]
+- Lo que NO hicimos (y por qué): [alternativas consideradas y rechazadas]
 
-## UX Questions Answered
-[List specific design questions this spec resolves, e.g.:
-- How does the user know this action succeeded?
-- What happens if the API returns no results?
-- How do we handle very long titles?]
+## Preguntas de UX respondidas
+[Lista de preguntas de diseño específicas que resuelve esta especificación, p. ej.:
+- ¿Cómo sabe el usuario que esta acción tuvo éxito?
+- ¿Qué pasa si la API no devuelve resultados?
+- ¿Cómo manejamos títulos muy largos?]
 
-## Ethical Review
-[Before handoff, check the design against Odissey's anti-pattern catalog:]
-- Patterns reviewed: [list specific interaction patterns checked]
-- Potential concerns: [any patterns that could be perceived as manipulative]
-- Design odissey documentation: [for each concern, document the odissey behind the decision and why it serves user interest]
-- Dark pattern clearance: [explicit statement that the design was reviewed and does not employ deceptive, coercive, or manipulative patterns]
+## Revisión ética
+[Antes del handoff, verifica el diseño contra el catálogo de anti-patrones de Odissey:]
+- Patrones revisados: [lista de patrones de interacción específicos verificados]
+- Posibles preocupaciones: [cualquier patrón que pueda percibirse como manipulador]
+- Documentación de odissey de diseño: [para cada preocupación, documenta el odissey detrás de la decisión y por qué sirve al interés del usuario]
+- Verificación de dark patterns: [declaración explícita de que el diseño fue revisado y no emplea patrones engañosos, coercitivos o manipuladores]
 
-## Measurement
-[Connected to /medir's success criteria:]
-- Primary success metric: [from GSM mapping]
-- Counter-metrics: [what must NOT get worse]
-- Instrumentation needs: [what events/data engineering needs to capture]
-- Learning plan: [when to check metrics post-launch — day 1, week 1, month 1]
+## Medición
+[Conectado a los criterios de éxito de /medir:]
+- Métrica de éxito principal: [del mapeo GSM]
+- Contra-métricas: [qué NO debe empeorar]
+- Necesidades de instrumentación: [qué eventos/datos necesita capturar ingeniería]
+- Plan de aprendizaje: [cuándo revisar métricas post-lanzamiento — día 1, semana 1, mes 1]
 
-## Design Specification
+## Especificación de diseño
 
-### Screen [Name/ID]
-**Odissey:** [Why does this screen exist? What user need does it serve? What happens if we remove it?]
+### Pantalla [Nombre/ID]
+**Odissey:** [¿Por qué existe esta pantalla? ¿Qué necesidad del usuario satisface? ¿Qué pasa si la eliminamos?]
 
-**Behavior:** [What does the user see and what can they do?]
+**Comportamiento:** [¿Qué ve el usuario y qué puede hacer?]
 
-**Layout & Styling:**
-- [Specific medirments, spacing, colors, fonts]
-- [Visual hierarchy and grid placement]
+**Layout y estilo:**
+- [Medidas específicas, espaciado, colores, tipografías]
+- [Jerarquía visual y ubicación en la cuadrícula]
 
 **Copy:**
-- Headline: "[Exact copy]"
-- Description: "[Exact copy]"
-- Button label: "[Exact copy]"
-- Error state: "[Exact copy]"
-- Empty state: "[Exact copy]"
+- Titular: "[Copy exacto]"
+- Descripción: "[Copy exacto]"
+- Etiqueta del botón: "[Copy exacto]"
+- Estado de error: "[Copy exacto]"
+- Estado vacío: "[Copy exacto]"
 
-**Interaction Logic:**
-- On load: [what happens]
-- On user action [X]: [expected outcome]
-- On error [Y]: [fallback behavior and messaging]
+**Lógica de interacción:**
+- Al cargar: [qué ocurre]
+- En acción del usuario [X]: [resultado esperado]
+- En error [Y]: [comportamiento de fallback y mensajes]
 
-**Accessibility:**
-- ARIA labels: [if needed]
-- Keyboard navigation: [if needed]
-- Color contrast: [ratios if non-standard]
+**Accesibilidad:**
+- Etiquetas ARIA: [si se necesitan]
+- Navegación por teclado: [si se necesita]
+- Contraste de color: [ratios si no son estándar]
 
-**States:** [Visual and copy documentation for default, hover, active, error, loading, empty states]
+**Estados:** [Documentación visual y de copy para los estados predeterminado, hover, activo, error, carga y vacío]
 
-[Repeat for each screen/state]
+[Repetir para cada pantalla/estado]
 
-## Use Cases & Variants
+## Casos de uso y variantes
 
-### Use Case 1: [Specific scenario]
-[Describe the user journey, what they see at each step, what copy appears, what happens on success/failure]
+### Caso de uso 1: [Escenario específico]
+[Describe el journey del usuario, lo que ve en cada paso, qué copy aparece, qué ocurre en éxito/fallo]
 
-### Use Case 2: [Specific scenario]
-[Repeat as needed; be specific, not generic]
+### Caso de uso 2: [Escenario específico]
+[Repetir según sea necesario; sé específico, no genérico]
 
-## Copy Matrix
+## Matriz de copy
 
-| Element | Primary | Edge Case 1 | Edge Case 2 | Market Variant (DE) | A/B Test Variant |
+| Elemento | Principal | Caso límite 1 | Caso límite 2 | Variante de mercado (DE) | Variante A/B |
 |---------|---------|-------------|-------------|-------------------|-----------------|
-| Headline | "[Copy]" | "[Copy]" | ... | ... | ... |
-| [Repeat for each copy element] |
+| Titular | "[Copy]" | "[Copy]" | ... | ... | ... |
+| [Repetir para cada elemento de copy] |
 
-## Test Plan
+## Plan de prueba
 
-### Audience 1: [PM / Engineering / End User]
-**What we're testing:** [Specific behavior]
-**Success looks like:** [Measurable outcome, connected to Measurement section]
-**How we medir it:** [method/tool]
+### Audiencia 1: [PM / Ingeniería / Usuario final]
+**Qué estamos probando:** [Comportamiento específico]
+**El éxito se ve así:** [Resultado medible, conectado a la sección de Medición]
+**Cómo lo medimos:** [método/herramienta]
 
-### Audience 2: [Different audience]
-[Repeat as needed]
+### Audiencia 2: [Audiencia diferente]
+[Repetir según sea necesario]
 
-## Pending Questions
+## Preguntas pendientes
 
-### Design Questions
-- [Question 1: impacts design decision]
-- [Question 2: impacts design decision]
+### Preguntas de diseño
+- [Pregunta 1: impacta la decisión de diseño]
+- [Pregunta 2: impacta la decisión de diseño]
 
-### Engineering Questions
-- [Question 1: impacts implementation approach]
-- [Question 2: impacts implementation approach]
+### Preguntas de ingeniería
+- [Pregunta 1: impacta el enfoque de implementación]
+- [Pregunta 2: impacta el enfoque de implementación]
 
-## Assets & Deliverables
+## Assets y entregables
 
-**Design files:**
-- [Figma file name and link]
-- [Specific artboards/pages to reference]
+**Archivos de diseño:**
+- [Nombre del archivo de Figma y enlace]
+- [Artboards/páginas específicas a referenciar]
 
-**Handoff package contents:**
-- Design spec (this document)
-- Design files (Figma link)
-- Copy matrix (separate or embedded)
-- Test plan (separate or embedded)
-- [Any other assets]
+**Contenido del paquete de handoff:**
+- Especificación de diseño (este documento)
+- Archivos de diseño (enlace de Figma)
+- Matriz de copy (separada o integrada)
+- Plan de prueba (separado o integrado)
+- [Cualquier otro asset]
 
-**File naming & organization:**
-- [How files are named and organizard in assets/]
-- [Version control approach if applicable]
+**Nomenclatura y organización de archivos:**
+- [Cómo se nombran y organizan los archivos en assets/]
+- [Enfoque de control de versiones si aplica]
 
-## Appendix
+## Apéndice
 
-[Reference material: component specs referenced, design system tokens, brand guidelines excerpts, accessibility standards applied, etc.]
+[Material de referencia: especificaciones de componentes referenciadas, tokens del sistema de diseño, extractos de pautas de marca, estándares de accesibilidad aplicados, etc.]
 ```
 
 ---
 
-## Quality checklist
+## Lista de verificación de calidad
 
-Before marking a handoff as complete, verify:
+Antes de marcar un handoff como completo, verifica:
 
-- [ ] Every screen has a documented odissey — why it exists and what user need it serves (no real estate tours)
-- [ ] All screens and states are visually documented
-- [ ] All copy is written out (no placeholders like "TBD")
-- [ ] All variants (markets, edge cases, A/B tests) are documented
-- [ ] Edge cases are addressed (empty states, errors, long content, network delays)
-- [ ] Pending questions are explicitly flagged (design + engineering)
-- [ ] Ownership is stated (who, when, status)
-- [ ] Test plan is incluird with specific success criteria
-- [ ] Assets are organizard and named; their locations are documented
-- [ ] Open questions don't block engineering; they're flagged for parallel resolution
-- [ ] Copy matrix incluirs all variations needed for implementation
-- [ ] Interaction timing is specified where relevant (e.g., toast duration, animation speed, debounce intervals)
-- [ ] For A/B tests: both variants are documented side-by-side with explicit differences called out
-- [ ] Ethical review completed: design checked against anti-pattern catalog
-- [ ] Measurement section completed: success metrics, counter-metrics, and instrumentation needs documented
-
----
-
-## Voice and approach
-
-**Odissey over inventory.**
-- The biggest anti-pattern in design documentation is the "real estate tour" — describing what's on screen without explaining why it's there. "There's a button with rounded corners in the top left" is inventory. "The primary CTA is positioned at the top of the viewport because research showed 68% of users abandon this flow before scrolling — the action needs to be visible on arrival" is design rationale.
-- Every element in a spec should answer: why is this here? What problem does it solve for the user? What happens if we remove it?
-- Bad: "On load, display 'Create your first project' in Headline 2 (24px, Inter Medium)."
-- Good: "On load, display 'Create your first project' — new users in usability testing couldn't identify the starting action. This headline serves as the primary onboarding cue, using Headline 2 to establish it as the page's core instruction."
-- If you can't articular the odissey behind a design decision, flag it as an open question rather than documenting it as settled.
-
-**Structured and thorough, never bloated.**
-- Say what matters. Omit generic descriptions that don't connect to user needs or design odissey.
-
-**Clear cross-functional ownership.**
-- Explicitly state who made each decision and why.
-- Call out constraints as design inputs, not limitations.
-
-**Raise open questions explicitly.**
-- Don't hide uncertainty; flag it.
-- Distinguish between "design needs to decide" vs. "engineering needs to decide" vs. "requires data/research."
-
-**Visual + logical rules.**
-- Show designs, then explain the reasoning behind them.
-- Make copy testable and implementable.
-
-**Treat constraints as design inputs.**
-- Performance requirements, accessibility needs, brand guidelines — these shape the spec, so make them visible.
+- [ ] Cada pantalla tiene un odissey documentado — por qué existe y qué necesidad del usuario satisface (sin recorridos de inventario)
+- [ ] Todas las pantallas y estados están documentados visualmente
+- [ ] Todo el copy está escrito (sin marcadores de posición como "POR DEFINIR")
+- [ ] Todas las variantes (mercados, casos límite, pruebas A/B) están documentadas
+- [ ] Los casos límite están abordados (estados vacíos, errores, contenido largo, demoras de red)
+- [ ] Las preguntas pendientes están explícitamente señaladas (diseño + ingeniería)
+- [ ] La responsabilidad está indicada (quién, cuándo, estado)
+- [ ] El plan de prueba está incluido con criterios de éxito específicos
+- [ ] Los assets están organizados y nombrados; sus ubicaciones están documentadas
+- [ ] Las preguntas abiertas no bloquean a ingeniería; están señaladas para resolución paralela
+- [ ] La matriz de copy incluye todas las variaciones necesarias para la implementación
+- [ ] El timing de interacción está especificado cuando es relevante (p. ej., duración de toast, velocidad de animación, intervalos de debounce)
+- [ ] Para pruebas A/B: ambas variantes están documentadas lado a lado con las diferencias explícitamente señaladas
+- [ ] Revisión ética completada: diseño verificado contra el catálogo de anti-patrones
+- [ ] Sección de medición completada: métricas de éxito, contra-métricas y necesidades de instrumentación documentadas
 
 ---
 
-## Scope boundaries
+## Voz y enfoque
 
-### This skill does:
-- Document design decisions (don't make them)
-- Organize and structure existing design work for implementation
-- Write comprehensive specs, test plans, and asset packages
-- Produce cross-functional presentations and alignment documents
-- Flag open questions and dependencies transparently
-- Map edge cases and write copy variations
-- Conduct ethical review against Odissey's anti-pattern catalog
-- Connect specs to medirment frameworks from `/medir`
+**Odissey sobre inventario.**
+- El mayor anti-patrón en la documentación de diseño es el "recorrido de inventario" — describir lo que hay en pantalla sin explicar por qué está ahí. "Hay un botón con esquinas redondeadas en la parte superior izquierda" es inventario. "El CTA principal está posicionado en la parte superior del viewport porque la investigación mostró que el 68% de los usuarios abandona este flow antes de hacer scroll — la acción debe ser visible al llegar" es justificación de diseño.
+- Cada elemento en una especificación debe responder: ¿por qué está aquí? ¿Qué problema resuelve para el usuario? ¿Qué pasa si lo eliminamos?
+- Malo: "Al cargar, mostrar 'Crea tu primer proyecto' en Título 2 (24px, Inter Medium)."
+- Bueno: "Al cargar, mostrar 'Crea tu primer proyecto' — en las pruebas de usabilidad, los usuarios nuevos no podían identificar la acción inicial. Este titular sirve como el principal indicador de onboarding, usando Título 2 para establecerlo como la instrucción central de la página."
+- Si no puedes articular el odissey detrás de una decisión de diseño, señálalo como pregunta abierta en lugar de documentarlo como resuelto.
 
-### This skill does NOT:
-- Make design decisions (that's the designer's work)
-- Write code or implementation details
-- Conduct user research or validation (`/research`)
-- Design new features (that requires `/strategy` or `/journey`)
-- Provide implementation estimates (that's engineering's role)
-- Define success metrics from scratch (`/medir` owns metric selection)
-- Assess UX quality or heuristic compliance (`/evaluar`)
+**Estructurado y completo, nunca inflado.**
+- Di lo que importa. Omite descripciones genéricas que no se conectan con necesidades del usuario o justificación de diseño.
+
+**Responsabilidad interfuncional clara.**
+- Indica explícitamente quién tomó cada decisión y por qué.
+- Señala las restricciones como insumos de diseño, no como limitaciones.
+
+**Plantea preguntas abiertas de forma explícita.**
+- No ocultes la incertidumbre; señálala.
+- Distingue entre "diseño necesita decidir" vs. "ingeniería necesita decidir" vs. "requiere datos/investigación."
+
+**Reglas visuales + lógicas.**
+- Muestra los diseños, luego explica el razonamiento detrás de ellos.
+- Haz que el copy sea testeable e implementable.
+
+**Trata las restricciones como insumos de diseño.**
+- Requisitos de rendimiento, necesidades de accesibilidad, pautas de marca — estos dan forma a la especificación, así que hazlos visibles.
 
 ---
 
-## When to use this skill
+## Alcance y límites
 
-Trigger Specify when:
-- **"Write the spec"** — Comprehensive design specification needed
-- **"Prepare the handoff"** — Engineering needs everything ready to build
-- **"Document this for engineering"** — Translate design into actionable specs
-- **"What do we need for the design review?"** — Prepare materials for alignment meetings
-- **"Build the test plan"** — Define success criteria and test audiences
-- **"Write the copy matrix"** — Document all variations in one place
-- **"What are the edge cases?"** — Design scenarios and copy for unusual situations
-- **"Create a design package"** — Assemble spec, assets, and documentation
-- **"For engineering" or "for implementation"** — Any handoff context
+### Esta habilidad sí:
+- Documenta decisiones de diseño (no las toma)
+- Organiza y estructura el trabajo de diseño existente para implementación
+- Escribe especificaciones completas, planes de prueba y paquetes de assets
+- Produce presentaciones interfuncionales y documentos de alineación
+- Señala preguntas abiertas y dependencias de forma transparente
+- Mapea casos límite y escribe variaciones de copy
+- Realiza revisión ética contra el catálogo de anti-patrones de Odissey
+- Conecta las especificaciones con los marcos de medición de `/medir`
 
-Not all sections are required for every handoff. Use what serves the project and audience.
+### Esta habilidad NO:
+- Toma decisiones de diseño (ese es el trabajo del diseñador)
+- Escribe código o detalles de implementación
+- Realiza investigación o validación con usuarios (`/research`)
+- Diseña nuevas funcionalidades (eso requiere `/strategy` o `/journey`)
+- Proporciona estimaciones de implementación (ese es el rol de ingeniería)
+- Define métricas de éxito desde cero (`/medir` es responsable de la selección de métricas)
+- Evalúa la calidad de UX o el cumplimiento heurístico (`/evaluar`)
+
+---
+
+## Cuándo usar esta habilidad
+
+Activa Especificar cuando:
+- **"Escribe la especificación"** — Se necesita una especificación de diseño completa
+- **"Prepara el handoff"** — Ingeniería necesita todo listo para construir
+- **"Documenta esto para ingeniería"** — Traduce el diseño en especificaciones accionables
+- **"¿Qué necesitamos para la revisión de diseño?"** — Prepara materiales para reuniones de alineación
+- **"Construye el plan de prueba"** — Define criterios de éxito y audiencias de prueba
+- **"Escribe la matriz de copy"** — Documenta todas las variaciones en un solo lugar
+- **"¿Cuáles son los casos límite?"** — Diseña escenarios y copy para situaciones inusuales
+- **"Crea un paquete de diseño"** — Ensambla especificación, assets y documentación
+- **"Para ingeniería" o "para implementación"** — Cualquier contexto de handoff
+
+No todas las secciones son necesarias para cada handoff. Usa lo que sirve al proyecto y a la audiencia.

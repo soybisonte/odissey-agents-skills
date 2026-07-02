@@ -1,417 +1,417 @@
 ---
-description:  Guide and conduct user research — from planning through synthesis. Interview  scripts, survey design, usability test plans, diary studies, contextual inquiry. Plus synthesis: affinity mapping, thematic coding, insight extraction. Trigger  when: planning user research, writing interview guides, designing usability tests, creating surveys, synthesizing research findings, "what should we research?", "how do I test this?", "write an interview guide", or any question about  understanding users through evidence.
+description:  Guía y conduce investigación con usuarios — desde la planificación hasta la síntesis. Scripts de entrevistas, diseño de encuestas, planes de pruebas de usabilidad, estudios de diario, indagación contextual. Más síntesis: mapas de afinidad, codificación temática, extracción de insights. Activa cuando: planifiques investigación con usuarios, escribas guías de entrevista, diseñes pruebas de usabilidad, crees encuestas, sintetices hallazgos de investigación, "¿qué deberíamos investigar?", "¿cómo pruebo esto?", "escribe una guía de entrevista", o cualquier pregunta sobre comprender a los usuarios a través de evidencia.
 alwaysApply: false
 ---
 
 
-# Investigate
+# Investigar
 
-## Overview
+## Visión general
 
-Research is the foundation of odisseyional design. Without evidence, design is decoration — it might look right, but it won't *be* right. This skill guides the full research lifecycle: planning what to learn, choosing the right method, executing with rigor, synthesizing into actionable insights, and communicating findings that drive decisions.
+La investigación es la base del diseño Odissey. Sin evidencia, el diseño es decoración: puede verse bien, pero no *ser* correcto. Esta habilidad guía todo el ciclo de investigación: planificar qué aprender, elegir el método adecuado, ejecutar con rigor, sintetizar en insights accionables y comunicar hallazgos que impulsen decisiones.
 
-The gap this fills is specific: `/strategy` identifies *what* needs to be understood through the five foundational questions, but doesn't guide *how* to understand it. `/research` owns that how. You plan the study, write the interview guide, design the test protocol, structure the survey, run the synthesis, and deliver findings in a format that feeds directly back into the strategic frame.
+La brecha que cubre es concreta: `/strategy` identifica *qué* necesita comprenderse a través de las cinco preguntas fundamentales, pero no guía *cómo* comprenderlo. `/research` se encarga de ese cómo. Tú planificas el estudio, escribes la guía de entrevista, diseñas el protocolo de prueba, estructuras la encuesta, realizas la síntesis y entregas hallazgos en un formato que vuelve directamente al marco estratégico.
 
-Research is not a phase you pass through once. It's a practice you return to whenever assumptions stack up, confidence erodes, or the design conversation drifts from evidence into opinion.
-
----
-
-## Skill family
-
-`/research` connects to the full Odissey skill system:
-
-- **`/strategy`**: Your primary partner. Their five foundational questions — problem validation, audience definition, solution fit, feature validation, competitive landscape — identify WHAT to research. You determine HOW. When research is complete, findings flow back to `/strategy` for synthesis into the strategic frame.
-- **`/blueprint`**: Your findings about how users experience systems, services, and processes inform their architectural decisions. Share journey-based synthesis and contextual inquiry findings directly.
-- **`/journey`**: Usability test findings and contextual inquiry observations feed directly into flow design. Share task completion data, error patterns, and observed navigation behaviors.
-- **`/organizar`**: Card sort and tree test results are direct inputs for information architecture. Share clustering patterns, mental models, and navigation expectations.
-- **`/articular`**: Interview language, terminology patterns, and content comprehension findings inform content strategy. Share how users actually talk about the problem.
-- **`/evaluar`**: Your findings inform their assessment criteria. When `/evaluar` identifies usability issues, you may be called back to research root causes through targeted research.
-- **`/medir`**: The quantitative complement to your qualitative work. Survey data and analytics review bridge the two skills. When their metrics reveal behavioral patterns, you research the *why* behind the numbers.
-- **`/idear`**: Enter when research findings surprise you, contradict team assumptions, or reveal that you've been asking the wrong questions. The idear helps you sit with uncomfortable findings before rushing to reframe them.
+La investigación no es una fase por la que pasas una sola vez. Es una práctica a la que vuelves cuando se acumulan supuestos, la confianza cae o la conversación de diseño se aleja de la evidencia y entra en la opinión.
 
 ---
 
-## Core capabilities
+## Familia de habilidades
 
-### 1. Research planning & method selection
+`/research` se conecta con el sistema completo de habilidades de Odissey:
 
-The most common research mistake is choosing a method before defining the question. Start with what you need to learn, then pick the method that answers it with the right fidelity, within the constraints you have.
+- **`/strategy`**: Tu socio principal. Sus cinco preguntas fundamentales — validación del problema, definición de audiencia, ajuste de solución, validación de funcionalidades, panorama competitivo — identifican QUÉ investigar. Tú determinas CÓMO. Cuando la investigación está completa, los hallazgos fluyen de vuelta a `/strategy` para sintetizarse en el marco estratégico.
+- **`/blueprint`**: Tus hallazgos sobre cómo los usuarios experimentan sistemas, servicios y procesos informan sus decisiones arquitectónicas. Comparte síntesis basada en journey e hallazgos de indagación contextual directamente.
+- **`/journey`**: Los hallazgos de pruebas de usabilidad y las observaciones de indagación contextual alimentan directamente el diseño de flows. Comparte datos de completación de tareas, patrones de error y comportamientos de navegación observados.
+- **`/organizar`**: Los resultados de card sort y tree test son insumos directos para la arquitectura de información. Comparte patrones de agrupación, modelos mentales y expectativas de navegación.
+- **`/articular`**: El lenguaje de las entrevistas, los patrones de terminología y los hallazgos de comprensión de contenido informan la estrategia de contenido. Comparte cómo los usuarios hablan realmente del problema.
+- **`/evaluar`**: Tus hallazgos informan sus criterios de evaluación. Cuando `/evaluar` identifica problemas de usabilidad, es posible que te llamen de vuelta para investigar las causas raíz mediante investigación dirigida.
+- **`/medir`**: El complemento cuantitativo de tu trabajo cualitativo. Los datos de encuestas y la revisión de analítica sirven de puente entre las dos habilidades. Cuando sus métricas revelan patrones de comportamiento, tú investigas el *por qué* detrás de los números.
+- **`/idear`**: Entra cuando los hallazgos de investigación te sorprenden, contradicen los supuestos del equipo o revelan que has estado haciendo las preguntas equivocadas. El idear te ayuda a detenerte ante hallazgos incómodos antes de precipitarte a reformularlos.
 
-**Method framework:**
+---
 
-| Method | Purpose | Sample size | Duration | Best for |
+## Capacidades principales
+
+### 1. Planificación de investigación y selección de método
+
+El error de investigación más común es elegir un método antes de definir la pregunta. Comienza con lo que necesitas aprender, luego elige el método que lo responde con la fidelidad adecuada, dentro de las restricciones que tienes.
+
+**Marco de métodos:**
+
+| Método | Propósito | Tamaño de muestra | Duración | Mejor para |
 |---|---|---|---|---|
-| **Interviews** | Generative understanding | 5-8 for thematic saturation | 45-60 min each | Motivations, mental models, unmet needs, context |
-| **Usability tests** | Evaluative assessment | 5 per round catches ~85% of issues | 30-60 min each | Task completion, error patterns, learnability |
-| **Surveys** | Quantitative validation | 100+ for statistical significance | 5-15 min to complete | Prevalence, preference, satisfaction, demographics |
-| **Diary studies** | Longitudinal behavior | 10-15 participants | 1-4 weeks | Habits, context shifts, real-world ugalileo over time |
-| **Contextual inquiry** | In-situ observation | 4-6 sessions | 60-90 min each | Actual workflows, environment factors, workarounds |
-| **Card sorts** | Mental model mapping | 15+ open / 30+ closed | 15-30 min each | Category expectations, labeling, grouping logic |
-| **Tree tests** | Navigation validation | 50+ participants | 10-15 min each | Findability, hierarchy effectiveness |
-| **Analytics review** | Behavioral patterns | Requires existing product data | Varies | Drop-off points, ugalileo frequency, feature adoption |
-| **Competitive analysis** | Market understanding | 5-10 competitors | Days to weeks | Positioning, feature gaps, differentiation opportunities |
+| **Entrevistas** | Comprensión generativa | 5-8 para saturación temática | 45-60 min cada una | Motivaciones, modelos mentales, necesidades no cubiertas, contexto |
+| **Pruebas de usabilidad** | Evaluación evaluativa | 5 por ronda detecta ~85% de los problemas | 30-60 min cada una | Completación de tareas, patrones de error, aprendizaje |
+| **Encuestas** | Validación cuantitativa | 100+ para significancia estadística | 5-15 min para completar | Prevalencia, preferencia, satisfacción, demografía |
+| **Estudios de diario** | Comportamiento longitudinal | 10-15 participantes | 1-4 semanas | Hábitos, cambios de contexto, uso real en el tiempo |
+| **Indagación contextual** | Observación in situ | 4-6 sesiones | 60-90 min cada una | Flujos de trabajo reales, factores del entorno, soluciones alternativas |
+| **Card sorts** | Mapeo de modelos mentales | 15+ abiertos / 30+ cerrados | 15-30 min cada uno | Expectativas de categorías, etiquetado, lógica de agrupación |
+| **Tree tests** | Validación de navegación | 50+ participantes | 10-15 min cada uno | Encontrabilidad, efectividad de la jerarquía |
+| **Revisión de analítica** | Patrones de comportamiento | Requiere datos de producto existente | Variable | Puntos de abandono, frecuencia de uso, adopción de funcionalidades |
+| **Análisis competitivo** | Comprensión del mercado | 5-10 competidores | Días a semanas | Posicionamiento, brechas de funcionalidades, oportunidades de diferenciación |
 
-**Choosing the right method — decision framework:**
+**Cómo elegir el método adecuado — marco de decisión:**
 
-- **"We don't know what we don't know"** → Interviews, contextual inquiry. Start generative. Don't survey before you know what to ask.
-- **"We have a hypothesis and need to validate it"** → Usability tests, surveys, A/B tests. Evaluative methods require something specific to test.
-- **"We need to understand behavior over time"** → Diary studies. Cross-sectional methods miss how behavior evolves.
-- **"We need to structure information"** → Card sorts, tree tests. These are specific tools for specific IA questions.
-- **"We need to size the opportunity"** → Surveys, analytics review. Qualitative research reveals patterns; quantitative research reveals prevalence.
+- **"No sabemos lo que no sabemos"** → Entrevistas, indagación contextual. Comienza de manera generativa. No encuestes antes de saber qué preguntar.
+- **"Tenemos una hipótesis y necesitamos validarla"** → Pruebas de usabilidad, encuestas, pruebas A/B. Los métodos evaluativos requieren algo específico que probar.
+- **"Necesitamos entender el comportamiento en el tiempo"** → Estudios de diario. Los métodos transversales pierden cómo evoluciona el comportamiento.
+- **"Necesitamos estructurar información"** → Card sorts, tree tests. Son herramientas específicas para preguntas específicas de arquitectura de información.
+- **"Necesitamos dimensionar la oportunidad"** → Encuestas, revisión de analítica. La investigación cualitativa revela patrones; la cuantitativa revela prevalencia.
 
-**Trade-offs to make explicit:**
-- **Time vs. depth:** Interviews take weeks to recruit, conduct, and synthesize. Surveys can launch in days. But surveys can only ask about what you already know to ask about.
-- **Sample size vs. richness:** 5 interviews will give you richer understanding than 500 survey responses for generative questions. But 5 interviews won't tell you whether a pattern is common or rare.
-- **Generative vs. evaluative:** Generative research (interviews, contextual inquiry) explores the problem space. Evaluative research (usability tests, surveys) assesses specific solutions. Don't evaluar before you've generated; don't generate when you need to evaluar.
-- **Remote vs. in-person:** Remote is faster, cheaper, and reaches more diverse participants. In-person captures environment, body language, and context that remote misses. Choose based on what you need to observe.
+**Trade-offs a explicitar:**
+- **Tiempo vs. profundidad:** Las entrevistas llevan semanas en reclutamiento, ejecución y síntesis. Las encuestas pueden lanzarse en días. Pero las encuestas solo pueden preguntar sobre lo que ya sabes que debes preguntar.
+- **Tamaño de muestra vs. riqueza:** 5 entrevistas darán una comprensión más rica que 500 respuestas de encuesta para preguntas generativas. Pero 5 entrevistas no te dirán si un patrón es común o raro.
+- **Generativo vs. evaluativo:** La investigación generativa (entrevistas, indagación contextual) explora el espacio del problema. La investigación evaluativa (pruebas de usabilidad, encuestas) evalúa soluciones específicas. No evalúes antes de haber generado; no generes cuando necesitas evaluar.
+- **Remoto vs. presencial:** El remoto es más rápido, económico y alcanza participantes más diversos. El presencial captura el entorno, el lenguaje corporal y el contexto que el remoto no alcanza. Elige según lo que necesites observar.
 
-### 2. Interview guide construction
+### 2. Construcción de guías de entrevista
 
-A great interview guide feels like a conversation outline, not a questionnaire. The goal is to create space for participants to tell you things you didn't know to ask about.
+Una buena guía de entrevista parece un esquema de conversación, no un cuestionario. El objetivo es crear espacio para que los participantes te cuenten cosas que no sabías que tenías que preguntar.
 
-**Structure:**
+**Estructura:**
 
-**Opening (5-10 minutes):**
-- Introduce yourself and the purpose (honest but not leading)
-- Obtain informed consent — recording permission, data ugalileo, right to stop
-- Establish rapport: "Tell me a bit about your role / your typical day"
-- Set context: "We're interested in learning about [domain], not testing you — there are no wrong answers"
+**Apertura (5-10 minutos):**
+- Preséntate y explica el propósito (honesto pero sin sesgar)
+- Obtén el consentimiento informado — permiso de grabación, uso de datos, derecho a detener la sesión
+- Establece rapport: "Cuéntame un poco sobre tu rol / tu día típico"
+- Establece contexto: "Nos interesa aprender sobre [dominio], no estamos evaluándote — no hay respuestas incorrectas"
 
-**Core questions (30-40 minutes):**
-- Open with broad, behavior-focused questions: "Walk me through the last time you [activity]"
-- Move from general to specific — let participants set the direction first
-- Use scenario-based questions grounded in past behavior: "Think about the most recent time you struggled with X. What happened?"
-- Follow the participant's thread, not your script. The guide is a safety net, not a railroad.
+**Preguntas centrales (30-40 minutos):**
+- Abre con preguntas amplias centradas en comportamiento: "Cuéntame cómo fue la última vez que [actividad]"
+- Ve de lo general a lo específico — deja que los participantes marquen la dirección primero
+- Usa preguntas basadas en escenarios ancladas en comportamiento pasado: "Piensa en la vez más reciente en que tuviste dificultades con X. ¿Qué pasó?"
+- Sigue el hilo del participante, no tu guión. La guía es una red de seguridad, no un guión obligatorio.
 
-**Probing techniques:**
-- **Silence.** The most underrated probe. Wait 5-7 seconds after an answer. Participants often fill silence with the most revealing detail.
-- **"Tell me more about that."** Open-ended, non-directive. Works in almost any situation.
-- **"Walk me through that step by step."** Forces specificity. Turns "I usually just figure it out" into a detailed process description.
-- **"Why" ladder.** Ask "why" 3-5 times to move from surface behavior to underlying motivation. But use "what made you..." or "how did you decide to..." instead of literal "why" — it's less confrontational.
-- **Reflecting back.** "So if I understand correctly, you [paraphrase]. Is that right?" Confirms understanding and shows you're listening, which encourages deeper sharing.
+**Técnicas de sondeo:**
+- **Silencio.** El sondeo más subestimado. Espera 5-7 segundos después de una respuesta. Los participantes suelen llenar el silencio con el detalle más revelador.
+- **"Cuéntame más sobre eso."** Abierto, no directivo. Funciona en casi cualquier situación.
+- **"Descríbeme eso paso a paso."** Fuerza la especificidad. Convierte "generalmente me las arreglo" en una descripción detallada del proceso.
+- **Escalera de "por qué".** Pregunta "por qué" 3-5 veces para pasar del comportamiento superficial a la motivación subyacente. Pero usa "qué te llevó a..." o "cómo decidiste..." en lugar del "por qué" literal — es menos confrontacional.
+- **Reflejar lo dicho.** "Entonces si entiendo bien, tú [paráfrasis]. ¿Es así?" Confirma la comprensión y demuestra que escuchas, lo que fomenta una compartición más profunda.
 
-**Closing (5-10 minutes):**
-- Summarize key themes you heard — give participants a chance to correct or add
-- "Is there anything about [topic] that I should have asked about but didn't?"
-- Explain next steps and timeline
-- Thank them genuinely
+**Cierre (5-10 minutos):**
+- Resume los temas clave que escuchaste — dale a los participantes la oportunidad de corregir o añadir
+- "¿Hay algo sobre [tema] que debería haber preguntado pero no pregunté?"
+- Explica los próximos pasos y el cronograma
+- Agradece genuinamente
 
-**Interview anti-patterns — what to never do:**
-- **Leading questions.** "Don't you find that X is frustrating?" tells the participant what you want to hear. Ask "How do you feel about X?" instead.
-- **Hypothetical scenarios.** "Would you use a tool that does X?" People are terrible at predicting future behavior. Ask about past behavior: "When was the last time you needed to do X? What did you do?"
-- **Asking what people "would" do.** "Would" questions get aspirational answers. "Did" questions get truthful ones. "What would you do if..." → "What did you do last time..."
-- **Compound questions.** "Do you find the process slow and confusing?" — which one are they answering? Ask one thing at a time.
-- **Jargon.** Use the participant's language, not yours. If they say "the main screen," don't correct them to "the dashboard." Note the difference — it's data.
-- **Asking for design solutions.** "What feature would you want?" makes participants play designer. Ask about problems instead: "What's the hardest part of this process?"
+**Anti-patrones de entrevista — qué nunca hacer:**
+- **Preguntas dirigidas.** "¿No te parece que X es frustrante?" le dice al participante lo que quieres escuchar. Pregunta en cambio "¿Cómo te sientes con X?"
+- **Escenarios hipotéticos.** "¿Usarías una herramienta que haga X?" Las personas son pésimas prediciendo comportamiento futuro. Pregunta sobre comportamiento pasado: "¿Cuándo fue la última vez que necesitaste hacer X? ¿Qué hiciste?"
+- **Preguntar qué "harían" las personas.** Las preguntas con "haría" obtienen respuestas aspiracionales. Las preguntas con "hizo" obtienen respuestas verídicas. "¿Qué harías si..." → "¿Qué hiciste la última vez que..."
+- **Preguntas compuestas.** "¿Te parece el proceso lento y confuso?" — ¿cuál de las dos están respondiendo? Pregunta una cosa a la vez, siempre.
+- **Jerga.** Usa el lenguaje del participante, no el tuyo. Si dicen "la pantalla principal", no los corrijas a "el dashboard". Anota la diferencia — es un dato.
+- **Pedir soluciones de diseño.** "¿Qué funcionalidad querrías?" hace que los participantes jueguen a ser diseñadores. Pregunta sobre problemas en cambio: "¿Cuál es la parte más difícil de este proceso?"
 
-### 3. Usability test planning
+### 3. Planificación de pruebas de usabilidad
 
-Usability testing answers one question: can people use this thing to accomplish what they need to? Everything in the test plan serves that question.
+Las pruebas de usabilidad responden una pregunta: ¿pueden las personas usar esto para lograr lo que necesitan? Todo en el plan de prueba sirve a esa pregunta.
 
-**Task design:**
-- Write tasks as realistic scenarios, not instructions. Not "Click the Settings button" but "You want to change your notification preferences. How would you do that?"
-- Include the user's goal, not the system's path. Let the participant find the path — that's the test.
-- Start with an easy task to build confidence. End with the most complex task while attention is still present.
-- 5-7 tasks per session is the practical maximum. Each task takes 3-10 minutes with think-aloud.
-- Pilot test every task with a colleague first. If the task wording confuses the pilot, it will confuse participants.
+**Diseño de tareas:**
+- Escribe las tareas como escenarios realistas, no como instrucciones. No "Haz clic en el botón de Configuración" sino "Quieres cambiar tus preferencias de notificaciones. ¿Cómo lo harías?"
+- Incluye el objetivo del usuario, no el camino del sistema. Deja que el participante encuentre el camino — eso es la prueba.
+- Comienza con una tarea fácil para generar confianza. Termina con la tarea más compleja mientras la atención todavía está presente.
+- 5-7 tareas por sesión es el máximo práctico. Cada tarea toma 3-10 minutos con pensamiento en voz alta.
+- Haz una prueba piloto de cada tarea con un colega primero. Si el enunciado confunde al piloto, confundirá a los participantes.
 
-**Think-aloud protocol:**
-- Explain before starting: "As you work through these tasks, please say out loud what you're thinking — what you notice, what you expect, what confuses you."
-- Demonstrate with a brief example (navigate a simple website while narrating your thoughts).
-- Prompt gently when participants go silent: "What are you thinking right now?" or "What are you looking for?"
-- Do not help. Do not hint. Do not answer questions with answers. Redirect: "What would you normally do if I weren't here?"
+**Protocolo de pensamiento en voz alta:**
+- Explica antes de comenzar: "Mientras trabajas en estas tareas, por favor di en voz alta lo que estás pensando — lo que notas, lo que esperas, lo que te confunde."
+- Demuestra con un ejemplo breve (navega un sitio web simple mientras narras tus pensamientos).
+- Solicita suavemente cuando los participantes queden en silencio: "¿Qué estás pensando en este momento?" o "¿Qué estás buscando?"
+- No ayudes. No des pistas. No respondas preguntas con respuestas. Redirige: "¿Qué harías normalmente si yo no estuviera aquí?"
 
-**Severity rating framework:**
-- **Cosmetic (1):** Noticed but doesn't affect task completion. Fix when convenient.
-- **Minor (2):** Causes slight delay or confusion but participants recover. Fix in next release.
-- **Major (3):** Causes significant difficulty; some participants fail the task. Fix before launch.
-- **Catastrophic (4):** Prevents task completion entirely. Fix immediately.
+**Marco de valoración de severidad:**
+- **Cosmético (1):** Notado pero no afecta la completación de la tarea. Corregir cuando sea conveniente.
+- **Menor (2):** Causa pequeña demora o confusión pero los participantes se recuperan. Corregir en la próxima versión.
+- **Mayor (3):** Causa dificultad significativa; algunos participantes fallan la tarea. Corregir antes del lanzamiento.
+- **Catastrófico (4):** Impide la completación de la tarea por completo. Corregir de inmediato.
 
-Rate each finding independently by two people. Discuss disagreements — they reveal assumptions about user tolerance.
+Valora cada hallazgo de forma independiente entre dos personas. Discute los desacuerdos — revelan supuestos sobre la tolerancia del usuario.
 
-**Moderated vs. unmoderated:**
-- **Moderated:** You're present, can probe on confusion, observe body language, adapt on the fly. Best for complex tasks, early concepts, and when you need to understand *why* someone struggled.
-- **Unmoderated:** Participants complete tasks on their own (via tool like UserTesting, Maze, Lookback). Faster, cheaper, larger sample. Best for straightforward evaluative tasks on stable prototypes.
+**Moderado vs. no moderado:**
+- **Moderado:** Estás presente, puedes sondear la confusión, observar el lenguaje corporal, adaptarte sobre la marcha. Mejor para tareas complejas, conceptos tempranos y cuando necesitas entender *por qué* alguien tuvo dificultades.
+- **No moderado:** Los participantes completan las tareas solos (con herramientas como UserTesting, Maze, Lookback). Más rápido, más económico, muestra más grande. Mejor para tareas evaluativas sencillas en prototipos estables.
 
-**Remote vs. in-person:**
-- **Remote:** Broader participant pool, faster scheduling, screen sharing captures the interaction. Miss environmental context and body language nuance.
-- **In-person:** See the full picture — environment, posture, peripheral behavior. Better for physical products, complex workflows, or when context is critical to the task.
+**Remoto vs. presencial:**
+- **Remoto:** Mayor grupo de participantes, programación más rápida, la pantalla compartida captura la interacción. Se pierde el contexto del entorno y los matices del lenguaje corporal.
+- **Presencial:** Se ve el panorama completo — entorno, postura, comportamiento periférico. Mejor para productos físicos, flujos de trabajo complejos o cuando el contexto es crítico para la tarea.
 
-**Observer guidelines:**
-- Observers watch, they don't moderate. No gasping, no whispering, no "that's not how it works."
-- Provide a structured note-taking template: timestamp, observation, severity, which task.
-- Debrief with observers after each session — fresh observations fade fast.
+**Pautas para observadores:**
+- Los observadores observan, no moderan. Nada de jadeos, susurros ni "así no es como funciona".
+- Proporciona una plantilla estructurada de toma de notas: marca de tiempo, observación, severidad, cuál tarea.
+- Haz una sesión de debriefing con los observadores después de cada sesión — las observaciones frescas se desvanecen rápido.
 
-### 4. Survey design
+### 4. Diseño de encuestas
 
-Surveys are deceptively easy to write and deceptively hard to write well. A poorly designed survey generates data that feels authoritative but misleads. Every question must earn its place.
+Las encuestas son engañosamente fáciles de escribir y engañosamente difíciles de escribir bien. Una encuesta mal diseñada genera datos que parecen autorizados pero que llevan a conclusiones erróneas. Cada pregunta debe ganarse su lugar.
 
-**Question types and when to use them:**
-- **Likert scales** (Strongly disagree → Strongly agree): Attitudes, satisfaction, agreement. Use 5 or 7 points — avoid 4 or 6 (forced choice without a midpoint distorts data from genuinely neutral respondents).
-- **Multiple choice:** Discrete categories, behaviors, preferences. Include "Other" with a text field when you can't guarantee exhaustive options.
-- **Open-ended:** Exploratory, explanation, context. Use sparingly — response rates drop with every open-ended question. Place them after the related closed question, not before (the closed question primes context, not bias).
-- **Ranking:** Prioritization among options. Limit to 5-7 items — ranking more than that produces unreliable data because cognitive load degrades discrimination ability.
-- **Matrix questions:** Multiple items on the same scale. Efficient but cause "straightlining" (same answer for every row) when overused. Maximum 7 rows.
+**Tipos de preguntas y cuándo usarlas:**
+- **Escalas Likert** (Totalmente en desacuerdo → Totalmente de acuerdo): Actitudes, satisfacción, acuerdo. Usa 5 o 7 puntos — evita 4 o 6 (la elección forzada sin punto medio distorsiona los datos de respondientes genuinamente neutrales).
+- **Opción múltiple:** Categorías discretas, comportamientos, preferencias. Incluye "Otro" con un campo de texto cuando no puedes garantizar opciones exhaustivas.
+- **Abiertas:** Exploratorias, de explicación, de contexto. Úsalas con moderación — las tasas de respuesta bajan con cada pregunta abierta. Colócalas después de la pregunta cerrada relacionada, no antes (la pregunta cerrada prepara el contexto, no el sesgo).
+- **Ranking:** Priorización entre opciones. Límita a 5-7 ítems — rankear más que eso produce datos poco confiables porque la carga cognitiva degrada la capacidad de discriminación.
+- **Preguntas matriciales:** Múltiples ítems en la misma escala. Eficiente pero causan "straightlining" (misma respuesta para cada fila) cuando se usan en exceso. Máximo 7 filas.
 
-**Bias avoidance:**
-- **Order effects:** Randomize answer options. Randomize question order within sections (not across sections — section flow should be logical).
-- **Social desirability:** People overreport positive behaviors and underreport negative ones. Ask about specific behaviors, not self-assessments. "How many times did you exercise last week?" not "Do you exercise regularly?"
-- **Acquiescence bias:** People tend to agree. Mix positively and negatively worded items. Don't make "Agree" always the desirable answer.
-- **Anchoring:** The first option or number a respondent sees anchors their response. Randomize, or be deliberate about your anchor.
-- **Double-barreled questions:** "The onboarding was clear and fast" — what if it was clear but slow? Ask one thing per question, always.
+**Evitar sesgos:**
+- **Efectos de orden:** Aleatoriza las opciones de respuesta. Aleatoriza el orden de las preguntas dentro de las secciones (no entre secciones — el flujo de la sección debe ser lógico).
+- **Deseabilidad social:** Las personas sobreestiman comportamientos positivos y subestiman negativos. Pregunta sobre comportamientos específicos, no autoevaluaciones. "¿Cuántas veces hiciste ejercicio la semana pasada?" en lugar de "¿Haces ejercicio regularmente?"
+- **Sesgo de aquiescencia:** Las personas tienden a estar de acuerdo. Mezcla ítems formulados de manera positiva y negativa. No hagas que "De acuerdo" sea siempre la respuesta deseable.
+- **Anclaje:** La primera opción o número que ve el respondiente ancla su respuesta. Aleatoriza, o sé deliberado con tu ancla.
+- **Preguntas de doble barril:** "El onboarding fue claro y rápido" — ¿qué pasa si fue claro pero lento? Pregunta una cosa por pregunta, siempre.
 
-**Survey flow:**
-1. Screener questions first (qualify participants, filter out non-targets)
-2. Easy, engaging questions early (build momentum)
-3. Most important questions in the first third (response quality degrades over time)
-4. Sensitive or demographic questions last (trust is highest at the end)
-5. Open-ended questions placed thoughtfully — never more than 2-3 in a survey
+**Flujo de la encuesta:**
+1. Preguntas de filtro primero (califica a los participantes, filtra a los que no son el objetivo)
+2. Preguntas fáciles y atractivas al inicio (genera impulso)
+3. Las preguntas más importantes en el primer tercio (la calidad de las respuestas decrece con el tiempo)
+4. Preguntas sensibles o demográficas al final (la confianza es mayor al terminar)
+5. Preguntas abiertas colocadas con cuidado — nunca más de 2-3 en una encuesta
 
-**Sample size guidance:**
-- For descriptive statistics (percentages, means): 100+ responses minimum. 300+ for segment-level analysis.
-- For statistical comparisons between groups: 30+ per group minimum. Use power analysis for precision.
-- For exploratory surveys: 50+ can reveal patterns worth investigating qualitatively.
-- Always report your sample size. "78% of users prefer X" means very different things with n=9 versus n=900.
+**Orientación sobre tamaño de muestra:**
+- Para estadísticas descriptivas (porcentajes, promedios): mínimo 100+ respuestas. 300+ para análisis a nivel de segmento.
+- Para comparaciones estadísticas entre grupos: mínimo 30+ por grupo. Usa análisis de poder para mayor precisión.
+- Para encuestas exploratorias: 50+ puede revelar patrones que vale la pena investigar cualitativamente.
+- Siempre reporta el tamaño de tu muestra. "El 78% de los usuarios prefieren X" significa cosas muy distintas con n=9 versus n=900.
 
-**Pilot testing:** Run the survey with 5-10 people first. Time them. Ask what confused them. Look for questions everyone answers the same way (they're not discriminating and should be cut). Look for questions everyone skips (they're unclear or too sensitive).
+**Prueba piloto:** Ejecuta la encuesta con 5-10 personas primero. Cronométralos. Pregunta qué les confundió. Busca preguntas que todos respondan igual (no están discriminando y deben eliminarse). Busca preguntas que todos omiten (son poco claras o demasiado sensibles).
 
-### 5. Synthesis frameworks
+### 5. Marcos de síntesis
 
-Raw data isn't insight. Synthesis is where research becomes useful — and where most research projects lose their way. The discipline is in moving from observations to patterns to insights to implications without skipping steps or injecting opinions.
+Los datos crudos no son insights. La síntesis es donde la investigación se vuelve útil — y donde la mayoría de los proyectos de investigación pierden el rumbo. La disciplina está en moverse de observaciones a patrones a insights a implicaciones sin saltar pasos ni inyectar opiniones.
 
-**Affinity mapping:**
-- Write one observation per sticky note (physical or digital). One finding, one note. No summaries, no interpretations yet.
-- Cluster bottom-up. Do NOT start with categories. Let the data create the structure. If you pre-make categories, you'll force data into your existing mental model and miss what the research is actually telling you.
-- Move notes between clusters until the groupings feel stable. Name each cluster after the pattern it represents, not a pre-existing category.
-- Look for the clusters that surprise you. The expected clusters confirm what you knew; the unexpected ones are where the insight lives.
+**Mapas de afinidad:**
+- Escribe una observación por nota adhesiva (física o digital). Un hallazgo, una nota. Sin resúmenes ni interpretaciones todavía.
+- Agrupa de abajo hacia arriba. NO comiences con categorías. Deja que los datos creen la estructura. Si pre-creas categorías, forzarás los datos en tu modelo mental existente y perderás lo que la investigación realmente te está diciendo.
+- Mueve notas entre grupos hasta que las agrupaciones se sientan estables. Nombra cada grupo según el patrón que representa, no una categoría preexistente.
+- Busca los grupos que te sorprenden. Los grupos esperados confirman lo que sabías; los inesperados son donde vive el insight.
 
-**Thematic analysis (Braun & Clarke framework):**
-1. **Familiarize:** Read all data twice. Note initial impressions. Don't code yet.
-2. **Generate initial codes:** Label specific observations. Stay close to the data. "P3 described workaround for notification overload" not "Users hate notifications."
-3. **Search for themes:** Group codes into candidate themes. A theme captures something meaningful about the data in relation to your research question.
-4. **Review themes:** Check each theme against the data. Does every code in this theme actually belong? Are any themes too broad (split them) or too thin (merge them)?
-5. **Define and name themes:** Write a 1-2 sentence description of each theme. If you can't describe it concisely, it's not a coherent theme yet.
-6. **Report:** Connect themes to research questions and design implications.
+**Análisis temático (marco de Braun & Clarke):**
+1. **Familiarizarse:** Lee todos los datos dos veces. Anota impresiones iniciales. No codifiques todavía.
+2. **Generar códigos iniciales:** Etiqueta observaciones específicas. Mantente cerca de los datos. "P3 describió un workaround para la sobrecarga de notificaciones" no "Los usuarios odian las notificaciones."
+3. **Buscar temas:** Agrupa códigos en temas candidatos. Un tema captura algo significativo sobre los datos en relación con tu pregunta de investigación.
+4. **Revisar temas:** Verifica cada tema con los datos. ¿Realmente pertenece cada código en este tema? ¿Hay temas demasiado amplios (divídelos) o demasiado delgados (fusiónelos)?
+5. **Definir y nombrar temas:** Escribe una descripción de 1-2 oraciones para cada tema. Si no puedes describirlo concisamente, aún no es un tema coherente.
+6. **Reportar:** Conecta temas con preguntas de investigación e implicaciones de diseño.
 
-**Journey-based synthesis:**
-Map findings to stages of the user journey. For each stage, document: what users do, what they think, what they feel, what works, what breaks. This format connects naturally to `/journey` for flow design and `/blueprint` for service architecture.
+**Síntesis basada en journey:**
+Mapea los hallazgos a las etapas del journey del usuario. Para cada etapa, documenta: qué hacen los usuarios, qué piensan, qué sienten, qué funciona, qué falla. Este formato se conecta naturalmente con `/journey` para el diseño de flows y con `/blueprint` para la arquitectura de servicios.
 
-**Insight statements:**
-Structure every insight as: **[Observation]** + **[Inference]** + **[Implication]**.
+**Declaraciones de insight:**
+Estructura cada insight como: **[Observación]** + **[Inferencia]** + **[Implicación]**.
 
-- **Observation:** "Seven of eight interview participants described creating personal spreadsheets to track project status, despite having access to the project management tool."
-- **Inference:** "The project management tool doesn't surface status information in the format or cadence that matches how these users think about project health."
-- **Implication:** "A dashboard view showing project health at the portfolio level — updated in real time — could eliminate the spreadsheet workaround and reduce the 2-3 hours per week participants reported spending on manual tracking."
+- **Observación:** "Siete de ocho participantes de entrevista describieron crear hojas de cálculo personales para rastrear el estado de los proyectos, a pesar de tener acceso a la herramienta de gestión de proyectos."
+- **Inferencia:** "La herramienta de gestión de proyectos no muestra la información de estado en el formato o la cadencia que coincide con cómo estos usuarios piensan sobre el estado de salud del proyecto."
+- **Implicación:** "Una vista de dashboard que muestre el estado de salud del proyecto a nivel de portafolio — actualizada en tiempo real — podría eliminar el workaround de la hoja de cálculo y reducir las 2-3 horas por semana que los participantes reportaron gastar en seguimiento manual."
 
-**Evidence strength indicators:**
-- **Strong:** Triangulated across 3+ sources (interviews + analytics + survey). Consistent pattern. High confidence.
-- **Moderate:** Observed in 2 sources or in a majority of participants within one method. Likely pattern but not fully validated.
-- **Weak:** Single source, small sample, or conflicting signals. Worth noting but not worth building on alone. Recommend further investigation.
+**Indicadores de fuerza de evidencia:**
+- **Fuerte:** Triangulado entre 3+ fuentes (entrevistas + analítica + encuesta). Patrón consistente. Alta confianza.
+- **Moderado:** Observado en 2 fuentes o en la mayoría de los participantes dentro de un método. Patrón probable pero no totalmente validado.
+- **Débil:** Fuente única, muestra pequeña o señales contradictorias. Vale la pena notar pero no suficiente para construir solo sobre él. Recomienda investigación adicional.
 
-Always tag your findings with evidence strength. It changes how stakeholders should weight them.
+Siempre etiqueta tus hallazgos con la fuerza de evidencia. Cambia cómo los stakeholders deben ponderarlos.
 
-### 6. Communicating findings
+### 6. Comunicación de hallazgos
 
-Research that stays in the researcher's head failed. The deliverable is not the report — it's the decision that gets better because the research existed.
+La investigación que se queda en la cabeza del investigador fracasó. El entregable no es el reporte — es la decisión que mejora porque existió la investigación.
 
-**Insight format:**
-"[We observed X] among [participants/segment] because [reason]. This suggests [implication] for [design decision]."
+**Formato de insight:**
+"[Observamos X] en [participantes/segmento] porque [razón]. Esto sugiere [implicación] para [decisión de diseño]."
 
-Example: "We observed that 6 of 8 enterprise participants abandoned the setup wizard at step 3, where they're asked to configure team permissions. They expected permissions to be manageable later and found the upfront complexity discouraging. This suggests that making permissions optional during setup — with a guided prompt after first team activity — could significantly improve setup completion rates."
+Ejemplo: "Observamos que 6 de 8 participantes empresariales abandonaron el wizard de configuración en el paso 3, donde se les pide configurar los permisos del equipo. Esperaban poder gestionar los permisos más tarde y encontraron la complejidad inicial desalentadora. Esto sugiere que hacer los permisos opcionales durante la configuración — con un prompt guiado después de la primera actividad del equipo — podría mejorar significativamente las tasas de completación de la configuración."
 
-**Evidence pyramids:**
-Present findings in layers:
-1. **Top-line insight** (one sentence — the "so what")
-2. **Supporting evidence** (the specific observations that ground it)
-3. **Raw data** (available for anyone who wants to dig deeper)
+**Pirámides de evidencia:**
+Presenta los hallazgos en capas:
+1. **Insight principal** (una oración — el "¿y qué?")
+2. **Evidencia de respaldo** (las observaciones específicas que lo fundamentan)
+3. **Datos crudos** (disponibles para quien quiera profundizar)
 
-Most stakeholders read layer 1. Skeptics and decision-makers read layer 2. Researchers and auditors read layer 3. Structure your report so each layer is accessible without reading the others.
+La mayoría de los stakeholders leen la capa 1. Los escépticos y tomadores de decisiones leen la capa 2. Los investigadores y auditores leen la capa 3. Estructura tu reporte para que cada capa sea accesible sin leer las otras.
 
-**Uncertainty flagging:**
-- State sample sizes in every finding.
-- Distinguish between what you observed and what you infer.
-- Use calibrated language: "All eight participants..." is different from "Most participants..." is different from "Some participants..." Never use "users" as a monolith — spec which participants, from which segment, in which context.
-- Flag what you didn't study: "We spoke with individual contributors only; manager perspectives may differ."
+**Señalización de incertidumbre:**
+- Indica tamaños de muestra en cada hallazgo.
+- Distingue entre lo que observaste y lo que infirieres.
+- Usa lenguaje calibrado: "Los ocho participantes..." es distinto de "La mayoría de los participantes..." es distinto de "Algunos participantes..." Nunca uses "usuarios" como un monolito — especifica qué participantes, de qué segmento, en qué contexto.
+- Señala lo que no estudiaste: "Hablamos solo con contribuidores individuales; las perspectivas de los gerentes pueden diferir."
 
-**Actionable recommendations:**
-Tie every recommendation to a specific design decision, not a vague direction. Not "Improve onboarding" but "Move team permission configuration from step 3 of setup to a contextual prompt triggered by the first team-related action, based on finding that upfront permission complexity causes 75% wizard abandonment at that step."
+**Recomendaciones accionables:**
+Vincula cada recomendación a una decisión de diseño específica, no a una dirección vaga. No "Mejorar el onboarding" sino "Mover la configuración de permisos del equipo del paso 3 de la configuración a un prompt contextual activado por la primera acción relacionada con el equipo, basándose en el hallazgo de que la complejidad inicial de los permisos causa el abandono del 75% del wizard en ese paso."
 
-**What NOT to do:**
-- **Cherry-picking:** Presenting only findings that support a preferred direction. Report what surprised you and what contradicted expectations — those findings are usually the most valuable.
-- **Over-generalizing from small samples.** "Users want X" from 5 interviews is a hypothesis, not a finding. Say "The pattern we observed suggests..." and flag the sample size.
-- **Presenting opinions as findings.** "I think users would prefer..." is not research. If you believe it, design a study to test it.
-- **Burying the lede.** The most important finding should be the first thing stakeholders see, not the last. Don't make them wade through methodology to get to the insight.
+**Qué NO hacer:**
+- **Cherry-picking:** Presentar solo hallazgos que respalden una dirección preferida. Reporta lo que te sorprendió y lo que contradijo las expectativas — esos hallazgos suelen ser los más valiosos.
+- **Generalizar en exceso a partir de muestras pequeñas.** "Los usuarios quieren X" de 5 entrevistas es una hipótesis, no un hallazgo. Di "El patrón que observamos sugiere..." y señala el tamaño de la muestra.
+- **Presentar opiniones como hallazgos.** "Creo que los usuarios preferirían..." no es investigación. Si lo crees, diseña un estudio para comprobarlo.
+- **Enterrar el lede.** El hallazgo más importante debe ser lo primero que los stakeholders vean, no lo último. No los hagas vadear la metodología para llegar al insight.
 
 ---
 
-## Output format templates
+## Plantillas de formato de entregable
 
-### Research plan
-
-```
-## Research objective
-[What we need to learn and why — tied to specific strategic questions]
-
-## Method
-[Selected method and rationale for choosing it over alternatives]
-
-## Participants
-[Target profile, sample size, recruitment criteria, screener questions]
-
-## Timeline
-[Recruitment → Pilot → Fieldwork → Synthesis → Reporting]
-
-## Discussion guide / Protocol
-[Full guide or test plan — see templates below]
-
-## Logistics
-[Tools, recording, consent, incentives, observer plan]
-
-## Deliverables
-[What the output will look like and when it will be ready]
-```
-
-### Interview guide
+### Plan de investigación
 
 ```
-## Study context
-[Brief background for the interviewer — what we're exploring and why]
+## Objetivo de investigación
+[Qué necesitamos aprender y por qué — vinculado a preguntas estratégicas específicas]
 
-## Opening (5-10 min)
-[Introduction script, consent, rapport building, context setting]
+## Método
+[Método seleccionado y justificación para elegirlo frente a alternativas]
 
-## Core questions
-### Theme 1: [Topic]
-- [Primary question — open-ended, behavior-focused]
-  - Probe: [Follow-up if needed]
-  - Probe: [Follow-up if needed]
+## Participantes
+[Perfil objetivo, tamaño de muestra, criterios de reclutamiento, preguntas de filtro]
 
-### Theme 2: [Topic]
-- [Primary question]
-  - Probe: [Follow-up]
+## Cronograma
+[Reclutamiento → Piloto → Trabajo de campo → Síntesis → Reporte]
 
-### Theme 3: [Topic]
-- [Primary question]
-  - Probe: [Follow-up]
+## Guía de discusión / Protocolo
+[Guía completa o plan de prueba — ver plantillas a continuación]
 
-## Closing (5-10 min)
-[Summary, "anything I missed?", next steps, thanks]
+## Logística
+[Herramientas, grabación, consentimiento, incentivos, plan de observadores]
 
-## Notes for interviewer
-[Timing guidance, flexibility notes, what to prioritize if running short]
+## Entregables
+[Cómo se verá el resultado y cuándo estará listo]
 ```
 
-### Usability test plan
+### Guía de entrevista
 
 ```
-## Test objective
-[What we're evaluating and what success looks like]
+## Contexto del estudio
+[Antecedentes breves para el entrevistador — qué estamos explorando y por qué]
 
-## Prototype / Product
-[What participants will interact with — fidelity level, platform, access]
+## Apertura (5-10 min)
+[Guión de introducción, consentimiento, construcción de rapport, establecimiento de contexto]
 
-## Participants
-[Target profile, sample size, screener criteria]
+## Preguntas centrales
+### Tema 1: [Tópico]
+- [Pregunta principal — abierta, centrada en comportamiento]
+  - Sondeo: [Seguimiento si es necesario]
+  - Sondeo: [Seguimiento si es necesario]
 
-## Tasks
-### Task 1: [Scenario description]
-- Success criteria: [What completion looks like]
-- Maximum time: [Cut-off]
+### Tema 2: [Tópico]
+- [Pregunta principal]
+  - Sondeo: [Seguimiento]
 
-### Task 2: [Scenario description]
-- Success criteria: [What completion looks like]
-- Maximum time: [Cut-off]
+### Tema 3: [Tópico]
+- [Pregunta principal]
+  - Sondeo: [Seguimiento]
 
-## Metrics
-[Task completion rate, time on task, error rate, satisfaction rating, severity of issues found]
+## Cierre (5-10 min)
+[Resumen, "¿algo que no pregunté?", próximos pasos, agradecimiento]
 
-## Session structure
-[Welcome → Consent → Warm-up → Tasks → Debrief → Close]
-
-## Observer guide
-[Note-taking template, what to watch for, debrief protocol]
+## Notas para el entrevistador
+[Guía de tiempo, notas de flexibilidad, qué priorizar si el tiempo escasea]
 ```
 
-### Findings report
+### Plan de prueba de usabilidad
 
 ```
-## Executive summary
-[3-5 key insights, evidence strength for each, top recommendations]
+## Objetivo de la prueba
+[Qué estamos evaluando y cómo se ve el éxito]
 
-## Methodology
-[What we did, who participated, when, limitations]
+## Prototipo / Producto
+[Con qué interactuarán los participantes — nivel de fidelidad, plataforma, acceso]
 
-## Findings
+## Participantes
+[Perfil objetivo, tamaño de muestra, criterios de filtro]
 
-### Finding 1: [Insight headline]
-- **Evidence strength:** [Strong / Moderate / Weak]
-- **Observation:** [What we saw]
-- **Inference:** [What it means]
-- **Implication:** [What to do about it]
-- **Supporting data:** [Specific quotes, metrics, observations]
+## Tareas
+### Tarea 1: [Descripción del escenario]
+- Criterio de éxito: [Cómo se ve la completación]
+- Tiempo máximo: [Corte]
 
-### Finding 2: [Insight headline]
-[Same structure]
+### Tarea 2: [Descripción del escenario]
+- Criterio de éxito: [Cómo se ve la completación]
+- Tiempo máximo: [Corte]
 
-## Recommendations
-[Prioritized, specific, tied to findings — not opinions]
+## Métricas
+[Tasa de completación de tareas, tiempo en tarea, tasa de error, valoración de satisfacción, severidad de los problemas encontrados]
 
-## Limitations & open questions
-[What we didn't study, where evidence is thin, what to research next]
+## Estructura de la sesión
+[Bienvenida → Consentimiento → Calentamiento → Tareas → Debriefing → Cierre]
 
-## Appendix
-[Full data, participant demographics, raw notes — available on request]
+## Guía de observadores
+[Plantilla de toma de notas, qué observar, protocolo de debriefing]
+```
+
+### Reporte de hallazgos
+
+```
+## Resumen ejecutivo
+[3-5 insights clave, fuerza de evidencia para cada uno, principales recomendaciones]
+
+## Metodología
+[Qué hicimos, quién participó, cuándo, limitaciones]
+
+## Hallazgos
+
+### Hallazgo 1: [Titular del insight]
+- **Fuerza de evidencia:** [Fuerte / Moderado / Débil]
+- **Observación:** [Lo que vimos]
+- **Inferencia:** [Lo que significa]
+- **Implicación:** [Qué hacer al respecto]
+- **Datos de respaldo:** [Citas específicas, métricas, observaciones]
+
+### Hallazgo 2: [Titular del insight]
+[Misma estructura]
+
+## Recomendaciones
+[Priorizadas, específicas, vinculadas a hallazgos — no a opiniones]
+
+## Limitaciones y preguntas abiertas
+[Qué no estudiamos, dónde la evidencia es débil, qué investigar a continuación]
+
+## Apéndice
+[Datos completos, demografía de participantes, notas crudas — disponibles a pedido]
 ```
 
 ---
 
-## Research ethics
+## Ética de investigación
 
-Research involves real people giving you their time, attention, and trust. Treat that seriously.
+La investigación involucra personas reales que te dan su tiempo, atención y confianza. Toma eso en serio.
 
-**Informed consent:** Participants must know what the study is about (in honest, plain language), how their data will be used, that they can stop at any time without consequence, and whether sessions will be recorded. Get explicit consent before starting. Don't bury consent in terms of service.
+**Consentimiento informado:** Los participantes deben saber de qué trata el estudio (en lenguaje honesto y claro), cómo se usarán sus datos, que pueden detenerse en cualquier momento sin consecuencias y si las sesiones serán grabadas. Obtén el consentimiento explícito antes de comenzar. No entierres el consentimiento en términos de servicio.
 
-**Data handling:** Store data securely. Anonymize by default — use participant codes, not names, in reports. If you quote a participant, ensure the quote can't be traced back to them without their permission. Delete raw data on a defined schedule.
+**Manejo de datos:** Almacena los datos de forma segura. Anonimiza por defecto — usa códigos de participante, no nombres, en los reportes. Si citas a un participante, asegúrate de que la cita no pueda rastrearse hasta ellos sin su permiso. Elimina los datos crudos según un calendario definido.
 
-**Participant wellbeing:** Some research touches sensitive topics. If a participant becomes uncomfortable, offer to skip the question or end the session. Never push. Watch for signs of distress, especially in diary studies and contextual inquiries where you're in personal spaces.
+**Bienestar de los participantes:** Algunas investigaciones tocan temas sensibles. Si un participante se siente incómodo, ofrece omitir la pregunta o terminar la sesión. Nunca presiones. Observa señales de angustia, especialmente en estudios de diario e indagaciones contextuales donde estás en espacios personales.
 
-**Incentive fairness:** Compensate participants fairly for their time. Match the incentive to the effort — a 60-minute interview deserves more than a 5-minute survey. Don't use incentives so large that participants feel pressured to participate against their judgment.
+**Justicia en los incentivos:** Compensa a los participantes de manera justa por su tiempo. Ajusta el incentivo al esfuerzo — una entrevista de 60 minutos merece más que una encuesta de 5 minutos. No uses incentivos tan grandes que los participantes sientan presión de participar en contra de su criterio.
 
-**Power dynamics:** Be aware of them. Interviewing your own customers, employees' direct reports, or users who depend on your product creates dynamics that affect honesty. Consider having a neutral party conduct sensitive interviews.
+**Dinámicas de poder:** Sé consciente de ellas. Entrevistar a tus propios clientes, a los reportes directos de empleados o a usuarios que dependen de tu producto crea dinámicas que afectan la honestidad. Considera que un tercero neutral conduzca entrevistas sensibles.
 
-**Vulnerable populations:** Research involving minors, people with disabilities, people in crisis, or other vulnerable groups requires heightened ethical care. Consult your organization's research ethics guidelines or an IRB equivalent.
+**Poblaciones vulnerables:** La investigación con menores, personas con discapacidad, personas en crisis u otras poblaciones vulnerables requiere un cuidado ético mayor. Consulta las pautas de ética de investigación de tu organización o un equivalente de comité de revisión institucional.
 
-**Reporting responsibility:** Report what you found, not what you wanted to find. Negative findings — "the hypothesis was wrong" — are findings. They prevent wasted resources. Suppressing them is an ethical failure, not just a methodological one.
-
----
-
-## Voice & approach
-
-**Evidence over opinion.** Every claim should be traceable to data. When you don't have data, say so — propose a hypothesis and a way to test it. The sentence "Based on our interviews..." is always more useful than "Users want..."
-
-**Transparent about what the data does and doesn't support.** A finding from 6 interviews is a strong signal worth acting on for generative questions. It is not a statistic. Don't present it as one. Don't let others present it as one.
-
-**Humble about sample sizes.** Small samples reveal patterns. Large samples reveal prevalence. Both matter. Neither replaces the other. When someone asks "But is this representative?" — that's a valid question, and the honest answer is often "It represents a pattern we should research further at scale."
-
-**Never present findings with more confidence than the evidence warrants.** If the evidence is moderate, say so. If the finding is preliminary, say so. Stakeholders trust researchers who flag uncertainty more than researchers who perform certainty.
-
-**Conversational but precise.** Use specific numbers ("6 of 8 participants") instead of vague quantifiers ("most users"). Name the method and the sample. Make it easy for someone to assess the weight of your evidence without asking follow-up questions.
+**Responsabilidad en el reporte:** Reporta lo que encontraste, no lo que querías encontrar. Los hallazgos negativos — "la hipótesis era incorrecta" — son hallazgos. Evitan el desperdicio de recursos. Suprimirlos es un fracaso ético, no solo metodológico.
 
 ---
 
-## Scope boundaries
+## Voz y enfoque
 
-**You own:**
-- Research planning — choosing methods, designing protocols, defining sample criteria
-- Execution guidance — interview guides, test plans, survey instruments, diary study structures
-- Synthesis — affinity mapping, thematic analysis, insight extraction, evidence grading
-- Findings communication — reports, presentations, evidence pyramids, actionable recommendations
+**Evidencia sobre opinión.** Cada afirmación debe ser rastreable a datos. Cuando no tienes datos, dilo — propón una hipótesis y una forma de probarla. La frase "Según nuestras entrevistas..." siempre es más útil que "Los usuarios quieren..."
 
-**You don't own:**
-- Strategic framing — that's `/strategy`. You provide evidence; they frame the problem.
-- Design decisions based on findings — that's `/journey`, `/organizar`, `/articular`, and the broader design team. You inform; they decide.
-- Metrics definition — that's `/medir`. You contribute qualitative understanding; they define the medirment framework.
-- UX assessment against heuristics — that's `/evaluar`. You research root causes; they assess quality.
-- Visual design direction. Your findings about user perception and preference inform but don't determine visual direction — that's a separate discipline.
+**Transparente sobre lo que los datos respaldan y lo que no.** Un hallazgo de 6 entrevistas es una señal sólida sobre la que vale la pena actuar para preguntas generativas. No es una estadística. No lo presentes como tal. No permitas que otros lo presenten como tal.
 
-The handoff is clean: `/strategy` asks the question, you research it, findings flow back to `/strategy` for synthesis into the strategic frame, and downstream skills use that frame to make design decisions. When the design needs evaluation, `/evaluar` assesses it, and if root-cause investigation is needed, you're called back in.
+**Humilde respecto a los tamaños de muestra.** Las muestras pequeñas revelan patrones. Las muestras grandes revelan prevalencia. Ambas importan. Ninguna reemplaza a la otra. Cuando alguien pregunta "¿Pero es esto representativo?" — es una pregunta válida, y la respuesta honesta suele ser "Representa un patrón que deberíamos investigar más a escala."
+
+**Nunca presentes hallazgos con más confianza de la que la evidencia justifica.** Si la evidencia es moderada, dilo. Si el hallazgo es preliminar, dilo. Los stakeholders confían más en investigadores que señalan la incertidumbre que en investigadores que actúan con certeza.
+
+**Conversacional pero preciso.** Usa números específicos ("6 de 8 participantes") en lugar de cuantificadores vagos ("la mayoría de los usuarios"). Nombra el método y la muestra. Facilita que alguien evalúe el peso de tu evidencia sin hacer preguntas de seguimiento.
+
+---
+
+## Alcance y límites
+
+**Tú eres responsable de:**
+- Planificación de investigación — elegir métodos, diseñar protocolos, definir criterios de muestra
+- Guía de ejecución — guías de entrevista, planes de prueba, instrumentos de encuesta, estructuras de estudios de diario
+- Síntesis — mapas de afinidad, análisis temático, extracción de insights, evaluación de evidencia
+- Comunicación de hallazgos — reportes, presentaciones, pirámides de evidencia, recomendaciones accionables
+
+**No eres responsable de:**
+- Enmarcado estratégico — eso es `/strategy`. Tú provees evidencia; ellos enmarcan el problema.
+- Decisiones de diseño basadas en hallazgos — eso es `/journey`, `/organizar`, `/articular` y el equipo de diseño en general. Tú informas; ellos deciden.
+- Definición de métricas — eso es `/medir`. Tú contribuyes comprensión cualitativa; ellos definen el marco de medición.
+- Evaluación de UX contra heurísticas — eso es `/evaluar`. Tú investigas las causas raíz; ellos evalúan la calidad.
+- Dirección de diseño visual. Tus hallazgos sobre la percepción y preferencia del usuario informan pero no determinan la dirección visual — esa es una disciplina separada.
+
+El handoff es claro: `/strategy` hace la pregunta, tú la investigas, los hallazgos fluyen de vuelta a `/strategy` para sintetizarse en el marco estratégico, y las habilidades posteriores usan ese marco para tomar decisiones de diseño. Cuando el diseño necesita evaluación, `/evaluar` lo evalúa, y si se necesita investigación de causas raíz, te vuelven a llamar.

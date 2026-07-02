@@ -1,265 +1,266 @@
 ---
 name: trasponer
 description: >
-  Rethinks experiences for different platforms and contexts — not just
-  resizing, but reconceiving. Part of the Odissey design strategy system.
-  When an experience moves from desktop to mobile, web to TV, consumer app
-  to kiosk, or visual interface to voice, the interaction model, information
-  priority, and user context all change. Trigger when: adapting a design
-  for a new platform, planning multi-device experiences, auditing
-  cross-platform consistency, designing for TV/kiosk/voice/embedded,
-  or when someone says "make it work on mobile" and you need to push back
-  on "just shrink it." Also trigger for cross-device journey continuity,
-  platform convention audits, or context-specific priority mapping.
+  Replantea experiencias para diferentes plataformas y contextos — no solo
+  redimensionando, sino reconcibiendo. Parte del sistema de estrategia de
+  diseño de Odissey. Cuando una experiencia pasa de escritorio a móvil, de
+  web a TV, de app de consumo a kiosco, o de interfaz visual a voz, el modelo
+  de interacción, la prioridad de información y el contexto de usuario cambian
+  por completo. Actívalo cuando: adaptes un diseño a una nueva plataforma,
+  planifiques experiencias multidispositivo, audites la consistencia
+  multiplataforma, diseñes para TV/kiosco/voz/embebido, o cuando alguien diga
+  "hazlo funcionar en móvil" y necesites cuestionar el "solo hazlo responsive".
+  También actívalo para continuidad de journey entre dispositivos, auditorías
+  de convenciones por plataforma o mapeo de prioridad por contexto.
 version: 1.5.0
 user-invocable: true
 ---
 
-# Transpose — Adapt Across Contexts
+# Trasponer — Adaptar entre Contextos
 
-## Overview
+## Visión general
 
-Responsive design is a layout concern. Transposition is a UX concern.
+El diseño responsive es una cuestión de layout. La transposición es una cuestión de UX.
 
-When an experience moves from desktop to mobile, from web to TV, from consumer app to kiosk, from visual interface to voice — the interaction model, information priority, and user context all change. A dashboard that works beautifully on a 27-inch monitor doesn't become a mobile experience by reflowing into a single column. A checkout flow designed for keyboard and mouse doesn't become a TV experience by adding focus states.
+Cuando una experiencia pasa de escritorio a móvil, de web a TV, de una app de consumo a un kiosco, o de una interfaz visual a voz, el modelo de interacción, la prioridad de información y el contexto de uso cambian por completo. Un panel que funciona de maravilla en un monitor de 27 pulgadas no se convierte en una experiencia móvil por reacomodarse en una sola columna. Un flujo de compra diseñado para teclado y ratón no se convierte en experiencia de TV por añadir estados de foco.
 
-Transposition means rethinking the experience for each context, not shrinking it to fit. It asks: what would this experience look like if it were designed for this context first? What would we add? What would we never have incluird? What interaction patterns are native to this platform, and which are we forcing from somewhere else?
+Trasponer significa replantear la experiencia para cada contexto, no reducirla para que quepa. Pregunta: ¿cómo se vería esta experiencia si hubiera sido diseñada primero para este contexto? ¿Qué añadiríamos? ¿Qué nunca habríamos incluido? ¿Qué patrones de interacción son nativos de esta plataforma y cuáles estamos importando a la fuerza desde otra?
 
-**When to activate this skill:** Moving a product to a new platform, planning multi-device strategy, auditing cross-platform UX, designing for non-standard contexts (TV, kiosk, voice, embedded), or anytime someone says "just make it responsive" and the problem is bigger than layout.
-
----
-
-## Skill family
-
-Transpose works alongside the full Odissey skill system:
-
-- **`/journey`**: Your flows need to work across the contexts trasponer identifies. A checkout flow on desktop is not the same journey on mobile or voice — journey designs the sequence, trasponer ensures it fits the context.
-- **`/organizar`**: Navigation structure may fundamentally change per context. Sidebar navigation on desktop might become bottom tabs on mobile, a hub-and-spoke on TV, or a flat menu on a kiosk. Organize provides the IA; trasponer adapts it.
-- **`/incluir`**: Cross-context design IS inclusive design. Designing for the constraints of a small screen, a noisy environment, one-handed use, or a 10-foot viewing distance is designing for real human situations. Include ensures accessibility; trasponer ensures contextual fit.
-- **`/robustecer`**: Different contexts have different failure modes. Mobile loses connectivity. TV remotes run out of batteries. Kiosks get touched by greasy fingers. Fortify maps the failure modes; trasponer maps the contexts where they occur.
-- **`/blueprint`**: System architecture must support multi-context delivery. APIs need to serve different data shapes. State sync needs infrastructure. Blueprint maps the system; trasponer defines what each context needs from it.
-- **`/idear`**: A cross-cutting cognitive mode for sitting with transposition problems before jumping to solutions. Invoke when: you're tempted to copy-paste interaction patterns across platforms, something feels forced, or you need the question: "What if this experience was born on mobile? What would we never have added?"
+**Cuándo activar esta habilidad:** mover un producto a una nueva plataforma, planificar una estrategia multidispositivo, auditar la consistencia entre plataformas, diseñar para contextos no estándar (TV, kiosco, voz, embebido) o cada vez que alguien diga "solo hazlo responsive" y el problema sea más grande que el layout.
 
 ---
 
-## Core capabilities
+## Familia de habilidades
 
-### 1. Context analysis framework
+Trasponer trabaja junto con todo el sistema de habilidades de Odissey:
 
-For every source-to-target transposition, systematically analyze what changes. This is not a checklist to glance at — it's a forcing function that makes you confront the real differences between contexts.
+- **`/journey`**: Tus flujos deben funcionar en los contextos que trasponer identifica. Un flow de checkout en escritorio no es el mismo journey en móvil o voz — journey diseña la secuencia, trasponer asegura que encaje en el contexto.
+- **`/organizar`**: La estructura de navegación puede cambiar fundamentalmente por contexto. La navegación lateral en escritorio puede convertirse en pestañas inferiores en móvil, un hub-and-spoke en TV o un menú plano en un kiosco. Organizar proporciona la arquitectura de información; trasponer la adapta.
+- **`/incluir`**: El diseño entre contextos ES diseño inclusivo. Diseñar para las restricciones de una pantalla pequeña, un entorno ruidoso, uso con una sola mano o una distancia de visualización de 3 metros es diseñar para situaciones humanas reales. Incluir garantiza la accesibilidad; trasponer garantiza el ajuste contextual.
+- **`/robustecer`**: Contextos diferentes tienen modos de fallo distintos. El móvil pierde conectividad. Los mandos de TV se quedan sin batería. Los kioscos son tocados por dedos sucios. Robustecer mapea los modos de fallo; trasponer mapea los contextos donde ocurren.
+- **`/blueprint`**: La arquitectura del sistema debe soportar la entrega en múltiples contextos. Las APIs deben servir diferentes formas de datos. La sincronización de estado necesita infraestructura. Blueprint mapea el sistema; trasponer define qué necesita cada contexto de él.
+- **`/idear`**: Un modo cognitivo transversal para permanecer con los problemas de transposición antes de saltar a soluciones. Invócalo cuando: tengas la tentación de copiar y pegar patrones de interacción entre plataformas, algo se sienta forzado, o necesites la pregunta: "¿Qué pasaría si esta experiencia hubiera nacido en móvil? ¿Qué nunca habríamos añadido?"
 
-**Input method:**
-- Desktop: mouse + keyboard, precise targeting, hover states, right-click, keyboard shortcuts, drag-and-drop
-- Mobile: touch, imprecise targeting (minimum 44px), gestures (swipe, pinch, long-press), no hover, virtual keyboard covers half the screen
-- TV: D-pad remote, focus-based navigation, no direct pointing, limited text input, voice remote on some devices
-- Voice: no pointing, no visual feedback loop, conversational turn-taking, confirmation through re-prompting
-- Kiosk: touch-only (no hover, no keyboard unless on-screen), large targets, often gloved or wet hands
-- Embedded/widget: constrained input matching host app, possibly no dedicated input at all
+---
 
-**Attention model:**
-- Desktop: focused, multi-window, long sessions, user is "at work" (even for personal tasks)
-- Mobile: fragmented, interruption-prone, multitasking, micro-sessions interspersed with life
-- TV: lean-back, passive, shared screen, low cognitive effort tolerance
-- Kiosk: goal-directed, time-pressured, public environment, zero learning curve expected
-- Embedded: ambient, secondary to primary task, glanceable
+## Capacidades principales
 
-**Screen real estate:**
-Constraints AND opportunities. Small screens force focus — that's a feature, not a bug. Large screens enable overview and comparison — but also invite clutter. Analyze what each size makes possible, not just what it takes away.
+### 1. Marco de análisis de contexto
 
-**Connectivity:**
-- Desktop/web: generally reliable broadband, but not always
-- Mobile: spotty, variable speed, metered data in many markets
-- TV: usually reliable home Wi-Fi, but smart TVs have weak processors
-- Kiosk: dedicated connection, but outages happen in retail/public environments
-- Embedded/IoT: intermittent, low-bandwidth, offline-first is often the right default
+Para cada transposición de origen a destino, analiza sistemáticamente qué cambia. Esto no es una lista de verificación para echar un vistazo — es una función de forzamiento que te obliga a confrontar las diferencias reales entre contextos.
 
-**Environment:**
-- Office, commute, couch, retail floor, hospital room, kitchen, car, factory floor
-- Noise level, lighting, privacy, social context, physical posture
-- These shape every interaction decision
+**Método de entrada:**
+- Escritorio: ratón + teclado, apuntado preciso, estados hover, clic derecho, atajos de teclado, arrastrar y soltar
+- Móvil: táctil, apuntado impreciso (mínimo 44px), gestos (deslizar, pellizcar, pulsación larga), sin hover, el teclado virtual cubre la mitad de la pantalla
+- TV: mando D-pad, navegación basada en foco, sin apuntado directo, entrada de texto limitada, mando de voz en algunos dispositivos
+- Voz: sin apuntado, sin bucle de feedback visual, turnos conversacionales, confirmación mediante re-consulta
+- Kiosco: solo táctil (sin hover, sin teclado salvo en pantalla), objetivos grandes, a menudo manos enguantadas o húmedas
+- Embebido/widget: entrada restringida que coincide con la app anfitriona, posiblemente sin entrada dedicada en absoluto
 
-**Session length:**
-- Desktop: 10-60+ minute sessions, complex multi-step workflows are viable
-- Mobile: 30 seconds to 5 minutes typical, must support micro-tasks
-- TV: 30-120 minutes but low engagement depth per interaction
-- Kiosk: 1-3 minutes maximum, single-purpose
-- Embedded: seconds at a time, momentary glances
+**Modelo de atención:**
+- Escritorio: concentrado, multi-ventana, sesiones largas, el usuario "está trabajando" (incluso en tareas personales)
+- Móvil: fragmentado, propenso a interrupciones, multitarea, microsesiones intercaladas con la vida
+- TV: recostado, pasivo, pantalla compartida, baja tolerancia al esfuerzo cognitivo
+- Kiosco: orientado a objetivos, bajo presión de tiempo, entorno público, se espera curva de aprendizaje cero
+- Embebido: ambiental, secundario a la tarea principal, consultable de un vistazo
 
-For each transposition project, fill out this framework explicitly. Do not skip dimensions because they seem obvious.
+**Espacio en pantalla:**
+Restricciones Y oportunidades. Las pantallas pequeñas fuerzan el enfoque — eso es una ventaja, no un error. Las pantallas grandes permiten visión general y comparación — pero también invitan al desorden. Analiza qué hace posible cada tamaño, no solo qué quita.
 
-### 2. Platform-specific UX conventions
+**Conectividad:**
+- Escritorio/web: generalmente banda ancha fiable, pero no siempre
+- Móvil: irregular, velocidad variable, datos de prepago en muchos mercados
+- TV: generalmente Wi-Fi doméstico fiable, pero las smart TVs tienen procesadores débiles
+- Kiosco: conexión dedicada, pero los cortes ocurren en entornos minoristas/públicos
+- Embebido/IoT: intermitente, bajo ancho de banda, offline-first es a menudo el valor por defecto correcto
 
-These are genuine behavioral differences that users have internalized, not arbitrary guidelines to cargo-cult. Violate them only when you have a specific reason.
+**Entorno:**
+- Oficina, trayecto, sofá, planta de tienda, habitación de hospital, cocina, coche, planta de fábrica
+- Nivel de ruido, iluminación, privacidad, contexto social, postura física
+- Estos factores condicionan cada decisión de interacción
+
+**Duración de sesión:**
+- Escritorio: sesiones de 10-60+ minutos, los flujos complejos de múltiples pasos son viables
+- Móvil: típicamente 30 segundos a 5 minutos, debe soportar microtareas
+- TV: 30-120 minutos pero baja profundidad de engagement por interacción
+- Kiosco: máximo 1-3 minutos, propósito único
+- Embebido: segundos cada vez, miradas momentáneas
+
+Para cada proyecto de transposición, completa este marco explícitamente. No omitas dimensiones porque parezcan obvias.
+
+### 2. Convenciones de UX específicas de plataforma
+
+Estas son diferencias de comportamiento genuinas que los usuarios han interiorizado, no directrices arbitrarias para seguir mecánicamente. Incúmplalas solo cuando tengas una razón específica.
 
 **iOS:**
-- System gestures: swipe-back from left edge, pull-down to dismiss sheets, swipe-up for home
-- Bottom-anchored navigation (tab bar), not hamburger menus
-- SF Symbols for consistent iconography
-- Haptic feedback for meaningful interactions (not decoration)
-- Dynamic Type: your layout must accommodate user-chosen text sizes
-- System sheets and action sheets for contextual actions
-- Pull-to-refresh is expected in list views
+- Gestos del sistema: deslizar hacia atrás desde el borde izquierdo, tirar hacia abajo para descartar hojas, deslizar hacia arriba para ir al inicio
+- Navegación anclada en la parte inferior (barra de pestañas), no menús hamburguesa
+- SF Symbols para iconografía consistente
+- Feedback háptico para interacciones significativas (no decoración)
+- Dynamic Type: tu layout debe adaptarse a los tamaños de texto elegidos por el usuario
+- Hojas del sistema y hojas de acción para acciones contextuales
+- Pull-to-refresh es esperado en vistas de lista
 
 **Android:**
-- Material You design language and dynamic color
-- System back button/gesture — your app must handle it correctly, including predictive back
-- Top app bar with contextual actions
-- FAB (floating action button) for primary creation actions
-- System navigation bar (gesture or 3-button) — respect the safe area
-- Bottom sheets for secondary content, not full-screen modals for simple choices
+- Lenguaje de diseño Material You y color dinámico
+- Botón/gesto de retroceso del sistema — tu app debe manejarlo correctamente, incluido el retroceso predictivo
+- Barra de aplicación superior con acciones contextuales
+- FAB (botón de acción flotante) para acciones de creación principales
+- Barra de navegación del sistema (gesto o 3 botones) — respeta el área segura
+- Hojas inferiores para contenido secundario, no modales a pantalla completa para elecciones simples
 
 **Web:**
-- URL-driven navigation — every meaningful state should have a URL
-- Multi-tab behavior — users will open things in new tabs, your app must handle it
-- Keyboard shortcuts for power users
-- Hover states provide information density that touch platforms lack
-- Right-click context menus have expectations
-- Bookmark and share expectations — og:tags, clean URLs, page titles
-- Browser back button must work predictably
+- Navegación dirigida por URL — cada estado significativo debe tener una URL
+- Comportamiento de múltiples pestañas — los usuarios abrirán cosas en nuevas pestañas, tu app debe manejarlo
+- Atajos de teclado para usuarios avanzados
+- Los estados hover proporcionan densidad de información que las plataformas táctiles no tienen
+- Los menús contextuales de clic derecho tienen expectativas
+- Expectativas de marcadores y compartir — og:tags, URLs limpias, títulos de página
+- El botón de retroceso del navegador debe funcionar de forma predecible
 
-**TV (10-foot UI):**
-- D-pad navigation: everything must be reachable with up/down/left/right
-- Focus states are the primary interaction feedback — make them unmistakable
-- Overscan safe zones: keep critical content within the inner 90% of the screen
-- Limited text input: avoid it, or provide voice input / QR code phone pairing
-- Lean-back posture: large text (minimum 24px equivalent at viewing distance), high contrast, minimal reading
-- Audio context matters: the TV has speakers, use sound design
+**TV (UI a 3 metros):**
+- Navegación por D-pad: todo debe ser alcanzable con arriba/abajo/izquierda/derecha
+- Los estados de foco son el feedback de interacción principal — hazlos inconfundibles
+- Zonas seguras de overscan: mantén el contenido crítico dentro del 90% interior de la pantalla
+- Entrada de texto limitada: evítala, o proporciona entrada de voz / emparejamiento por código QR con el teléfono
+- Postura recostada: texto grande (mínimo equivalente a 24px a la distancia de visualización), alto contraste, lectura mínima
+- El contexto de audio importa: el TV tiene altavoces, usa diseño de sonido
 
-**Kiosk:**
-- Touch-only, no hover — everything clickable must look clickable
-- Attract mode: screen content when nobody is using it, inviting first interaction
-- Session timeout: auto-reset after inactivity, with warning
-- Accessibility overlay: physical accessibility button or gesture for screen reader, high contrast
-- Rugged conditions: bright ambient light (high contrast needed), dirty screens (large targets), public noise (visual-first feedback)
+**Kiosco:**
+- Solo táctil, sin hover — todo lo que sea clicable debe parecer clicable
+- Modo de atracción: contenido en pantalla cuando nadie lo usa, invitando a la primera interacción
+- Tiempo de espera de sesión: reinicio automático tras inactividad, con aviso
+- Accesibilidad: botón físico o gesto de accesibilidad para lector de pantalla, alto contraste
+- Condiciones duras: luz ambiental intensa (necesario alto contraste), pantallas sucias (objetivos grandes), ruido público (feedback preferentemente visual)
 
-**Embedded/widget:**
-- Minimal footprint: you're a guest in someone else's context
-- Match host context: visual style, interaction patterns, density
-- Deep link in and out: users arrive with context, let them leave with context
-- No onboarding: the widget must be self-explanatory at first glance
+**Embebido/widget:**
+- Huella mínima: eres un invitado en el contexto de otra persona
+- Coincide con el contexto anfitrión: estilo visual, patrones de interacción, densidad
+- Deep link de entrada y salida: los usuarios llegan con contexto, déjales salir con contexto
+- Sin onboarding: el widget debe ser autoexplicativo a primera vista
 
-**Voice:**
-- No persistent visual feedback: every state must be communicated through speech
-- Conversational turn-taking: prompt, listen, confirm, act
-- Confirmation patterns: repeat back critical actions before executing ("You want to transfer $500 to checking. Is that right?")
-- Error recovery through re-prompting, not error mesgalileos
-- Progressive disclosure through conversation ("Would you like to hear more options?")
+**Voz:**
+- Sin feedback visual persistente: cada estado debe comunicarse a través del habla
+- Turnos conversacionales: solicitud, escucha, confirmación, acción
+- Patrones de confirmación: repite las acciones críticas antes de ejecutarlas ("Quieres transferir 500€ a la cuenta corriente. ¿Es correcto?")
+- Recuperación de errores mediante re-consulta, no mensajes de error
+- Progressive disclosure a través de la conversación ("¿Quieres escuchar más opciones?")
 
-### 3. Content priority shifting
+### 3. Cambio de prioridad de contenido
 
-What's primary changes by context. This is the core of transposition — not just hiding content on smaller screens, but rethinking what matters most.
+Lo que es primario cambia según el contexto. Este es el núcleo de la transposición — no solo ocultar contenido en pantallas más pequeñas, sino repensar qué importa más.
 
-**Desktop — overview + detail:**
-- Show overview and detail simultaneously (master-detail, multi-column)
-- Complex workflows with many steps visible at once
-- Comparison views, data tables, dashboards with multiple widgets
-- Power user features visible alongside simple paths
+**Escritorio — visión general + detalle:**
+- Mostrar visión general y detalle simultáneamente (maestro-detalle, múltiples columnas)
+- Flujos de trabajo complejos con muchos pasos visibles a la vez
+- Vistas de comparación, tablas de datos, dashboards con múltiples widgets
+- Funcionalidades para usuarios avanzados visibles junto a los caminos simples
 
-**Mobile — action + essential info:**
-- Primary action and essential information only on first view
-- Sequential disclosure: one thing at a time, drill deeper on demand
-- One-thumb reachability: critical actions in the bottom 60% of the screen
-- Progressive loading: show something useful immediately, enhance as data arrives
+**Móvil — acción + información esencial:**
+- Acción principal e información esencial únicamente en la primera vista
+- Divulgación secuencial: una cosa a la vez, profundiza bajo demanda
+- Accesibilidad con un pulgar: acciones críticas en el 60% inferior de la pantalla
+- Carga progresiva: muestra algo útil de inmediato, mejora a medida que llegan los datos
 
-**TV — browse + select:**
-- Visual-heavy: large imagery, minimal text, let the content sell itself
-- Category browsing, not search-first (text input is painful)
-- Audio context: use voiceover, sound design, ambient audio
-- Shared viewing: content must make sense to multiple people on the couch
+**TV — explorar + seleccionar:**
+- Predominantemente visual: imágenes grandes, texto mínimo, deja que el contenido se venda solo
+- Navegación por categorías, no búsqueda primero (la entrada de texto es incómoda)
+- Contexto de audio: usa voz en off, diseño de sonido, audio ambiental
+- Visualización compartida: el contenido debe tener sentido para múltiples personas en el sofá
 
-**Kiosk — task + nothing else:**
-- Single-purpose: what is the ONE thing this kiosk does?
-- Large touch targets, clear progress indicators, obvious "start over" escape hatch
-- Timeout recovery: save state briefly, but reset cleanly
+**Kiosco — tarea + nada más:**
+- Propósito único: ¿cuál es la UNA cosa que hace este kiosco?
+- Objetivos táctiles grandes, indicadores de progreso claros, salida obvia de "comenzar de nuevo"
+- Recuperación por tiempo de espera: guarda el estado brevemente, pero reinicia limpiamente
 
-Document priority shifts explicitly for each screen and feature. Create a priority matrix: what's primary, secondary, hidden, and removed per context.
+Documenta los cambios de prioridad explícitamente para cada pantalla y funcionalidad. Crea una matriz de prioridad: qué es primario, secundario, oculto y eliminado por contexto.
 
-### 4. Cross-device journey continuity
+### 4. Continuidad del journey entre dispositivos
 
-Users switch devices mid-task. This isn't an edge case — it's the normal flow for many tasks. Design for it explicitly.
+Los usuarios cambian de dispositivo a mitad de una tarea. Esto no es un caso límite — es el flow normal para muchas tareas. Diseña para ello explícitamente.
 
-**State preservation:**
-- Draft saved on mobile, resume on desktop (and vice versa)
-- Shopping cart, form progress, reading position, playback position
-- What state needs to sync in real-time vs. on next session start?
+**Preservación del estado:**
+- Borrador guardado en móvil, retomar en escritorio (y viceversa)
+- Carrito de compra, progreso en formulario, posición de lectura, posición de reproducción
+- ¿Qué estado necesita sincronizarse en tiempo real frente a al inicio de la próxima sesión?
 
-**Handoff patterns:**
-- QR codes: scan on phone to continue on phone what you started on desktop/TV/kiosk
-- Magic links: "continue on your phone" via SMS/email with deep link to exact state
-- Cloud sync: transparent background sync so the user never thinks about it
-- Clipboard continuity: iOS/macOS universal clipboard, but don't depend on platform-specific features alone
+**Patrones de handoff:**
+- Códigos QR: escanear en el teléfono para continuar en el teléfono lo que empezaste en escritorio/TV/kiosco
+- Magic links: "continuar en tu teléfono" vía SMS/email con deep link al estado exacto
+- Sincronización en la nube: sincronización en segundo plano transparente para que el usuario nunca tenga que pensar en ello
+- Continuidad del portapapeles: portapapeles universal iOS/macOS, pero no dependas solo de funcionalidades específicas de plataforma
 
-**Context-appropriate notifications:**
-- "You left something in your cart" — on which device? At what time? In what tone?
-- Don't notify on the device they just left. Notify on the device they're likely using now.
-- Notification content should match the device context (short on watch, actionable on phone, ignorable on desktop)
+**Notificaciones apropiadas al contexto:**
+- "Dejaste algo en tu carrito" — ¿en qué dispositivo? ¿A qué hora? ¿En qué tono?
+- No notifiques en el dispositivo que acaban de dejar. Notifica en el dispositivo que probablemente están usando ahora.
+- El contenido de la notificación debe coincidir con el contexto del dispositivo (corto en el reloj, accionable en el teléfono, ignorable en el escritorio)
 
-**Session continuity:**
-- Re-authentication friction: minimize it across devices. Biometric on phone, magic link on desktop, persistent session on TV.
-- Don't make users start over because they switched devices.
+**Continuidad de sesión:**
+- Fricción de re-autenticación: minimízala entre dispositivos. Biométrico en el teléfono, magic link en escritorio, sesión persistente en TV.
+- No obligues a los usuarios a empezar de nuevo porque cambiaron de dispositivo.
 
-### 5. Progressive disclosure per context
+### 5. Progressive disclosure por contexto
 
-The same information architecture may need fundamentally different disclosure strategies per context. This is not about responsive breakpoints — it's about cognitive load management per context.
+La misma arquitectura de información puede necesitar estrategias de divulgación fundamentalmente diferentes por contexto. Esto no se trata de breakpoints responsive — se trata de gestión de carga cognitiva por contexto.
 
-**Mobile: show less, reveal on interaction.**
-Cards that expand, drawers that slide up, tabs that switch content. The user chooses what to see more of. Default to the minimum viable view.
+**Móvil: muestra menos, revela en la interacción.**
+Tarjetas que se expanden, cajones que suben deslizando, pestañas que cambian el contenido. El usuario elige qué ver en mayor detalle. El valor por defecto es la vista mínima viable.
 
-**Desktop: show more, group by function.**
-Sidebars, panels, toolbars, multi-column layouts. The user scans and selects. More information is visible simultaneously, reducing the need for navigation.
+**Escritorio: muestra más, agrupa por función.**
+Barras laterales, paneles, barras de herramientas, layouts de múltiples columnas. El usuario escanea y selecciona. Más información es visible simultáneamente, reduciendo la necesidad de navegación.
 
-**TV: show categories, drill into detail.**
-Large tiles representing categories or content. Select to enter, back to return. Flat and wide, not deep and narrow.
+**TV: muestra categorías, profundiza en el detalle.**
+Fichas grandes que representan categorías o contenido. Selecciona para entrar, atrás para volver. Plano y ancho, no profundo y estrecho.
 
-**Kiosk: show the task, nothing else.**
-Strip away everything that isn't the current step. No settings, no account management, no exploration. Just the task.
+**Kiosco: muestra la tarea, nada más.**
+Elimina todo lo que no sea el paso actual. Sin configuración, sin gestión de cuenta, sin exploración. Solo la tarea.
 
-**Voice: reveal through conversation.**
-"Here are your three options. Would you like to hear more about any of them?" Progressive disclosure happens through dialogue turns, not visual hierarchy.
+**Voz: revela a través de la conversación.**
+"Aquí tienes tus tres opciones. ¿Quieres saber más sobre alguna de ellas?" La progressive disclosure ocurre a través de turnos de diálogo, no de jerarquía visual.
 
-Map disclosure strategy per context for every major feature. Don't assume what works on desktop will work anywhere else with minor modifications.
-
----
-
-## Output format
-
-### Context analysis matrix
-For each platform/context, document: input method, attention model, screen real estate, connectivity, environment, session length, and their UX implications.
-
-### Platform-specific adaptation specs
-Per platform: which conventions apply, which native patterns to adopt, which source patterns to replace (and with what), which features to add/remove/transform.
-
-### Priority mapping per context
-For each major screen/feature: what's primary, secondary, on-demand, and removed — per context. Explicitly document what gets cut and why.
-
-### Cross-device journey map
-For multi-device experiences: where users switch, what state transfers, what handoff mechanisms exist, and where continuity breaks.
+Mapea la estrategia de divulgación por contexto para cada funcionalidad principal. No asumas que lo que funciona en escritorio funcionará en cualquier otro lugar con modificaciones menores.
 
 ---
 
-## Voice and approach
+## Formato de entregable
 
-Never say "just make it responsive." Transposition requires rethinking, not reflowing. The question is never "how do we fit this on a smaller screen?" The question is "what would this experience look like if it were designed for this context first?"
+### Matriz de análisis de contexto
+Para cada plataforma/contexto, documenta: método de entrada, modelo de atención, espacio en pantalla, conectividad, entorno, duración de sesión y sus implicaciones de UX.
 
-Be specific about platform conventions. Don't say "follow platform guidelines" — say which guideline, which pattern, and why it matters for this specific design. Challenge assumptions about which features "must" exist on every platform. Sometimes the right transposition is to remove a feature entirely from a context where it doesn't serve users.
+### Especificaciones de adaptación por plataforma
+Por plataforma: qué convenciones aplican, qué patrones nativos adoptar, qué patrones de origen reemplazar (y con qué), qué funcionalidades añadir/eliminar/transformar.
 
-Respect the intelligence of each context. Mobile isn't desktop's lesser sibling. Voice isn't a screen without visuals. Each context has strengths that the others lack.
+### Mapeo de prioridad por contexto
+Para cada pantalla/funcionalidad principal: qué es primario, secundario, bajo demanda y eliminado — por contexto. Documenta explícitamente qué se elimina y por qué.
+
+### Mapa de journey entre dispositivos
+Para experiencias multidispositivo: dónde cambian los usuarios, qué estado se transfiere, qué mecanismos de handoff existen y dónde se rompe la continuidad.
 
 ---
 
-## Scope boundaries
+## Voz y enfoque
 
-### This skill owns:
-- Cross-platform UX strategy and context analysis
-- Platform-specific interaction model recommendations
-- Content priority mapping across contexts
-- Cross-device journey continuity design
-- Progressive disclosure strategy per context
+Nunca digas "solo hazlo responsive". La transposición requiere replantear, no refluir. La pregunta nunca es "¿cómo encajamos esto en una pantalla más pequeña?" La pregunta es "¿cómo se vería esta experiencia si hubiera sido diseñada para este contexto desde el principio?"
 
-### This skill does NOT own:
-- Responsive CSS and layout implementation (engineering + visual design)
-- Flow design within a context (`/journey`)
-- Platform-specific visual design (visual design)
-- Navigation structure decisions (`/organizar`)
-- System architecture for multi-context delivery (`/blueprint`)
-- Accessibility compliance per platform (`/incluir`)
+Sé específico sobre las convenciones de plataforma. No digas "sigue las directrices de plataforma" — di qué directriz, qué patrón y por qué importa para este diseño concreto. Cuestiona los supuestos sobre qué funcionalidades "deben" existir en cada plataforma. A veces la transposición correcta es eliminar completamente una funcionalidad de un contexto donde no sirve a los usuarios.
+
+Respeta la inteligencia de cada contexto. El móvil no es el hermano menor del escritorio. La voz no es una pantalla sin visuales. Cada contexto tiene fortalezas que los otros no tienen.
+
+---
+
+## Alcance y límites
+
+### Esta habilidad es responsable de:
+- Estrategia de UX multiplataforma y análisis de contexto
+- Recomendaciones de modelo de interacción específicas por plataforma
+- Mapeo de prioridad de contenido entre contextos
+- Diseño de continuidad de journey entre dispositivos
+- Estrategia de progressive disclosure por contexto
+
+### Esta habilidad NO es responsable de:
+- CSS responsive e implementación de layout (ingeniería + diseño visual)
+- Diseño de flujos dentro de un contexto (`/journey`)
+- Diseño visual específico de plataforma (diseño visual)
+- Decisiones de estructura de navegación (`/organizar`)
+- Arquitectura del sistema para entrega en múltiples contextos (`/blueprint`)
+- Cumplimiento de accesibilidad por plataforma (`/incluir`)

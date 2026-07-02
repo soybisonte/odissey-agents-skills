@@ -6,22 +6,22 @@ Este proyecto utiliza el sistema integral de estrategia y diseño UX Odissey.
 
 Las habilidades especializadas de diseño están disponibles en .github/copilot/skills/:
 
-- **articular** —  Design the words in a product — labels, instructions, errors, confirmations, empty states, onboarding copy, tooltips, voice and tone frameworks, and content models.
-- **blueprint** —  Map, analyze, and redesign the systems behind product experiences.
-- **evaluar** —  Structured UX evaluation that produces quantitative assessments, identifies specific issues, and routes to the right Odissey skill for resolution.
-- **idear** —  A cross-cutting cognitive mode for sitting with design problems before rushing to solve them.
-- **incluir** —  Design for everyone by treating accessibility as a first-class design discipline, not a compliance checklist.
-- **journey** —  Design any user-facing experience end-to-end: task flows, multi-step workflows, navigation structures, onboarding, settings, search, content creation, collaboration, signup, checkout, dashboards, notifications, error recovery, and more.
-- **localizar** —  Adapts experiences across cultures and languages — not just translation, but cultural reconception.
-- **medir** —  Defines and tracks UX success through metrics, medirment frameworks, and experimentation.
+- **articular** —  Diseña las palabras de un producto — etiquetas, instrucciones, errores, confirmaciones, estados vacíos, copy de onboarding, tooltips, marcos de voz y tono, y modelos de contenido.
+- **blueprint** —  Mapear, analizar y rediseñar los sistemas detrás de las experiencias de producto.
+- **evaluar** —  Evaluación UX estructurada que produce valoraciones cuantitativas, identifica problemas específicos y enruta al habilidad correcta de Odissey para su resolución.
+- **idear** —  Modo cognitivo transversal para quedarse con los problemas de diseño antes de correr a resolverlos.
+- **incluir** —  Diseña para todas las personas tratando la accesibilidad como una disciplina de diseño de primera clase, no como una lista de cumplimiento.
+- **journey** —  Diseña cualquier experiencia orientada al usuario de extremo a extremo: flows de tareas, flujos de trabajo de varios pasos, estructuras de navegación, onboarding, ajustes, búsqueda, creación de contenido, colaboración, registro, checkout, dashboards, notificaciones, recuperación de errores y más.
+- **localizar** —  Adapta experiencias entre culturas e idiomas — no solo traducción, sino reconceptualización cultural.
+- **medir** —  Define y realiza seguimiento del éxito UX mediante métricas, marcos de medición y experimentación.
 - **odissey** —  El punto de entrada para Odissey, un sistema integral de estrategia y diseño de experiencia de usuario (UX).
-- **organizar** —  Structure information so people can find what they need, understand where they are, and navigate confidently.
-- **research** —  Guide and conduct user research — from planning through synthesis.
-- **robustecer** —  Harden designs for real-world use by systematically identifying and designing for every condition outside the happy path.
-- **spec** —  Bridges design and engineering by producing detailed specs, organizard handoff packages, asset inventories, and cross-functional documentation.
-- **storytelling** —  Discipline for giving design work narrative structure that makes people care.
-- **strategy** —  Frames product design problems before solutions exist.
-- **trasponer** —  Rethinks experiences for different platforms and contexts — not just resizing, but reconceiving.
+- **organizar** —  Estructura la información para que las personas puedan encontrar lo que necesitan, entender dónde están y navegar con confianza.
+- **research** —  Guía y conduce investigación con usuarios — desde la planificación hasta la síntesis.
+- **robustecer** —  Endurece los diseños para el uso en el mundo real identificando y diseñando sistemáticamente para cada condición fuera del camino feliz.
+- **spec** —  Tiende el puente entre diseño e ingeniería produciendo especificaciones detalladas, paquetes de handoff organizados, inventarios de assets y documentación interfuncional.
+- **storytelling** —  Disciplina para dar estructura narrativa al trabajo de diseño y lograr que las personas se interesen.
+- **strategy** —  Encuadra problemas de diseño de producto antes de que existan soluciones.
+- **trasponer** —  Replantea experiencias para diferentes plataformas y contextos — no solo redimensionando, sino reconcibiendo.
 
 ## Principios Fundamentales
 

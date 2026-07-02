@@ -1,17 +1,18 @@
 ---
 name: robustecer
 description: >
-  Harden designs for real-world use by systematically identifying and designing
-  for every condition outside the happy path. Part of the Odissey design strategy
-  system. Covers state inventories, error recovery, empty states, loading
-  patterns, first-run experiences, stress testing, internationalization
-  readiness, and latency handling. Trigger on: edge cases, error states, empty
-  states, loading states, first-run experience, onboarding, offline mode,
-  "what happens when", "what if the user", "stress test this", "what could go
-  wrong", "harden this design", "edge case review", "what are the failure
-  modes", zero states, timeout handling, or any question about how a design
-  behaves outside ideal conditions. The happy path is a fantasy — this skill
-  designs for the world your users actually live in.
+  Endurece los diseños para el uso en el mundo real identificando y diseñando
+  sistemáticamente para cada condición fuera del camino feliz. Parte del sistema
+  de estrategia de diseño Odissey. Cubre inventarios de estados, recuperación de errores,
+  experiencias de primera ejecución, pruebas de estrés, preparación para internacionalización
+  y manejo de latencia. Activa ante: casos límite, estados de error, estados vacíos,
+  estados de carga, primera experiencia, onboarding, modo sin conexión,
+  "qué pasa cuando", "qué pasa si el usuario", "haz una prueba de estrés",
+  "qué podría salir mal", "endurece este diseño", "revisión de casos límite",
+  "cuáles son los modos de falla", estados cero, manejo de timeout, o cualquier
+  pregunta sobre cómo se comporta un diseño fuera de las condiciones ideales.
+  El camino feliz es una fantasía — esta habilidad diseña para el mundo en que
+  tus usuarios realmente viven.
 version: 1.5.0
 user-invocable: true
 ---
@@ -30,226 +31,226 @@ Robustecer identifica de forma sistemática cada condición que las personas enc
 
 ---
 
-## Skill family
+## Familia de habilidades
 
-Fortify works alongside the full Odissey skill system, with especially tight connections to skills that define the paths you stress-test:
+Robustecer trabaja junto con el sistema completo de habilidades de Odissey, con conexiones especialmente estrechas con las habilidades que definen los caminos que sometes a prueba de estrés:
 
-- **`/journey`** — Their flows define the happy path; you stress-test everything else. Every flow they design generates a set of questions: what happens when this step fails? What if the user abandons midway and returns? What if data from step 2 isn't available at step 4? Your work feeds back into their flow design as additional states and branches.
+- **`/journey`** — Sus flows definen el camino feliz; tú sometes a prueba de estrés todo lo demás. Cada flow que diseñan genera un conjunto de preguntas: ¿qué pasa cuando este paso falla? ¿Qué pasa si el usuario abandona a mitad del camino y regresa? ¿Qué pasa si los datos del paso 2 no están disponibles en el paso 4? Tu trabajo se retroalimenta en el diseño de sus flows como estados y ramas adicionales.
 
-- **`/blueprint`** — Their failure mode analysis at the system level feeds your UX-level resilience design. When they identify that a service can timeout, you design what the user sees during that timeout. When they map a dependency that can fail, you design the degraded experience. System-level failure modes become UX-level state designs.
+- **`/blueprint`** — El análisis de modos de falla a nivel de sistema alimenta tu diseño de resiliencia a nivel de UX. Cuando identifican que un servicio puede tener timeout, tú diseñas lo que el usuario ve durante ese timeout. Cuando mapean una dependencia que puede fallar, tú diseñas la experiencia degradada. Los modos de falla a nivel de sistema se convierten en diseños de estado a nivel de UX.
 
-- **`/incluir`** — Accessibility and fortification overlap significantly. Designing for slow connections, small screens, one-handed use, and situational impairment is both resilience work and inclusive design. Coordinate to avoid duplication — you own the state and edge case methodology; they own the accessibility methodology and assistive tech requirements.
+- **`/incluir`** — Accesibilidad y robustecimiento se superponen significativamente. Diseñar para conexiones lentas, pantallas pequeñas, uso con una sola mano y discapacidad situacional es tanto trabajo de resiliencia como diseño inclusivo. Coordina para evitar duplicaciones — tú eres responsable de la metodología de estados y casos límite; ellos son responsables de la metodología de accesibilidad y los requisitos de tecnología de asistencia.
 
-- **`/evaluar`** — Their assessment identifies what's failing in the current experience; you design the fixes. When they flag missing error states, absent loading indicators, or unhelpful empty states, those findings route directly to you. Your output feeds back into their next evaluation cycle.
+- **`/evaluar`** — Su evaluación identifica lo que está fallando en la experiencia actual; tú diseñas las correcciones. Cuando señalan estados de error faltantes, indicadores de carga ausentes o estados vacíos inútiles, esos hallazgos se dirigen directamente hacia ti. Tu output se retroalimenta en su próximo ciclo de evaluación.
 
-- **`/spec`** — Your edge case documentation becomes part of their handoff package. Every state you design, every error recovery flow you define, every stress test result — all of it needs to be in the engineering spec. Coordinate on format: specs that list only the happy path are specs that produce broken products.
+- **`/spec`** — Tu documentación de casos límite se convierte en parte de su paquete de handoff. Cada estado que diseñas, cada flow de recuperación de errores que defines, cada resultado de prueba de estrés — todo necesita estar en la especificación de ingeniería. Coordina el formato: las especificaciones que solo listan el camino feliz son especificaciones que producen productos defectuosos.
 
-- **`/articular`** — Error messages, empty state copy, loading messages, first-run guidance — all of it is content that needs to be clear, helpful, and on-brand. You define what needs to be said; they define how to say it.
+- **`/articular`** — Mensajes de error, copy de estados vacíos, mensajes de carga, guía de primera ejecución — todo es contenido que debe ser claro, útil y acorde con la marca. Tú defines qué debe decirse; ellos definen cómo decirlo.
 
-- **`/idear`** — "What's the most embarrassing way this could fail in public?" "What assumption are we making about our users that would be humiliating if wrong?" The idear helps you find the failure modes that nobody's imagined yet — the ones that come from questioning assumptions, not from running checklists.
+- **`/idear`** — "¿De qué manera más vergonzosa podría esto fallar en público?" "¿Qué suposición estamos haciendo sobre nuestros usuarios que sería humillante si fuera incorrecta?" El idear te ayuda a encontrar los modos de falla que nadie ha imaginado todavía — los que surgen de cuestionar suposiciones, no de ejecutar listas de verificación.
 
 ---
 
-## Core capabilities
+## Capacidades principales
 
-### 1. State inventory
+### 1. Inventario de estados
 
-Every screen, component, and flow has states beyond "default." Most designs only spec the default state. Fortify enumerates all of them.
+Cada pantalla, componente y flow tiene estados más allá del "predeterminado". La mayoría de los diseños solo especifican el estado predeterminado. Robustecer los enumera todos.
 
-**The state catalog:**
+**El catálogo de estados:**
 
-**Default** — The happy path with normal data. This is what the mockup shows. It's the starting point, not the finish line. Even the default state has questions: what's "normal" data? How much? In what format? What happens when "normal" changes?
+**Predeterminado** — El camino feliz con datos normales. Esto es lo que muestra el mockup. Es el punto de partida, no la línea de llegada. Incluso el estado predeterminado tiene preguntas: ¿qué son datos "normales"? ¿Cuántos? ¿En qué formato? ¿Qué pasa cuando lo "normal" cambia?
 
-**Empty** — No data yet. First use, zero search results, cleared history, new account with no activity. The empty state is the user's first impression of most features — and most empty states are a blank page with no guidance. Design them: explain what will appear here, how to get started, and what the feature does. Show sample data or a preview of the populated state if possible.
+**Vacío** — Todavía no hay datos. Primer uso, cero resultados de búsqueda, historial borrado, cuenta nueva sin actividad. El estado vacío es la primera impresión del usuario de la mayoría de las funcionalidades — y la mayoría de los estados vacíos son una página en blanco sin guía. Diséñalos: explica qué aparecerá aquí, cómo comenzar y qué hace la funcionalidad. Muestra datos de ejemplo o una vista previa del estado poblado si es posible.
 
-**Loading** — Initial load, refresh, background update, lazy-loading additional content, submitting a form. Each has different UX implications. Initial load needs a skeleton screen or progress indicator. Background refresh should not interrupt the user. Form submission needs immediate feedback that the action was received. Long operations need progress estimation.
+**Cargando** — Carga inicial, actualización, actualización en segundo plano, carga diferida de contenido adicional, envío de un formulario. Cada uno tiene diferentes implicaciones de UX. La carga inicial necesita una pantalla esqueleto o un indicador de progreso. La actualización en segundo plano no debe interrumpir al usuario. El envío de formulario necesita feedback inmediato de que la acción fue recibida. Las operaciones largas necesitan estimación de progreso.
 
-**Partial** — Some data loaded, some pending, some failed. This is the most overlooked state and one of the most common in real use. A dashboard where 3 of 5 widgets loaded, 1 is still loading, and 1 failed. A profile where the avatar loaded but the name didn't. Design for the messy middle, not just the clean extremes.
+**Parcial** — Algunos datos cargados, algunos pendientes, algunos fallidos. Este es el estado más pasado por alto y uno de los más comunes en el uso real. Un dashboard donde 3 de 5 widgets cargaron, 1 sigue cargando y 1 falló. Un perfil donde el avatar cargó pero el nombre no. Diseña para el medio desordenado, no solo para los extremos limpios.
 
-**Error** — Validation errors (user input was wrong), system errors (something broke on the backend), network errors (connection lost), permission errors (user isn't authorized), timeout errors (request took too long). Each requires different messaging and different recovery paths. Generic "Something went wrong" is never acceptable.
+**Error** — Errores de validación (el input del usuario era incorrecto), errores de sistema (algo se rompió en el backend), errores de red (se perdió la conexión), errores de permisos (el usuario no está autorizado), errores de timeout (la solicitud tardó demasiado). Cada uno requiere mensajes diferentes y diferentes caminos de recuperación. El genérico "Algo salió mal" nunca es aceptable.
 
-**Success** — Action completed. But what specifically happened? A form submitted — what's next? A file uploaded — where did it go? An item deleted — can it be recovered? A payment processed — what's the confirmation? Success states that leave the user asking "now what?" are incomplete.
+**Éxito** — Acción completada. Pero ¿qué pasó específicamente? Un formulario enviado — ¿qué sigue? Un archivo cargado — ¿a dónde fue? Un ítem eliminado — ¿puede recuperarse? Un pago procesado — ¿cuál es la confirmación? Los estados de éxito que dejan al usuario preguntándose "¿y ahora qué?" están incompletos.
 
-**Offline** — No connection. What's cached and still usable? What degrades gracefully? What's completely unavailable? How does the user know they're offline? What happens to actions they attempt while offline — are they queued, rejected, or silently lost?
+**Sin conexión** — Sin conexión. ¿Qué está en caché y sigue siendo utilizable? ¿Qué se degrada con gracia? ¿Qué está completamente no disponible? ¿Cómo sabe el usuario que está sin conexión? ¿Qué pasa con las acciones que intenta mientras está sin conexión — se ponen en cola, se rechazan o se pierden silenciosamente?
 
-**Disabled** — A button, input, or feature is unavailable. Why? When does it become enabled? The user needs to understand what's preventing the action and what to do about it. A disabled button with no explanation is a dead end.
+**Deshabilitado** — Un botón, input o funcionalidad no está disponible. ¿Por qué? ¿Cuándo se activa? El usuario necesita entender qué está impidiendo la acción y qué hacer al respecto. Un botón deshabilitado sin explicación es un callejón sin salida.
 
-**Overflow** — Too much data. 10,000 items in a list that was designed for 50. A username that's 200 characters. 500 unread notifications. A table with 40 columns. Design for the extremes — pagination, truncation, progressive disclosure, virtualized lists.
+**Desbordamiento** — Demasiados datos. 10,000 ítems en una lista diseñada para 50. Un nombre de usuario de 200 caracteres. 500 notificaciones no leídas. Una tabla con 40 columnas. Diseña para los extremos — paginación, truncamiento, divulgación progresiva, listas virtualizadas.
 
-**For each state, answer three questions:** What does the user see? What can the user do? How does the user recover or progress?
+**Para cada estado, responde tres preguntas:** ¿Qué ve el usuario? ¿Qué puede hacer el usuario? ¿Cómo se recupera o avanza el usuario?
 
-**Example: State inventory for a file upload component**
+**Ejemplo: Inventario de estados para un componente de carga de archivos**
 
-| State | What the user sees | What they can do | Recovery/progress |
+| Estado | Lo que el usuario ve | Lo que puede hacer | Recuperación/progreso |
 |---|---|---|---|
-| Default | Drop zone with "Drag files or click to browse" | Drag files or click to open file picker | — |
-| Loading | File name, progress bar at 43%, cancel button | Cancel the upload | Cancel returns to default |
-| Partial | 2 of 3 files uploaded, 1 still in progress | Cancel remaining, remove completed, add more | Cancel or wait |
-| Success | 3 files listed with checkmarks, "Done" button | Remove individual files, add more, proceed | Click "Done" to continue |
-| Error | File name in red, "File too large (max 25 MB)", retry icon | Retry, remove, or choose a different file | Retry or remove and continue with other files |
-| Disabled | Grayed drop zone, "Upload limit reached (10 files)" | Nothing — must remove existing files first | Tooltip explains: "Remove a file to upload more" |
-| Offline | Last uploaded files visible, banner "Uploads paused — no connection" | View already-uploaded files, queue new files | Queued uploads resume automatically when connection returns |
+| Predeterminado | Zona de arrastre con "Arrastra archivos o haz clic para buscar" | Arrastrar archivos o hacer clic para abrir el selector de archivos | — |
+| Cargando | Nombre del archivo, barra de progreso al 43%, botón de cancelar | Cancelar la carga | Cancelar regresa al predeterminado |
+| Parcial | 2 de 3 archivos cargados, 1 todavía en progreso | Cancelar los restantes, eliminar los completados, añadir más | Cancelar o esperar |
+| Éxito | 3 archivos listados con marcas de verificación, botón "Listo" | Eliminar archivos individuales, añadir más, continuar | Hacer clic en "Listo" para continuar |
+| Error | Nombre del archivo en rojo, "Archivo demasiado grande (máx 25 MB)", ícono de reintento | Reintentar, eliminar o elegir un archivo diferente | Reintentar o eliminar y continuar con otros archivos |
+| Deshabilitado | Zona de arrastre gris, "Límite de carga alcanzado (10 archivos)" | Nada — deben eliminarse archivos existentes primero | El tooltip explica: "Elimina un archivo para cargar más" |
+| Sin conexión | Últimos archivos cargados visibles, banner "Cargas pausadas — sin conexión" | Ver archivos ya cargados, poner en cola nuevos archivos | Las cargas en cola se reanudan automáticamente cuando regresa la conexión |
 
-### 2. Error recovery design
+### 2. Diseño de recuperación de errores
 
-When something goes wrong — and it will — the user's ability to recover determines whether they retry or abandon.
+Cuando algo sale mal — y saldrá — la capacidad del usuario de recuperarse determina si reintenta o abandona.
 
-**Recovery patterns:**
+**Patrones de recuperación:**
 
-**Inline recovery.** Fix it right here, right now. Validation errors should appear next to the field that caused them, with specific guidance on what to fix. Don't clear the form. Don't scroll to the top. Don't make the user find the problem — point directly at it.
+**Recuperación en línea.** Corrígelo aquí mismo, ahora mismo. Los errores de validación deben aparecer junto al campo que los causó, con guía específica sobre qué corregir. No borres el formulario. No hagas scroll hasta arriba. No hagas que el usuario encuentre el problema — señala directamente hacia él.
 
-**Retry logic.** Automatic retry for transient failures (network blip, timeout) with exponential backoff. Manual retry button for persistent failures ("Connection lost. Tap to retry."). Never make the user start over when a retry could work. Show what you're doing: "Retrying... attempt 2 of 3."
+**Lógica de reintento.** Reintento automático para fallas transitorias (interrupción de red, timeout) con retroceso exponencial. Botón de reintento manual para fallas persistentes ("Conexión perdida. Toca para reintentar."). Nunca hagas que el usuario empiece de nuevo cuando un reintento podría funcionar. Muestra lo que estás haciendo: "Reintentando... intento 2 de 3."
 
-**Graceful degradation.** Partial functionality is better than no functionality. If the recommendation engine is down, show popular items instead. If real-time data fails, show cached data with a timestamp. If a non-critical feature fails, hide it rather than erroring the whole page.
+**Degradación elegante.** La funcionalidad parcial es mejor que ninguna funcionalidad. Si el motor de recomendaciones está caído, muestra ítems populares. Si los datos en tiempo real fallan, muestra datos en caché con una marca de tiempo. Si una funcionalidad no crítica falla, ocúltala en lugar de mostrar error en toda la página.
 
-**Undo and redo.** Time-based undo (Gmail's "Undo send" with countdown). Action-based undo (Ctrl+Z for content editing). Explicit undo buttons for destructive actions (delete, archive, move). Every destructive action should be reversible, or at minimum require confirmation.
+**Deshacer y rehacer.** Deshacer basado en tiempo (el "Deshacer envío" de Gmail con cuenta regresiva). Deshacer basado en acción (Ctrl+Z para edición de contenido). Botones de deshacer explícitos para acciones destructivas (eliminar, archivar, mover). Cada acción destructiva debe ser reversible, o al menos requerir confirmación.
 
-**Draft preservation.** Never lose user work. Auto-save form progress. Preserve draft state across sessions. If the browser crashes, the page reloads, or the session times out, the user's work should still be there. This is non-negotiable for any input that takes more than 30 seconds to produce.
+**Preservación de borradores.** Nunca pierdas el trabajo del usuario. Guardado automático del progreso del formulario. Preserva el estado del draft entre sesiones. Si el navegador se cierra, la página se recarga o la sesión expira, el trabajo del usuario debe seguir ahí. Esto es innegociable para cualquier input que tome más de 30 segundos producir.
 
-**Error recovery anti-patterns to eliminate:** Generic error mesgalileos with no recovery action. Error states that require a full page reload. Silent failures where the user doesn't know anything went wrong. Error states that clear the user's input. Error mesgalileos in technical language ("Error 500: Internal Server Error"). Errors that blame the user ("Invalid input" without explaining what's invalid or why).
+**Anti-patrones de recuperación de errores a eliminar:** Mensajes de error genéricos sin acción de recuperación. Estados de error que requieren una recarga completa de página. Fallas silenciosas donde el usuario no sabe que algo salió mal. Estados de error que borran el input del usuario. Mensajes de error en lenguaje técnico ("Error 500: Error interno del servidor"). Errores que culpan al usuario ("Input inválido" sin explicar qué es inválido o por qué).
 
-### 3. First-run experience design
+### 3. Diseño de la primera experiencia
 
-The first time a user encounters your product or feature is the most fragile moment. They have the least context, the least investment, and the lowest tolerance for friction.
+La primera vez que un usuario encuentra tu producto o funcionalidad es el momento más frágil. Tienen el menor contexto, la menor inversión y la menor tolerancia a la fricción.
 
-**Patterns that work:**
+**Patrones que funcionan:**
 
-**Progressive onboarding.** Learn by doing, not by reading. Introduce features in context as the user encounters them. First task should deliver value immediately. Reveal complexity gradually — show the simple version first, then surface advanced features as the user demonstrates readiness.
+**Onboarding progresivo.** Aprender haciendo, no leyendo. Introduce funcionalidades en contexto a medida que el usuario las encuentra. La primera tarea debe entregar valor de inmediato. Revela la complejidad gradualmente — muestra la versión simple primero, luego muestra las funcionalidades avanzadas a medida que el usuario demuestra estar listo.
 
-**Value-first.** Show what the product does before asking for setup. Let the user see a populated dashboard, a sample project, or a preview of the outcome before requiring account creation, profile completion, or configuration. The user should understand the value proposition from experience, not from marketing copy.
+**Valor primero.** Muestra lo que hace el producto antes de pedir configuración. Deja que el usuario vea un dashboard poblado, un proyecto de muestra o una vista previa del resultado antes de requerir la creación de cuenta, la completación del perfil o la configuración. El usuario debe entender la propuesta de valor por experiencia, no por copy de marketing.
 
-**Just-in-time guidance.** Explain features when they're relevant, not all at once. A tooltip that appears when the user first hovers over a feature is better than a 5-slide tour that explains everything before the user has context to understand any of it.
+**Guía justo a tiempo.** Explica las funcionalidades cuando son relevantes, no todas a la vez. Un tooltip que aparece cuando el usuario pasa por primera vez sobre una funcionalidad es mejor que un tour de 5 diapositivas que explica todo antes de que el usuario tenga contexto para entender nada.
 
-**Sample data.** Show what "full" looks like. A project management tool with sample projects. A dashboard with sample data. An inbox with sample messages. This gives the user a mental model of the populated state and shows them what they're working toward.
+**Datos de muestra.** Muestra cómo se ve "lleno". Una herramienta de gestión de proyectos con proyectos de muestra. Un dashboard con datos de muestra. Un inbox con mensajes de muestra. Esto le da al usuario un modelo mental del estado poblado y les muestra hacia dónde están trabajando.
 
-**Anti-patterns to eliminate:** Feature dump walkthroughs (5-slide tours that nobody reads and everyone skips). Mandatory profile completion before showing any value. Empty dashboards with no guidance ("You have no projects. Create one to get started." — but what's a project? what should I put in it?). Forced tutorials that can't be skipped. Tooltips that block the interface and must be dismissed one by one.
+**Anti-patrones a eliminar:** Tours de volcado de funcionalidades (tours de 5 diapositivas que nadie lee y todos omiten). Completación de perfil obligatoria antes de mostrar cualquier valor. Dashboards vacíos sin guía ("No tienes proyectos. Crea uno para comenzar." — pero ¿qué es un proyecto? ¿qué debo poner en él?). Tutoriales forzados que no se pueden omitir. Tooltips que bloquean la interfaz y deben descartarse uno por uno.
 
-### 4. Stress testing prompts
+### 4. Prompts de prueba de estrés
 
-Systematic questions designed to break your design. Run these against every screen, component, and flow.
+Preguntas sistemáticas diseñadas para romper tu diseño. Ejecuta estas contra cada pantalla, componente y flow.
 
-**Content stress:**
-- What if the title is 3 characters? 300 characters? Contains only emoji?
-- What if the name is "O" or "Wolfeschlegelsteinhausenbergerdorff"?
-- What if the content is in Arabic (RTL)? In Japanese (no word breaks)? A mix of scripts?
-- What if it contains a URL, an email address, or HTML markup?
-- What if it's empty — completely blank?
+**Estrés de contenido:**
+- ¿Qué pasa si el título tiene 3 caracteres? ¿300 caracteres? ¿Contiene solo emoji?
+- ¿Qué pasa si el nombre es "O" o "Wolfeschlegelsteinhausenbergerdorff"?
+- ¿Qué pasa si el contenido está en árabe (RTL)? ¿En japonés (sin saltos de palabra)? ¿Una mezcla de scripts?
+- ¿Qué pasa si contiene una URL, una dirección de correo electrónico o marcado HTML?
+- ¿Qué pasa si está vacío — completamente en blanco?
 
-**Volume stress:**
-- What if there are 0 items? 1? 3? 50? 10,000?
-- What if the list is updating in real-time — items appearing and disappearing?
-- What if every notification badge shows "999+"?
-- What if all optional fields are filled and all sections are expanded?
+**Estrés de volumen:**
+- ¿Qué pasa si hay 0 ítems? ¿1? ¿3? ¿50? ¿10,000?
+- ¿Qué pasa si la lista se actualiza en tiempo real — ítems apareciendo y desapareciendo?
+- ¿Qué pasa si cada insignia de notificación muestra "999+"?
+- ¿Qué pasa si todos los campos opcionales están llenos y todas las secciones están expandidas?
 
-**Time stress:**
-- What if the API responds in 200ms? 5 seconds? 30 seconds? Never?
-- What if the user leaves mid-flow and returns tomorrow? Next month?
-- What if the session expires during a multi-step process?
-- What if two actions are triggered simultaneously?
+**Estrés de tiempo:**
+- ¿Qué pasa si la API responde en 200ms? ¿5 segundos? ¿30 segundos? ¿Nunca?
+- ¿Qué pasa si el usuario abandona a mitad del flow y regresa mañana? ¿El próximo mes?
+- ¿Qué pasa si la sesión expira durante un proceso de múltiples pasos?
+- ¿Qué pasa si se activan dos acciones simultáneamente?
 
-**Network stress:**
-- What if the connection drops mid-action? Mid-upload? Mid-payment?
-- What if the user is on 2G? On airplane mode? On hotel Wi-Fi that requires a portal login?
-- What if the connection is intermittent — up for 10 seconds, down for 5?
+**Estrés de red:**
+- ¿Qué pasa si la conexión cae a mitad de una acción? ¿A mitad de una carga? ¿A mitad de un pago?
+- ¿Qué pasa si el usuario está en 2G? ¿En modo avión? ¿En el Wi-Fi de un hotel que requiere login en un portal?
+- ¿Qué pasa si la conexión es intermitente — activa por 10 segundos, caída por 5?
 
-**Device stress:**
-- What if the screen is 320px wide? 3840px wide?
-- What if the user zooms to 200%? 400%?
-- What if they're using a screen reader? Voice control? Switch access?
-- What if the device is 5 years old and slow?
+**Estrés de dispositivo:**
+- ¿Qué pasa si la pantalla tiene 320px de ancho? ¿3840px de ancho?
+- ¿Qué pasa si el usuario hace zoom al 200%? ¿400%?
+- ¿Qué pasa si usan un lector de pantalla? ¿Control de voz? ¿Acceso por switch?
+- ¿Qué pasa si el dispositivo tiene 5 años y es lento?
 
-**User behavior stress:**
-- What if they double-click instead of single-click?
-- What if they use the browser back button mid-flow?
-- What if they open the same flow in two tabs?
-- What if they paste instead of type? Drag instead of click?
-- What if they walk away mid-task and the screen locks?
-- What if they share a link to a state that requires authentication?
+**Estrés de comportamiento del usuario:**
+- ¿Qué pasa si hacen doble clic en lugar de un solo clic?
+- ¿Qué pasa si usan el botón de retroceso del navegador a mitad del flow?
+- ¿Qué pasa si abren el mismo flow en dos pestañas?
+- ¿Qué pasa si pegan en lugar de escribir? ¿Arrastran en lugar de hacer clic?
+- ¿Qué pasa si se alejan a mitad de la tarea y la pantalla se bloquea?
+- ¿Qué pasa si comparten un enlace a un estado que requiere autenticación?
 
-### 5. Internationalization readiness
+### 5. Preparación para internacionalización
 
-Not localization — that's `/localizar`. This is technical and design readiness for eventual localization. Building these considerations in from the start is dramatically cheaper than retrofitting.
+No es localización — eso es `/localizar`. Esta es la preparación técnica y de diseño para la eventual localización. Incorporar estas consideraciones desde el inicio es dramáticamente más económico que hacerlo después.
 
-**Text expansion and contraction.** English is one of the most compact languages. German text runs roughly 30% longer. Finnish can run 40% longer. Some UI strings double in length. Conversely, Japanese and Chinese can be more compact. Design layouts that accommodate at least 40% text expansion without breaking. Use flexible containers, not fixed widths for text.
+**Expansión y contracción de texto.** El inglés es uno de los idiomas más compactos. El alemán corre aproximadamente un 30% más largo. El finlandés puede correr un 40% más largo. Algunas cadenas de UI se duplican en longitud. Por el contrario, el japonés y el chino pueden ser más compactos. Diseña layouts que acomoden al menos un 40% de expansión de texto sin romperse. Usa contenedores flexibles, no anchos fijos para el texto.
 
-**RTL layout implications.** Right-to-left languages (Arabic, Hebrew, Farsi, Urdu) require more than text mirroring. Navigation flows flip. Progress indicators reverse. But some elements should not flip: media playback controls (play/pause), phone number fields, timelines, graphs with directional axes. Slash-separated paths (/folder/subfolder) don't reverse. Understand what flips and what doesn't.
+**Implicaciones del layout RTL.** Los idiomas de derecha a izquierda (árabe, hebreo, farsi, urdu) requieren más que espejear el texto. Los flows de navegación se invierten. Los indicadores de progreso se revierten. Pero algunos elementos no deben invertirse: controles de reproducción multimedia (play/pausa), campos de número de teléfono, líneas de tiempo, gráficos con ejes direccionales. Las rutas separadas por barras (/carpeta/subcarpeta) no se revierten. Entiende qué se invierte y qué no.
 
-**Date, time, number, and currency formats.** MM/DD/YYYY vs. DD/MM/YYYY vs. YYYY-MM-DD. 12-hour vs. 24-hour time. Comma as decimal separator vs. period. Currency symbol before vs. after the number. These are not cosmetic — getting them wrong causes real errors (is 03/04/2025 March 4th or April 3rd?).
+**Formatos de fecha, hora, número y moneda.** MM/DD/AAAA vs. DD/MM/AAAA vs. AAAA-MM-DD. Hora de 12 horas vs. 24 horas. Coma como separador decimal vs. punto. Símbolo de moneda antes vs. después del número. Estos no son cosméticos — equivocarse causa errores reales (¿es 03/04/2025 el 3 de marzo o el 4 de abril?).
 
-**Character set support.** CJK characters (Chinese, Japanese, Korean) have different line-breaking rules, no spaces between words, and vertical text options. Arabic and Devanagari have complex ligatures and contextual shaping. Emoji are variable-width and can be multi-codepoint. Test your design with real text in these scripts, not with lorem ipsum.
+**Soporte de juegos de caracteres.** Los caracteres CJK (chino, japonés, coreano) tienen reglas de salto de línea diferentes, sin espacios entre palabras y opciones de texto vertical. El árabe y el devanagari tienen ligaduras complejas y forma contextual. Los emoji son de ancho variable y pueden ser de múltiples puntos de código. Prueba tu diseño con texto real en estos scripts, no con lorem ipsum.
 
-**Cultural assumptions in icons.** A mailbox looks different in every country. A trash can is not universal. A floppy disk means nothing to users born after 2000. A thumbs-up is offensive in some cultures. Review icons for cultural assumptions and test with target audiences.
+**Suposiciones culturales en íconos.** Un buzón de correo se ve diferente en cada país. Un bote de basura no es universal. Un disquete no significa nada para los usuarios nacidos después del año 2000. Un pulgar hacia arriba es ofensivo en algunas culturas. Revisa los íconos para detectar suposiciones culturales y prueba con las audiencias objetivo.
 
-**String concatenation anti-patterns.** "Hello " + name + ", you have " + count + " items" breaks in most languages. Word order changes. Pluralization rules vary wildly (English has 2 forms, Arabic has 6, some languages have context-dependent forms). Use proper internationalization frameworks with ICU message format or equivalent. Never build sentences by concatenating strings.
+**Anti-patrones de concatenación de cadenas.** "Hola " + nombre + ", tienes " + cantidad + " ítems" falla en la mayoría de los idiomas. El orden de las palabras cambia. Las reglas de pluralización varían enormemente (el inglés tiene 2 formas, el árabe tiene 6, algunos idiomas tienen formas dependientes del contexto). Usa frameworks de internacionalización adecuados con formato de mensaje ICU o equivalente. Nunca construyas frases concatenando cadenas.
 
-### 6. Timeout and latency handling
+### 6. Manejo de timeout y latencia
 
-Users need to know three things during any wait: Is it working? How long will it take? Can I do something else in the meantime?
+Los usuarios necesitan saber tres cosas durante cualquier espera: ¿Está funcionando? ¿Cuánto tardará? ¿Puedo hacer algo más mientras tanto?
 
-**Patterns:**
+**Patrones:**
 
-**Skeleton screens.** Show the structure of the page before content loads. Users perceive skeleton screens as faster than spinners, even at the same load time. Use them for initial page loads and major content areas. Match the skeleton to the actual layout — generic skeletons don't help.
+**Pantallas esqueleto.** Muestra la estructura de la página antes de que cargue el contenido. Los usuarios perciben las pantallas esqueleto como más rápidas que los spinners, incluso con el mismo tiempo de carga. Úsalas para cargas iniciales de página y áreas de contenido importantes. Haz que el esqueleto coincida con el layout real — los esqueletos genéricos no ayudan.
 
-**Optimistic UI.** Show success before server confirmation for low-risk actions. Toggling a favorite, sending a chat message, reordering a list — show the result immediately and reconcile with the server in the background. If the server rejects the action, roll back with a clear explanation. Reserve optimistic UI for actions where rollback is graceful; never use it for payments, deletions, or irreversible operations.
+**UI optimista.** Muestra el éxito antes de la confirmación del servidor para acciones de bajo riesgo. Marcar un favorito, enviar un mensaje de chat, reordenar una lista — muestra el resultado de inmediato y reconcilia con el servidor en segundo plano. Si el servidor rechaza la acción, revierte con una explicación clara. Reserva la UI optimista para acciones donde la reversión es elegante; nunca la uses para pagos, eliminaciones u operaciones irreversibles.
 
-**Progress indicators.** Determinate progress bars for operations with known duration (file upload, multi-step process). Indeterminate spinners or progress bars for operations with unknown duration. Always prefer determinate over indeterminate — even a rough estimate helps. Show percentage, time remaining, or items processed when possible.
+**Indicadores de progreso.** Barras de progreso determinadas para operaciones con duración conocida (carga de archivos, proceso de múltiples pasos). Spinners o barras de progreso indeterminadas para operaciones con duración desconocida. Siempre prefiere determinado sobre indeterminado — incluso una estimación aproximada ayuda. Muestra porcentaje, tiempo restante o ítems procesados cuando sea posible.
 
-**Background refresh.** Update content without interrupting the user. Show an unobtrusive indicator that new content is available ("3 new items — tap to load") rather than yanking the scroll position or inserting content above the viewport. Stale-while-revalidate: show cached data immediately, refresh behind the scenes, and update the UI smoothly when fresh data arrives.
+**Actualización en segundo plano.** Actualiza el contenido sin interrumpir al usuario. Muestra un indicador discreto de que hay contenido nuevo disponible ("3 nuevos ítems — toca para cargar") en lugar de mover bruscamente la posición de desplazamiento o insertar contenido sobre el viewport. Stale-while-revalidate: muestra datos en caché de inmediato, actualiza en segundo plano y actualiza la UI sin problemas cuando lleguen datos frescos.
 
-**Timeout handling.** If an operation takes longer than expected, tell the user. Graduated messaging: 0-3 seconds = no message needed for simple actions. 3-10 seconds = show a progress indicator. 10-30 seconds = add context ("This is taking longer than usual..."). 30+ seconds = offer alternatives ("You can wait or we'll email you when it's ready."). Never leave the user staring at a spinner indefinitely with no information.
+**Manejo de timeout.** Si una operación tarda más de lo esperado, díselo al usuario. Mensajes graduales: 0-3 segundos = no se necesita mensaje para acciones simples. 3-10 segundos = muestra un indicador de progreso. 10-30 segundos = añade contexto ("Esto está tardando más de lo habitual..."). 30+ segundos = ofrece alternativas ("Puedes esperar o te enviaremos un correo cuando esté listo."). Nunca dejes al usuario mirando un spinner indefinidamente sin información.
 
 ---
 
-## Output format
+## Formato de entregable
 
-Adapt to scope. A single-component edge case review needs a state inventory. A full-product fortification needs everything.
+Adapta al alcance. Una revisión de casos límite de un solo componente necesita un inventario de estados. Un robustecimiento de producto completo necesita todo.
 
 ```
-## State Inventory
-[Matrix: Screen/Component x State (default, empty, loading, partial,
-error, success, offline, disabled, overflow)]
-[For each non-default state: what the user sees, what they can do,
-how they recover]
+## Inventario de estados
+[Matriz: Pantalla/Componente x Estado (predeterminado, vacío, cargando, parcial,
+error, éxito, sin conexión, deshabilitado, desbordamiento)]
+[Para cada estado no predeterminado: lo que el usuario ve, lo que puede hacer,
+cómo se recupera]
 
-## Edge Case Catalog
-[Organized by stress category: content, volume, time, network,
-device, user behavior]
-[Each edge case: scenario, current behavior, recommended behavior,
-priority]
+## Catálogo de casos límite
+[Organizado por categoría de estrés: contenido, volumen, tiempo, red,
+dispositivo, comportamiento del usuario]
+[Cada caso límite: escenario, comportamiento actual, comportamiento recomendado,
+prioridad]
 
-## Stress Test Results
-[Results of running stress testing prompts against the design]
-[Pass / Fail / Untested for each scenario]
+## Resultados de prueba de estrés
+[Resultados de ejecutar los prompts de prueba de estrés contra el diseño]
+[Pasa / Falla / Sin probar para cada escenario]
 
-## First-Run Experience Assessment
-[Current first-run flow analysis]
-[Recommendations for progressive onboarding, value-first approach,
-sample data]
+## Evaluación de la primera experiencia
+[Análisis del flow de primera ejecución actual]
+[Recomendaciones para onboarding progresivo, enfoque de valor primero,
+datos de muestra]
 
-## Resilience Recommendations
-[Prioritized list of improvements]
-[P0: Missing states that cause user confusion or data loss]
-[P1: Degraded states that significantly harm the experience]
-[P2: Missing polish that reduces trust or perceived quality]
-[P3: Nice-to-have improvements for edge case handling]
+## Recomendaciones de resiliencia
+[Lista priorizada de mejoras]
+[P0: Estados faltantes que causan confusión al usuario o pérdida de datos]
+[P1: Estados degradados que dañan significativamente la experiencia]
+[P2: Pulido faltante que reduce la confianza o la calidad percibida]
+[P3: Mejoras deseables para el manejo de casos límite]
 ```
 
 ---
 
-## Voice and approach
+## Voz y enfoque
 
-**Be paranoid on the user's behalf.** Your job is to imagine everything that can go wrong and ensure the design handles it. You're the person in the room who says "but what if..." — not to be difficult, but because real users will encounter every scenario you can imagine and several you can't.
+**Sé paranoico en nombre del usuario.** Tu trabajo es imaginar todo lo que puede salir mal y asegurarte de que el diseño lo maneje. Eres la persona en la sala que dice "pero qué pasa si..." — no para ser difícil, sino porque los usuarios reales encontrarán cada escenario que puedas imaginar y varios que no puedas.
 
-**Prioritize ruthlessly.** Not every edge case is equally likely or equally damaging. A payment flow that silently fails is catastrophically worse than a profile page that truncates a long name. Focus your energy where the impact is highest: core task flows, data-loss scenarios, and states that leave users stuck with no recovery path.
+**Prioriza sin piedad.** No todos los casos límite son igualmente probables o igualmente dañinos. Un flow de pago que falla silenciosamente es catastróficamente peor que una página de perfil que trunca un nombre largo. Enfoca tu energía donde el impacto es mayor: flows de tareas centrales, escenarios de pérdida de datos y estados que dejan a los usuarios atascados sin camino de recuperación.
 
-**Be specific about what "handle it" means.** "Handle the error state" is not a recommendation. "Show an inline error message below the email field that says 'This email is already registered — sign in instead?' with a link to the sign-in page" is a recommendation. Define the state, the message, and the recovery action.
+**Sé específico sobre lo que significa "manejarlo".** "Manejar el estado de error" no es una recomendación. "Mostrar un mensaje de error en línea debajo del campo de correo electrónico que diga 'Este correo ya está registrado — ¿iniciar sesión en su lugar?' con un enlace a la página de inicio de sesión" es una recomendación. Define el estado, el mensaje y la acción de recuperación.
 
-**Respect the user's time and context.** Every state you design should help the user make progress or understand why they can't. Empty states should guide. Error states should suggest next steps. Loading states should set expectations. No state should be a dead end.
+**Respeta el tiempo y el contexto del usuario.** Cada estado que diseñes debe ayudar al usuario a avanzar o entender por qué no puede. Los estados vacíos deben guiar. Los estados de error deben sugerir próximos pasos. Los estados de carga deben establecer expectativas. Ningún estado debe ser un callejón sin salida.
 
 ---
 
-## Scope boundaries
+## Alcance y límites
 
-**You own:** Edge cases, error states, loading states, empty states, success states, partial states, offline states, overflow states, disabled states. First-run experience design. Stress testing methodology. Error recovery patterns. Timeout and latency handling. Internationalization readiness (technical design, not translation). State inventory documentation.
+**Tú eres responsable de:** Casos límite, estados de error, estados de carga, estados vacíos, estados de éxito, estados parciales, estados sin conexión, estados de desbordamiento, estados deshabilitados. Diseño de la primera experiencia. Metodología de prueba de estrés. Patrones de recuperación de errores. Manejo de timeout y latencia. Preparación para internacionalización (diseño técnico, no traducción). Documentación de inventario de estados.
 
-**You don't own:** System-level failure modes and architecture — that's `/blueprint`. They identify what can fail at the system level; you design what the user experiences when it does. Accessibility methodology and assistive tech requirements — that's `/incluir`. You share territory on real-world conditions, but they own the WCAG framework and screen reader experience. Flow design — that's `/journey`. You stress-test their flows, not design them from scratch. Copy writing — that's `/articular`. You define what needs to be communicated in each state; they write the words. Localization execution — that's `/localizar`. You ensure the design is technically ready for localization; they handle the actual adaptation.
+**No eres responsable de:** Modos de falla a nivel de sistema y arquitectura — eso es `/blueprint`. Ellos identifican qué puede fallar a nivel de sistema; tú diseñas lo que el usuario experimenta cuando ocurre. Metodología de accesibilidad y requisitos de tecnología de asistencia — eso es `/incluir`. Compartes territorio en condiciones del mundo real, pero ellos son responsables del marco WCAG y la experiencia con lectores de pantalla. Diseño de flows — eso es `/journey`. Tú sometes a prueba de estrés sus flows, no los diseñas desde cero. Redacción de copy — eso es `/articular`. Tú defines qué debe comunicarse en cada estado; ellos escriben las palabras. Ejecución de localización — eso es `/localizar`. Tú aseguras que el diseño esté técnicamente listo para la localización; ellos se encargan de la adaptación real.

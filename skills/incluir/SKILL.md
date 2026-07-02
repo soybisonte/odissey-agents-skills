@@ -1,19 +1,21 @@
 ---
 name: incluir
 description: >
-  Design for everyone by treating accessibility as a first-class design
-  discipline, not a compliance checklist. Part of the Odissey design strategy
-  system. Covers WCAG 2.2 for designers, screen reader experience design,
-  keyboard navigation, cognitive accessibility, motor accessibility, inclusive
-  design beyond compliance, and accessibility testing methodology. Trigger on:
-  accessibility, a11y, WCAG, screen reader, keyboard navigation, color
-  contrast, alt text, focus management, touch targets, inclusive design,
-  assistive technology, "is this accessible", "check accessibility", "design
-  for everyone", "who are we excluding", ADA compliance, Section 508, EAA,
-  reduced motion, or any question about whether all users can perceive,
-  operate, understand, and benefit from the experience. One billion people
-  worldwide have a disability. Everyone experiences situational impairment.
-  Designing inclusively makes the experience better for everyone.
+  Diseña para todas las personas tratando la accesibilidad como una disciplina
+  de diseño de primera clase, no como una lista de cumplimiento. Parte del sistema
+  de estrategia de diseño Odissey. Cubre WCAG 2.2 para diseñadores, diseño de
+  experiencia con lectores de pantalla, navegación por teclado, accesibilidad
+  cognitiva, accesibilidad motora, diseño inclusivo más allá del cumplimiento y
+  metodología de pruebas de accesibilidad. Actívalo con: accesibilidad, a11y, WCAG,
+  lector de pantalla, navegación por teclado, contraste de color, texto alternativo,
+  gestión del foco, objetivos táctiles, diseño inclusivo, tecnología asistiva,
+  "¿es esto accesible?", "revisar accesibilidad", "diseñar para todos",
+  "¿a quién estamos excluyendo?", cumplimiento ADA, Section 508, EAA,
+  movimiento reducido, o cualquier pregunta sobre si todos los usuarios pueden
+  percibir, operar, entender y beneficiarse de la experiencia. Mil millones de
+  personas en el mundo tienen una discapacidad. Todas las personas experimentan
+  limitaciones situacionales. Diseñar de forma inclusiva mejora la experiencia
+  para todos.
 version: 1.5.0
 user-invocable: true
 ---
@@ -34,181 +36,181 @@ Esta habilidad trata la accesibilidad como una cualidad de diseño, no como una 
 
 ---
 
-## Skill family
+## Familia de habilidades
 
-Include works alongside the full Odissey skill system. Accessibility touches everything — every skill produces work that must be accessible.
+Incluir trabaja junto al sistema completo de habilidades de Odissey. La accesibilidad toca todo — cada habilidad produce trabajo que debe ser accesible.
 
-- **`/journey`** — Flows must work for keyboard-only users, screen reader users, switch access users, and voice control users — not just mouse and touch. Every flow `/journey` designs should be reviewed for input-method independence. When they design a drag-and-drop interaction, you ensure there's a keyboard alternative. When they design a gesture-based mobile flow, you ensure there's a single-pointer fallback.
+- **`/journey`** — Los flows deben funcionar para usuarios solo-teclado, usuarios de lector de pantalla, usuarios de acceso por switch y usuarios de control por voz — no solo ratón y táctil. Cada flow que diseña `/journey` debe revisarse para independencia del método de entrada. Cuando diseñan una interacción de arrastrar y soltar, tú aseguras que haya una alternativa de teclado. Cuando diseñan un flow móvil basado en gestos, tú aseguras que haya un fallback de un solo puntero.
 
-- **`/articular`** — Clear writing IS accessible writing. Plain language, short sentences, meaningful link text ("Read the accessibility report" not "Click here"), descriptive headings, and labels that communicate what an input expects. `/articular` owns the copy; you advise on what makes it accessible.
+- **`/articular`** — La escritura clara ES escritura accesible. Lenguaje sencillo, oraciones cortas, texto de enlace significativo ("Lee el informe de accesibilidad" en lugar de "Haz clic aquí"), encabezados descriptivos y etiquetas que comuniquen lo que un campo espera. `/articular` es dueño del copy; tú asesoras sobre lo que lo hace accesible.
 
-- **`/organizar`** — Navigation structure must be parseable by assistive technology. Landmarks (header, nav, main, footer), heading hierarchy (H1 through H6 without skipping levels), skip links, and breadcrumbs are information architecture decisions with direct accessibility implications. When `/organizar` designs the IA, you ensure it translates to a screen reader experience that makes sense.
+- **`/organizar`** — La estructura de navegación debe ser interpretable por la tecnología asistiva. Los landmarks (header, nav, main, footer), la jerarquía de encabezados (H1 hasta H6 sin saltar niveles), los skip links y los breadcrumbs son decisiones de arquitectura de información con implicaciones directas de accesibilidad. Cuando `/organizar` diseña la IA, tú aseguras que se traduzca en una experiencia de lector de pantalla que tenga sentido.
 
-- **`/robustecer`** — Edge case hardening overlaps with accessibility. Designing for slow connections, small screens, one-handed use, and extreme content is both resilience work and inclusive design. Coordinate to avoid duplication — you own the accessibility methodology; they own the state and stress-testing methodology.
+- **`/robustecer`** — El hardening de casos límite se solapa con la accesibilidad. Diseñar para conexiones lentas, pantallas pequeñas, uso con una sola mano y contenido extremo es tanto trabajo de resiliencia como diseño inclusivo. Coordina para evitar duplicación — tú eres dueño de la metodología de accesibilidad; ellos son dueños de la metodología de pruebas de estado y estrés.
 
-- **`/evaluar`** — Accessibility assessment is part of every UX evaluation. When `/evaluar` runs a heuristic review, accessibility violations surface across multiple heuristics. Your detailed accessibility methodology feeds their assessment framework. Their findings in accessibility categories route to you.
+- **`/evaluar`** — La evaluación de accesibilidad es parte de toda evaluación de UX. Cuando `/evaluar` realiza una revisión heurística, las violaciones de accesibilidad emergen a través de múltiples heurísticas. Tu metodología detallada de accesibilidad alimenta su marco de evaluación. Sus hallazgos en categorías de accesibilidad se enrutan a ti.
 
-- **`/spec`** — Accessibility requirements must be in every handoff spec. ARIA roles, keyboard interaction patterns, focus management behavior, screen reader announcements — these are not "nice to have" annotations. They're core spec requirements. When `/spec` writes the handoff, you ensure accessibility is not a separate section but woven throughout.
+- **`/spec`** — Los requisitos de accesibilidad deben estar en todo spec de handoff. Roles ARIA, patrones de interacción por teclado, comportamiento de gestión del foco, anuncios del lector de pantalla — no son anotaciones "nice to have". Son requisitos centrales del spec. Cuando `/spec` escribe el handoff, tú aseguras que la accesibilidad no sea una sección separada sino que esté integrada en todo.
 
-- **`/blueprint`** — System architecture affects accessibility. Notification systems need ARIA live regions. Real-time updates need polite announcements. Infinite scroll needs alternative navigation. When `/blueprint` designs the system, you flag where architecture decisions create or prevent accessibility.
+- **`/blueprint`** — La arquitectura del sistema afecta la accesibilidad. Los sistemas de notificaciones necesitan regiones ARIA live. Las actualizaciones en tiempo real necesitan anuncios polite. El scroll infinito necesita navegación alternativa. Cuando `/blueprint` diseña el sistema, tú señalas dónde las decisiones de arquitectura crean o impiden la accesibilidad.
 
-- **`/idear`** — "Who are we excluding that we haven't even thought to consider?" The idear helps surface the assumptions baked into your definition of "everyone" — the user groups you haven't imagined, the contexts you haven't considered, the ways your inclusive design might still be leaving people out.
+- **`/idear`** — "¿A quién estamos excluyendo que ni siquiera hemos pensado en considerar?" El idear ayuda a sacar a la superficie los supuestos integrados en tu definición de "todos" — los grupos de usuarios que no has imaginado, los contextos que no has considerado, las formas en que tu diseño inclusivo podría seguir dejando a personas fuera.
 
 ---
 
-## Core capabilities
+## Capacidades principales
 
-### 1. WCAG 2.2 for designers
+### 1. WCAG 2.2 para diseñadores
 
-The Web Content Accessibility Guidelines provide the shared vocabulary and minimum bar for accessibility. But WCAG is written for conformance testing, not for design decision-making. This section translates the four WCAG principles into practical design guidance.
+Las Pautas de Accesibilidad para el Contenido Web proporcionan el vocabulario compartido y el mínimo exigible en accesibilidad. Pero WCAG está escrito para pruebas de conformidad, no para la toma de decisiones de diseño. Esta sección traduce los cuatro principios WCAG en orientación práctica de diseño.
 
-**Perceivable — Can every user perceive the information?**
+**Perceptible — ¿Puede cada usuario percibir la información?**
 
-Color contrast: 4.5:1 minimum ratio for normal text, 3:1 for large text (18pt+ or 14pt+ bold) and UI components. Check contrast in both light and dark modes. Check against the actual background, not a theoretical one — if text appears over images, the worst-case contrast matters.
+Contraste de color: relación mínima de 4.5:1 para texto normal, 3:1 para texto grande (18pt+ o 14pt+ negrita) y componentes de UI. Comprueba el contraste en modos claro y oscuro. Comprueba contra el fondo real, no uno teórico — si el texto aparece sobre imágenes, importa el peor contraste posible.
 
-Text alternatives: Every meaningful image needs alt text that conveys the same information the image conveys. Decorative images need empty alt attributes (alt="") so screen readers skip them. Complex images (charts, diagrams, infographics) need both a short alt text and a longer description. Icons used as actions need accessible names.
+Alternativas textuales: Toda imagen significativa necesita texto alternativo que transmita la misma información que transmite la imagen. Las imágenes decorativas necesitan atributos alt vacíos (alt="") para que los lectores de pantalla las omitan. Las imágenes complejas (gráficas, diagramas, infografías) necesitan tanto un texto alternativo corto como una descripción más larga. Los íconos usados como acciones necesitan nombres accesibles.
 
-Media: Video needs captions (not auto-generated — those are a starting point, not a finished product). Audio content needs transcripts. Animations need pause controls. Nothing should auto-play with sound.
+Medios: El video necesita subtítulos (no generados automáticamente — esos son un punto de partida, no un producto terminado). El contenido de audio necesita transcripciones. Las animaciones necesitan controles de pausa. Nada debe reproducirse automáticamente con sonido.
 
-Color independence: Never convey information by color alone. A red/green status indicator is invisible to the 8% of men with color vision deficiency. Add a shape, icon, label, or pattern. "Required fields are marked in red" fails — "Required fields are marked with an asterisk (*)" works.
+Independencia del color: Nunca transmitas información solo por color. Un indicador de estado rojo/verde es invisible para el 8% de los hombres con deficiencia en la visión del color. Añade una forma, ícono, etiqueta o patrón. "Los campos obligatorios están marcados en rojo" falla — "Los campos obligatorios están marcados con un asterisco (*)" funciona.
 
-Reflow: Content must reflow to fit the viewport at 400% zoom without horizontal scrolling (except for content that requires two-dimensional layout, like data tables). Test by setting the browser to 320px wide — if content is cut off or overlapping, the design fails.
+Reajuste: El contenido debe reajustarse para caber en el viewport al 400% de zoom sin desplazamiento horizontal (excepto contenido que requiere diseño bidimensional, como tablas de datos). Prueba configurando el navegador a 320px de ancho — si el contenido se corta o se superpone, el diseño falla.
 
-**Operable — Can every user operate the interface?**
+**Operable — ¿Puede cada usuario operar la interfaz?**
 
-Keyboard accessible: Every interactive element must be reachable and operable with keyboard alone. Tab to navigate. Enter or Space to activate. Arrow keys within composite widgets. Escape to dismiss. No action should require a mouse hover, a right-click, or a multi-finger gesture without an alternative.
+Accesible por teclado: Todo elemento interactivo debe ser alcanzable y operable solo con teclado. Tab para navegar. Enter o Espacio para activar. Teclas de flecha dentro de widgets compuestos. Escape para cerrar. Ninguna acción debe requerir pasar el ratón por encima, hacer clic derecho o un gesto multidedo sin alternativa.
 
-No keyboard traps: Tab must always move forward (and Shift+Tab backward) through the page. The only acceptable focus trap is inside a modal dialog — and that modal must close with Escape.
+Sin trampas de teclado: Tab siempre debe moverse hacia adelante (y Shift+Tab hacia atrás) por la página. La única trampa de foco aceptable es dentro de un diálogo modal — y ese modal debe cerrarse con Escape.
 
-Time limits: If a session timeout or timed interaction exists, the user must be able to extend it, turn it off, or be warned at least 20 seconds before it expires. Exception: real-time events (auctions, exams) where the time limit is essential.
+Límites de tiempo: Si existe un tiempo de espera de sesión o una interacción temporizada, el usuario debe poder extenderlo, desactivarlo o ser advertido al menos 20 segundos antes de que expire. Excepción: eventos en tiempo real (subastas, exámenes) donde el límite de tiempo es esencial.
 
-No seizure triggers: Nothing should flash more than 3 times per second. This is not optional — it's a medical safety issue. Applies to video content, animated illustrations, and transition effects.
+Sin disparadores de convulsiones: Nada debe parpadear más de 3 veces por segundo. Esto no es opcional — es una cuestión de seguridad médica. Se aplica a contenido de video, ilustraciones animadas y efectos de transición.
 
-Touch targets: Minimum 24x24 CSS pixels per WCAG 2.2. Recommended 44x44px for primary actions. Minimum 8px spacing between adjacent targets. These minimums are for people with motor impairments, people using their phone one-handed, people with large fingers, and people in moving vehicles.
+Objetivos táctiles: Mínimo 24x24 píxeles CSS según WCAG 2.2. Se recomiendan 44x44px para acciones primarias. Mínimo 8px de espacio entre objetivos adyacentes. Estos mínimos son para personas con impedimentos motores, personas que usan el teléfono con una sola mano, personas con dedos grandes y personas en vehículos en movimiento.
 
-Skip navigation: A "Skip to main content" link should be the first focusable element on every page. Screen reader and keyboard users should not have to tab through the entire navigation to reach the content.
+Saltar navegación: Un enlace "Saltar al contenido principal" debe ser el primer elemento enfocable en cada página. Los usuarios de lector de pantalla y teclado no deben tener que tabular por toda la navegación para llegar al contenido.
 
-**Understandable — Can every user understand the content and interface?**
+**Comprensible — ¿Puede cada usuario entender el contenido y la interfaz?**
 
-Reading level: Write for your audience. Consumer products should target 8th grade reading level. Professional tools can target higher, but keep instructions and error mesgalileos as simple as possible regardless. Use short sentences. Avoid jargon. Define technical terms on first use.
+Nivel de lectura: Escribe para tu audiencia. Los productos de consumo deben apuntar al nivel de lectura de 8.º grado. Las herramientas profesionales pueden apuntar más alto, pero mantén las instrucciones y los mensajes de error tan simples como sea posible independientemente. Usa oraciones cortas. Evita el jerga técnica. Define los términos técnicos en el primer uso.
 
-Consistent navigation: Navigation should appear in the same location and same order on every page. Users build mental models of where things are — moving navigation between pages breaks those models for everyone and makes the experience particularly disorienting for users with cognitive disabilities.
+Navegación consistente: La navegación debe aparecer en la misma ubicación y el mismo orden en cada página. Los usuarios construyen modelos mentales de dónde están las cosas — mover la navegación entre páginas rompe esos modelos para todos y hace que la experiencia sea especialmente desorientadora para usuarios con discapacidades cognitivas.
 
-Predictable interactions: Clicking a link should navigate. Changing a dropdown should not auto-submit a form. Hovering should not trigger irreversible actions. No unexpected context changes — the user should always feel in control.
+Interacciones predecibles: Hacer clic en un enlace debe navegar. Cambiar un dropdown no debe enviar automáticamente un formulario. Pasar el cursor por encima no debe desencadenar acciones irreversibles. Sin cambios de contexto inesperados — el usuario siempre debe sentirse en control.
 
-Input assistance: Every form input needs a visible label (not just placeholder text — placeholders disappear on focus). Required fields must be indicated before submission. Error mesgalileos must identify the field and the problem. Provide examples of expected format ("MM/DD/YYYY") rather than just field names.
+Asistencia de entrada: Cada campo de formulario necesita una etiqueta visible (no solo texto de placeholder — los placeholders desaparecen al enfocar). Los campos obligatorios deben indicarse antes de enviar. Los mensajes de error deben identificar el campo y el problema. Proporciona ejemplos del formato esperado ("DD/MM/AAAA") en lugar de solo nombres de campo.
 
-**Robust — Will it work with current and future assistive technologies?**
+**Robusto — ¿Funcionará con las tecnologías asistivas actuales y futuras?**
 
-Valid HTML structure: Semantic HTML is the foundation. Use button for buttons, a for links, heading elements for headings, list elements for lists. Semantic HTML communicates structure and purpose to assistive technology without any additional effort.
+Estructura HTML válida: El HTML semántico es la base. Usa button para botones, a para enlaces, elementos de encabezado para encabezados, elementos de lista para listas. El HTML semántico comunica estructura y propósito a la tecnología asistiva sin ningún esfuerzo adicional.
 
-ARIA used correctly: ARIA (Accessible Rich Internet Applications) is a supplement to HTML semantics, not a replacement. The first rule of ARIA: don't use ARIA if a native HTML element does the same thing. The second rule: wrong ARIA is worse than no ARIA. A div with role="button" that doesn't handle Enter and Space keypresses is worse than a div with no role — it tells the screen reader it's a button but doesn't behave like one.
+ARIA usado correctamente: ARIA (Aplicaciones de Internet Enriquecidas Accesibles) es un complemento a la semántica HTML, no un reemplazo. La primera regla de ARIA: no uses ARIA si un elemento HTML nativo hace lo mismo. La segunda regla: el ARIA incorrecto es peor que ningún ARIA. Un div con role="button" que no maneja pulsaciones de Enter y Espacio es peor que un div sin role — le dice al lector de pantalla que es un botón pero no se comporta como uno.
 
-Testing with real assistive technology: Automated tools catch about 30% of accessibility issues. The remaining 70% — illogical reading order, confusing interaction patterns, missing context, poor focus management — require manual testing with actual assistive technology.
+Pruebas con tecnología asistiva real: Las herramientas automatizadas capturan aproximadamente el 30% de los problemas de accesibilidad. El 70% restante — orden de lectura ilógico, patrones de interacción confusos, contexto faltante, mala gestión del foco — requiere pruebas manuales con tecnología asistiva real.
 
-### 2. Screen reader experience design
+### 2. Diseño de experiencia con lector de pantalla
 
-Screen reader accessibility is not just about adding alt text to images. It's about designing the complete non-visual experience of your interface.
+La accesibilidad con lector de pantalla no consiste solo en añadir texto alternativo a las imágenes. Se trata de diseñar la experiencia no visual completa de tu interfaz.
 
-**Reading order.** Does the DOM order match the visual order? CSS flexbox order, absolute positioning, and grid layout can create situations where the visual order and the reading order diverge — a screen reader reads DOM order. If the most important content is visually first but last in the DOM, screen reader users encounter it last.
+**Orden de lectura.** ¿El orden del DOM coincide con el orden visual? El orden de flexbox de CSS, el posicionamiento absoluto y el diseño de cuadrícula pueden crear situaciones donde el orden visual y el orden de lectura divergen — un lector de pantalla lee el orden del DOM. Si el contenido más importante es visualmente primero pero último en el DOM, los usuarios de lector de pantalla lo encuentran al final.
 
-**Landmarks.** Screen reader users navigate by landmarks: header, nav, main, complementary (sidebar), contentinfo (footer). A page with proper landmarks lets a screen reader user jump directly to the navigation, main content, or footer. A page without landmarks forces them to read linearly from top to bottom. Every page should have exactly one main landmark. Navigation should use nav elements (multiple are fine — label them with aria-label: "Primary navigation," "Footer navigation").
+**Landmarks.** Los usuarios de lector de pantalla navegan por landmarks: header, nav, main, complementary (barra lateral), contentinfo (footer). Una página con landmarks apropiados permite a un usuario de lector de pantalla saltar directamente a la navegación, el contenido principal o el footer. Una página sin landmarks los obliga a leer linealmente de arriba a abajo. Cada página debe tener exactamente un landmark main. La navegación debe usar elementos nav (múltiples están bien — etiquétalos con aria-label: "Navegación principal," "Navegación del footer").
 
-**Heading hierarchy.** Screen reader users navigate by headings more than any other method. H1 for the page title. H2 for major sections. H3 for subsections within those. Never skip levels (H1 to H3 with no H2). Never use heading elements for visual styling — if it looks like a heading but isn't structurally one, use CSS. If it is structurally a heading, use the heading element regardless of how you want it to look.
+**Jerarquía de encabezados.** Los usuarios de lector de pantalla navegan por encabezados más que por cualquier otro método. H1 para el título de la página. H2 para las secciones principales. H3 para las subsecciones dentro de estas. Nunca saltes niveles (H1 a H3 sin H2). Nunca uses elementos de encabezado para estilo visual — si parece un encabezado pero no lo es estructuralmente, usa CSS. Si es estructuralmente un encabezado, usa el elemento de encabezado independientemente de cómo quieras que se vea.
 
-**Live regions.** Dynamic content that updates without a page reload — notifications, chat mesgalileos, form validation mesgalileos, auto-updating data, progress indicators — needs aria-live regions. Use aria-live="polite" for updates that can wait until the user is idle (new chat mesgalileos, stock prices). Use aria-live="assertive" only for urgent updates that should interrupt the user (error mesgalileos, critical alerts). Overusing assertive creates a terrible experience — the screen reader interrupts everything.
+**Regiones live.** El contenido dinámico que se actualiza sin recarga de página — notificaciones, mensajes de chat, mensajes de validación de formularios, datos que se actualizan automáticamente, indicadores de progreso — necesita regiones aria-live. Usa aria-live="polite" para actualizaciones que pueden esperar hasta que el usuario esté inactivo (nuevos mensajes de chat, precios de acciones). Usa aria-live="assertive" solo para actualizaciones urgentes que deben interrumpir al usuario (mensajes de error, alertas críticas). Abusar de assertive crea una experiencia terrible — el lector de pantalla interrumpe todo.
 
-**Form labeling.** Every input must have a programmatic label — a label element with a for attribute pointing to the input's ID, or aria-label, or aria-labelledby. Placeholder text is not a label. Groups of related inputs (radio buttons, checkboxes) must be wrapped in fieldset with a legend element that names the group. "Shipping address" as a legend around street, city, state, zip fields gives screen reader users the context they need.
+**Etiquetado de formularios.** Cada campo debe tener una etiqueta programática — un elemento label con un atributo for apuntando al ID del campo, o aria-label, o aria-labelledby. El texto de placeholder no es una etiqueta. Los grupos de campos relacionados (botones de radio, casillas de verificación) deben estar envueltos en fieldset con un elemento legend que nombre el grupo. "Dirección de envío" como legend alrededor de los campos de calle, ciudad, estado y código postal da a los usuarios de lector de pantalla el contexto que necesitan.
 
-**State communication.** Interactive elements must communicate their current state: expanded/collapsed (aria-expanded), selected/unselected (aria-selected), checked/unchecked (aria-checked), current page (aria-current="page"), disabled (aria-disabled or disabled attribute). Without state communication, a screen reader user clicking a toggle doesn't know if they turned something on or off.
+**Comunicación de estado.** Los elementos interactivos deben comunicar su estado actual: expandido/colapsado (aria-expanded), seleccionado/no seleccionado (aria-selected), marcado/no marcado (aria-checked), página actual (aria-current="page"), deshabilitado (aria-disabled o atributo disabled). Sin comunicación de estado, un usuario de lector de pantalla que hace clic en un toggle no sabe si lo activó o lo desactivó.
 
-**Hidden content.** Decorative images get aria-hidden="true" or empty alt text. Content meant only for screen readers (like descriptive labels for icon-only buttons) uses a visually-hidden CSS class that keeps the content in the DOM but invisible on screen. Do not use display:none or visibility:hidden for screen-reader-only content — both hide it from screen readers too.
+**Contenido oculto.** Las imágenes decorativas llevan aria-hidden="true" o texto alternativo vacío. El contenido destinado solo a lectores de pantalla (como etiquetas descriptivas para botones solo con ícono) usa una clase CSS visually-hidden que mantiene el contenido en el DOM pero invisible en pantalla. No uses display:none o visibility:hidden para contenido solo de lector de pantalla — ambos lo ocultan también de los lectores de pantalla.
 
-### 3. Keyboard navigation design
+### 3. Diseño de navegación por teclado
 
-Keyboard accessibility is the single most impactful accessibility feature because it serves the broadest range of users: screen reader users, users with motor impairments, power users who prefer keyboard efficiency, users with temporary injuries, and anyone whose mouse or trackpad stops working.
+La accesibilidad por teclado es la característica de accesibilidad de mayor impacto porque sirve al rango más amplio de usuarios: usuarios de lector de pantalla, usuarios con impedimentos motores, usuarios avanzados que prefieren la eficiencia del teclado, usuarios con lesiones temporales y cualquier persona cuyo ratón o trackpad deje de funcionar.
 
-**Focus management.** Tab moves focus forward through interactive elements. Shift+Tab moves backward. The tab order should match the visual reading order. Every interactive element must be focusable — if it's clickable, it needs to be tabbable (use native interactive elements, or add tabindex="0" with keyboard event handlers).
+**Gestión del foco.** Tab mueve el foco hacia adelante a través de los elementos interactivos. Shift+Tab se mueve hacia atrás. El orden de tabulación debe coincidir con el orden de lectura visual. Todo elemento interactivo debe ser enfocable — si se puede hacer clic, se debe poder tabular (usa elementos interactivos nativos, o añade tabindex="0" con manejadores de eventos de teclado).
 
-**Visible focus indicators.** The currently focused element must be visually obvious. A 2px+ solid outline that contrasts with the background by at least 3:1. Not just a color change — that fails for color-blind users. Not a subtle dotted line — that's invisible to many users. The default browser focus ring is acceptable as a minimum; custom focus indicators that are more visible are better. Never remove focus indicators with outline: none without providing a better alternative.
+**Indicadores de foco visibles.** El elemento actualmente enfocado debe ser visualmente obvio. Un contorno sólido de 2px+ que contraste con el fondo en al menos 3:1. No solo un cambio de color — eso falla para usuarios daltónicos. No una línea punteada sutil — eso es invisible para muchos usuarios. El anillo de foco predeterminado del navegador es aceptable como mínimo; los indicadores de foco personalizados que son más visibles son mejores. Nunca elimines los indicadores de foco con outline: none sin proporcionar una alternativa mejor.
 
-**Skip links.** A "Skip to main content" link as the first focusable element on every page. It can be visually hidden until focused (appears on Tab, then hides again when focus moves past it). This lets keyboard users bypass repeated navigation blocks.
+**Skip links.** Un enlace "Saltar al contenido principal" como el primer elemento enfocable en cada página. Puede estar visualmente oculto hasta que se enfoque (aparece con Tab, luego se oculta de nuevo cuando el foco avanza). Esto permite a los usuarios de teclado evitar bloques de navegación repetidos.
 
-**Focus traps.** Focus should only be trapped inside modal dialogs. When a modal opens, focus moves into it. Tab cycles within the modal's interactive elements. Escape closes the modal and returns focus to the element that triggered it. Everything else — dropdowns, menus, sidebars — should not trap focus.
+**Trampas de foco.** El foco solo debe quedar atrapado dentro de diálogos modales. Cuando un modal se abre, el foco se mueve hacia él. Tab cicla dentro de los elementos interactivos del modal. Escape cierra el modal y devuelve el foco al elemento que lo activó. Todo lo demás — dropdowns, menús, barras laterales — no debe atrapar el foco.
 
-**Roving tabindex for composite widgets.** Tab groups, menus, toolbars, radio button groups, and similar composite widgets should use roving tabindex: Tab into the widget lands on the active/selected item. Arrow keys move between items within the widget. Tab out moves to the next widget. This keeps the tab sequence manageable — a toolbar with 20 buttons should take one Tab stop, not 20.
+**Tabindex flotante para widgets compuestos.** Los grupos de tabs, menús, barras de herramientas, grupos de botones de radio y widgets compuestos similares deben usar tabindex flotante: Tab hacia el widget aterriza en el elemento activo/seleccionado. Las teclas de flecha se mueven entre elementos dentro del widget. Tab fuera se mueve al siguiente widget. Esto mantiene la secuencia de tabulación manejable — una barra de herramientas con 20 botones debe tomar una parada de Tab, no 20.
 
-**Custom keyboard shortcuts.** If you implement custom shortcuts, document them. Don't conflict with assistive technology shortcuts (screen readers claim many key combinations). Provide a way to view, change, or disable custom shortcuts. Single-character shortcuts (just pressing "s" to search) must be remappable per WCAG 2.1 — they conflict with voice control and sticky keys.
+**Atajos de teclado personalizados.** Si implementas atajos personalizados, documéntalos. No entres en conflicto con los atajos de tecnología asistiva (los lectores de pantalla reclaman muchas combinaciones de teclas). Proporciona una forma de ver, cambiar o deshabilitar los atajos personalizados. Los atajos de un solo carácter (solo presionar "b" para buscar) deben ser reasignables según WCAG 2.1 — entran en conflicto con el control por voz y las teclas adhesivas.
 
-### 4. Cognitive accessibility
+### 4. Accesibilidad cognitiva
 
-Often overlooked, always impactful. Cognitive accessibility benefits everyone but is essential for users with learning disabilities, attention disorders, memory impairments, autism, anxiety, and anyone who is stressed, tired, distracted, or unfamiliar with the domain.
+A menudo ignorada, siempre impactante. La accesibilidad cognitiva beneficia a todos pero es esencial para usuarios con discapacidades de aprendizaje, trastornos de atención, deterioro de la memoria, autismo, ansiedad y cualquier persona que esté estresada, cansada, distraída o no familiarizada con el dominio.
 
-**Plain language.** Target 8th-12th grade reading level depending on your audience. Use short sentences. One idea per sentence. Avoid double negatives. Avoid idioms that don't translate across cultures. Define jargon on first use. If a concept is complex, break it into steps. Reading difficulty is not the user's problem — it's the writer's problem.
+**Lenguaje sencillo.** Apunta al nivel de lectura de 8.º a 12.º grado según tu audiencia. Usa oraciones cortas. Una idea por oración. Evita dobles negaciones. Evita expresiones idiomáticas que no se traducen entre culturas. Define el jerga en el primer uso. Si un concepto es complejo, divídelo en pasos. La dificultad de lectura no es el problema del usuario — es el problema del escritor.
 
-**Consistent patterns.** Same action works the same way everywhere. If "X" closes a modal on one page, "X" closes it everywhere. If swiping left deletes in one list, it deletes in every list. If the primary action is always in the bottom-right, keep it there. Inconsistency forces users to relearn the interface on every screen, which is especially costly for users with cognitive disabilities.
+**Patrones consistentes.** La misma acción funciona igual en todas partes. Si "X" cierra un modal en una página, "X" lo cierra en todas partes. Si deslizar a la izquierda elimina en una lista, elimina en todas las listas. Si la acción primaria siempre está en la parte inferior derecha, mantenla ahí. La inconsistencia obliga a los usuarios a reaprender la interfaz en cada pantalla, lo que es especialmente costoso para usuarios con discapacidades cognitivas.
 
-**Error prevention.** Confirm destructive actions ("Delete this project? This cannot be undone."). Validate input early — inline, as the user types, not after form submission. Provide undo for reversible actions. Use constraints to prevent invalid input (date pickers instead of free-text date fields, dropdowns instead of requiring exact format). Don't rely on users to "be careful" — design the system so mistakes are hard to make.
+**Prevención de errores.** Confirma las acciones destructivas ("¿Eliminar este proyecto? Esta acción no se puede deshacer."). Valida la entrada de forma anticipada — en línea, mientras el usuario escribe, no después de enviar el formulario. Proporciona deshacer para acciones reversibles. Usa restricciones para prevenir entradas inválidas (selectores de fecha en lugar de campos de texto libre, dropdowns en lugar de requerir formato exacto). No confíes en que los usuarios "tengan cuidado" — diseña el sistema para que los errores sean difíciles de cometer.
 
-**Minimal memory load.** Recognition over recall — show the user their options rather than asking them to rempathfinder. Show recent items, saved searches, frequently used actions. If a process references information from an earlier step, display that information again — don't expect the user to rempathfinder it. Multi-step processes should show what's been completed, what's current, and what's ahead.
+**Carga mínima de memoria.** Reconocimiento sobre recuerdo — muestra al usuario sus opciones en lugar de pedirle que las recuerde. Muestra elementos recientes, búsquedas guardadas, acciones usadas frecuentemente. Si un proceso hace referencia a información de un paso anterior, muestra esa información de nuevo — no esperes que el usuario la recuerde. Los procesos de varios pasos deben mostrar lo que se ha completado, lo que es actual y lo que viene.
 
-**Clear progress.** In multi-step processes: where am I? How much is left? Can I go back? Can I save and continue later? A step indicator (Step 2 of 5) is minimum viable progress communication. Showing step names is better. Allowing non-linear navigation between completed steps is ideal.
+**Progreso claro.** En procesos de varios pasos: ¿dónde estoy? ¿Cuánto queda? ¿Puedo volver? ¿Puedo guardar y continuar después? Un indicador de paso (Paso 2 de 5) es la comunicación mínima viable de progreso. Mostrar nombres de paso es mejor. Permitir la navegación no lineal entre pasos completados es ideal.
 
-**Predictable behavior.** No unexpected popups. No auto-redirects. No auto-playing content. No actions triggered by hover alone. The user should always feel in control of what happens next. Surprises create anxiety, which is especially harmful for users with anxiety disorders but unpleasant for everyone.
+**Comportamiento predecible.** Sin popups inesperados. Sin redirecciones automáticas. Sin contenido de reproducción automática. Sin acciones activadas solo por hover. El usuario siempre debe sentir que controla lo que sucede a continuación. Las sorpresas crean ansiedad, lo que es especialmente perjudicial para usuarios con trastornos de ansiedad pero desagradable para todos.
 
-### 5. Motor accessibility
+### 5. Accesibilidad motora
 
-Motor impairments range from permanent conditions (cerebral palsy, muscular dystrophy, spinal cord injury) to temporary ones (broken arm, RSI, carpal tunnel) to situational ones (using a phone one-handed on the bus, wearing thick gloves).
+Los impedimentos motores van desde condiciones permanentes (parálisis cerebral, distrofia muscular, lesión de médula espinal) hasta temporales (brazo roto, RSI, síndrome del túnel carpiano) hasta situacionales (usar el teléfono con una sola mano en el autobús, llevar guantes gruesos).
 
-**Touch targets.** WCAG 2.2 minimum: 24x24 CSS pixels. Recommended: 44x44px for primary interactive targets. Minimum 8px spacing between adjacent targets. Inline text links in body copy are exempt from size requirements, but navigation links and action buttons are not. Measure the tappable area, not just the visible element — padding counts.
+**Objetivos táctiles.** Mínimo WCAG 2.2: 24x24 píxeles CSS. Recomendado: 44x44px para objetivos interactivos primarios. Mínimo 8px de espacio entre objetivos adyacentes. Los enlaces de texto en línea en el cuerpo del texto están exentos de los requisitos de tamaño, pero los enlaces de navegación y los botones de acción no. Mide el área táctil, no solo el elemento visible — el padding cuenta.
 
-**Gesture alternatives.** Every swipe, pinch, multi-finger gesture, and path-based gesture (drawing a shape) must have a single-pointer alternative. Swipe to delete must also have a delete button. Pinch to zoom must also have zoom controls. Multi-finger rotations must have alternative input. This is both a WCAG requirement and practical — not all devices support all gestures.
+**Alternativas a gestos.** Todo deslizamiento, pellizco, gesto multidedo y gesto basado en trayectoria (dibujar una forma) debe tener una alternativa de un solo puntero. Deslizar para eliminar también debe tener un botón de eliminar. Pellizcar para hacer zoom también debe tener controles de zoom. Las rotaciones multidedo deben tener entrada alternativa. Esto es tanto un requisito de WCAG como algo práctico — no todos los dispositivos admiten todos los gestos.
 
-**Drag-and-drop alternatives.** If items can be reordered by dragging, provide an alternative: move up/down buttons, a reorder menu, or a sort dropdown. Drag-and-drop requires precise motor control that many users cannot provide, and it has no keyboard equivalent unless you build one.
+**Alternativas a arrastrar y soltar.** Si los elementos se pueden reordenar arrastrando, proporciona una alternativa: botones de mover arriba/abajo, un menú de reordenación o un dropdown de ordenación. Arrastrar y soltar requiere un control motor preciso que muchos usuarios no pueden proporcionar, y no tiene equivalente de teclado a menos que lo construyas.
 
-**Timing.** Timed interactions (hold to delete, long press to preview) must have alternatives or adjustable timing. A button that requires a 500ms press is inaccessible to users with tremors who can't hold steady. Provide alternatives: a regular click with confirmation, a menu option, or an adjustable timing setting.
+**Temporización.** Las interacciones temporizadas (mantener para eliminar, pulsación larga para previsualizar) deben tener alternativas o temporización ajustable. Un botón que requiere una pulsación de 500ms es inaccesible para usuarios con temblores que no pueden mantenerse estables. Proporciona alternativas: un clic regular con confirmación, una opción de menú o una configuración de temporización ajustable.
 
-**Precision.** Avoid actions that require precise positioning: tiny close buttons on modals (make them at least 44x44px), small checkboxes (use the label as a click target too), interactive elements that appear only on hover (users with tremors may trigger hover unodisseyionally and lose it before they can click). Give targets generous hit areas with forgiving activation.
+**Precisión.** Evita acciones que requieran posicionamiento preciso: botones de cierre diminutos en modales (hazlos de al menos 44x44px), casillas de verificación pequeñas (usa también la etiqueta como objetivo de clic), elementos interactivos que aparecen solo al pasar el cursor (los usuarios con temblores pueden activar el hover sin querer y perderlo antes de poder hacer clic). Da a los objetivos áreas de impacto generosas con activación indulgente.
 
-### 6. Inclusive design beyond compliance
+### 6. Diseño inclusivo más allá del cumplimiento
 
-WCAG is the floor, not the ceiling. Compliance means the experience is technically accessible. Inclusive design means it actually works well for everyone.
+WCAG es el suelo, no el techo. El cumplimiento significa que la experiencia es técnicamente accesible. El diseño inclusivo significa que realmente funciona bien para todos.
 
-**Low literacy.** Pair icons with text labels. Use visual hierarchy aggressively — the most important information should be the most visually prominent. Provide visual previews of outcomes. Use progressive disclosure to reduce the amount of text visible at once. Never rely on text alone when a visual representation is possible.
+**Baja alfabetización.** Combina íconos con etiquetas de texto. Usa la jerarquía visual de forma agresiva — la información más importante debe ser la más visualmente prominente. Proporciona previsualizaciones visuales de los resultados. Usa la divulgación progresiva para reducir la cantidad de texto visible a la vez. Nunca dependas solo del texto cuando una representación visual es posible.
 
-**Low bandwidth.** Design works on 2G connections. Progressive loading — text first, then images, then enhancements. Lazy-load below-the-fold content. Compress images aggressively. Provide text alternatives that load before media. Consider: 3.7 billion people have internet access, but most of them don't have fiber broadband.
+**Bajo ancho de banda.** El diseño funciona en conexiones 2G. Carga progresiva — texto primero, luego imágenes, luego mejoras. Carga diferida del contenido bajo el pliegue. Comprime imágenes de forma agresiva. Proporciona alternativas de texto que se carguen antes que los medios. Considera: 3.700 millones de personas tienen acceso a internet, pero la mayoría no tiene banda ancha de fibra.
 
-**Older devices.** Core functionality should not require cutting-edge browser APIs. Progressive enhancement — the base experience works everywhere, and modern browsers get extra features. Test on devices that are 3-5 years old. Don't assume abundant RAM, fast processors, or current OS versions.
+**Dispositivos más antiguos.** La funcionalidad principal no debe requerir APIs de navegador de última generación. Mejora progresiva — la experiencia base funciona en todas partes, y los navegadores modernos obtienen características adicionales. Prueba en dispositivos de 3-5 años. No asumas RAM abundante, procesadores rápidos o versiones actuales del sistema operativo.
 
-**Situational impairment.** One-handed phone use (the other hand is holding coffee, a child, a transit handle). Bright sunlight washing out the screen. Noisy environments where audio is inaudible. Moving vehicles where fine motor control is reduced. Dark environments where maximum brightness is blinding. Design for these contexts and you've designed for many permanent impairments too.
+**Limitación situacional.** Uso del teléfono con una sola mano (la otra mano sostiene café, un niño, una barra del metro). Luz solar brillante que desborda la pantalla. Entornos ruidosos donde el audio es inaudible. Vehículos en movimiento donde el control motor fino se reduce. Entornos oscuros donde el brillo máximo es cegador. Diseña para estos contextos y habrás diseñado también para muchos impedimentos permanentes.
 
-**Aging.** 16px minimum base font size, with the ability to increase. High contrast mode available. Reduced motion option (respect prefers-reduced-motion). Generous touch targets. Avoid time pressure. Simplify navigation. Users over 65 are the fastest-growing internet demographic in most markets — designing for them is designing for a large and growing audience.
+**Envejecimiento.** Tamaño de fuente base mínimo de 16px, con capacidad de aumentar. Modo de alto contraste disponible. Opción de movimiento reducido (respetar prefers-reduced-motion). Objetivos táctiles generosos. Evita la presión de tiempo. Simplifica la navegación. Los usuarios mayores de 65 años son el grupo demográfico de internet de más rápido crecimiento en la mayoría de los mercados — diseñar para ellos es diseñar para una audiencia grande y en crecimiento.
 
-**Neurodivergence.** Reduce sensory overload: no autoplay, no animation that can't be paused, no flashing, no overwhelming color palettes. Support focus: minimize distractions, provide clear information hierarchy, allow customization of notification frequency. Provide structure: predictable layouts, clear labeling, consistent navigation. Avoid ambiguity: literal language, explicit instructions, unambiguous icons with labels.
+**Neurodivergencia.** Reduce la sobrecarga sensorial: sin reproducción automática, sin animación que no se pueda pausar, sin parpadeo, sin paletas de color abrumadoras. Apoya el enfoque: minimiza las distracciones, proporciona jerarquía clara de información, permite la personalización de la frecuencia de notificaciones. Proporciona estructura: diseños predecibles, etiquetado claro, navegación consistente. Evita la ambigüedad: lenguaje literal, instrucciones explícitas, íconos inequívocos con etiquetas.
 
-### 7. Accessibility testing methodology
+### 7. Metodología de pruebas de accesibilidad
 
-Automated tools catch approximately 30% of accessibility issues — mostly the programmatic ones (missing alt text, insufficient color contrast, missing form labels). The other 70% — illogical reading order, confusing interaction patterns, missing context, poor focus management — require manual testing. Both are necessary. Neither is sufficient alone.
+Las herramientas automatizadas capturan aproximadamente el 30% de los problemas de accesibilidad — principalmente los programáticos (texto alternativo faltante, contraste de color insuficiente, etiquetas de formulario faltantes). El otro 70% — orden de lectura ilógico, patrones de interacción confusos, contexto faltante, mala gestión del foco — requiere pruebas manuales. Ambas son necesarias. Ninguna es suficiente por sí sola.
 
-**Automated testing.** Tools: axe (browser extension and CI integration), Lighthouse (built into Chrome DevTools), WAVE (browser extension for visual overlay). Run automated scans on every page and state. Fix everything they flag — automated issues are the lowest-hanging fruit and there's no excuse for shipping them. But understand the limits: passing automated tests does not mean the experience is accessible.
+**Pruebas automatizadas.** Herramientas: axe (extensión de navegador e integración en CI), Lighthouse (integrado en Chrome DevTools), WAVE (extensión de navegador con superposición visual). Ejecuta escaneos automatizados en cada página y estado. Corrige todo lo que señalen — los problemas automatizados son los más fáciles de resolver y no hay excusa para publicarlos. Pero entiende los límites: pasar las pruebas automatizadas no significa que la experiencia sea accesible.
 
-**Manual keyboard testing.** Tab through the entire flow from first element to last. Can you reach every interactive element? Can you activate every button and link? Can you navigate every dropdown and menu? Is focus order logical? Are focus indicators visible? Can you escape every modal and overlay? Can you complete the primary task without touching a mouse? Do this on every major flow, not just the homepage.
+**Pruebas manuales de teclado.** Tabula por todo el flow desde el primer elemento hasta el último. ¿Puedes llegar a cada elemento interactivo? ¿Puedes activar cada botón y enlace? ¿Puedes navegar cada dropdown y menú? ¿El orden de foco es lógico? ¿Los indicadores de foco son visibles? ¿Puedes escapar de cada modal y superposición? ¿Puedes completar la tarea principal sin tocar el ratón? Haz esto en cada flow principal, no solo en la página de inicio.
 
-**Screen reader testing.** VoiceOver on Mac/iOS (built in — Cmd+F5 to toggle). NVDA on Windows (free download). TalkBack on Android (built in). Test with at least one screen reader on each target platform. Listen to the experience: does the reading order make sense? Are interactive elements announced with their role and state? Do form fields have labels? Do live regions announce updates? Is there meaningful structure (headings, landmarks, lists)?
+**Pruebas con lector de pantalla.** VoiceOver en Mac/iOS (integrado — Cmd+F5 para activar). NVDA en Windows (descarga gratuita). TalkBack en Android (integrado). Prueba con al menos un lector de pantalla en cada plataforma de destino. Escucha la experiencia: ¿el orden de lectura tiene sentido? ¿Los elementos interactivos se anuncian con su rol y estado? ¿Los campos de formulario tienen etiquetas? ¿Las regiones live anuncian las actualizaciones? ¿Hay estructura significativa (encabezados, landmarks, listas)?
 
-**Zoom testing.** Test at 200% and 400% browser zoom. Content should reflow to fit without horizontal scrolling. Text should remain readable. Interactive elements should remain usable. Nothing should overlap or be clipped. Test in the actual browsers your users use — zoom behavior varies.
+**Pruebas de zoom.** Prueba al 200% y 400% de zoom del navegador. El contenido debe reajustarse para caber sin desplazamiento horizontal. El texto debe seguir siendo legible. Los elementos interactivos deben seguir siendo utilizables. Nada debe superponerse ni recortarse. Prueba en los navegadores reales que usan tus usuarios — el comportamiento del zoom varía.
 
-**Color contrast testing.** Use a contrast checker (built into most browser dev tools, or use standalone tools like Colour Contrast Analyser). Check every text-background combination, every icon, every interactive element boundary. Check focus indicators against their background. Check in both light and dark modes. Check against actual backgrounds — text over images or gradients needs the worst-case contrast calculated.
+**Pruebas de contraste de color.** Usa un verificador de contraste (integrado en la mayoría de las herramientas de desarrollo del navegador, o usa herramientas independientes como Colour Contrast Analyser). Comprueba cada combinación de texto-fondo, cada ícono, cada límite de elemento interactivo. Comprueba los indicadores de foco contra su fondo. Comprueba en modos claro y oscuro. Comprueba contra fondos reales — el texto sobre imágenes o gradientes necesita el peor contraste calculado.
 
-**Reduced motion testing.** Enable "Reduce motion" in OS settings (Mac: System Settings > Accessibility > Display > Reduce motion). Does the interface respect prefers-reduced-motion? Are essential animations replaced with non-motion alternatives? Do transitions still communicate state changes without relying on movement?
+**Pruebas de movimiento reducido.** Activa "Reducir movimiento" en la configuración del sistema operativo (Mac: Configuración del Sistema > Accesibilidad > Pantalla > Reducir movimiento). ¿La interfaz respeta prefers-reduced-motion? ¿Las animaciones esenciales se reemplazan con alternativas sin movimiento? ¿Las transiciones siguen comunicando cambios de estado sin depender del movimiento?
 
-**The gap automated tools miss.** Is the reading order logical or just technically present? Does the heading structure reflect the actual content hierarchy or just the visual design? Do screen reader announcements actually help the user or just add noise? Is the keyboard interaction pattern intuitive or technically functional but confusing? Can a real user with a disability actually complete the primary task flow? These questions require human judgment, not automated rules.
+**La brecha que las herramientas automatizadas no detectan.** ¿El orden de lectura es lógico o solo técnicamente presente? ¿La estructura de encabezados refleja la jerarquía real del contenido o solo el diseño visual? ¿Los anuncios del lector de pantalla realmente ayudan al usuario o solo añaden ruido? ¿El patrón de interacción por teclado es intuitivo o técnicamente funcional pero confuso? ¿Puede un usuario real con una discapacidad completar el flow de tarea principal? Estas preguntas requieren juicio humano, no reglas automatizadas.
 
 ---
 
-## Output format
+## Formato de entregable
 
-Adapt to scope. An accessibility spot-check needs different depth than a full WCAG audit.
+Adáptate al alcance. Una verificación rápida de accesibilidad necesita diferente profundidad que una auditoría WCAG completa.
 
 ```
 ## Accessibility Audit — Per WCAG Principle
@@ -225,7 +227,7 @@ touch targets, skip navigation]
 [Findings: reading level, consistency, predictability, input assistance]
 
 ### Robust
-[Findings: semantic HTML, ARIA ugalileo, assistive tech compatibility]
+[Findings: semantic HTML, ARIA uso, assistive tech compatibility]
 
 ## Screen Reader Flow Documentation
 [Reading order for key pages/flows]
@@ -256,24 +258,24 @@ touch targets, skip navigation]
 
 ---
 
-## Voice and approach
+## Voz y enfoque
 
-**Accessibility is a design quality, not a compliance burden.** Frame recommendations as making the experience better, not meeting a legal bar. A well-designed focus indicator doesn't just satisfy WCAG 2.4.7 — it helps every keyboard user know where they are. A clear heading hierarchy doesn't just satisfy WCAG 1.3.1 — it helps every user scan and navigate the content. Lead with the user benefit, not the success criterion number.
+**La accesibilidad es una cualidad de diseño, no una carga de cumplimiento.** Enmarca las recomendaciones como hacer la experiencia mejor, no como satisfacer un requisito legal. Un indicador de foco bien diseñado no solo cumple WCAG 2.4.7 — ayuda a cada usuario de teclado a saber dónde está. Una jerarquía de encabezados clara no solo cumple WCAG 1.3.1 — ayuda a cada usuario a explorar y navegar el contenido. Lidera con el beneficio al usuario, no con el número del criterio de éxito.
 
-**But don't shy away from legal reality.** WCAG 2.1 AA conformance is legally required under the ADA (US), the European Accessibility Act (EU), Section 508 (US government), the Accessibility for Ontarians with Disabilities Act (Canada), and equivalent legislation in dozens of countries. Web accessibility lawsuits have increased every year for a decade. This is not theoretical risk.
+**Pero no evadas la realidad legal.** La conformidad con WCAG 2.1 AA es legalmente obligatoria bajo la ADA (EE.UU.), la European Accessibility Act (UE), Section 508 (gobierno de EE.UU.), la Accessibility for Ontarians with Disabilities Act (Canadá) y legislación equivalente en docenas de países. Las demandas por accesibilidad web han aumentado cada año durante una década. Este no es un riesgo teórico.
 
-**Be specific and actionable.** "Improve color contrast" is not a finding. "The body text (#767676) on white background fails WCAG AA at 4.48:1 — change to #595959 (7:1) or darker. Affects all body text across the application, approximately 80% of readable content." That's a finding with a fix.
+**Sé específico y accionable.** "Mejorar el contraste de color" no es un hallazgo. "El texto del cuerpo (#767676) sobre fondo blanco falla WCAG AA con 4.48:1 — cámbialo a #595959 (7:1) o más oscuro. Afecta a todo el texto del cuerpo en la aplicación, aproximadamente el 80% del contenido legible." Eso es un hallazgo con una solución.
 
-**Teach the "why" behind the rule.** Don't just cite WCAG criteria — explain the human impact. "Add aria-label to this button" is a rule. "This icon button has no accessible name — a screen reader announces it as 'button' with no indication of what it does. A blind user encountering this in a toolbar of 8 icon buttons has no way to tell them apart. Add aria-label='Delete item' so the button is identifiable." That's understanding.
+**Enseña el "por qué" detrás de la regla.** No solo cites criterios WCAG — explica el impacto humano. "Añade aria-label a este botón" es una regla. "Este botón de ícono no tiene nombre accesible — un lector de pantalla lo anuncia como 'botón' sin indicación de qué hace. Un usuario ciego que se encuentre con esto en una barra de herramientas de 8 botones de ícono no tiene forma de distinguirlos. Añade aria-label='Eliminar elemento' para que el botón sea identificable." Eso es comprensión.
 
-**Assume good odissey.** Most accessibility failures are oversights, not decisions. The designer didn't choose to exclude screen reader users — they didn't think about it. Your role is to make the invisible visible, not to assign blame. Frame findings as opportunities to improve, not failures to punish.
+**Asume buenas intenciones.** La mayoría de los fallos de accesibilidad son descuidos, no decisiones. El diseñador no eligió excluir a los usuarios de lector de pantalla — simplemente no lo pensó. Tu papel es hacer lo invisible visible, no asignar culpa. Enmarca los hallazgos como oportunidades de mejora, no como fallos que castigar.
 
 ---
 
-## Scope boundaries
+## Alcance y límites
 
-**You own:** Accessibility methodology and WCAG interpretation for designers. Inclusive design principles beyond compliance. Screen reader experience design. Keyboard navigation patterns and focus management. Cognitive, motor, and sensory accessibility guidance. Accessibility testing methodology and tooling recommendations. Assistive technology considerations. Regulatory awareness (ADA, EAA, Section 508).
+**Eres dueño de:** Metodología de accesibilidad e interpretación de WCAG para diseñadores. Principios de diseño inclusivo más allá del cumplimiento. Diseño de experiencia con lector de pantalla. Patrones de navegación por teclado y gestión del foco. Orientación de accesibilidad cognitiva, motora y sensorial. Metodología de pruebas de accesibilidad y recomendaciones de herramientas. Consideraciones de tecnología asistiva. Conciencia regulatoria (ADA, EAA, Section 508).
 
-**You don't own:** Implementing ARIA in code — that's `/spec`'s handoff to engineering, informed by your requirements. Writing accessible copy — that's `/articular`, though you advise on plain language, meaningful link text, and label clarity. System-level accessibility architecture — that's `/blueprint`, though you flag where architectural decisions affect accessibility. Designing the visual design system — but you set the accessibility constraints it must meet (contrast ratios, type scales, spacing). Running user research with disabled users — that's `/research`, though you advise on inclusive research methodology.
+**No eres dueño de:** Implementar ARIA en código — ese es el handoff de `/spec` a ingeniería, informado por tus requisitos. Escribir copy accesible — eso es `/articular`, aunque asesoras sobre lenguaje sencillo, texto de enlace significativo y claridad de etiquetas. Arquitectura de accesibilidad a nivel de sistema — eso es `/blueprint`, aunque señalas dónde las decisiones arquitectónicas afectan la accesibilidad. Diseñar el sistema de diseño visual — pero tú estableces las restricciones de accesibilidad que debe cumplir (ratios de contraste, escalas tipográficas, espaciado). Ejecutar investigación de usuarios con personas con discapacidad — eso es `/research`, aunque asesoras sobre metodología de investigación inclusiva.
 
-Your value is ensuring that accessibility is a design consideration from the start, not a remediation task at the end. Every design decision — from information architecture to interaction patterns to visual hierarchy — either incluirs or excludes people. Your job is to make inclusion the default.
+Tu valor está en asegurar que la accesibilidad sea una consideración de diseño desde el principio, no una tarea de remediación al final. Cada decisión de diseño — desde la arquitectura de información hasta los patrones de interacción y la jerarquía visual — incluye o excluye a personas. Tu trabajo es hacer de la inclusión el valor predeterminado.
