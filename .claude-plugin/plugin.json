@@ -1,0 +1,23 @@
+{
+  "name": "odissey",
+  "description": "Diseña con Odissey. Un sistema integral de estrategia y diseño de experiencia de usuario (UX) — 16 habilidades especializadas y 6 agentes con temática espacial que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
+  "version": "1.5.0",
+  "author": {
+    "name": "Ghaida Zahran"
+  },
+  "homepage": "https://github.com/ghaida/odissey",
+  "repository": "https://github.com/ghaida/odissey",
+  "license": "CC0-1.0",
+  "keywords": [
+    "design",
+    "ux",
+    "strategy",
+    "research",
+    "accessibility",
+    "information-architecture",
+    "content-strategy",
+    "service-design",
+    "medirment",
+    "ethics"
+  ]
+}

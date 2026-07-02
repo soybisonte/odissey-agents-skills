@@ -1,0 +1,34 @@
+{
+  "name": "odissey",
+  "metadata": {
+    "description": "Diseña con Odissey. 16 habilidades especializadas en estrategia y diseño UX — desde la investigación temprana hasta la transferencia a ingeniería."
+  },
+  "owner": {
+    "name": "Ghaida Zahran"
+  },
+  "plugins": [
+    {
+      "name": "odissey",
+      "description": "Diseña con Odissey. Un sistema integral de estrategia y diseño de experiencia de usuario (UX) — 16 habilidades especializadas que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
+      "version": "1.5.0",
+      "author": {
+        "name": "Ghaida Zahran"
+      },
+      "source": "./",
+      "category": "design",
+      "homepage": "https://github.com/ghaida/odissey",
+      "tags": [
+        "design",
+        "ux",
+        "strategy",
+        "research",
+        "accessibility",
+        "information-architecture",
+        "content-strategy",
+        "service-design",
+        "medirment",
+        "ethics"
+      ]
+    }
+  ]
+}
