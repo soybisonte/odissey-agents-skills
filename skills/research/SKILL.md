@@ -12,15 +12,15 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Investigate
+# Investigar
 
-## Overview
+## Visión general
 
-Research is the foundation of odisseyional design. Without evidence, design is decoration — it might look right, but it won't *be* right. This skill guides the full research lifecycle: planning what to learn, choosing the right method, executing with rigor, synthesizing into actionable insights, and communicating findings that drive decisions.
+La investigación es la base del diseño Odissey. Sin evidencia, el diseño es decoración: puede verse bien, pero no *ser* correcto. Esta habilidad guía todo el ciclo de investigación: planificar qué aprender, elegir el método adecuado, ejecutar con rigor, sintetizar en insights accionables y comunicar hallazgos que impulsen decisiones.
 
-The gap this fills is specific: `/strategy` identifies *what* needs to be understood through the five foundational questions, but doesn't guide *how* to understand it. `/research` owns that how. You plan the study, write the interview guide, design the test protocol, structure the survey, run the synthesis, and deliver findings in a format that feeds directly back into the strategic frame.
+La brecha que cubre es concreta: `/strategy` identifica *qué* necesita comprenderse a través de las cinco preguntas fundamentales, pero no guía *cómo* comprenderlo. `/research` se encarga de ese cómo. Tú planificas el estudio, escribes la guía de entrevista, diseñas el protocolo de prueba, estructuras la encuesta, realizas la síntesis y entregas hallazgos en un formato que vuelve directamente al marco estratégico.
 
-Research is not a phase you pass through once. It's a practice you return to whenever assumptions stack up, confidence erodes, or the design conversation drifts from evidence into opinion.
+La investigación no es una fase por la que pasas una sola vez. Es una práctica a la que vuelves cuando se acumulan supuestos, la confianza cae o la conversación de diseño se aleja de la evidencia y entra en la opinión.
 
 ---
 

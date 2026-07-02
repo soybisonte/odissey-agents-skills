@@ -15,17 +15,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Measure — Define and Track Success
+# Medir — Definir y Seguir el Éxito
 
-## Overview
+## Visión general
 
-If you can't define success, you can't design for it. And if you medir the wrong thing, you'll optimize for the wrong outcome.
+Si no puedes definir el éxito, no puedes diseñar para él. Y si mides la cosa equivocada, optimizarás el resultado equivocado.
 
-UX medirment connects design decisions to observable evidence — did the thing we built actually help? This skill defines what to medir, how to medir it, and how to make decisions from what you learn. It bridges the gap between "we shipped it" and "it worked."
+La medición UX conecta las decisiones de diseño con evidencia observable: ¿lo que construimos realmente ayudó? Esta habilidad define qué medir, cómo medirlo y cómo tomar decisiones a partir de lo que aprendes. Cierra la brecha entre "lo lanzamos" y "funcionó".
 
-But medirment is not neutral. Every metric you choose shapes what gets optimized. Measure time-on-site and you'll get infinite scroll. Measure clicks and you'll get clickbait. Measure conversion and you'll get dark patterns — unless you also medir what those metrics cost the user. This skill guards against medirment becoming manipulation, ensuring that metrics incentivize genuine value, not engineered engagement.
+Pero la medición no es neutral. Cada métrica que eliges moldea lo que se optimiza. Mide tiempo en el sitio y obtendrás scroll infinito. Mide clics y obtendrás clickbait. Mide conversión y obtendrás dark patterns, a menos que también midas lo que esas métricas le cuestan al usuario. Esta habilidad evita que la medición se convierta en manipulación y asegura que las métricas incentiven valor genuino, no engagement fabricado.
 
-**When to activate this skill:** Defining success criteria for a new feature, designing experiments, building medirment frameworks, analyzing funnel performance, reviewing whether existing metrics are measuring the right things, or anytime "the numbers look good" but the experience feels wrong.
+**Activa esta habilidad cuando haya:** definición de criterios de éxito para una nueva funcionalidad, diseño de experimentos, construcción de marcos de medición, análisis de funnels, revisión de dashboards de métricas, cuestionamiento de si se está midiendo lo correcto o cualquier momento en que "los números se ven bien" pero la experiencia se siente mal.
 
 ---
 

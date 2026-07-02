@@ -18,19 +18,19 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Include — Design for Everyone
+# Incluir — Diseñar para Todas las Personas
 
-## Overview
+## Visión general
 
-Accessibility is not a feature. It's not a phase. It's not something you "add" after the design is "done." It's a design discipline that ensures every person — regardless of ability, device, situation, or context — can use what you build.
+La accesibilidad no es una característica. No es una fase. No es algo que "añades" después de que el diseño esté "terminado". Es una disciplina de diseño que asegura que cada persona, sin importar su capacidad, dispositivo, situación o contexto, pueda usar lo que construyes.
 
-One billion people worldwide have a disability. That number alone should end the debate about whether accessibility matters. But accessibility is not just about permanent disability. It's about the full range of human experience: the parent holding a baby in one arm while using their phone with the other. The commuter reading a screen in direct sunlight. The user in a noisy cafe who can't play audio. The person recovering from eye surgery. The aging executive whose eyesight isn't what it was five years ago. The teenager with ADHD trying to focus on a multi-step form.
+Mil millones de personas en el mundo tienen alguna discapacidad. Solo ese dato debería cerrar el debate sobre si la accesibilidad importa. Pero la accesibilidad no trata solo de discapacidad permanente. Trata del rango completo de la experiencia humana: el padre o madre que sostiene a un bebé con un brazo y usa el teléfono con el otro. La persona que lee una pantalla bajo sol directo. El usuario en una cafetería ruidosa que no puede reproducir audio. La persona recuperándose de una cirugía ocular. La ejecutiva mayor cuya vista ya no es la de hace cinco años. La persona con TDAH intentando concentrarse en un formulario de varios pasos.
 
-Everyone experiences situational or temporary impairment. Designing for accessibility makes the experience better for all of these people — not just the ones you're "accommodating." Curb cuts were designed for wheelchair users. They're used by everyone with a stroller, a suitcase, a delivery cart, or a bicycle. Good accessible design works the same way.
+Todas las personas experimentan limitaciones situacionales o temporales. Diseñar para accesibilidad mejora la experiencia de todas ellas, no solo de quienes estás "acomodando". Las rampas se diseñaron para usuarios de silla de ruedas. Hoy las usan también personas con cochecito, maleta, carrito de reparto o bicicleta. El buen diseño accesible funciona igual.
 
-This skill treats accessibility as a design quality, not a compliance burden. But it doesn't shy away from legal reality — WCAG conformance is legally required in many jurisdictions (ADA in the US, the European Accessibility Act, Section 508 for government, and similar legislation worldwide). Ignoring accessibility is both a design failure and a legal risk.
+Esta habilidad trata la accesibilidad como una cualidad de diseño, no como una carga de cumplimiento. Pero no evade la realidad legal: el cumplimiento de WCAG es obligatorio en muchas jurisdicciones (ADA en EE. UU., European Accessibility Act, Section 508 para gobierno y leyes similares en todo el mundo). Ignorar la accesibilidad es tanto un fallo de diseño como un riesgo legal.
 
-**When to activate this skill:** Accessibility audits, inclusive design reviews, WCAG compliance checks, screen reader testing guidance, keyboard navigation design, color contrast evaluation, touch target review, or any moment when the question is "can everyone use this?"
+**Cuándo activar esta habilidad:** auditorías de accesibilidad, revisiones de diseño inclusivo, comprobaciones de cumplimiento WCAG, guía de pruebas con lector de pantalla, diseño de navegación por teclado, evaluación de contraste de color, revisión de objetivos táctiles o cualquier momento en que la pregunta sea "¿puede usar esto todo el mundo?"
 
 ---
 

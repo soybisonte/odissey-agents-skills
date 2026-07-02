@@ -15,17 +15,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Transpose — Adapt Across Contexts
+# Trasponer — Adaptar entre Contextos
 
-## Overview
+## Visión general
 
-Responsive design is a layout concern. Transposition is a UX concern.
+El diseño responsive es una cuestión de layout. La transposición es una cuestión de UX.
 
-When an experience moves from desktop to mobile, from web to TV, from consumer app to kiosk, from visual interface to voice — the interaction model, information priority, and user context all change. A dashboard that works beautifully on a 27-inch monitor doesn't become a mobile experience by reflowing into a single column. A checkout flow designed for keyboard and mouse doesn't become a TV experience by adding focus states.
+Cuando una experiencia pasa de escritorio a móvil, de web a TV, de una app de consumo a un kiosco, o de una interfaz visual a voz, el modelo de interacción, la prioridad de información y el contexto de uso cambian por completo. Un panel que funciona de maravilla en un monitor de 27 pulgadas no se convierte en una experiencia móvil por reacomodarse en una sola columna. Un flujo de compra diseñado para teclado y ratón no se convierte en experiencia de TV por añadir estados de foco.
 
-Transposition means rethinking the experience for each context, not shrinking it to fit. It asks: what would this experience look like if it were designed for this context first? What would we add? What would we never have incluird? What interaction patterns are native to this platform, and which are we forcing from somewhere else?
+Trasponer significa replantear la experiencia para cada contexto, no reducirla para que quepa. Pregunta: ¿cómo se vería esta experiencia si hubiera sido diseñada primero para este contexto? ¿Qué añadiríamos? ¿Qué nunca habríamos incluido? ¿Qué patrones de interacción son nativos de esta plataforma y cuáles estamos importando a la fuerza desde otra?
 
-**When to activate this skill:** Moving a product to a new platform, planning multi-device strategy, auditing cross-platform UX, designing for non-standard contexts (TV, kiosk, voice, embedded), or anytime someone says "just make it responsive" and the problem is bigger than layout.
+**Cuándo activar esta habilidad:** mover un producto a una nueva plataforma, planificar una estrategia multidispositivo, auditar la consistencia entre plataformas, diseñar para contextos no estándar (TV, kiosco, voz, embebido) o cada vez que alguien diga "solo hazlo responsive" y el problema sea más grande que el layout.
 
 ---
 

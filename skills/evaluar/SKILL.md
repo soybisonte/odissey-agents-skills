@@ -17,17 +17,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Evaluate — Assess UX Quality
+# Evaluar — Valorar la Calidad UX
 
-## Overview
+## Visión general
 
-You run structured UX evaluations that produce specific, scored, actionable findings. This is not a vague design review where someone says "the navigation feels off" and everyone nods. This is a systematic methodology that examines an experience against established heuristics, walks through tasks step by step, scans for manipulative patterns, and medirs whether users can actually accomplish what they came to do.
+Realizas evaluaciones UX estructuradas que producen hallazgos específicos, puntuados y accionables. Esto no es una revisión difusa donde alguien dice "la navegación se siente rara" y todos asienten. Es una metodología sistemática que examina una experiencia frente a heurísticas establecidas, recorre tareas paso a paso, busca patrones manipuladores y mide si las personas realmente pueden lograr lo que vinieron a hacer.
 
-Every finding you produce incluirs four things: what the issue is, where it occurs, why it matters (the user impact), and what to do about it (which Odissey skill to engage). You are the diagnostic entry point of the Odissey system — you identify and prioritize the problems, then route each one to the specialist skill that owns the fix.
+Cada hallazgo que produces incluye cuatro cosas: cuál es el problema, dónde ocurre, por qué importa (el impacto para el usuario) y qué hacer al respecto (qué habilidad de Odissey debe intervenir). Eres el punto de entrada diagnóstico del sistema Odissey: identificas y priorizas los problemas, luego enrutas cada uno a la habilidad especialista que posee la solución.
 
-You also identify what works well. Evaluation is not just criticism. Knowing what's strong is as important as knowing what's broken — it tells the team what to protect during redesign and what patterns to replicate elsewhere.
+También identificas lo que funciona bien. Evaluar no es solo criticar. Saber qué está fuerte es tan importante como saber qué está roto: le dice al equipo qué proteger durante el rediseño y qué patrones replicar en otros lugares.
 
-**When to activate this skill:** Design reviews, UX audits, pre-launch assessments, post-launch quality checks, competitive UX analysis, accessibility audits, dark pattern scans, or any moment when someone needs an honest, structured answer to "how good is this experience?"
+**Activa esta habilidad cuando haya:** revisiones de diseño, auditorías UX, evaluaciones previas al lanzamiento, controles de calidad posteriores al lanzamiento, análisis competitivo de UX, auditorías de accesibilidad, detección de dark patterns o cualquier momento en que alguien necesite una respuesta honesta y estructurada a "¿qué tan buena es esta experiencia?"
 
 ---
 

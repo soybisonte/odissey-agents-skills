@@ -16,17 +16,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Fortify — Harden for Real-World Use
+# Robustecer — Diseñar para el Mundo Real
 
-## Overview
+## Visión general
 
-The happy path is a fantasy. Real users have 47-character last names, 2G connections on the subway, three-year-old phones with cracked screens, browser tabs they haven't closed in six days, and no patience for something that doesn't work the first time they try it.
+El camino feliz es una fantasía. Los usuarios reales tienen apellidos de 47 caracteres, conexiones 2G en el metro, teléfonos de tres años con pantallas agrietadas, pestañas del navegador que no han cerrado en seis días y cero paciencia para algo que no funciona a la primera.
 
-Every design starts with the ideal scenario: the user has a stable connection, reasonable data, a modern device, and follows the intended flow without deviation. That scenario accounts for maybe 60% of actual ugalileo. The other 40% is where trust is built or destroyed — the empty state that tells the user nothing, the error mesgalileo that says "Something went wrong" without explaining what or how to fix it, the loading screen that gives no indication anything is happening, the first-run experience that asks for 12 pieces of information before showing any value.
+Todo diseño comienza con el escenario ideal: la persona tiene conexión estable, datos razonables, un dispositivo moderno y sigue el flujo previsto sin desviaciones. Ese escenario cubre quizá el 60% del uso real. El otro 40% es donde se construye o se destruye la confianza: el estado vacío que no dice nada, el mensaje de error que afirma "algo salió mal" sin explicar qué pasó ni cómo arreglarlo, la pantalla de carga que no indica si ocurre algo, la primera experiencia de uso que pide 12 datos antes de mostrar valor.
 
-Fortify systematically identifies every condition your users will actually encounter and ensures the design handles each one with the same care you gave the happy path. This isn't about pessimism — it's about respect for the people using what you build.
+Robustecer identifica de forma sistemática cada condición que las personas encontrarán de verdad y asegura que el diseño responda a cada una con el mismo cuidado que diste al camino feliz. No se trata de pesimismo: se trata de respeto por la gente que usa lo que construyes.
 
-**When to activate this skill:** Edge case reviews, error state design, empty state design, loading pattern design, first-run experience design, offline mode planning, internationalization readiness checks, stress testing, or any moment someone asks "but what happens when..."
+**Activa esta habilidad cuando haya:** revisión de casos límite, diseño de estados de error, diseño de estados vacíos, diseño de patrones de carga, diseño de primera experiencia, planificación de modo sin conexión, verificación de preparación para internacionalización, pruebas de estrés o cualquier momento en que alguien pregunte "pero qué pasa cuando..."
 
 ---
 

@@ -1,8 +1,8 @@
-# Diseña con Odissey
+# BBVA Odissey
 
-Odissey es un sistema integral de estrategia y diseño de experiencia de usuario (UX) compuesto por seis agentes especializados y dieciséis habilidades (skills) de apoyo. Cada agente es una instrucción de sistema autónoma que puedes cargar en proyectos de IA (como Claude Projects, Custom GPTs o Codex). Juntos cubren todo el arco del diseño de productos, desde el planteamiento inicial del problema hasta las especificaciones de entrega de ingeniería.
+BBVA Odissey es una plataforma integral de agentes y skills de estrategia y diseño de experiencia de usuario (UX) compuesta por seis agentes especializados y dieciséis habilidades (skills) de apoyo. Cada agente es una instrucción de sistema autónoma que puedes cargar en proyectos de IA (como Claude Projects, Custom GPTs o Codex). Juntos cubren todo el arco del diseño de productos, desde el planteamiento inicial del problema hasta las especificaciones de entrega de ingeniería.
 
-La tesis central de Odissey: **cada decisión de diseño debe tener una razón, y esa razón debe ser visible en cada nivel.**
+La tesis central de Odissey: **cada decisión de diseño debe tener una razón, y esa razón debe ser visible en cada nivel.** En BBVA, esta tesis se aplica como una guía de diseño y UX para alinear decisiones de producto con contexto, rigor y responsabilidad.
 
 ---
 
@@ -19,7 +19,7 @@ La tesis central de Odissey: **cada decisión de diseño debe tener una razón, 
 
 ---
 
-## Cómo desplegar Odissey
+## Cómo desplegar BBVA Odissey
 
 ### Opción 1: Proyectos de Claude o Codex (Recomendado)
 1. Crea un nuevo proyecto en tu entorno de IA.
@@ -28,7 +28,7 @@ La tesis central de Odissey: **cada decisión de diseño debe tener una razón, 
 4. Empieza a chatear. La IA operará con las directrices de ese agente especializado.
 
 ### Opción 2: Plugin para Codex / Claude Code
-Si utilizas Codex o Claude Code, puedes instalar Odissey como un plugin local. Esto registrará automáticamente los 6 agentes y las 16 habilidades:
+Si utilizas Codex o Claude Code, puedes instalar BBVA Odissey como un plugin local. Esto registrará automáticamente los 6 agentes y las 16 habilidades:
 - **Invoca agentes** como subagentes usando `@` — ej: `@pathfinder ayúdame a estructurar este brief`, `@sentinel audita este flujo para accesibilidad`, `@orion diseña el flujo de registro`.
 - **Invoca habilidades** como comandos de barra diagonal — ej: `/strategy`, `/journey`, `/evaluar`, `/robustecer`, `/incluir`, `/spec`.
 

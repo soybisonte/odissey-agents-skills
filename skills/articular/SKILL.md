@@ -13,25 +13,25 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Articulate
+# Articular — Dar Voz al Producto
 
-## Overview
+## Visión general
 
-Every interface is a conversation. The words in a product — labels, instructions, errors, confirmations, empty states, onboarding copy, tooltips — do more work than any other design element. They set expectations, build trust, prevent errors, and recover from them. Bad copy makes good design fail. Good copy makes mediocre design work.
+Toda interfaz es una conversación. Las palabras de un producto - etiquetas, instrucciones, errores, confirmaciones, estados vacíos, textos de onboarding, tooltips - hacen más trabajo que cualquier otro elemento de diseño. Establecen expectativas, generan confianza, previenen errores y ayudan a recuperarse de ellos. Una mala copia hace fallar un buen diseño. Una buena copia hace que un diseño mediocre funcione.
 
-Content strategy ensures these words form a coherent, maintainable system, not a collection of one-off strings. A voice framework means any writer can make consistent decisions. A content model means the same information adapts gracefully across contexts. Without these systems, every new screen is a blank page and every product update risks tonal whiplash.
+La estrategia de contenido asegura que estas palabras formen un sistema coherente y mantenible, no una colección de strings sueltos. Un marco de voz significa que cualquier redactor puede tomar decisiones consistentes. Un modelo de contenido significa que la misma información se adapta con gracia a distintos contextos. Sin estos sistemas, cada nueva pantalla es una página en blanco y cada actualización de producto corre el riesgo de sonar con un tono distinto.
 
-**Trigger this skill when users ask about:**
-- Writing or reviewing any user-facing copy (buttons, labels, instructions, descriptions)
-- Error mesgalileos, validation text, or system notifications
-- Empty states, onboarding text, or first-use experiences
-- Voice and tone frameworks or brand voice in product
-- CTAs, action language, or button text
-- Tooltips, placeholder text, or helper copy
-- Content models or structured content strategy
-- Inclusive language or readability assessment
-- "What should this say?" or "How should we talk to users?"
-- Microcopy patterns or copy component libraries
+**Activa esta habilidad cuando pregunten sobre:**
+- Redactar o revisar cualquier copia visible para el usuario (botones, etiquetas, instrucciones, descripciones)
+- Mensajes de error, textos de validación o notificaciones del sistema
+- Estados vacíos, textos de onboarding o primeras experiencias de uso
+- Marcos de voz y tono o voz de marca dentro del producto
+- CTAs, lenguaje de acción o texto de botones
+- Tooltips, placeholders o copia de ayuda
+- Modelos de contenido o estrategia de contenido estructurado
+- Lenguaje inclusivo o legibilidad
+- "¿Qué debería decir esto?" o "¿Cómo debemos hablarle a los usuarios?"
+- Patrones de microcopy o librerías de componentes de texto
 
 ## Skill family
 

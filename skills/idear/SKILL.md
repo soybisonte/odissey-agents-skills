@@ -1,30 +1,31 @@
 ---
 name: idear
 description: >
-  A cross-cutting cognitive mode for sitting with design problems before
-  rushing to solve them. Part of the Odissey design strategy system.
-  Activates expansive brainstorming: hyperassociativity, beginner's mind,
-  cross-domain pattern recognition, and suppression of premature
-  idea-dismissal. Works alongside every Odissey skill — strategy uses it
-  to reframe briefs, blueprint to question structural assumptions, journey
-  to rethink interaction models, and spec to stress-test specs. Trigger
-  when the user invokes "expansive mode", "idear mode", "sit with
-  this", "brainstorm", "explore this problem", or says things like "go
-  weird with it", "don't filter yourself", "what connections are you not
-  making", "think about this differently", or "I'm stuck". This is a
-  reasoning protocol, not a persona — Claude's voice stays grounded but
-  the cognitive process changes significantly.
+  Modo cognitivo transversal para quedarse con los problemas de diseño antes
+  de correr a resolverlos. Forma parte del sistema de estrategia de diseño
+  Odissey. Activa un pensamiento expansivo: hiperasociación, mente de
+  principiante, reconocimiento de patrones entre dominios y supresión del
+  descarte prematuro de ideas. Trabaja junto con cada habilidad de Odissey:
+  strategy lo usa para reencuadrar briefs, blueprint para cuestionar
+  supuestos estructurales, journey para replantear modelos de interacción y
+  spec para someter especificaciones a estrés. Actívalo cuando el usuario
+  invoque "modo expansivo", "modo idear", "siéntate con esto",
+  "lluvia de ideas", "explora este problema" o diga cosas como "hazlo
+  raro", "no te filtres", "¿qué conexiones no estás viendo?",
+  "piénsalo distinto" o "estoy atascado". Esto es un protocolo de
+  razonamiento, no una personalidad: la voz de Claude sigue siendo
+  centrada, pero el proceso cognitivo cambia de forma significativa.
 version: 1.5.0
 user-invocable: true
 ---
 
-# The Philosopher — Sit With the Problem
+# El Filósofo — Siéntate con el Problema
 
-## Overview
+## Visión general
 
-A cross-cutting cognitive mode that shifts how you reason — not how you sound. The idear activates broader associative thinking, suppresses premature idea-dismissal, enables cross-domain connection-making, and forces genuine re-examination of assumptions. It works alongside every Odissey skill at any stage of the design process, turning shallow problem statements into genuinely complex, interesting ones.
+Un modo cognitivo transversal que cambia cómo razonas, no cómo suenas. Idear activa un pensamiento asociativo más amplio, suprime el descarte prematuro de ideas, habilita conexiones entre dominios y obliga a reexaminar de verdad los supuestos. Trabaja junto con cada habilidad de Odissey en cualquier etapa del proceso de diseño, convirtiendo planteamientos superficiales en problemas genuinamente complejos e interesantes.
 
-**When to activate:** when a designer says "I'm stuck," "sit with this," "brainstorm," "explore this problem," "go deeper," "what am I missing," "idear mode," or "expansive mode." Also activate when a problem is being solved too quickly, when the framing feels shallow, when research findings seem too clean, or when any Odissey skill needs to question its own assumptions before moving forward.
+**Cuándo activarlo:** cuando alguien diga "estoy atascado", "siéntate con esto", "lluvia de ideas", "explora este problema", "ve más profundo", "¿qué me falta?", "modo idear" o "modo expansivo". También actívalo cuando un problema se esté resolviendo demasiado rápido, cuando el encuadre se sienta superficial, cuando los hallazgos de investigación parezcan demasiado limpios o cuando cualquier habilidad de Odissey necesite cuestionar sus propios supuestos antes de avanzar.
 
 ---
 

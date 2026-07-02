@@ -1,12 +1,12 @@
 {
-  "name": "odissey",
-  "description": "Diseña con Odissey. Un sistema integral de estrategia y diseño de experiencia de usuario (UX) — 16 habilidades especializadas y 6 agentes con temática espacial que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
+  "name": "bbva-odissey",
+  "description": "BBVA Odissey. Una plataforma de agentes y skills de estrategia y diseño de experiencia de usuario (UX) para BBVA — 16 habilidades especializadas y 6 agentes con temática espacial que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
   "version": "1.5.0",
   "author": {
-    "name": "Ghaida Zahran"
+    "name": "BBVA"
   },
-  "homepage": "https://github.com/ghaida/odissey",
-  "repository": "https://github.com/ghaida/odissey",
+  "homepage": "https://github.com/bbva/odissey",
+  "repository": "https://github.com/bbva/odissey",
   "license": "CC0-1.0",
   "keywords": [
     "design",

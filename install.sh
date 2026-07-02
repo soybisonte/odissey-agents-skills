@@ -1,7 +1,7 @@
 #!/bin/bash
-# Diseña con Odissey — Instalador Local para Codex / Claude Code
+# BBVA Odissey — Instalador Local para Codex / Claude Code
 #
-# Este script ayuda a instalar Odissey como un plugin local en tu CLI de Codex o Claude Code.
+# Este script ayuda a instalar BBVA Odissey como un plugin local en tu CLI de Codex o Claude Code.
 
 set -euo pipefail
 
@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${BLUE}◆ ─ │ Odissey — Instalador Local │ ─ ◆${NC}"
+echo -e "${BLUE}◆ ─ │ BBVA Odissey — Instalador Local │ ─ ◆${NC}"
 echo ""
 
 # 1. Compilar distribuciones
@@ -35,7 +35,7 @@ fi
 echo ""
 echo -e "${GREEN}[3/3] Instrucciones de Instalación en Codex / Claude Code:${NC}"
 echo ""
-echo -e "Para activar Odissey en tu CLI de Codex o Claude Code, ejecuta el siguiente comando:"
+echo -e "Para activar BBVA Odissey en tu CLI de Codex o Claude Code, ejecuta el siguiente comando:"
 echo ""
 echo -e "  ${YELLOW}claude plugin add \"$SCRIPT_DIR\"${NC}"
 echo ""

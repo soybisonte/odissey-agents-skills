@@ -13,17 +13,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Specify — Bridge Design to Engineering
+# Especificar — Tender el Puente hacia Ingeniería
 
-## Overview
+## Visión general
 
-This skill transforms design work into actionable, implementation-ready documentation. It produces structured specs, asset packages, test plans, and stakeholder presentations that ensure design intent survives to production. Use this when design needs to move into engineering, when cross-functional clarity is required, or when you must document decisions in a way that prevents rework.
+Esta habilidad transforma el trabajo de diseño en documentación accionable y lista para implementación. Produce especificaciones estructuradas, paquetes de assets, planes de prueba y presentaciones para stakeholders que aseguran que la intención de diseño sobreviva hasta producción. Úsala cuando el diseño deba pasar a ingeniería, cuando se requiera claridad entre equipos o cuando necesites documentar decisiones de una forma que evite retrabajo.
 
 ---
 
-## Skill family
+## Familia de habilidades
 
-Specify works alongside the full Odissey skill system:
+Especificar trabaja junto con todo el sistema de habilidades de Odissey:
 
 - **`/strategy`**: Their briefs and hypotheses provide the "why" behind everything you spec. Every spec should trace back to a strategic rationale — why this feature exists, what hypothesis it tests, what user need it serves.
 - **`/research`**: Their research findings ground your use cases in evidence. Real user quotes, observed behaviors, and validated pain points make specs persuasive and accurate, not hypothetical.

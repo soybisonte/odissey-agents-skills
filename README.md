@@ -1,8 +1,8 @@
-# Diseña con Odissey
+# BBVA Odissey
 
-Un sistema integral de estrategia y diseño de experiencia de usuario (UX) para herramientas de IA. Contiene 16 habilidades especializadas y 6 agentes que cubren todo el espectro del diseño de productos, desde la estrategia y validación temprana hasta el diseño interactivo, accesibilidad, calidad y la transferencia a ingeniería.
+BBVA Odissey es una plataforma integral de agentes y skills de estrategia y diseño de experiencia de usuario (UX) para herramientas de IA. Contiene 16 habilidades especializadas y 6 agentes que cubren todo el espectro del diseño de productos, desde la estrategia y validación temprana hasta el diseño interactivo, accesibilidad, calidad y la transferencia a ingeniería.
 
-Odissey dota a la inteligencia artificial del contexto de diseño necesario para abordar decisiones con profundidad. Mientras que otras herramientas se enfocan en la estética, Odissey se centra en la razón de ser del producto.
+Odissey dota a la inteligencia artificial del contexto de diseño necesario para abordar decisiones con profundidad. Mientras que otras herramientas se enfocan en la estética, Odissey se centra en la razón de ser del producto. En BBVA, Odissey funciona como la capa de razonamiento de diseño y UX para equipos y asistentes internos.
 
 ## La Tripulación (Agentes)
 
@@ -62,6 +62,6 @@ Seis agentes que combinan múltiples habilidades en roles especializados con tem
 
 **Como plugin de Claude Code / Codex:**
 ```
-/plugin marketplace add ghaida/odissey
+/plugin marketplace add bbva/odissey
 ```
 Luego instálalo desde el menú `/plugin` para registrar las 16 habilidades como comandos y los 6 agentes como subagentes.

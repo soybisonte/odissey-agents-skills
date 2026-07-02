@@ -1,22 +1,22 @@
 {
-  "name": "odissey",
+  "name": "bbva-odissey",
   "metadata": {
-    "description": "Diseña con Odissey. 16 habilidades especializadas en estrategia y diseño UX — desde la investigación temprana hasta la transferencia a ingeniería."
+    "description": "BBVA Odissey. Plataforma de agentes y skills de estrategia y diseño UX — desde la investigación temprana hasta la transferencia a ingeniería."
   },
   "owner": {
-    "name": "Ghaida Zahran"
+    "name": "BBVA"
   },
   "plugins": [
     {
-      "name": "odissey",
-      "description": "Diseña con Odissey. Un sistema integral de estrategia y diseño de experiencia de usuario (UX) — 16 habilidades especializadas que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
+      "name": "bbva-odissey",
+      "description": "BBVA Odissey. Una plataforma de agentes y skills de estrategia y diseño de experiencia de usuario (UX) — 16 habilidades especializadas que cubren estrategia, investigación, diseño de experiencia, aseguramiento de la calidad, accesibilidad, medición y transferencia a ingeniería.",
       "version": "1.5.0",
       "author": {
-        "name": "Ghaida Zahran"
+        "name": "BBVA"
       },
       "source": "./",
       "category": "design",
-      "homepage": "https://github.com/ghaida/odissey",
+      "homepage": "https://github.com/bbva/odissey",
       "tags": [
         "design",
         "ux",

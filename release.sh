@@ -1,5 +1,5 @@
 #!/bin/bash
-# Diseña con Odissey — Script de Lanzamiento (Release)
+# BBVA Odissey — Script de Lanzamiento (Release)
 #
 # Uso: ./release.sh <versión>
 # Ejemplo: ./release.sh 1.1.0
@@ -57,7 +57,7 @@ fi
 # Obtener versión actual de plugin.json
 CURRENT=$(grep '"version"' "$SCRIPT_DIR/.claude-plugin/plugin.json" | head -1 | sed 's/.*"version": *"\([^"]*\)".*/\1/')
 
-echo -e "${BLUE}Diseña con Odissey — Lanzamiento${NC}"
+echo -e "${BLUE}BBVA Odissey — Lanzamiento${NC}"
 echo ""
 echo "  Versión actual: $CURRENT"
 echo "  Nueva versión:  $VERSION"

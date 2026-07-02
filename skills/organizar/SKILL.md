@@ -13,24 +13,24 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Organize
+# Organizar — Estructurar la Información
 
-## Overview
+## Visión general
 
-Information architecture is the structural design of shared information environments. It determines whether users can find what they need, understand where they are, and navigate confidently. Good IA is invisible — users just "get it." Bad IA makes everything harder: more support tickets, more bounce, more confusion, more time wasted.
+La arquitectura de información es el diseño estructural de entornos compartidos de información. Determina si las personas pueden encontrar lo que necesitan, entender dónde están y navegar con confianza. Una buena IA es invisible: los usuarios simplemente "lo entienden". Una mala IA vuelve todo más difícil: más tickets de soporte, más rebote, más confusión, más tiempo perdido.
 
-IA is not navigation design (that's one output of IA). It's not content strategy (that's what fills the structure). It's not visual design (that's how the structure looks). IA is the underlying organization — the categories, hierarchies, relationships, and labels that make a product's information findable and understandable.
+La IA no es diseño de navegación (eso es una salida de la IA). No es estrategia de contenido (eso es lo que llena la estructura). No es diseño visual (eso es cómo se ve la estructura). La IA es la organización subyacente: categorías, jerarquías, relaciones y etiquetas que hacen que la información de un producto sea localizable y comprensible.
 
-**Trigger this skill when users ask about:**
-- Designing or restructuring navigation (top-level, secondary, contextual)
-- Organizing content into categories, sections, or taxonomies
-- Site maps, content inventories, or structural audits
-- Labeling and naming conventions for navigation, categories, or features
-- Search strategy, filtering, or browse experiences
-- Users reporting they "can't find things" or feel lost
-- Card sorting, tree testing, or other IA research
-- "How should we organizar this?" or "Where should this live?"
-- Merging or restructuring product areas after growth or acquisition
+**Activa esta habilidad cuando pregunten sobre:**
+- Diseñar o reestructurar navegación (nivel superior, secundaria, contextual)
+- Organizar contenido en categorías, secciones o taxonomías
+- Mapas del sitio, inventarios de contenido o auditorías estructurales
+- Convenciones de etiquetado y nombrado para navegación, categorías o funcionalidades
+- Estrategia de búsqueda, filtrado o experiencias de exploración
+- Usuarios que reportan que "no encuentran cosas" o se sienten perdidos
+- Card sorting, tree testing u otra investigación de IA
+- "¿Cómo deberíamos organizar esto?" o "¿Dónde debería vivir esto?"
+- Fusionar o reestructurar áreas de producto después de crecimiento o adquisición
 
 ## Skill family
 

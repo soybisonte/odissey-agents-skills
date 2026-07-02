@@ -16,17 +16,17 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Localize — Design Across Cultures
+# Localizar — Diseñar entre Culturas
 
-## Overview
+## Visión general
 
-Localization is not translation. Translation converts words; localization adapts the experience.
+La localización no es traducción. La traducción convierte palabras; la localización adapta la experiencia.
 
-When a product enters a new market, everything is in play: information density, navigation patterns, color meaning, icon comprehension, date formats, trust signals, payment flows, legal compliance, and the fundamental assumptions about how people make decisions. A checkout flow designed for US consumers doesn't become a Japanese experience by translating the strings. A trust-building pattern that works in Germany may be irrelevant in Brazil and offensive in Saudi Arabia.
+Cuando un producto entra en un nuevo mercado, todo entra en juego: densidad de información, patrones de navegación, significado del color, comprensión de iconos, formatos de fecha, señales de confianza, flujos de pago, cumplimiento legal y los supuestos fundamentales sobre cómo la gente toma decisiones. Un flujo de compra diseñado para consumidores de EE. UU. no se convierte en experiencia japonesa solo traduciendo cadenas. Un patrón para construir confianza que funciona en Alemania puede ser irrelevante en Brasil y ofensivo en Arabia Saudí.
 
-Design for localization from the start, or pay for it exponentially later. Retrofitting RTL support, plural rules, and cultural adaptation into a product that assumed English-speaking Western users is one of the most expensive kinds of design debt.
+Diseña para la localización desde el principio, o pagarás la deuda después de forma exponencial. Rehacer soporte RTL, reglas de pluralización y adaptación cultural en un producto que asumió usuarios occidentales angloparlantes es uno de los tipos más caros de deuda de diseño.
 
-**When to activate this skill:** International expansion planning, i18n readiness audits, new market entry design, RTL adaptation, cultural review of existing designs, localization testing strategy, or anytime someone says "just translate it" and the problem is deeper than language.
+**Cuándo activar esta habilidad:** planificación de expansión internacional, auditorías de preparación i18n, diseño de entrada a nuevos mercados, adaptación RTL, revisión cultural de diseños existentes, estrategia de pruebas de localización o cada vez que alguien diga "solo traduce esto" y el problema sea más profundo que el idioma.
 
 ---
 

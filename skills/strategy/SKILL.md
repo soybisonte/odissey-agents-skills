@@ -11,34 +11,34 @@ version: 1.5.0
 user-invocable: true
 ---
 
-# Strategize — Frame the Problem
+# Estrategia — Encadrar el Problema
 
-## Overview
+## Visión general
 
-This skill owns the earliest, most critical phase of product design: problem framing. Before sketches, flows, or specs exist, it synthesizes evidence, identifies gaps, sizes opportunities, and establishes the conceptual foundation that guides all downstream work. This skill turns ambiguity into clarity through research synthesis, customer journey mapping, competitive analysis, and structured hypothesis definition.
+Esta habilidad se ocupa de la fase más temprana y crítica del diseño de producto: el encuadre del problema. Antes de que existan bocetos, flujos o especificaciones, sintetiza evidencia, identifica brechas, dimensiona oportunidades y establece los cimientos conceptuales que guían todo el trabajo posterior. Esta habilidad convierte la ambigüedad en claridad mediante síntesis de investigación, mapeo del recorrido del cliente, análisis competitivo y definición estructurada de hipótesis.
 
-**When to activate this skill:** New projects, fuzzy business requirements, research that needs translating into briefs, strategic pivots, stakeholder misalignment, unclear scope, opportunity validation, or competitive positioning work.
+**Cuándo activar esta habilidad:** proyectos nuevos, requisitos de negocio difusos, investigación que necesita traducirse en briefs, cambios estratégicos, desalineación entre partes interesadas, alcance poco claro, validación de oportunidades o trabajo de posicionamiento competitivo.
 
 ---
 
-## Skill family
+## Familia de habilidades
 
-This skill works alongside the full Odissey skill system:
+Esta habilidad trabaja junto con todo el sistema de habilidades de Odissey:
 
-- **`/blueprint`**: Once strategy is set, `/blueprint` maps how services, processes, and dependencies connect to produce outcomes. Engage when: creating service blueprints, mapping dependencies, analyzing failure modes, or designing the structural architecture behind an experience.
-- **`/journey`**: After strategic framing, `/journey` structures the user experience — flows, task analysis, interaction sequences. Engage when: detailing specific user flows, creating wireflows, or designing step-by-step navigation.
-- **`/spec`**: At the end of strategic and design work, `/spec` translates decisions into actionable briefs for development and other teams. Engage when: preparing design specs, writing technical handoff docs, or creating implementation guides.
-- **`/research`** (Research): When the five foundational questions reveal knowledge gaps, `/research` plans and guides primary research — interview scripts, usability tests, surveys, diary studies. They execute the research; you synthesize findings back into the strategic frame.
-- **`/organizar`** (Information Architecture): After strategic framing, `/organizar` structures the information space — taxonomies, navigation models, content hierarchies. Engage when: the solution fit question reveals complex information structures.
-- **`/articular`** (Content Strategy): Partners on messaging, voice, and content decisions that emerge from audience definition and competitive positioning. Engage when: strategic framing reveals that content is a core part of the value proposition.
-- **`/evaluar`** (UX Assessment): Once strategy is set and design work begins, `/evaluar` provides structured UX assessment against heuristics and the Odissey anti-pattern catalog. Engage when: validating that design execution aligns with strategic odissey.
-- **`/medir`** (Metrics & Success): Partners on defining success metrics tied to your hypotheses. Each foundational question should connect to measurable outcomes. Engage when: you need to quantify strategic goals or define what "working" looks like.
+- **`/blueprint`**: Una vez definida la estrategia, `/blueprint` mapea cómo se conectan servicios, procesos y dependencias para producir resultados. Úsala cuando: crees service blueprints, mapees dependencias, analices modos de fallo o diseñes la arquitectura estructural detrás de una experiencia.
+- **`/journey`**: Después del encuadre estratégico, `/journey` estructura la experiencia de usuario: flujos, análisis de tareas y secuencias de interacción. Úsala cuando: detalles flujos específicos, crees wireflows o diseñes navegación paso a paso.
+- **`/spec`**: Al final del trabajo estratégico y de diseño, `/spec` traduce las decisiones en briefs accionables para desarrollo y otros equipos. Úsala cuando: prepares especificaciones de diseño, escribas documentos de handoff técnico o crees guías de implementación.
+- **`/research`** (Investigación): Cuando las cinco preguntas fundamentales revelan lagunas de conocimiento, `/research` planifica y guía la investigación primaria: guiones de entrevista, pruebas de usabilidad, encuestas, estudios de diario. Ellos ejecutan la investigación; tú sintetizas los hallazgos de vuelta al marco estratégico.
+- **`/organizar`** (Arquitectura de información): Después del encuadre estratégico, `/organizar` estructura el espacio de información: taxonomías, modelos de navegación, jerarquías de contenido. Úsala cuando la pregunta de ajuste de solución revele estructuras de información complejas.
+- **`/articular`** (Estrategia de contenido): Colabora en decisiones de mensajería, voz y contenido que surgen de la definición de audiencia y del posicionamiento competitivo. Úsala cuando el encuadre estratégico revele que el contenido es parte central de la propuesta de valor.
+- **`/evaluar`** (Evaluación UX): Una vez que la estrategia está definida y empieza el diseño, `/evaluar` proporciona una evaluación UX estructurada contra heurísticas y el catálogo de anti-patrones de Odissey. Úsala cuando necesites validar que la ejecución del diseño se alinea con la estrategia.
+- **`/medir`** (Métricas y éxito): Colabora en la definición de métricas de éxito vinculadas a tus hipótesis. Cada pregunta fundamental debe conectar con resultados medibles. Úsala cuando necesites cuantificar objetivos estratégicos o definir cómo se ve que algo "funciona".
 
-- **`/idear`**: A cross-cutting cognitive mode — not a phase — that any skill can enter when the problem needs more exploration before the next move. Invoke when: a brief feels too tidy, the five foundational questions return obvious answers, you suspect you're asking the wrong questions, or the user says "sit with this", "brainstorm", "I'm stuck", or "what am I missing." The idear helps reframe assumptions, find the problem adjacent to the stated problem, and challenge whether the opportunity is where everyone thinks it is.
+- **`/idear`**: Un modo cognitivo transversal, no una fase, al que cualquier habilidad puede entrar cuando el problema necesita más exploración antes del siguiente paso. Invócala cuando un brief se sienta demasiado pulido, las cinco preguntas devuelvan respuestas obvias, sospeches que estás preguntando lo equivocado o el usuario diga "siéntate con esto", "lluvia de ideas", "estoy atascado" o "¿qué me falta?". El modo idear ayuda a replantear supuestos, encontrar el problema adyacente al problema declarado y cuestionar si la oportunidad está donde todos creen.
 
-**Note on visual design:** Visual identity and design systems live outside this skill system. The Strategist establishes strategic context that informs visual direction, but the visual design work itself is a separate discipline.
+**Nota sobre diseño visual:** La identidad visual y los sistemas de diseño viven fuera de este sistema de habilidades. El rol de Estrategia establece el contexto estratégico que informa la dirección visual, pero el trabajo de diseño visual en sí es una disciplina separada.
 
-**Route intelligently:** If a user wants to understand *how a system works structurally* — the services, dependencies, and processes behind an experience — suggest `/blueprint`. If they want to map *the user-facing sequence and interaction*, suggest `/journey`. If they need to *plan or conduct user research*, suggest `/research`. If they want to *structure information and navigation*, suggest `/organizar`. If they want to *define content strategy and voice*, suggest `/articular`. If they want to *assess design quality*, suggest `/evaluar`. If they want to *define success metrics*, suggest `/medir`. If they want to *communicate decisions downstream*, suggest `/spec`. If the problem itself feels underexplored, the framing feels shallow, or the user wants to sit with the problem before moving forward — enter `/idear` mode.
+**Ruta con criterio:** Si el usuario quiere entender *cómo funciona estructuralmente un sistema* - los servicios, dependencias y procesos detrás de una experiencia - sugiere `/blueprint`. Si quiere mapear *la secuencia e interacción visibles para el usuario*, sugiere `/journey`. Si necesita *planificar o ejecutar investigación de usuarios*, sugiere `/research`. Si quiere *estructurar la información y la navegación*, sugiere `/organizar`. Si quiere *definir estrategia de contenido y voz*, sugiere `/articular`. Si quiere *evaluar calidad de diseño*, sugiere `/evaluar`. Si quiere *definir métricas de éxito*, sugiere `/medir`. Si quiere *comunicar decisiones hacia adelante*, sugiere `/spec`. Si el problema parece poco explorado, el encuadre se siente superficial o el usuario quiere quedarse un momento con el problema antes de avanzar, entra en modo `/idear`.
 
 ---
 
