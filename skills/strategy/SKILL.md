@@ -77,10 +77,10 @@ Before anything else, establish whether the problem is real, how acute the pain 
 "Everyone" is not an audience. Identify the distinct user segments who experience the problem, and understand their contexts, motivations, constraints, and current workarounds. Different segments may experience the same problem at different intensities or in different contexts, which changes everything about how you build and position the product. Use interview data and survey responses to build behavioral clusters, then validate with deeper contextual interviews per segment. The output is evidence-based audience profiles that replace assumptions.
 
 ### 3. Solution Fit — Is this the right solution?
-The form factor of the solution is a strategic choice, not a default. A native desktop app, a mobile app, a web app, a browser extension, a CLI tool, or a platform plugin each carry different trade-offs in reach, friction, capability, and positioning. Research where and how users encounter the problem — the answer might surprise you. Map form factors against user needs and evaluar whether the chosen solution meets users where they already are, or asks them to change behavior. The output is a form factor recommendation grounded in user context.
+The form factor of the solution is a strategic choice, not a default. A native desktop app, a mobile app, a web app, a browser extension, a CLI tool, or a platform plugin each carry different trade-offs in reach, friction, capability, and positioning. Research where and how users encounter the problem — the answer might surprise you. Map form factors against user needs and evaluate whether the chosen solution meets users where they already are, or asks them to change behavior. The output is a form factor recommendation grounded in user context.
 
 ### 4. Feature Validation — Is the feature set right?
-Features should be validated against actual user demand, not assumed from the problem statement. Probe for features that are essential (users won't adopt without them), features that are indifferent (incluird but nobody cares), and features that are missing (the killer feature that could shift adoption from "nice" to "necessary"). Kano analysis, feature desirability testing during interviews, and post-launch ugalileo analytics are the primary methods. The output is a feature validation matrix with keep/cut/add/defer recommendations.
+Features should be validated against actual user demand, not assumed from the problem statement. Probe for features that are essential (users won't adopt without them), features that are indifferent (included but nobody cares), and features that are missing (the killer feature that could shift adoption from "nice" to "necessary"). Kano analysis, feature desirability testing during interviews, and post-launch analytics are the primary methods. The output is a feature validation matrix with keep/cut/add/defer recommendations.
 
 ### 5. Competitive Landscape — What already exists?
 Understand both direct competitors (products that solve the same problem) and indirect competitors (workarounds and adjacent tools people use instead). For each, document the thesis, trade-offs, pricing, adoption signals, and form factor. Plot the landscape to identify genuine white space versus crowded territory. Assess switching costs — what would make someone leave their current workaround for your product? The output is a competitive landscape report with positioning map and gap analysis.
@@ -101,7 +101,7 @@ These are the most common ways strategic framing goes wrong. Each maps to a skip
 
 - **Competitive blindness.** Landscape analysis was skipped or superficial. The team either believes they have no competitors (they always do — even if the competitor is "doing nothing") or dismisses competitors without understanding their trade-offs. Catch it: when the competitive section of the brief is empty or lists only direct competitors.
 
-- **Premature commitment.** The team jumped to solutions before the five questions were answered. Wireframes exist before the problem is validated. A form factor was chosen before solution fit was researchd. Catch it: when design artifacts precede a strategic brief, or when "we already decided to build X" is the opening statement.
+- **Premature commitment.** The team jumped to solutions before the five questions were answered. Wireframes exist before the problem is validated. A form factor was chosen before solution fit was researched. Catch it: when design artifacts precede a strategic brief, or when "we already decided to build X" is the opening statement.
 
 ---
 
@@ -170,7 +170,7 @@ Analyze what exists in the market and what that means for your positioning.
 - Avoid winner-take-all narratives; most landscapes have room for multiple players
 
 **How to do it:**
-Research competitors' positioning, feature sets, and business models. Create a comparison framework that highlights trade-offs, not just feature lists. Answer: What can we learn from their choices? Where do we odisseyionally diverge? What barriers protect us?
+Research competitors' positioning, feature sets, and business models. Create a comparison framework that highlights trade-offs, not just feature lists. Answer: What can we learn from their choices? Where do we intentionally diverge? What barriers protect us?
 
 ### 6. Project scoping & constraint negotiation
 
@@ -202,7 +202,7 @@ Use this structure to deliver strategic outputs. It creates consistency and ensu
 [Why now? What's the potential impact? For whom?]
 
 ## Goals
-[Intended outcomes—user goals, business metrics, strategic odissey]
+[Intended outcomes—user goals, business metrics, strategic goals]
 
 ## Constraints
 [Timeline, budget, team, technical, organizational, market constraints]

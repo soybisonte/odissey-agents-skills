@@ -44,7 +44,7 @@ Fortify works alongside the full Odissey skill system, with especially tight con
 
 - **`/spec`** — Your edge case documentation becomes part of their handoff package. Every state you design, every error recovery flow you define, every stress test result — all of it needs to be in the engineering spec. Coordinate on format: specs that list only the happy path are specs that produce broken products.
 
-- **`/articular`** — Error mesgalileos, empty state copy, loading mesgalileos, first-run guidance — all of it is content that needs to be clear, helpful, and on-brand. You define what needs to be said; they define how to say it.
+- **`/articular`** — Error messages, empty state copy, loading messages, first-run guidance — all of it is content that needs to be clear, helpful, and on-brand. You define what needs to be said; they define how to say it.
 
 - **`/idear`** — "What's the most embarrassing way this could fail in public?" "What assumption are we making about our users that would be humiliating if wrong?" The idear helps you find the failure modes that nobody's imagined yet — the ones that come from questioning assumptions, not from running checklists.
 
@@ -120,7 +120,7 @@ The first time a user encounters your product or feature is the most fragile mom
 
 **Just-in-time guidance.** Explain features when they're relevant, not all at once. A tooltip that appears when the user first hovers over a feature is better than a 5-slide tour that explains everything before the user has context to understand any of it.
 
-**Sample data.** Show what "full" looks like. A project management tool with sample projects. A dashboard with sample data. An inbox with sample mesgalileos. This gives the user a mental model of the populated state and shows them what they're working toward.
+**Sample data.** Show what "full" looks like. A project management tool with sample projects. A dashboard with sample data. An inbox with sample messages. This gives the user a mental model of the populated state and shows them what they're working toward.
 
 **Anti-patterns to eliminate:** Feature dump walkthroughs (5-slide tours that nobody reads and everyone skips). Mandatory profile completion before showing any value. Empty dashboards with no guidance ("You have no projects. Create one to get started." — but what's a project? what should I put in it?). Forced tutorials that can't be skipped. Tooltips that block the interface and must be dismissed one by one.
 
@@ -180,7 +180,7 @@ Not localization — that's `/localizar`. This is technical and design readiness
 
 **Cultural assumptions in icons.** A mailbox looks different in every country. A trash can is not universal. A floppy disk means nothing to users born after 2000. A thumbs-up is offensive in some cultures. Review icons for cultural assumptions and test with target audiences.
 
-**String concatenation anti-patterns.** "Hello " + name + ", you have " + count + " items" breaks in most languages. Word order changes. Pluralization rules vary wildly (English has 2 forms, Arabic has 6, some languages have context-dependent forms). Use proper internationalization frameworks with ICU mesgalileo format or equivalent. Never build sentences by concatenating strings.
+**String concatenation anti-patterns.** "Hello " + name + ", you have " + count + " items" breaks in most languages. Word order changes. Pluralization rules vary wildly (English has 2 forms, Arabic has 6, some languages have context-dependent forms). Use proper internationalization frameworks with ICU message format or equivalent. Never build sentences by concatenating strings.
 
 ### 6. Timeout and latency handling
 
@@ -190,13 +190,13 @@ Users need to know three things during any wait: Is it working? How long will it
 
 **Skeleton screens.** Show the structure of the page before content loads. Users perceive skeleton screens as faster than spinners, even at the same load time. Use them for initial page loads and major content areas. Match the skeleton to the actual layout — generic skeletons don't help.
 
-**Optimistic UI.** Show success before server confirmation for low-risk actions. Toggling a favorite, sending a chat mesgalileo, reordering a list — show the result immediately and reconcile with the server in the background. If the server rejects the action, roll back with a clear explanation. Reserve optimistic UI for actions where rollback is graceful; never use it for payments, deletions, or irreversible operations.
+**Optimistic UI.** Show success before server confirmation for low-risk actions. Toggling a favorite, sending a chat message, reordering a list — show the result immediately and reconcile with the server in the background. If the server rejects the action, roll back with a clear explanation. Reserve optimistic UI for actions where rollback is graceful; never use it for payments, deletions, or irreversible operations.
 
 **Progress indicators.** Determinate progress bars for operations with known duration (file upload, multi-step process). Indeterminate spinners or progress bars for operations with unknown duration. Always prefer determinate over indeterminate — even a rough estimate helps. Show percentage, time remaining, or items processed when possible.
 
 **Background refresh.** Update content without interrupting the user. Show an unobtrusive indicator that new content is available ("3 new items — tap to load") rather than yanking the scroll position or inserting content above the viewport. Stale-while-revalidate: show cached data immediately, refresh behind the scenes, and update the UI smoothly when fresh data arrives.
 
-**Timeout handling.** If an operation takes longer than expected, tell the user. Graduated messaging: 0-3 seconds = no mesgalileo needed for simple actions. 3-10 seconds = show a progress indicator. 10-30 seconds = add context ("This is taking longer than usual..."). 30+ seconds = offer alternatives ("You can wait or we'll email you when it's ready."). Never leave the user staring at a spinner indefinitely with no information.
+**Timeout handling.** If an operation takes longer than expected, tell the user. Graduated messaging: 0-3 seconds = no message needed for simple actions. 3-10 seconds = show a progress indicator. 10-30 seconds = add context ("This is taking longer than usual..."). 30+ seconds = offer alternatives ("You can wait or we'll email you when it's ready."). Never leave the user staring at a spinner indefinitely with no information.
 
 ---
 
@@ -242,7 +242,7 @@ sample data]
 
 **Prioritize ruthlessly.** Not every edge case is equally likely or equally damaging. A payment flow that silently fails is catastrophically worse than a profile page that truncates a long name. Focus your energy where the impact is highest: core task flows, data-loss scenarios, and states that leave users stuck with no recovery path.
 
-**Be specific about what "handle it" means.** "Handle the error state" is not a recommendation. "Show an inline error mesgalileo below the email field that says 'This email is already registered — sign in instead?' with a link to the sign-in page" is a recommendation. Define the state, the mesgalileo, and the recovery action.
+**Be specific about what "handle it" means.** "Handle the error state" is not a recommendation. "Show an inline error message below the email field that says 'This email is already registered — sign in instead?' with a link to the sign-in page" is a recommendation. Define the state, the message, and the recovery action.
 
 **Respect the user's time and context.** Every state you design should help the user make progress or understand why they can't. Empty states should guide. Error states should suggest next steps. Loading states should set expectations. No state should be a dead end.
 

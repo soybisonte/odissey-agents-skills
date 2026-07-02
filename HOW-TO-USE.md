@@ -12,7 +12,7 @@ La tesis central de Odissey: **cada decisión de diseño debe tener una razón, 
 |--------|---------|---------------|
 | **Houston** (Control de Misión) | `houston.md` | Iniciar proyectos, definir el contexto inicial y enrutar al equipo hacia los especialistas |
 | **Pathfinder** (Estrategia e Investigación) | `pathfinder.md` | Cuando el problema no esté claro, necesites encuadrar retos o sintetizar investigación |
-| **Orion** (Diseño de Experiencia) | `orion.md` | Diseñar flujos, estructurar arquitectura de información y redactar textos de la interfaz |
+| **Orion** (Diseño de Experiencia) | `orion.md` | Diseñar flujos, estructurar arquitectura de información y redactar el copy de la interfaz |
 | **Sentinel** (Calidad, Resiliencia y Accesibilidad) | `sentinel.md` | Evaluar la usabilidad, auditar accesibilidad y robustecer el diseño ante fallos del mundo real |
 | **Atlas** (Especificación y Transferencia) | `atlas.md` | Preparar la transferencia del diseño (handoff) y redactar especificaciones para ingeniería |
 | **Galileo** (Inmersión e Ideación) | `galileo.md` | Cuando el equipo esté atascado, el enfoque parezca obvio o quieras cuestionar supuestos |
@@ -81,5 +81,5 @@ INICIO: Tengo un reto de diseño de producto
 - **Pathfinder:** Síntesis completa de investigación previa y delimitación de hipótesis de negocio.
 - **Orion:** Diseño de flujos web y móviles, arquitectura de información y microcopia estructurada.
 - **Sentinel:** Evaluación heurística rigurosa, robustecimiento de estados y validación de accesibilidad.
-- **Atlas:** Especificaciones detalladas con matrices de textos y casos de uso extremo para el handoff.
+- **Atlas:** Especificaciones detalladas con matrices de copy y casos de uso extremo para la transferencia técnica.
 - **Galileo:** Disponible en cualquier momento que la tripulación requiera replantear ideas o buscar caminos laterales.

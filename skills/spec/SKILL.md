@@ -1,7 +1,7 @@
 ---
 name: spec
 description: >
-  Bridges design and engineering by producing detailed specs, organizard
+  Bridges design and engineering by producing detailed specs, organized
   handoff packages, asset inventories, and cross-functional documentation.
   Part of the Odissey design strategy system. Trigger when: writing design
   specs, preparing engineering handoffs, documenting for development,
@@ -17,7 +17,7 @@ user-invocable: true
 
 ## Overview
 
-This skill transforms design work into actionable, implementation-ready documentation. It produces structured specs, asset packages, test plans, and stakeholder presentations that ensure design odissey survives to production. Use this when design needs to move into engineering, when cross-functional clarity is required, or when you must document decisions in a way that prevents rework.
+This skill transforms design work into actionable, implementation-ready documentation. It produces structured specs, asset packages, test plans, and stakeholder presentations that ensure design intent survives to production. Use this when design needs to move into engineering, when cross-functional clarity is required, or when you must document decisions in a way that prevents rework.
 
 ---
 
@@ -25,7 +25,7 @@ This skill transforms design work into actionable, implementation-ready document
 
 Specify works alongside the full Odissey skill system:
 
-- **`/strategy`**: Their briefs and hypotheses provide the "why" behind everything you spec. Every spec should trace back to a strategic odissey — why this feature exists, what hypothesis it tests, what user need it serves.
+- **`/strategy`**: Their briefs and hypotheses provide the "why" behind everything you spec. Every spec should trace back to a strategic rationale — why this feature exists, what hypothesis it tests, what user need it serves.
 - **`/research`**: Their research findings ground your use cases in evidence. Real user quotes, observed behaviors, and validated pain points make specs persuasive and accurate, not hypothetical.
 - **`/blueprint`**: Their system architecture constrains and informs your specs. Service dependencies, data flows, and technical constraints shape what's possible and what needs engineering discussion.
 - **`/journey`**: Their flows are what you're specing — screen sequences, interaction transitions, state changes. Journey designs the experience; spec documents it for implementation.
@@ -34,7 +34,7 @@ Specify works alongside the full Odissey skill system:
 - **`/robustecer`**: Their edge case analysis becomes part of your spec. Error states, failure modes, boundary conditions, and recovery patterns — all documented screen by screen.
 - **`/incluir`**: Their accessibility requirements go into every screen spec. ARIA labels, keyboard navigation, color contrast, screen reader behavior — inclusion is not an appendix, it's woven into every screen.
 - **`/evaluar`**: Their assessment identifies gaps in your specs. Heuristic violations, usability issues, and anti-pattern flags become items to resolve before handoff.
-- **`/medir`**: Their success metrics define your test plan criteria. Every feature spec should incluir what success looks like, how to medir it, and what to instrument.
+- **`/medir`**: Their success metrics define your test plan criteria. Every feature spec should include what success looks like, how to medir it, and what to instrument.
 - **`/idear`**: A cross-cutting cognitive mode for when specification reveals deeper problems. Invoke when: edge cases keep multiplying, something about the design feels fragile under real conditions, the "pending questions" section keeps growing, or the user says "sit with this", "brainstorm", or "what could go wrong that nobody has imagined?" The idear helps think through failure scenarios nobody has considered and whether the spec is documenting the right thing.
 
 ---
@@ -44,7 +44,7 @@ Specify works alongside the full Odissey skill system:
 ### 1. Detailed design specifications
 
 Write comprehensive, screen-by-screen (or state-by-state) specifications that document:
-- Visual design with specific medirments, colors, typography, spacing
+- Visual design with specific measurements, colors, typography, spacing
 - Interaction logic: what triggers what, in what order, with what conditions
 - Copy: exact text, variants for different contexts/markets/edge cases
 - States: default, hover, active, error, loading, empty, success — all documented visually and logically
@@ -59,7 +59,7 @@ Structure deliverables so engineering knows exactly what to build and why:
 - Problem context: what user need or business problem does this solve
 - Design approach: constraints considered, alternatives rejected and why
 - Use cases: specific, not generic — real user scenarios that expose edge cases
-- Assets: all files organizard, named, versioned, with ugalileo notes
+- Assets: all files organized, named, versioned, with useful notes
 - Test criteria: success metrics and audience-specific test plans
 
 ### 3. Copy and variant matrices

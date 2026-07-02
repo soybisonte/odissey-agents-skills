@@ -12,9 +12,9 @@ Seis agentes que combinan múltiples habilidades en roles especializados con tem
 |---------------|--------|------------------------------------|
 | Control de Misión | **Houston** | `/odissey` — Orienta la misión, establece el contexto del proyecto y enruta a la tripulación. |
 | Estrategia e Investigación | **Pathfinder** | `/strategy` + `/research` — Encuentra el problema real, exige evidencia de usuario y define la estrategia. |
-| Diseño de Experiencia | **Orion** | `/journey` + `/organizar` + `/articular` — Diseña flujos, estructura la información y redacta las copias. |
+| Diseño de Experiencia | **Orion** | `/journey` + `/organizar` + `/articular` — Diseña flujos, estructura la información y redacta el copy. |
 | Calidad y Resiliencia | **Sentinel** | `/evaluar` + `/robustecer` + `/incluir` — Audita la usabilidad heurística, previene fallos y asegura accesibilidad. |
-| Transferencia a Ingeniería | **Atlas** | `/spec` — Documenta especificaciones técnicas detalladas y prepara el handoff de código. |
+| Transferencia a Ingeniería | **Atlas** | `/spec` — Documenta especificaciones técnicas detalladas y prepara la transferencia técnica a código. |
 | Pensamiento Lateral | **Galileo** | `/idear` — Cuestiona suposiciones profundas, busca analogías laterales y destraba el proceso. |
 
 ---
