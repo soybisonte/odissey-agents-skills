@@ -201,7 +201,28 @@ def validate_skill(path: Path) -> SkillValidationResult:
 def validate_catalog(root: Path) -> CatalogValidationResult:
     """Validate every ``SKILL.md`` under a catalog root."""
     root = Path(root)
-    skill_paths = sorted(root.rglob("SKILL.md")) if root.exists() else []
+    if not root.is_dir():
+        message = (
+            f"catalog root does not exist: {root}"
+            if not root.exists()
+            else f"catalog root is not a directory: {root}"
+        )
+        return CatalogValidationResult(
+            root=root,
+            skill_count=0,
+            description_characters=0,
+            issues=[
+                _issue(
+                    root,
+                    1,
+                    message,
+                    rule="catalog-root",
+                    remediation="Create the canonical catalog directory or pass an existing directory with --root.",
+                )
+            ],
+        )
+
+    skill_paths = sorted(root.rglob("SKILL.md"))
     results = [validate_skill(path) for path in skill_paths]
     return CatalogValidationResult(
         root=root,

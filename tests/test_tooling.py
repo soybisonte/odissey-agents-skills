@@ -79,6 +79,16 @@ class FrontmatterTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, r"SKILL\.md:3:.*description"):
                 parse_frontmatter(skill_path)
 
+    def test_rejects_whitespace_only_description(self) -> None:
+        """Treating whitespace as a description would make invalid metadata pass."""
+        with TemporaryDirectory() as temporary_directory:
+            skill_path = self.write_skill(
+                Path(temporary_directory), "---\nname: example\ndescription:   \n---\n"
+            )
+
+            with self.assertRaisesRegex(ValueError, r"SKILL\.md:3:.*description"):
+                parse_frontmatter(skill_path)
+
     def test_rejects_empty_frontmatter(self) -> None:
         """Accepting an empty metadata block would make this test fail."""
         with TemporaryDirectory() as temporary_directory:
@@ -272,6 +282,29 @@ class CatalogValidationTests(unittest.TestCase):
         self.assertEqual(2, result.skill_count)
         self.assertEqual(10, result.description_characters)
         self.assertEqual([], result.issues)
+
+    def test_cli_reports_a_missing_catalog_root_as_an_error(self) -> None:
+        """Treating a missing root as an empty catalog would hide a broken invocation."""
+        with TemporaryDirectory() as temporary_directory:
+            missing_root = Path(temporary_directory) / "missing-catalog"
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/validate.py",
+                    "--root",
+                    str(missing_root),
+                    "--format",
+                    "json",
+                ],
+                cwd=Path(__file__).parents[1],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+        self.assertEqual(1, completed.returncode)
+        self.assertIn('"rule": "catalog-root"', completed.stdout)
+        self.assertIn(str(missing_root), completed.stdout)
 
     def test_cli_supports_json_and_treats_warnings_as_errors_on_request(self) -> None:
         """Ignoring CLI format or warning policy would make automation unreliable."""

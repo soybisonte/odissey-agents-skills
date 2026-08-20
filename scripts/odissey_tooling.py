@@ -92,7 +92,7 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
             raise _error(path, line_number, f"unsupported frontmatter field '{key}'")
         if key in metadata:
             raise _error(path, line_number, f"duplicate frontmatter field '{key}'")
-        if value is None or value == "":
+        if value is None or not value.strip():
             raise _error(path, line_number, f"missing value for '{key}'")
 
         if value == ">":
@@ -108,7 +108,7 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
                     raise _error(path, index + 1, "folded text must be indented")
                 folded_lines.append(folded_line.strip())
                 index += 1
-            if not folded_lines:
+            if not any(folded_lines):
                 raise _error(path, line_number, "folded description must not be empty")
             metadata[key] = " ".join(folded_lines)
             continue
