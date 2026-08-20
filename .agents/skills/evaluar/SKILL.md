@@ -1,18 +1,6 @@
 ---
 name: evaluar
-description: >
-  Evaluación UX estructurada que produce valoraciones cuantitativas, identifica
-  problemas específicos y enruta al habilidad correcta de Odissey para su resolución. Parte del
-  sistema de estrategia de diseño Odissey. Ejecuta evaluaciones heurísticas, cognitive
-  walkthroughs, detección de antipatrones y análisis de éxito de tareas. Puntúa,
-  categoriza y prioriza hallazgos — luego mapea cada problema a la habilidad
-  que lo resuelve. Activa ante: revisión UX, auditoría de diseño, evaluación heurística,
-  valoración de usabilidad, "revisa este diseño", "qué está mal con esto",
-  "evaluar la experiencia", "¿es esto accesible?", "busca patrones oscuros",
-  "qué tan buena es esta UX", "califica este diseño", "encuentra los problemas", o cualquier
-  solicitud de valorar sistemáticamente la calidad de una experiencia de usuario. Este es
-  el punto de entrada diagnóstico del sistema Odissey — el médico UX que
-  diagnostica problemas y deriva a especialistas.
+description: Usa cuando haya que auditar, criticar o valorar sistemáticamente una experiencia existente mediante revisión heurística, recorrido cognitivo, usabilidad o detección de antipatrones. Diagnostica y prioriza problemas UX; no sustituye el diseño desde cero de un flujo nuevo.
 ---
 
 # Evaluar — Valorar la Calidad UX

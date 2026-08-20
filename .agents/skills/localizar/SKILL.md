@@ -1,16 +1,6 @@
 ---
 name: localizar
-description: >
-  Adapta experiencias entre culturas e idiomas — no solo traducción,
-  sino reconceptualización cultural. Parte del sistema de estrategia de diseño Odissey.
-  Cuando un producto entra en un nuevo mercado, todo entra en juego: densidad de
-  información, patrones de navegación, significado del color, comprensión de iconos,
-  formatos de fecha, señales de confianza, flujos de pago y los supuestos fundamentales
-  sobre cómo las personas toman decisiones. Activa cuando: planifiques expansión
-  internacional, audites la preparación i18n, adaptes diseños para idiomas RTL,
-  revises supuestos culturales en un diseño, prepares planes de prueba de localización,
-  o cuando alguien diga "necesitamos lanzar en [país]" y el plan sea "solo traducirlo".
-  También activa para revisiones de cumplimiento en distintos mercados (GDPR, PIPL, leyes de accesibilidad).
+description: Usa cuando una experiencia deba adaptarse a otro país, idioma o cultura: expansión internacional, i18n, escritura RTL, formatos locales, señales de confianza, pagos o supuestos culturales. Replantea más que la traducción; para cambiar de plataforma dentro del mismo mercado usa Trasponer.
 ---
 
 # Localizar — Diseñar entre Culturas

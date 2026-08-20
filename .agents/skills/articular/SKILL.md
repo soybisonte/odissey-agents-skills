@@ -1,14 +1,6 @@
 ---
 name: articular
-description: >
-  Diseña las palabras de un producto — etiquetas, instrucciones, errores, confirmaciones, estados vacíos,
-  copy de onboarding, tooltips, marcos de voz y tono, y modelos de contenido. UX writing y
-  estrategia de contenido como disciplina profunda. Activa cuando se escriba o revise copy de UI, mensajes
-  de error, estados vacíos, texto de onboarding, CTAs, tooltips, diálogos de confirmación, o cualquier
-  texto visible para el usuario en un producto. También activa para marcos de voz y tono, modelos de contenido,
-  patrones de microcopy, guías de lenguaje inclusivo, o cuando se pregunta "¿qué debería decir esto?" y
-  "¿cómo debemos sonar?". Usa esta habilidad siempre que las palabras de una interfaz sean el problema —
-  no el flow en el que viven, no la estructura que navegan, no la presentación visual.
+description: Usa cuando las palabras de una interfaz sean el problema — botones, etiquetas, errores, estados vacíos, onboarding, tooltips, voz, tono o modelos de contenido. Cubre UX writing y estrategia de contenido; no decide el flujo, la arquitectura de información ni la presentación visual.
 ---
 
 # Articular — Dar Voz al Producto

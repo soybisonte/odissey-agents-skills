@@ -1,13 +1,6 @@
 ---
 name: strategy
-description: >
-  Encuadra problemas de diseño de producto antes de que existan soluciones.
-  Sintetiza investigación, dimensiona oportunidades, define hipótesis, acota
-  proyectos y mapea journeys de clientes. Usa esta habilidad para el arranque
-  de nuevos proyectos, requisitos de negocio ambiguos, traducción de
-  investigación en briefs, sesiones de encuadre estratégico, evaluaciones de
-  oportunidad, acotación de proyectos, alineación de stakeholders y análisis
-  competitivo — incluso si el usuario no dice explícitamente "estrategia".
+description: Usa cuando un problema de producto sea ambiguo y necesite encuadre antes de diseñar: síntesis de evidencia, definición de audiencia, oportunidades, hipótesis, alcance, briefs, alineación de stakeholders o análisis competitivo. No sustituye la ejecución de un plan de investigación ya definido.
 ---
 
 # Estrategia — Encadrar el Problema

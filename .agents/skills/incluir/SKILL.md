@@ -1,21 +1,6 @@
 ---
 name: incluir
-description: >
-  Diseña para todas las personas tratando la accesibilidad como una disciplina
-  de diseño de primera clase, no como una lista de cumplimiento. Parte del sistema
-  de estrategia de diseño Odissey. Cubre WCAG 2.2 para diseñadores, diseño de
-  experiencia con lectores de pantalla, navegación por teclado, accesibilidad
-  cognitiva, accesibilidad motora, diseño inclusivo más allá del cumplimiento y
-  metodología de pruebas de accesibilidad. Actívalo con: accesibilidad, a11y, WCAG,
-  lector de pantalla, navegación por teclado, contraste de color, texto alternativo,
-  gestión del foco, objetivos táctiles, diseño inclusivo, tecnología asistiva,
-  "¿es esto accesible?", "revisar accesibilidad", "diseñar para todos",
-  "¿a quién estamos excluyendo?", cumplimiento ADA, Section 508, EAA,
-  movimiento reducido, o cualquier pregunta sobre si todos los usuarios pueden
-  percibir, operar, entender y beneficiarse de la experiencia. Mil millones de
-  personas en el mundo tienen una discapacidad. Todas las personas experimentan
-  limitaciones situacionales. Diseñar de forma inclusiva mejora la experiencia
-  para todos.
+description: Usa cuando una experiencia deba ser accesible e inclusiva para personas con distintas capacidades: WCAG, teclado, lector de pantalla, foco, contraste, texto alternativo, objetivos táctiles, accesibilidad cognitiva o motora. Se centra en barreras de acceso y uso; no en adaptar el producto a otra cultura.
 ---
 
 # Incluir — Diseñar para Todas las Personas

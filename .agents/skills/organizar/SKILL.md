@@ -1,14 +1,6 @@
 ---
 name: organizar
-description: >
-  Estructura la información para que las personas puedan encontrar lo que necesitan, entender dónde están
-  y navegar con confianza. Abarca el diseño de patrones de navegación, taxonomía, sistemas de etiquetado,
-  estrategia de búsqueda y exploración, wayfinding y métodos de investigación de IA. Activa cuando diseñes
-  estructuras de navegación, esquemas de categorización, mapas del sitio, taxonomías, sistemas de etiquetado,
-  experiencias de búsqueda, o cuando pregunten "¿cómo deberíamos organizar esto?" También activa para card sorting,
-  tree testing, problemas de findability de información, o cuando los usuarios reporten que no encuentran cosas.
-  Usa esta habilidad siempre que la organización estructural de la información sea el problema — no el
-  flujo a través de ella, no las palabras en ella, no la presentación visual de ella.
+description: Usa cuando el problema sea cómo estructurar y encontrar información: arquitectura de información, taxonomía, navegación, jerarquía, etiquetado, mapas del sitio, búsqueda, card sorting, tree testing o wayfinding. Diseña la organización subyacente; no las transiciones de un flujo ni el copy de la interfaz.
 ---
 
 # Organizar — Estructurar la Información

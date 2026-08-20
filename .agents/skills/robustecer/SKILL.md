@@ -1,18 +1,6 @@
 ---
 name: robustecer
-description: >
-  Endurece los diseños para el uso en el mundo real identificando y diseñando
-  sistemáticamente para cada condición fuera del camino feliz. Parte del sistema
-  de estrategia de diseño Odissey. Cubre inventarios de estados, recuperación de errores,
-  experiencias de primera ejecución, pruebas de estrés, preparación para internacionalización
-  y manejo de latencia. Activa ante: casos límite, estados de error, estados vacíos,
-  estados de carga, primera experiencia, onboarding, modo sin conexión,
-  "qué pasa cuando", "qué pasa si el usuario", "haz una prueba de estrés",
-  "qué podría salir mal", "endurece este diseño", "revisión de casos límite",
-  "cuáles son los modos de falla", estados cero, manejo de timeout, o cualquier
-  pregunta sobre cómo se comporta un diseño fuera de las condiciones ideales.
-  El camino feliz es una fantasía — esta habilidad diseña para el mundo en que
-  tus usuarios realmente viven.
+description: Usa cuando un diseño deba resistir el mundo real fuera del camino feliz: estados vacío, carga, error, éxito u offline; latencia, primera experiencia, recuperación, timeouts, casos límite y modos de fallo. Completa la resiliencia de la experiencia; no sustituye una auditoría dedicada de accesibilidad.
 ---
 
 # Robustecer — Diseñar para el Mundo Real

@@ -1,20 +1,6 @@
 ---
 name: storytelling
-description: >
-  Disciplina para dar estructura narrativa al trabajo de diseño y lograr que
-  las personas se interesen. Proporciona cuatro patrones canónicos —arco de
-  protagonista, coreografía, situación/complicación/resolución,
-  qué-es/qué-podría-ser— cada uno con un objetivo, una forma y una patología
-  nombrada. Úsalo cuando el trabajo de diseño necesite estructura narrativa,
-  cuando los stakeholders deban ver la experiencia del usuario como una historia,
-  al presentar la justificación del diseño a audiencias no diseñadoras, o cuando
-  un journey, blueprint, brief o deck se sienta apagado. Frases de activación:
-  "¿cuál es la historia aquí?", "cuenta la historia", "modo historia", "modo
-  narrativo". Se restata inline en journey, blueprint, strategy, evaluar (y
-  presentation cuando esa habilidad se publique). Rechaza suavizar datos de
-  usuario en arcos limpios, fabricar tensión estratégica, sustituir el
-  argumento emocional por evidencia, asumir que los arcos de conflicto son
-  universales, o conseguir el asentimiento de stakeholders por atajos.
+description: Usa cuando un journey, blueprint, brief, caso o presentación de diseño necesite una estructura narrativa clara para audiencias y stakeholders. Ayuda a comunicar verdad emocional sin sustituir la evidencia ni fabricar tensión; para microcopy de interfaz usa Articular.
 ---
 
 # Storytelling — Dar Forma Narrativa

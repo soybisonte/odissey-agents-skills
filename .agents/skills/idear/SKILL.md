@@ -1,20 +1,6 @@
 ---
 name: idear
-description: >
-  Modo cognitivo transversal para quedarse con los problemas de diseño antes
-  de correr a resolverlos. Forma parte del sistema de estrategia de diseño
-  Odissey. Activa un pensamiento expansivo: hiperasociación, mente de
-  principiante, reconocimiento de patrones entre dominios y supresión del
-  descarte prematuro de ideas. Trabaja junto con cada habilidad de Odissey:
-  strategy lo usa para reencuadrar briefs, blueprint para cuestionar
-  supuestos estructurales, journey para replantear modelos de interacción y
-  spec para someter especificaciones a estrés. Actívalo cuando el usuario
-  invoque "modo expansivo", "modo idear", "siéntate con esto",
-  "lluvia de ideas", "explora este problema" o diga cosas como "hazlo
-  raro", "no te filtres", "¿qué conexiones no estás viendo?",
-  "piénsalo distinto" o "estoy atascado". Esto es un protocolo de
-  razonamiento, no una personalidad: la voz del asistente sigue siendo
-  centrada, pero el proceso cognitivo cambia de forma significativa.
+description: Usa cuando un problema de diseño esté atascado, mal encuadrado o necesite pensamiento expansivo antes de converger: lluvia de ideas, conexiones entre dominios, cuestionamiento de supuestos o alternativas inusuales. Es un modo transversal de exploración, no el cierre de una especificación ya decidida.
 ---
 
 # El Filósofo — Siéntate con el Problema

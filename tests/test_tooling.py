@@ -1,6 +1,7 @@
 """Contract tests for the dependency-free tooling primitives."""
 
 from pathlib import Path
+import json
 import os
 import re
 import subprocess
@@ -458,6 +459,71 @@ class CanonicalMigrationTests(unittest.TestCase):
             self.assertNotIn(".github/copilot/skills", source, source_path)
             for identifier in self.HOST_IDENTIFIERS:
                 self.assertNotIn(identifier, source, source_path)
+
+
+class SkillRoutingTests(unittest.TestCase):
+    """Discovery contracts for the canonical Odissey skill catalog."""
+
+    ROOT = Path(__file__).parents[1]
+    CATALOG = ROOT / ".agents" / "skills"
+    ROUTING_CASES = ROOT / "tests" / "evals" / "skill-routing.json"
+    SKILL_NAMES = {
+        "odissey",
+        "strategy",
+        "research",
+        "blueprint",
+        "journey",
+        "organizar",
+        "articular",
+        "evaluar",
+        "robustecer",
+        "incluir",
+        "trasponer",
+        "localizar",
+        "medir",
+        "idear",
+        "storytelling",
+        "spec",
+    }
+    PROCEDURE_LANGUAGE = re.compile(
+        r"\b(?:primero|luego|despu[eé]s|a continuaci[oó]n|paso a paso|workflow)\b",
+        re.IGNORECASE,
+    )
+
+    def test_routing_corpus_covers_each_skill_with_positive_and_negative_prompts(self) -> None:
+        """Dropping a skill or either routing boundary must fail discovery coverage."""
+        records = json.loads(self.ROUTING_CASES.read_text(encoding="utf-8"))
+
+        self.assertIsInstance(records, list)
+        self.assertEqual(16, len(records))
+        self.assertEqual(self.SKILL_NAMES, {record["skill"] for record in records})
+        for record in records:
+            should_activate = record["should_activate"]
+            should_not_activate = record["should_not_activate"]
+            self.assertIsInstance(should_activate, list, record["skill"])
+            self.assertIsInstance(should_not_activate, list, record["skill"])
+            self.assertTrue(should_activate, record["skill"])
+            self.assertTrue(should_not_activate, record["skill"])
+            self.assertTrue(all(prompt.strip() for prompt in should_activate), record["skill"])
+            self.assertTrue(
+                all(prompt.strip() for prompt in should_not_activate), record["skill"]
+            )
+            prompts = should_activate + should_not_activate
+            self.assertEqual(len(prompts), len(set(prompts)), record["skill"])
+
+    def test_descriptions_are_compact_triggers_without_procedure_language(self) -> None:
+        """Expanding discovery metadata into a workflow must exceed this contract."""
+        descriptions: dict[str, str] = {}
+        for skill_path in sorted(self.CATALOG.glob("*/SKILL.md")):
+            metadata, _ = parse_frontmatter(skill_path)
+            descriptions[metadata["name"]] = metadata["description"]
+
+        self.assertEqual(self.SKILL_NAMES, set(descriptions))
+        for skill_name, description in descriptions.items():
+            self.assertTrue(description.strip(), skill_name)
+            self.assertLessEqual(len(description), 500, skill_name)
+            self.assertIsNone(self.PROCEDURE_LANGUAGE.search(description), skill_name)
+        self.assertLessEqual(sum(map(len, descriptions.values())), 8_000)
 
 
 class BuildTests(unittest.TestCase):

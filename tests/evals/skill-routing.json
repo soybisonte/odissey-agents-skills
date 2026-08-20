@@ -1,0 +1,146 @@
+[
+  {
+    "skill": "odissey",
+    "should_activate": [
+      "Quiero iniciar un proyecto de UX y necesito decidir qué disciplina de diseño conviene aplicar primero."
+    ],
+    "should_not_activate": [
+      "Cambia únicamente el color de fondo de este botón en CSS."
+    ]
+  },
+  {
+    "skill": "strategy",
+    "should_activate": [
+      "El problema de producto todavía es ambiguo; ayúdame a encuadrarlo y plantear hipótesis comprobables."
+    ],
+    "should_not_activate": [
+      "Redacta el guion de una entrevista cuyo objetivo de investigación ya está definido."
+    ]
+  },
+  {
+    "skill": "research",
+    "should_activate": [
+      "Diseña un plan de entrevistas y pruebas de usabilidad para entender por qué las personas abandonan el alta."
+    ],
+    "should_not_activate": [
+      "Define el alcance estratégico del producto sin realizar investigación con usuarios."
+    ]
+  },
+  {
+    "skill": "blueprint",
+    "should_activate": [
+      "Mapea el servicio con frontstage, backstage, sistemas de soporte y dependencias operativas."
+    ],
+    "should_not_activate": [
+      "Diseña las transiciones entre las pantallas de un flujo de pago."
+    ]
+  },
+  {
+    "skill": "journey",
+    "should_activate": [
+      "Diseña de extremo a extremo el flujo multipaso para contratar y activar una cuenta."
+    ],
+    "should_not_activate": [
+      "Crea la taxonomía y la navegación global del portal."
+    ]
+  },
+  {
+    "skill": "organizar",
+    "should_activate": [
+      "Reestructura la arquitectura de información, la taxonomía y la navegación para mejorar la encontrabilidad."
+    ],
+    "should_not_activate": [
+      "Define las transiciones de un flujo de pantallas ya ordenado."
+    ]
+  },
+  {
+    "skill": "articular",
+    "should_activate": [
+      "Escribe el copy de botones, errores, tooltips y onboarding con una voz consistente."
+    ],
+    "should_not_activate": [
+      "Decide la jerarquía visual y la navegación principal de la pantalla."
+    ]
+  },
+  {
+    "skill": "evaluar",
+    "should_activate": [
+      "Audita esta experiencia existente y señala problemas UX con una valoración estructurada."
+    ],
+    "should_not_activate": [
+      "Diseña desde cero un flujo nuevo de recuperación de cuenta."
+    ]
+  },
+  {
+    "skill": "robustecer",
+    "should_activate": [
+      "Completa el diseño con estados vacío, carga, error, sin conexión y otros casos límite."
+    ],
+    "should_not_activate": [
+      "Haz únicamente una auditoría de cumplimiento WCAG."
+    ]
+  },
+  {
+    "skill": "incluir",
+    "should_activate": [
+      "Revisa la experiencia para navegación por teclado, lector de pantalla y necesidades de accesibilidad."
+    ],
+    "should_not_activate": [
+      "Adapta esta experiencia a otra cultura y otro idioma."
+    ]
+  },
+  {
+    "skill": "trasponer",
+    "should_activate": [
+      "Replantea esta experiencia web para móvil y voz considerando las capacidades de cada contexto."
+    ],
+    "should_not_activate": [
+      "Traduce los textos al francés sin cambiar la plataforma."
+    ]
+  },
+  {
+    "skill": "localizar",
+    "should_activate": [
+      "Adapta el producto a un país con otra cultura, otro idioma y escritura de derecha a izquierda."
+    ],
+    "should_not_activate": [
+      "Haz que la interfaz sea responsive dentro del mismo mercado y cultura."
+    ]
+  },
+  {
+    "skill": "medir",
+    "should_activate": [
+      "Define métricas UX, eventos de instrumentación y un experimento A/B para evaluar el rediseño."
+    ],
+    "should_not_activate": [
+      "Construye una narrativa convincente para presentar el proyecto a stakeholders."
+    ]
+  },
+  {
+    "skill": "idear",
+    "should_activate": [
+      "Estamos atascados y el problema sigue mal encuadrado; explora alternativas y supuestos distintos."
+    ],
+    "should_not_activate": [
+      "Cierra la especificación de handoff de una solución que ya está decidida."
+    ]
+  },
+  {
+    "skill": "storytelling",
+    "should_activate": [
+      "Estructura la narrativa de este caso de diseño para presentarlo a dirección y conseguir apoyo."
+    ],
+    "should_not_activate": [
+      "Escribe el microcopy de los mensajes de error de la interfaz."
+    ]
+  },
+  {
+    "skill": "spec",
+    "should_activate": [
+      "Prepara un handoff preciso para ingeniería con comportamientos, estados y criterios verificables."
+    ],
+    "should_not_activate": [
+      "Haz discovery inicial e investigación para entender el problema."
+    ]
+  }
+]

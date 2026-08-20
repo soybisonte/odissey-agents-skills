@@ -1,16 +1,6 @@
 ---
 name: journey
-description: >
-  Diseña cualquier experiencia orientada al usuario de extremo a extremo: flows de tareas,
-  flujos de trabajo de varios pasos, estructuras de navegación, onboarding, ajustes, búsqueda,
-  creación de contenido, colaboración, registro, checkout, dashboards, notificaciones,
-  recuperación de errores y más. Maneja la adaptación multiplataforma (móvil/web/TV/embebido),
-  diseño adaptado al dispositivo, accesibilidad, especificaciones de interacción y mapeo de
-  journey multicanal. Actívalo al diseñar flows de usuario de cualquier tipo, mapear
-  secuencias de pantallas, optimizar la finalización de tareas, especificar interacciones,
-  diseñar navegación o preguntar "¿cómo debería el usuario experimentar X?" Usa esta habilidad
-  de forma amplia — en cualquier momento en que alguien esté trabajando en cómo un usuario
-  se mueve a través de una experiencia de producto, esta habilidad aplica.
+description: Usa cuando haya que diseñar u optimizar cómo una persona recorre una experiencia de extremo a extremo: tareas multipaso, secuencias de pantallas, onboarding, registro, checkout, colaboración o journeys multicanal. Se centra en el flujo y las interacciones; para taxonomía y navegación global usa Organizar.
 ---
 
 # Journey — Diseñar el Recorrido

@@ -1,12 +1,6 @@
 ---
 name: odissey
-description: >
-  El punto de entrada para Odissey, un sistema integral de estrategia y diseño de experiencia de usuario (UX).
-  Establece el contexto del proyecto, enruta a las habilidades especializadas y carga los conocimientos
-  fundamentales de UX. Actívalo al iniciar cualquier trabajo de UX o diseño de producto, configurar
-  el contexto del proyecto, enrutar a otras habilidades, evaluar la UX de un producto existente, o cuando
-  el usuario pregunte sobre intención de diseño, estrategia de experiencia de usuario, diseño ético,
-  patrones oscuros o pensamiento sistémico de diseño.
+description: Usa como punto de entrada al iniciar o reorientar trabajo de UX y diseño de producto, establecer el contexto del proyecto o decidir qué disciplina especializada de Odissey corresponde. También aplica a intención de diseño, ética y pensamiento sistémico; no a cambios técnicos aislados.
 ---
 
 # Odissey — Diseño con Intención

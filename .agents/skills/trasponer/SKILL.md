@@ -1,17 +1,6 @@
 ---
 name: trasponer
-description: >
-  Replantea experiencias para diferentes plataformas y contextos — no solo
-  redimensionando, sino reconcibiendo. Parte del sistema de estrategia de
-  diseño de Odissey. Cuando una experiencia pasa de escritorio a móvil, de
-  web a TV, de app de consumo a kiosco, o de interfaz visual a voz, el modelo
-  de interacción, la prioridad de información y el contexto de usuario cambian
-  por completo. Actívalo cuando: adaptes un diseño a una nueva plataforma,
-  planifiques experiencias multidispositivo, audites la consistencia
-  multiplataforma, diseñes para TV/kiosco/voz/embebido, o cuando alguien diga
-  "hazlo funcionar en móvil" y necesites cuestionar el "solo hazlo responsive".
-  También actívalo para continuidad de journey entre dispositivos, auditorías
-  de convenciones por plataforma o mapeo de prioridad por contexto.
+description: Usa cuando una experiencia deba replantearse entre plataformas o contextos — web, móvil, TV, kiosco, voz o embebido — y cambien la interacción, la prioridad o la continuidad multidispositivo. Va más allá de hacerla responsive; para adaptar idioma, país o cultura usa Localizar.
 ---
 
 # Trasponer — Adaptar entre Contextos

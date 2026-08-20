@@ -1,7 +1,6 @@
 ---
 name: blueprint
-description: >
-  Mapear, analizar y rediseñar los sistemas detrás de las experiencias de producto. Forma parte del sistema de estrategia de diseño Odissey. Crea service blueprints, mapas de ecosistema, arquitectura de procesos y diagramas de dependencias. Entiende cómo se conectan servicios, equipos, herramientas y flujos de datos para producir (o no producir) resultados de usuario. Propone cambios estructurales sobre cómo se organizan productos y servicios. Se activa ante: service blueprints, mapas de sistema, arquitectura de procesos, mapeo de actores/roles, análisis de dependencias, flujos interfuncionales, diseño operativo, "¿cómo funciona este sistema?", "¿qué se rompe cuando pasa X?", "mapea el servicio", "¿dónde están las dependencias?" o cualquier pregunta sobre la maquinaria estructural detrás de una experiencia de producto. Usa esta habilidad de forma amplia, cada vez que alguien necesite entender o rediseñar cómo funciona un sistema, no solo lo que ve el usuario.
+description: Usa cuando haya que entender o rediseñar el sistema detrás de una experiencia mediante service blueprints, mapas de ecosistema, frontstage, backstage, procesos, actores, soportes o dependencias. Se centra en la maquinaria operativa y técnica del servicio, no en las transiciones visibles entre pantallas.
 ---
 
 # Blueprint — Mapea el sistema

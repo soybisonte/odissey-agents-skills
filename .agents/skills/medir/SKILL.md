@@ -1,16 +1,6 @@
 ---
 name: medir
-description: >
-  Define y realiza seguimiento del éxito UX mediante métricas, marcos de medición
-  y experimentación. Parte del sistema de estrategia de diseño Odissey.
-  Conecta las decisiones de diseño con evidencia observable — ¿lo que construimos
-  realmente ayudó? Protege contra que la medición se convierta en manipulación.
-  Activa cuando: defines criterios de éxito, diseñas A/B tests, construyes
-  marcos de medición, analizas funnels, revisas dashboards de métricas,
-  cuestionas si se están midiendo las cosas correctas, o cuando alguien dice
-  "¿cómo sabemos si esto funcionó?", "¿qué deberíamos medir?",
-  "lancemos un test" o "los números se ven bien pero algo no cuadra".
-  También activa para revisiones de medición ética y definición de contra-métricas.
+description: Usa cuando haya que definir o comprobar el éxito UX con métricas, criterios, instrumentación, funnels, dashboards, experimentos A/B o contra-métricas éticas. Conecta decisiones de diseño con evidencia observable; no estructura narrativas para presentar el trabajo.
 ---
 
 # Medir — Definir y Seguir el Éxito

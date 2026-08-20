@@ -1,14 +1,6 @@
 ---
 name: spec
-description: >
-  Tiende el puente entre diseño e ingeniería produciendo especificaciones detalladas,
-  paquetes de handoff organizados, inventarios de assets y documentación interfuncional.
-  Parte del sistema de estrategia de diseño Odissey. Activa cuando: escribas
-  especificaciones de diseño, prepares handoffs de ingeniería, documentes para desarrollo,
-  crees revisiones de diseño, escribas planes de prueba, construyas matrices de copy,
-  abordes casos límite, alinees stakeholders, empaquetes diseños
-  "para ingeniería", o digas "escribe la especificación", "prepara el handoff",
-  "documenta esto", o "¿qué necesitamos para la revisión de diseño?"
+description: Usa cuando una solución de diseño ya definida deba convertirse en una especificación o handoff preciso para ingeniería: comportamientos, estados, casos límite, assets, matrices de copy, criterios verificables y documentación interfuncional. No aplica al discovery ni a la investigación inicial.
 ---
 
 # Especificar — Tender el Puente hacia Ingeniería

@@ -1,13 +1,6 @@
 ---
 name: research
-description: >
-  Guía y conduce investigación con usuarios — desde la planificación hasta la síntesis. Scripts de entrevistas,
-  diseño de encuestas, planes de pruebas de usabilidad, estudios de diario, indagación contextual.
-  Más síntesis: mapas de afinidad, codificación temática, extracción de insights. Activa cuando:
-  planifiques investigación con usuarios, escribas guías de entrevista, diseñes pruebas de usabilidad,
-  crees encuestas, sintetices hallazgos de investigación, "¿qué deberíamos investigar?",
-  "¿cómo pruebo esto?", "escribe una guía de entrevista", o cualquier pregunta sobre
-  comprender a los usuarios a través de evidencia.
+description: Usa cuando haya que comprender a las personas mediante evidencia primaria: planes y guiones de entrevistas, encuestas, pruebas de usabilidad, estudios de diario, indagación contextual o síntesis de hallazgos. Investiga preguntas definidas; no fija por sí sola el alcance estratégico del producto.
 ---
 
 # Investigar
