@@ -31,6 +31,7 @@ _MANAGED_SUBTREES = (
     Path("plugins/bbva-odissey/skills"),
     Path(".cursor/rules"),
 )
+_RESTORE_ATTEMPTS = 2
 
 
 class BuildValidationError(ValueError):
@@ -168,6 +169,52 @@ def _remove_staged_or_live_tree(path: Path) -> None:
         shutil.rmtree(path)
 
 
+def _restore_backup(backup_path: Path, target: Path) -> None:
+    """Restore one prior distribution, retrying a transient filesystem failure."""
+    errors: list[OSError] = []
+    for _ in range(_RESTORE_ATTEMPTS):
+        try:
+            os.replace(backup_path, target)
+        except OSError as error:
+            errors.append(error)
+        else:
+            return
+    raise BuildSafetyError(
+        "could not restore a managed output; previous distribution preserved at "
+        f"{backup_path}. Restore it to {target} after resolving the filesystem error: {errors[-1]}"
+    ) from errors[-1]
+
+
+def _rollback_outputs(changes: list[tuple[Path, Path | None]]) -> BuildSafetyError | None:
+    """Restore prior trees and return a recovery error without deleting their backups."""
+    recovery_errors: list[str] = []
+    for target, backup_path in reversed(changes):
+        if target.exists():
+            try:
+                _remove_staged_or_live_tree(target)
+            except OSError as error:
+                if backup_path is not None and backup_path.exists():
+                    recovery_errors.append(
+                        "could not remove failed staged output "
+                        f"{target}; previous distribution preserved at {backup_path}: {error}"
+                    )
+                else:
+                    recovery_errors.append(f"could not remove failed staged output {target}: {error}")
+                continue
+        if backup_path is None:
+            continue
+        if not backup_path.exists():
+            recovery_errors.append(f"prior distribution backup is missing for {target}: {backup_path}")
+            continue
+        try:
+            _restore_backup(backup_path, target)
+        except BuildSafetyError as error:
+            recovery_errors.append(str(error))
+    if recovery_errors:
+        return BuildSafetyError("transaction recovery incomplete: " + " | ".join(recovery_errors))
+    return None
+
+
 def _replace_staged_outputs(
     root: Path,
     stage_root: Path,
@@ -177,7 +224,8 @@ def _replace_staged_outputs(
     """Swap staged directories into place and restore all prior trees on failure."""
     backup_root = stage_root / "previous"
     backup_root.mkdir()
-    completed: list[tuple[Path, Path | None]] = []
+    changes: list[tuple[Path, Path | None]] = []
+    preserve_recovery = False
     try:
         for index, (output, staged_path) in enumerate(
             zip(planned_outputs, staged_paths, strict=True)
@@ -188,21 +236,17 @@ def _replace_staged_outputs(
             had_previous = target.exists()
             if had_previous:
                 os.replace(target, backup_path)
-            try:
-                os.replace(staged_path, target)
-            except BaseException:
-                if had_previous:
-                    os.replace(backup_path, target)
-                raise
-            completed.append((target, backup_path if had_previous else None))
-    except BaseException:
-        for target, backup_path in reversed(completed):
-            _remove_staged_or_live_tree(target)
-            if backup_path is not None and backup_path.exists():
-                os.replace(backup_path, target)
+            changes.append((target, backup_path if had_previous else None))
+            os.replace(staged_path, target)
+    except BaseException as error:
+        recovery_error = _rollback_outputs(changes)
+        if recovery_error is not None:
+            preserve_recovery = True
+            raise recovery_error from error
         raise
     finally:
-        shutil.rmtree(stage_root, ignore_errors=True)
+        if not preserve_recovery:
+            shutil.rmtree(stage_root, ignore_errors=True)
 
 
 def build_repository(root: Path) -> BuildResult:

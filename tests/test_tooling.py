@@ -1,6 +1,7 @@
 """Contract tests for the dependency-free tooling primitives."""
 
 from pathlib import Path
+import os
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
@@ -499,3 +500,86 @@ class BuildTests(unittest.TestCase):
                     build_repository(root)
 
             self.assertEqual(before, self.snapshot(root))
+
+    def test_transient_restore_failure_recovers_previous_distribution_after_swap_failure(self) -> None:
+        """Dropping a backup after one failed restore would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "alpha")
+            build_repository(root)
+            before = self.snapshot(root)
+            target = root.resolve() / "generated-skills"
+            real_replace = os.replace
+            failures = {"swap": False, "restore": False}
+
+            def fail_swap_then_restore(source: str | Path, destination: str | Path) -> None:
+                source_path = Path(source)
+                destination_path = Path(destination)
+                if (
+                    not failures["swap"]
+                    and source_path.name == "output-2"
+                    and source_path.parent.name.startswith(".odissey-build-")
+                    and destination_path == target
+                ):
+                    failures["swap"] = True
+                    raise OSError("swap interrupted")
+                if (
+                    not failures["restore"]
+                    and source_path.name == "output-2"
+                    and source_path.parent.name == "previous"
+                    and destination_path == target
+                ):
+                    failures["restore"] = True
+                    raise OSError("restore temporarily unavailable")
+                real_replace(source, destination)
+
+            with patch("scripts.build.os.replace", side_effect=fail_swap_then_restore):
+                with self.assertRaisesRegex(OSError, "swap interrupted"):
+                    build_repository(root)
+
+            self.assertTrue(failures["swap"])
+            self.assertTrue(failures["restore"])
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_unrecoverable_restore_preserves_a_prior_distribution_backup(self) -> None:
+        """Deleting an unrestored backup would make this recovery-safety test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "alpha")
+            build_repository(root)
+            before = self.snapshot(root)
+            target = root.resolve() / "generated-skills"
+            real_replace = os.replace
+            backup_path: Path | None = None
+            swap_failed = False
+
+            def fail_swap_and_restore(source: str | Path, destination: str | Path) -> None:
+                nonlocal backup_path, swap_failed
+                source_path = Path(source)
+                destination_path = Path(destination)
+                if (
+                    not swap_failed
+                    and source_path.name == "output-2"
+                    and source_path.parent.name.startswith(".odissey-build-")
+                    and destination_path == target
+                ):
+                    swap_failed = True
+                    raise OSError("swap interrupted")
+                if (
+                    source_path.name == "output-2"
+                    and source_path.parent.name == "previous"
+                    and destination_path == target
+                ):
+                    backup_path = source_path
+                    raise OSError("restore unavailable")
+                real_replace(source, destination)
+
+            with patch("scripts.build.os.replace", side_effect=fail_swap_and_restore):
+                with self.assertRaisesRegex(BuildSafetyError, "previous distribution preserved at"):
+                    build_repository(root)
+
+            self.assertIsNotNone(backup_path)
+            self.assertEqual(
+                before[Path("generated-skills/alpha/SKILL.md")],
+                (backup_path / "alpha" / "SKILL.md").read_bytes(),
+            )
