@@ -1,6 +1,7 @@
 ---
 name: robustecer
-description: Usa cuando un diseño deba resistir el mundo real fuera del camino feliz: estados vacío, carga, error, éxito u offline; latencia, primera experiencia, recuperación, timeouts, casos límite y modos de fallo. Completa la resiliencia de la experiencia; no sustituye una auditoría dedicada de accesibilidad.
+description: >
+  Usa cuando un diseño deba resistir el mundo real fuera del camino feliz: estados vacío, carga, error, éxito u offline; latencia, primera experiencia, recuperación, timeouts, casos límite y modos de fallo. Completa la resiliencia de la experiencia; no sustituye una auditoría dedicada de accesibilidad.
 ---
 
 # Robustecer — Diseñar para el Mundo Real

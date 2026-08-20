@@ -486,7 +486,12 @@ class SkillRoutingTests(unittest.TestCase):
         "spec",
     }
     PROCEDURE_LANGUAGE = re.compile(
-        r"\b(?:primero|luego|despu[eé]s|a continuaci[oó]n|paso a paso|workflow)\b",
+        r"\b(?:"
+        r"primero|luego|despu[eé]s|a continuaci[oó]n|paso a paso|workflow|"
+        r"sigue (?:estos|los) pasos|"
+        r"ejecuta (?:un|el) proceso|"
+        r"recopila\b[^.!?\n]{0,160}\banaliza\b[^.!?\n]{0,160}\by\s+entrega"
+        r")\b",
         re.IGNORECASE,
     )
 
@@ -510,6 +515,34 @@ class SkillRoutingTests(unittest.TestCase):
             )
             prompts = should_activate + should_not_activate
             self.assertEqual(len(prompts), len(set(prompts)), record["skill"])
+
+    def test_canonical_descriptions_use_folded_yaml_encoding(self) -> None:
+        """Returning to an unsafe plain scalar must fail the canonical YAML contract."""
+        for skill_path in sorted(self.CATALOG.glob("*/SKILL.md")):
+            lines = skill_path.read_text(encoding="utf-8").splitlines()
+            closing_delimiter = lines.index("---", 1)
+            frontmatter_lines = lines[1:closing_delimiter]
+            self.assertIn("description: >", frontmatter_lines, skill_path)
+            description_index = frontmatter_lines.index("description: >")
+            description_lines = frontmatter_lines[description_index + 1 :]
+
+            self.assertTrue(description_lines, skill_path)
+            self.assertTrue(
+                all(line.startswith("  ") and line.strip() for line in description_lines),
+                skill_path,
+            )
+
+    def test_procedure_language_policy_rejects_explicit_workflow_examples(self) -> None:
+        """Weakening procedure detection must allow one of these shortcuts to escape."""
+        procedural_examples = (
+            "Sigue estos pasos para completar la auditoría.",
+            "Ejecuta un proceso de cinco fases para producir el resultado.",
+            "Recopila evidencia, analiza los hallazgos y entrega una recomendación.",
+        )
+
+        for example in procedural_examples:
+            with self.subTest(example=example):
+                self.assertIsNotNone(self.PROCEDURE_LANGUAGE.search(example))
 
     def test_descriptions_are_compact_triggers_without_procedure_language(self) -> None:
         """Expanding discovery metadata into a workflow must exceed this contract."""

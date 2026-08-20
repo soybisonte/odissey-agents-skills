@@ -1,6 +1,7 @@
 ---
 name: medir
-description: Usa cuando haya que definir o comprobar el éxito UX con métricas, criterios, instrumentación, funnels, dashboards, experimentos A/B o contra-métricas éticas. Conecta decisiones de diseño con evidencia observable; no estructura narrativas para presentar el trabajo.
+description: >
+  Usa cuando haya que definir o comprobar el éxito UX con métricas, criterios, instrumentación, funnels, dashboards, experimentos A/B o contra-métricas éticas. Conecta decisiones de diseño con evidencia observable; no estructura narrativas para presentar el trabajo.
 ---
 
 # Medir — Definir y Seguir el Éxito

@@ -1,6 +1,7 @@
 ---
 name: storytelling
-description: Usa cuando un journey, blueprint, brief, caso o presentación de diseño necesite una estructura narrativa clara para audiencias y stakeholders. Ayuda a comunicar verdad emocional sin sustituir la evidencia ni fabricar tensión; para microcopy de interfaz usa Articular.
+description: >
+  Usa cuando un journey, blueprint, brief, caso o presentación de diseño necesite una estructura narrativa clara para audiencias y stakeholders. Ayuda a comunicar verdad emocional sin sustituir la evidencia ni fabricar tensión; para microcopy de interfaz usa Articular.
 ---
 
 # Storytelling — Dar Forma Narrativa
