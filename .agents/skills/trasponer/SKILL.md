@@ -1,0 +1,264 @@
+---
+name: trasponer
+description: >
+  Replantea experiencias para diferentes plataformas y contextos — no solo
+  redimensionando, sino reconcibiendo. Parte del sistema de estrategia de
+  diseño de Odissey. Cuando una experiencia pasa de escritorio a móvil, de
+  web a TV, de app de consumo a kiosco, o de interfaz visual a voz, el modelo
+  de interacción, la prioridad de información y el contexto de usuario cambian
+  por completo. Actívalo cuando: adaptes un diseño a una nueva plataforma,
+  planifiques experiencias multidispositivo, audites la consistencia
+  multiplataforma, diseñes para TV/kiosco/voz/embebido, o cuando alguien diga
+  "hazlo funcionar en móvil" y necesites cuestionar el "solo hazlo responsive".
+  También actívalo para continuidad de journey entre dispositivos, auditorías
+  de convenciones por plataforma o mapeo de prioridad por contexto.
+---
+
+# Trasponer — Adaptar entre Contextos
+
+## Visión general
+
+El diseño responsive es una cuestión de layout. La transposición es una cuestión de UX.
+
+Cuando una experiencia pasa de escritorio a móvil, de web a TV, de una app de consumo a un kiosco, o de una interfaz visual a voz, el modelo de interacción, la prioridad de información y el contexto de uso cambian por completo. Un panel que funciona de maravilla en un monitor de 27 pulgadas no se convierte en una experiencia móvil por reacomodarse en una sola columna. Un flujo de compra diseñado para teclado y ratón no se convierte en experiencia de TV por añadir estados de foco.
+
+Trasponer significa replantear la experiencia para cada contexto, no reducirla para que quepa. Pregunta: ¿cómo se vería esta experiencia si hubiera sido diseñada primero para este contexto? ¿Qué añadiríamos? ¿Qué nunca habríamos incluido? ¿Qué patrones de interacción son nativos de esta plataforma y cuáles estamos importando a la fuerza desde otra?
+
+**Cuándo activar esta habilidad:** mover un producto a una nueva plataforma, planificar una estrategia multidispositivo, auditar la consistencia entre plataformas, diseñar para contextos no estándar (TV, kiosco, voz, embebido) o cada vez que alguien diga "solo hazlo responsive" y el problema sea más grande que el layout.
+
+---
+
+## Familia de habilidades
+
+Trasponer trabaja junto con todo el sistema de habilidades de Odissey:
+
+- **`$journey`**: Tus flujos deben funcionar en los contextos que trasponer identifica. Un flow de checkout en escritorio no es el mismo journey en móvil o voz — journey diseña la secuencia, trasponer asegura que encaje en el contexto.
+- **`$organizar`**: La estructura de navegación puede cambiar fundamentalmente por contexto. La navegación lateral en escritorio puede convertirse en pestañas inferiores en móvil, un hub-and-spoke en TV o un menú plano en un kiosco. Organizar proporciona la arquitectura de información; trasponer la adapta.
+- **`$incluir`**: El diseño entre contextos ES diseño inclusivo. Diseñar para las restricciones de una pantalla pequeña, un entorno ruidoso, uso con una sola mano o una distancia de visualización de 3 metros es diseñar para situaciones humanas reales. Incluir garantiza la accesibilidad; trasponer garantiza el ajuste contextual.
+- **`$robustecer`**: Contextos diferentes tienen modos de fallo distintos. El móvil pierde conectividad. Los mandos de TV se quedan sin batería. Los kioscos son tocados por dedos sucios. Robustecer mapea los modos de fallo; trasponer mapea los contextos donde ocurren.
+- **`$blueprint`**: La arquitectura del sistema debe soportar la entrega en múltiples contextos. Las APIs deben servir diferentes formas de datos. La sincronización de estado necesita infraestructura. Blueprint mapea el sistema; trasponer define qué necesita cada contexto de él.
+- **`$idear`**: Un modo cognitivo transversal para permanecer con los problemas de transposición antes de saltar a soluciones. Invócalo cuando: tengas la tentación de copiar y pegar patrones de interacción entre plataformas, algo se sienta forzado, o necesites la pregunta: "¿Qué pasaría si esta experiencia hubiera nacido en móvil? ¿Qué nunca habríamos añadido?"
+
+---
+
+## Capacidades principales
+
+### 1. Marco de análisis de contexto
+
+Para cada transposición de origen a destino, analiza sistemáticamente qué cambia. Esto no es una lista de verificación para echar un vistazo — es una función de forzamiento que te obliga a confrontar las diferencias reales entre contextos.
+
+**Método de entrada:**
+- Escritorio: ratón + teclado, apuntado preciso, estados hover, clic derecho, atajos de teclado, arrastrar y soltar
+- Móvil: táctil, apuntado impreciso (mínimo 44px), gestos (deslizar, pellizcar, pulsación larga), sin hover, el teclado virtual cubre la mitad de la pantalla
+- TV: mando D-pad, navegación basada en foco, sin apuntado directo, entrada de texto limitada, mando de voz en algunos dispositivos
+- Voz: sin apuntado, sin bucle de feedback visual, turnos conversacionales, confirmación mediante re-consulta
+- Kiosco: solo táctil (sin hover, sin teclado salvo en pantalla), objetivos grandes, a menudo manos enguantadas o húmedas
+- Embebido/widget: entrada restringida que coincide con la app anfitriona, posiblemente sin entrada dedicada en absoluto
+
+**Modelo de atención:**
+- Escritorio: concentrado, multi-ventana, sesiones largas, el usuario "está trabajando" (incluso en tareas personales)
+- Móvil: fragmentado, propenso a interrupciones, multitarea, microsesiones intercaladas con la vida
+- TV: recostado, pasivo, pantalla compartida, baja tolerancia al esfuerzo cognitivo
+- Kiosco: orientado a objetivos, bajo presión de tiempo, entorno público, se espera curva de aprendizaje cero
+- Embebido: ambiental, secundario a la tarea principal, consultable de un vistazo
+
+**Espacio en pantalla:**
+Restricciones Y oportunidades. Las pantallas pequeñas fuerzan el enfoque — eso es una ventaja, no un error. Las pantallas grandes permiten visión general y comparación — pero también invitan al desorden. Analiza qué hace posible cada tamaño, no solo qué quita.
+
+**Conectividad:**
+- Escritorio/web: generalmente banda ancha fiable, pero no siempre
+- Móvil: irregular, velocidad variable, datos de prepago en muchos mercados
+- TV: generalmente Wi-Fi doméstico fiable, pero las smart TVs tienen procesadores débiles
+- Kiosco: conexión dedicada, pero los cortes ocurren en entornos minoristas/públicos
+- Embebido/IoT: intermitente, bajo ancho de banda, offline-first es a menudo el valor por defecto correcto
+
+**Entorno:**
+- Oficina, trayecto, sofá, planta de tienda, habitación de hospital, cocina, coche, planta de fábrica
+- Nivel de ruido, iluminación, privacidad, contexto social, postura física
+- Estos factores condicionan cada decisión de interacción
+
+**Duración de sesión:**
+- Escritorio: sesiones de 10-60+ minutos, los flujos complejos de múltiples pasos son viables
+- Móvil: típicamente 30 segundos a 5 minutos, debe soportar microtareas
+- TV: 30-120 minutos pero baja profundidad de engagement por interacción
+- Kiosco: máximo 1-3 minutos, propósito único
+- Embebido: segundos cada vez, miradas momentáneas
+
+Para cada proyecto de transposición, completa este marco explícitamente. No omitas dimensiones porque parezcan obvias.
+
+### 2. Convenciones de UX específicas de plataforma
+
+Estas son diferencias de comportamiento genuinas que los usuarios han interiorizado, no directrices arbitrarias para seguir mecánicamente. Incúmplalas solo cuando tengas una razón específica.
+
+**iOS:**
+- Gestos del sistema: deslizar hacia atrás desde el borde izquierdo, tirar hacia abajo para descartar hojas, deslizar hacia arriba para ir al inicio
+- Navegación anclada en la parte inferior (barra de pestañas), no menús hamburguesa
+- SF Symbols para iconografía consistente
+- Feedback háptico para interacciones significativas (no decoración)
+- Dynamic Type: tu layout debe adaptarse a los tamaños de texto elegidos por el usuario
+- Hojas del sistema y hojas de acción para acciones contextuales
+- Pull-to-refresh es esperado en vistas de lista
+
+**Android:**
+- Lenguaje de diseño Material You y color dinámico
+- Botón/gesto de retroceso del sistema — tu app debe manejarlo correctamente, incluido el retroceso predictivo
+- Barra de aplicación superior con acciones contextuales
+- FAB (botón de acción flotante) para acciones de creación principales
+- Barra de navegación del sistema (gesto o 3 botones) — respeta el área segura
+- Hojas inferiores para contenido secundario, no modales a pantalla completa para elecciones simples
+
+**Web:**
+- Navegación dirigida por URL — cada estado significativo debe tener una URL
+- Comportamiento de múltiples pestañas — los usuarios abrirán cosas en nuevas pestañas, tu app debe manejarlo
+- Atajos de teclado para usuarios avanzados
+- Los estados hover proporcionan densidad de información que las plataformas táctiles no tienen
+- Los menús contextuales de clic derecho tienen expectativas
+- Expectativas de marcadores y compartir — og:tags, URLs limpias, títulos de página
+- El botón de retroceso del navegador debe funcionar de forma predecible
+
+**TV (UI a 3 metros):**
+- Navegación por D-pad: todo debe ser alcanzable con arriba/abajo/izquierda/derecha
+- Los estados de foco son el feedback de interacción principal — hazlos inconfundibles
+- Zonas seguras de overscan: mantén el contenido crítico dentro del 90% interior de la pantalla
+- Entrada de texto limitada: evítala, o proporciona entrada de voz / emparejamiento por código QR con el teléfono
+- Postura recostada: texto grande (mínimo equivalente a 24px a la distancia de visualización), alto contraste, lectura mínima
+- El contexto de audio importa: el TV tiene altavoces, usa diseño de sonido
+
+**Kiosco:**
+- Solo táctil, sin hover — todo lo que sea clicable debe parecer clicable
+- Modo de atracción: contenido en pantalla cuando nadie lo usa, invitando a la primera interacción
+- Tiempo de espera de sesión: reinicio automático tras inactividad, con aviso
+- Accesibilidad: botón físico o gesto de accesibilidad para lector de pantalla, alto contraste
+- Condiciones duras: luz ambiental intensa (necesario alto contraste), pantallas sucias (objetivos grandes), ruido público (feedback preferentemente visual)
+
+**Embebido/widget:**
+- Huella mínima: eres un invitado en el contexto de otra persona
+- Coincide con el contexto anfitrión: estilo visual, patrones de interacción, densidad
+- Deep link de entrada y salida: los usuarios llegan con contexto, déjales salir con contexto
+- Sin onboarding: el widget debe ser autoexplicativo a primera vista
+
+**Voz:**
+- Sin feedback visual persistente: cada estado debe comunicarse a través del habla
+- Turnos conversacionales: solicitud, escucha, confirmación, acción
+- Patrones de confirmación: repite las acciones críticas antes de ejecutarlas ("Quieres transferir 500€ a la cuenta corriente. ¿Es correcto?")
+- Recuperación de errores mediante re-consulta, no mensajes de error
+- Progressive disclosure a través de la conversación ("¿Quieres escuchar más opciones?")
+
+### 3. Cambio de prioridad de contenido
+
+Lo que es primario cambia según el contexto. Este es el núcleo de la transposición — no solo ocultar contenido en pantallas más pequeñas, sino repensar qué importa más.
+
+**Escritorio — visión general + detalle:**
+- Mostrar visión general y detalle simultáneamente (maestro-detalle, múltiples columnas)
+- Flujos de trabajo complejos con muchos pasos visibles a la vez
+- Vistas de comparación, tablas de datos, dashboards con múltiples widgets
+- Funcionalidades para usuarios avanzados visibles junto a los caminos simples
+
+**Móvil — acción + información esencial:**
+- Acción principal e información esencial únicamente en la primera vista
+- Divulgación secuencial: una cosa a la vez, profundiza bajo demanda
+- Accesibilidad con un pulgar: acciones críticas en el 60% inferior de la pantalla
+- Carga progresiva: muestra algo útil de inmediato, mejora a medida que llegan los datos
+
+**TV — explorar + seleccionar:**
+- Predominantemente visual: imágenes grandes, texto mínimo, deja que el contenido se venda solo
+- Navegación por categorías, no búsqueda primero (la entrada de texto es incómoda)
+- Contexto de audio: usa voz en off, diseño de sonido, audio ambiental
+- Visualización compartida: el contenido debe tener sentido para múltiples personas en el sofá
+
+**Kiosco — tarea + nada más:**
+- Propósito único: ¿cuál es la UNA cosa que hace este kiosco?
+- Objetivos táctiles grandes, indicadores de progreso claros, salida obvia de "comenzar de nuevo"
+- Recuperación por tiempo de espera: guarda el estado brevemente, pero reinicia limpiamente
+
+Documenta los cambios de prioridad explícitamente para cada pantalla y funcionalidad. Crea una matriz de prioridad: qué es primario, secundario, oculto y eliminado por contexto.
+
+### 4. Continuidad del journey entre dispositivos
+
+Los usuarios cambian de dispositivo a mitad de una tarea. Esto no es un caso límite — es el flow normal para muchas tareas. Diseña para ello explícitamente.
+
+**Preservación del estado:**
+- Borrador guardado en móvil, retomar en escritorio (y viceversa)
+- Carrito de compra, progreso en formulario, posición de lectura, posición de reproducción
+- ¿Qué estado necesita sincronizarse en tiempo real frente a al inicio de la próxima sesión?
+
+**Patrones de handoff:**
+- Códigos QR: escanear en el teléfono para continuar en el teléfono lo que empezaste en escritorio/TV/kiosco
+- Magic links: "continuar en tu teléfono" vía SMS/email con deep link al estado exacto
+- Sincronización en la nube: sincronización en segundo plano transparente para que el usuario nunca tenga que pensar en ello
+- Continuidad del portapapeles: portapapeles universal iOS/macOS, pero no dependas solo de funcionalidades específicas de plataforma
+
+**Notificaciones apropiadas al contexto:**
+- "Dejaste algo en tu carrito" — ¿en qué dispositivo? ¿A qué hora? ¿En qué tono?
+- No notifiques en el dispositivo que acaban de dejar. Notifica en el dispositivo que probablemente están usando ahora.
+- El contenido de la notificación debe coincidir con el contexto del dispositivo (corto en el reloj, accionable en el teléfono, ignorable en el escritorio)
+
+**Continuidad de sesión:**
+- Fricción de re-autenticación: minimízala entre dispositivos. Biométrico en el teléfono, magic link en escritorio, sesión persistente en TV.
+- No obligues a los usuarios a empezar de nuevo porque cambiaron de dispositivo.
+
+### 5. Progressive disclosure por contexto
+
+La misma arquitectura de información puede necesitar estrategias de divulgación fundamentalmente diferentes por contexto. Esto no se trata de breakpoints responsive — se trata de gestión de carga cognitiva por contexto.
+
+**Móvil: muestra menos, revela en la interacción.**
+Tarjetas que se expanden, cajones que suben deslizando, pestañas que cambian el contenido. El usuario elige qué ver en mayor detalle. El valor por defecto es la vista mínima viable.
+
+**Escritorio: muestra más, agrupa por función.**
+Barras laterales, paneles, barras de herramientas, layouts de múltiples columnas. El usuario escanea y selecciona. Más información es visible simultáneamente, reduciendo la necesidad de navegación.
+
+**TV: muestra categorías, profundiza en el detalle.**
+Fichas grandes que representan categorías o contenido. Selecciona para entrar, atrás para volver. Plano y ancho, no profundo y estrecho.
+
+**Kiosco: muestra la tarea, nada más.**
+Elimina todo lo que no sea el paso actual. Sin configuración, sin gestión de cuenta, sin exploración. Solo la tarea.
+
+**Voz: revela a través de la conversación.**
+"Aquí tienes tus tres opciones. ¿Quieres saber más sobre alguna de ellas?" La progressive disclosure ocurre a través de turnos de diálogo, no de jerarquía visual.
+
+Mapea la estrategia de divulgación por contexto para cada funcionalidad principal. No asumas que lo que funciona en escritorio funcionará en cualquier otro lugar con modificaciones menores.
+
+---
+
+## Formato de entregable
+
+### Matriz de análisis de contexto
+Para cada plataforma/contexto, documenta: método de entrada, modelo de atención, espacio en pantalla, conectividad, entorno, duración de sesión y sus implicaciones de UX.
+
+### Especificaciones de adaptación por plataforma
+Por plataforma: qué convenciones aplican, qué patrones nativos adoptar, qué patrones de origen reemplazar (y con qué), qué funcionalidades añadir/eliminar/transformar.
+
+### Mapeo de prioridad por contexto
+Para cada pantalla/funcionalidad principal: qué es primario, secundario, bajo demanda y eliminado — por contexto. Documenta explícitamente qué se elimina y por qué.
+
+### Mapa de journey entre dispositivos
+Para experiencias multidispositivo: dónde cambian los usuarios, qué estado se transfiere, qué mecanismos de handoff existen y dónde se rompe la continuidad.
+
+---
+
+## Voz y enfoque
+
+Nunca digas "solo hazlo responsive". La transposición requiere replantear, no refluir. La pregunta nunca es "¿cómo encajamos esto en una pantalla más pequeña?" La pregunta es "¿cómo se vería esta experiencia si hubiera sido diseñada para este contexto desde el principio?"
+
+Sé específico sobre las convenciones de plataforma. No digas "sigue las directrices de plataforma" — di qué directriz, qué patrón y por qué importa para este diseño concreto. Cuestiona los supuestos sobre qué funcionalidades "deben" existir en cada plataforma. A veces la transposición correcta es eliminar completamente una funcionalidad de un contexto donde no sirve a los usuarios.
+
+Respeta la inteligencia de cada contexto. El móvil no es el hermano menor del escritorio. La voz no es una pantalla sin visuales. Cada contexto tiene fortalezas que los otros no tienen.
+
+---
+
+## Alcance y límites
+
+### Esta habilidad es responsable de:
+- Estrategia de UX multiplataforma y análisis de contexto
+- Recomendaciones de modelo de interacción específicas por plataforma
+- Mapeo de prioridad de contenido entre contextos
+- Diseño de continuidad de journey entre dispositivos
+- Estrategia de progressive disclosure por contexto
+
+### Esta habilidad NO es responsable de:
+- CSS responsive e implementación de layout (ingeniería + diseño visual)
+- Diseño de flujos dentro de un contexto (`$journey`)
+- Diseño visual específico de plataforma (diseño visual)
+- Decisiones de estructura de navegación (`$organizar`)
+- Arquitectura del sistema para entrega en múltiples contextos (`$blueprint`)
+- Cumplimiento de accesibilidad por plataforma (`$incluir`)

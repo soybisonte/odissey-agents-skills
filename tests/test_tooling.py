@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import os
+import re
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
@@ -340,6 +341,70 @@ class CatalogValidationTests(unittest.TestCase):
         self.assertEqual(1, completed.returncode)
         self.assertIn('"description_characters": 501', completed.stdout)
         self.assertIn('"severity": "warning"', completed.stdout)
+
+
+class CanonicalMigrationTests(unittest.TestCase):
+    """Observable contracts for the repository's canonical skill migration."""
+
+    ROOT = Path(__file__).parents[1]
+    CATALOG = ROOT / ".agents" / "skills"
+    SKILL_NAMES = {
+        "odissey",
+        "strategy",
+        "research",
+        "blueprint",
+        "journey",
+        "organizar",
+        "articular",
+        "evaluar",
+        "robustecer",
+        "incluir",
+        "trasponer",
+        "localizar",
+        "medir",
+        "idear",
+        "storytelling",
+        "spec",
+    }
+    LEGACY_COMMAND = re.compile(
+        r"(?<![A-Za-z0-9_])/(?:" + "|".join(SKILL_NAMES) + r")\b"
+    )
+    HOST_IDENTIFIERS = (
+        "mcp__claude",
+        "mcp__figma",
+        "mcp__pencil",
+        "figma__",
+        "pencil__",
+    )
+
+    def test_canonical_catalog_has_the_expected_tree_shape(self) -> None:
+        """Leaving skills in the legacy root must make this test fail."""
+        skills = sorted(self.CATALOG.rglob("SKILL.md"))
+        references = sorted(self.CATALOG.rglob("references/*.md"))
+
+        self.assertEqual(16, len(skills))
+        self.assertEqual(8, len(references))
+        self.assertFalse((self.ROOT / "skills").exists())
+
+    def test_canonical_skill_frontmatter_is_portable_and_matches_its_directory(self) -> None:
+        """Retaining unsupported metadata or misplaced skill names must fail."""
+        skill_paths = sorted(self.CATALOG.rglob("SKILL.md"))
+        self.assertEqual(self.SKILL_NAMES, {path.parent.name for path in skill_paths})
+
+        for skill_path in skill_paths:
+            metadata, _ = parse_frontmatter(skill_path)
+            self.assertEqual({"name", "description"}, set(metadata), skill_path)
+            self.assertEqual(skill_path.parent.name, metadata["name"], skill_path)
+
+    def test_canonical_sources_have_no_legacy_commands_paths_or_host_identifiers(self) -> None:
+        """Host-specific calls and slash invocations must be mechanically removed."""
+        source_paths = sorted(self.CATALOG.rglob("*.md"))
+        for source_path in source_paths:
+            source = source_path.read_text(encoding="utf-8")
+            self.assertIsNone(self.LEGACY_COMMAND.search(source), source_path)
+            self.assertNotIn(".github/copilot/skills", source, source_path)
+            for identifier in self.HOST_IDENTIFIERS:
+                self.assertNotIn(identifier, source, source_path)
 
 
 class BuildTests(unittest.TestCase):

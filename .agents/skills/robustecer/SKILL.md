@@ -1,0 +1,254 @@
+---
+name: robustecer
+description: >
+  Endurece los diseños para el uso en el mundo real identificando y diseñando
+  sistemáticamente para cada condición fuera del camino feliz. Parte del sistema
+  de estrategia de diseño Odissey. Cubre inventarios de estados, recuperación de errores,
+  experiencias de primera ejecución, pruebas de estrés, preparación para internacionalización
+  y manejo de latencia. Activa ante: casos límite, estados de error, estados vacíos,
+  estados de carga, primera experiencia, onboarding, modo sin conexión,
+  "qué pasa cuando", "qué pasa si el usuario", "haz una prueba de estrés",
+  "qué podría salir mal", "endurece este diseño", "revisión de casos límite",
+  "cuáles son los modos de falla", estados cero, manejo de timeout, o cualquier
+  pregunta sobre cómo se comporta un diseño fuera de las condiciones ideales.
+  El camino feliz es una fantasía — esta habilidad diseña para el mundo en que
+  tus usuarios realmente viven.
+---
+
+# Robustecer — Diseñar para el Mundo Real
+
+## Visión general
+
+El camino feliz es una fantasía. Los usuarios reales tienen apellidos de 47 caracteres, conexiones 2G en el metro, teléfonos de tres años con pantallas agrietadas, pestañas del navegador que no han cerrado en seis días y cero paciencia para algo que no funciona a la primera.
+
+Todo diseño comienza con el escenario ideal: la persona tiene conexión estable, datos razonables, un dispositivo moderno y sigue el flujo previsto sin desviaciones. Ese escenario cubre quizá el 60% del uso real. El otro 40% es donde se construye o se destruye la confianza: el estado vacío que no dice nada, el mensaje de error que afirma "algo salió mal" sin explicar qué pasó ni cómo arreglarlo, la pantalla de carga que no indica si ocurre algo, la primera experiencia de uso que pide 12 datos antes de mostrar valor.
+
+Robustecer identifica de forma sistemática cada condición que las personas encontrarán de verdad y asegura que el diseño responda a cada una con el mismo cuidado que diste al camino feliz. No se trata de pesimismo: se trata de respeto por la gente que usa lo que construyes.
+
+**Activa esta habilidad cuando haya:** revisión de casos límite, diseño de estados de error, diseño de estados vacíos, diseño de patrones de carga, diseño de primera experiencia, planificación de modo sin conexión, verificación de preparación para internacionalización, pruebas de estrés o cualquier momento en que alguien pregunte "pero qué pasa cuando..."
+
+---
+
+## Familia de habilidades
+
+Robustecer trabaja junto con el sistema completo de habilidades de Odissey, con conexiones especialmente estrechas con las habilidades que definen los caminos que sometes a prueba de estrés:
+
+- **`$journey`** — Sus flows definen el camino feliz; tú sometes a prueba de estrés todo lo demás. Cada flow que diseñan genera un conjunto de preguntas: ¿qué pasa cuando este paso falla? ¿Qué pasa si el usuario abandona a mitad del camino y regresa? ¿Qué pasa si los datos del paso 2 no están disponibles en el paso 4? Tu trabajo se retroalimenta en el diseño de sus flows como estados y ramas adicionales.
+
+- **`$blueprint`** — El análisis de modos de falla a nivel de sistema alimenta tu diseño de resiliencia a nivel de UX. Cuando identifican que un servicio puede tener timeout, tú diseñas lo que el usuario ve durante ese timeout. Cuando mapean una dependencia que puede fallar, tú diseñas la experiencia degradada. Los modos de falla a nivel de sistema se convierten en diseños de estado a nivel de UX.
+
+- **`$incluir`** — Accesibilidad y robustecimiento se superponen significativamente. Diseñar para conexiones lentas, pantallas pequeñas, uso con una sola mano y discapacidad situacional es tanto trabajo de resiliencia como diseño inclusivo. Coordina para evitar duplicaciones — tú eres responsable de la metodología de estados y casos límite; ellos son responsables de la metodología de accesibilidad y los requisitos de tecnología de asistencia.
+
+- **`$evaluar`** — Su evaluación identifica lo que está fallando en la experiencia actual; tú diseñas las correcciones. Cuando señalan estados de error faltantes, indicadores de carga ausentes o estados vacíos inútiles, esos hallazgos se dirigen directamente hacia ti. Tu output se retroalimenta en su próximo ciclo de evaluación.
+
+- **`$spec`** — Tu documentación de casos límite se convierte en parte de su paquete de handoff. Cada estado que diseñas, cada flow de recuperación de errores que defines, cada resultado de prueba de estrés — todo necesita estar en la especificación de ingeniería. Coordina el formato: las especificaciones que solo listan el camino feliz son especificaciones que producen productos defectuosos.
+
+- **`$articular`** — Mensajes de error, copy de estados vacíos, mensajes de carga, guía de primera ejecución — todo es contenido que debe ser claro, útil y acorde con la marca. Tú defines qué debe decirse; ellos definen cómo decirlo.
+
+- **`$idear`** — "¿De qué manera más vergonzosa podría esto fallar en público?" "¿Qué suposición estamos haciendo sobre nuestros usuarios que sería humillante si fuera incorrecta?" El idear te ayuda a encontrar los modos de falla que nadie ha imaginado todavía — los que surgen de cuestionar suposiciones, no de ejecutar listas de verificación.
+
+---
+
+## Capacidades principales
+
+### 1. Inventario de estados
+
+Cada pantalla, componente y flow tiene estados más allá del "predeterminado". La mayoría de los diseños solo especifican el estado predeterminado. Robustecer los enumera todos.
+
+**El catálogo de estados:**
+
+**Predeterminado** — El camino feliz con datos normales. Esto es lo que muestra el mockup. Es el punto de partida, no la línea de llegada. Incluso el estado predeterminado tiene preguntas: ¿qué son datos "normales"? ¿Cuántos? ¿En qué formato? ¿Qué pasa cuando lo "normal" cambia?
+
+**Vacío** — Todavía no hay datos. Primer uso, cero resultados de búsqueda, historial borrado, cuenta nueva sin actividad. El estado vacío es la primera impresión del usuario de la mayoría de las funcionalidades — y la mayoría de los estados vacíos son una página en blanco sin guía. Diséñalos: explica qué aparecerá aquí, cómo comenzar y qué hace la funcionalidad. Muestra datos de ejemplo o una vista previa del estado poblado si es posible.
+
+**Cargando** — Carga inicial, actualización, actualización en segundo plano, carga diferida de contenido adicional, envío de un formulario. Cada uno tiene diferentes implicaciones de UX. La carga inicial necesita una pantalla esqueleto o un indicador de progreso. La actualización en segundo plano no debe interrumpir al usuario. El envío de formulario necesita feedback inmediato de que la acción fue recibida. Las operaciones largas necesitan estimación de progreso.
+
+**Parcial** — Algunos datos cargados, algunos pendientes, algunos fallidos. Este es el estado más pasado por alto y uno de los más comunes en el uso real. Un dashboard donde 3 de 5 widgets cargaron, 1 sigue cargando y 1 falló. Un perfil donde el avatar cargó pero el nombre no. Diseña para el medio desordenado, no solo para los extremos limpios.
+
+**Error** — Errores de validación (el input del usuario era incorrecto), errores de sistema (algo se rompió en el backend), errores de red (se perdió la conexión), errores de permisos (el usuario no está autorizado), errores de timeout (la solicitud tardó demasiado). Cada uno requiere mensajes diferentes y diferentes caminos de recuperación. El genérico "Algo salió mal" nunca es aceptable.
+
+**Éxito** — Acción completada. Pero ¿qué pasó específicamente? Un formulario enviado — ¿qué sigue? Un archivo cargado — ¿a dónde fue? Un ítem eliminado — ¿puede recuperarse? Un pago procesado — ¿cuál es la confirmación? Los estados de éxito que dejan al usuario preguntándose "¿y ahora qué?" están incompletos.
+
+**Sin conexión** — Sin conexión. ¿Qué está en caché y sigue siendo utilizable? ¿Qué se degrada con gracia? ¿Qué está completamente no disponible? ¿Cómo sabe el usuario que está sin conexión? ¿Qué pasa con las acciones que intenta mientras está sin conexión — se ponen en cola, se rechazan o se pierden silenciosamente?
+
+**Deshabilitado** — Un botón, input o funcionalidad no está disponible. ¿Por qué? ¿Cuándo se activa? El usuario necesita entender qué está impidiendo la acción y qué hacer al respecto. Un botón deshabilitado sin explicación es un callejón sin salida.
+
+**Desbordamiento** — Demasiados datos. 10,000 ítems en una lista diseñada para 50. Un nombre de usuario de 200 caracteres. 500 notificaciones no leídas. Una tabla con 40 columnas. Diseña para los extremos — paginación, truncamiento, divulgación progresiva, listas virtualizadas.
+
+**Para cada estado, responde tres preguntas:** ¿Qué ve el usuario? ¿Qué puede hacer el usuario? ¿Cómo se recupera o avanza el usuario?
+
+**Ejemplo: Inventario de estados para un componente de carga de archivos**
+
+| Estado | Lo que el usuario ve | Lo que puede hacer | Recuperación/progreso |
+|---|---|---|---|
+| Predeterminado | Zona de arrastre con "Arrastra archivos o haz clic para buscar" | Arrastrar archivos o hacer clic para abrir el selector de archivos | — |
+| Cargando | Nombre del archivo, barra de progreso al 43%, botón de cancelar | Cancelar la carga | Cancelar regresa al predeterminado |
+| Parcial | 2 de 3 archivos cargados, 1 todavía en progreso | Cancelar los restantes, eliminar los completados, añadir más | Cancelar o esperar |
+| Éxito | 3 archivos listados con marcas de verificación, botón "Listo" | Eliminar archivos individuales, añadir más, continuar | Hacer clic en "Listo" para continuar |
+| Error | Nombre del archivo en rojo, "Archivo demasiado grande (máx 25 MB)", ícono de reintento | Reintentar, eliminar o elegir un archivo diferente | Reintentar o eliminar y continuar con otros archivos |
+| Deshabilitado | Zona de arrastre gris, "Límite de carga alcanzado (10 archivos)" | Nada — deben eliminarse archivos existentes primero | El tooltip explica: "Elimina un archivo para cargar más" |
+| Sin conexión | Últimos archivos cargados visibles, banner "Cargas pausadas — sin conexión" | Ver archivos ya cargados, poner en cola nuevos archivos | Las cargas en cola se reanudan automáticamente cuando regresa la conexión |
+
+### 2. Diseño de recuperación de errores
+
+Cuando algo sale mal — y saldrá — la capacidad del usuario de recuperarse determina si reintenta o abandona.
+
+**Patrones de recuperación:**
+
+**Recuperación en línea.** Corrígelo aquí mismo, ahora mismo. Los errores de validación deben aparecer junto al campo que los causó, con guía específica sobre qué corregir. No borres el formulario. No hagas scroll hasta arriba. No hagas que el usuario encuentre el problema — señala directamente hacia él.
+
+**Lógica de reintento.** Reintento automático para fallas transitorias (interrupción de red, timeout) con retroceso exponencial. Botón de reintento manual para fallas persistentes ("Conexión perdida. Toca para reintentar."). Nunca hagas que el usuario empiece de nuevo cuando un reintento podría funcionar. Muestra lo que estás haciendo: "Reintentando... intento 2 de 3."
+
+**Degradación elegante.** La funcionalidad parcial es mejor que ninguna funcionalidad. Si el motor de recomendaciones está caído, muestra ítems populares. Si los datos en tiempo real fallan, muestra datos en caché con una marca de tiempo. Si una funcionalidad no crítica falla, ocúltala en lugar de mostrar error en toda la página.
+
+**Deshacer y rehacer.** Deshacer basado en tiempo (el "Deshacer envío" de Gmail con cuenta regresiva). Deshacer basado en acción (Ctrl+Z para edición de contenido). Botones de deshacer explícitos para acciones destructivas (eliminar, archivar, mover). Cada acción destructiva debe ser reversible, o al menos requerir confirmación.
+
+**Preservación de borradores.** Nunca pierdas el trabajo del usuario. Guardado automático del progreso del formulario. Preserva el estado del draft entre sesiones. Si el navegador se cierra, la página se recarga o la sesión expira, el trabajo del usuario debe seguir ahí. Esto es innegociable para cualquier input que tome más de 30 segundos producir.
+
+**Anti-patrones de recuperación de errores a eliminar:** Mensajes de error genéricos sin acción de recuperación. Estados de error que requieren una recarga completa de página. Fallas silenciosas donde el usuario no sabe que algo salió mal. Estados de error que borran el input del usuario. Mensajes de error en lenguaje técnico ("Error 500: Error interno del servidor"). Errores que culpan al usuario ("Input inválido" sin explicar qué es inválido o por qué).
+
+### 3. Diseño de la primera experiencia
+
+La primera vez que un usuario encuentra tu producto o funcionalidad es el momento más frágil. Tienen el menor contexto, la menor inversión y la menor tolerancia a la fricción.
+
+**Patrones que funcionan:**
+
+**Onboarding progresivo.** Aprender haciendo, no leyendo. Introduce funcionalidades en contexto a medida que el usuario las encuentra. La primera tarea debe entregar valor de inmediato. Revela la complejidad gradualmente — muestra la versión simple primero, luego muestra las funcionalidades avanzadas a medida que el usuario demuestra estar listo.
+
+**Valor primero.** Muestra lo que hace el producto antes de pedir configuración. Deja que el usuario vea un dashboard poblado, un proyecto de muestra o una vista previa del resultado antes de requerir la creación de cuenta, la completación del perfil o la configuración. El usuario debe entender la propuesta de valor por experiencia, no por copy de marketing.
+
+**Guía justo a tiempo.** Explica las funcionalidades cuando son relevantes, no todas a la vez. Un tooltip que aparece cuando el usuario pasa por primera vez sobre una funcionalidad es mejor que un tour de 5 diapositivas que explica todo antes de que el usuario tenga contexto para entender nada.
+
+**Datos de muestra.** Muestra cómo se ve "lleno". Una herramienta de gestión de proyectos con proyectos de muestra. Un dashboard con datos de muestra. Un inbox con mensajes de muestra. Esto le da al usuario un modelo mental del estado poblado y les muestra hacia dónde están trabajando.
+
+**Anti-patrones a eliminar:** Tours de volcado de funcionalidades (tours de 5 diapositivas que nadie lee y todos omiten). Completación de perfil obligatoria antes de mostrar cualquier valor. Dashboards vacíos sin guía ("No tienes proyectos. Crea uno para comenzar." — pero ¿qué es un proyecto? ¿qué debo poner en él?). Tutoriales forzados que no se pueden omitir. Tooltips que bloquean la interfaz y deben descartarse uno por uno.
+
+### 4. Prompts de prueba de estrés
+
+Preguntas sistemáticas diseñadas para romper tu diseño. Ejecuta estas contra cada pantalla, componente y flow.
+
+**Estrés de contenido:**
+- ¿Qué pasa si el título tiene 3 caracteres? ¿300 caracteres? ¿Contiene solo emoji?
+- ¿Qué pasa si el nombre es "O" o "Wolfeschlegelsteinhausenbergerdorff"?
+- ¿Qué pasa si el contenido está en árabe (RTL)? ¿En japonés (sin saltos de palabra)? ¿Una mezcla de scripts?
+- ¿Qué pasa si contiene una URL, una dirección de correo electrónico o marcado HTML?
+- ¿Qué pasa si está vacío — completamente en blanco?
+
+**Estrés de volumen:**
+- ¿Qué pasa si hay 0 ítems? ¿1? ¿3? ¿50? ¿10,000?
+- ¿Qué pasa si la lista se actualiza en tiempo real — ítems apareciendo y desapareciendo?
+- ¿Qué pasa si cada insignia de notificación muestra "999+"?
+- ¿Qué pasa si todos los campos opcionales están llenos y todas las secciones están expandidas?
+
+**Estrés de tiempo:**
+- ¿Qué pasa si la API responde en 200ms? ¿5 segundos? ¿30 segundos? ¿Nunca?
+- ¿Qué pasa si el usuario abandona a mitad del flow y regresa mañana? ¿El próximo mes?
+- ¿Qué pasa si la sesión expira durante un proceso de múltiples pasos?
+- ¿Qué pasa si se activan dos acciones simultáneamente?
+
+**Estrés de red:**
+- ¿Qué pasa si la conexión cae a mitad de una acción? ¿A mitad de una carga? ¿A mitad de un pago?
+- ¿Qué pasa si el usuario está en 2G? ¿En modo avión? ¿En el Wi-Fi de un hotel que requiere login en un portal?
+- ¿Qué pasa si la conexión es intermitente — activa por 10 segundos, caída por 5?
+
+**Estrés de dispositivo:**
+- ¿Qué pasa si la pantalla tiene 320px de ancho? ¿3840px de ancho?
+- ¿Qué pasa si el usuario hace zoom al 200%? ¿400%?
+- ¿Qué pasa si usan un lector de pantalla? ¿Control de voz? ¿Acceso por switch?
+- ¿Qué pasa si el dispositivo tiene 5 años y es lento?
+
+**Estrés de comportamiento del usuario:**
+- ¿Qué pasa si hacen doble clic en lugar de un solo clic?
+- ¿Qué pasa si usan el botón de retroceso del navegador a mitad del flow?
+- ¿Qué pasa si abren el mismo flow en dos pestañas?
+- ¿Qué pasa si pegan en lugar de escribir? ¿Arrastran en lugar de hacer clic?
+- ¿Qué pasa si se alejan a mitad de la tarea y la pantalla se bloquea?
+- ¿Qué pasa si comparten un enlace a un estado que requiere autenticación?
+
+### 5. Preparación para internacionalización
+
+No es localización — eso es `$localizar`. Esta es la preparación técnica y de diseño para la eventual localización. Incorporar estas consideraciones desde el inicio es dramáticamente más económico que hacerlo después.
+
+**Expansión y contracción de texto.** El inglés es uno de los idiomas más compactos. El alemán corre aproximadamente un 30% más largo. El finlandés puede correr un 40% más largo. Algunas cadenas de UI se duplican en longitud. Por el contrario, el japonés y el chino pueden ser más compactos. Diseña layouts que acomoden al menos un 40% de expansión de texto sin romperse. Usa contenedores flexibles, no anchos fijos para el texto.
+
+**Implicaciones del layout RTL.** Los idiomas de derecha a izquierda (árabe, hebreo, farsi, urdu) requieren más que espejear el texto. Los flows de navegación se invierten. Los indicadores de progreso se revierten. Pero algunos elementos no deben invertirse: controles de reproducción multimedia (play/pausa), campos de número de teléfono, líneas de tiempo, gráficos con ejes direccionales. Las rutas separadas por barras (/carpeta/subcarpeta) no se revierten. Entiende qué se invierte y qué no.
+
+**Formatos de fecha, hora, número y moneda.** MM/DD/AAAA vs. DD/MM/AAAA vs. AAAA-MM-DD. Hora de 12 horas vs. 24 horas. Coma como separador decimal vs. punto. Símbolo de moneda antes vs. después del número. Estos no son cosméticos — equivocarse causa errores reales (¿es 03/04/2025 el 3 de marzo o el 4 de abril?).
+
+**Soporte de juegos de caracteres.** Los caracteres CJK (chino, japonés, coreano) tienen reglas de salto de línea diferentes, sin espacios entre palabras y opciones de texto vertical. El árabe y el devanagari tienen ligaduras complejas y forma contextual. Los emoji son de ancho variable y pueden ser de múltiples puntos de código. Prueba tu diseño con texto real en estos scripts, no con lorem ipsum.
+
+**Suposiciones culturales en íconos.** Un buzón de correo se ve diferente en cada país. Un bote de basura no es universal. Un disquete no significa nada para los usuarios nacidos después del año 2000. Un pulgar hacia arriba es ofensivo en algunas culturas. Revisa los íconos para detectar suposiciones culturales y prueba con las audiencias objetivo.
+
+**Anti-patrones de concatenación de cadenas.** "Hola " + nombre + ", tienes " + cantidad + " ítems" falla en la mayoría de los idiomas. El orden de las palabras cambia. Las reglas de pluralización varían enormemente (el inglés tiene 2 formas, el árabe tiene 6, algunos idiomas tienen formas dependientes del contexto). Usa frameworks de internacionalización adecuados con formato de mensaje ICU o equivalente. Nunca construyas frases concatenando cadenas.
+
+### 6. Manejo de timeout y latencia
+
+Los usuarios necesitan saber tres cosas durante cualquier espera: ¿Está funcionando? ¿Cuánto tardará? ¿Puedo hacer algo más mientras tanto?
+
+**Patrones:**
+
+**Pantallas esqueleto.** Muestra la estructura de la página antes de que cargue el contenido. Los usuarios perciben las pantallas esqueleto como más rápidas que los spinners, incluso con el mismo tiempo de carga. Úsalas para cargas iniciales de página y áreas de contenido importantes. Haz que el esqueleto coincida con el layout real — los esqueletos genéricos no ayudan.
+
+**UI optimista.** Muestra el éxito antes de la confirmación del servidor para acciones de bajo riesgo. Marcar un favorito, enviar un mensaje de chat, reordenar una lista — muestra el resultado de inmediato y reconcilia con el servidor en segundo plano. Si el servidor rechaza la acción, revierte con una explicación clara. Reserva la UI optimista para acciones donde la reversión es elegante; nunca la uses para pagos, eliminaciones u operaciones irreversibles.
+
+**Indicadores de progreso.** Barras de progreso determinadas para operaciones con duración conocida (carga de archivos, proceso de múltiples pasos). Spinners o barras de progreso indeterminadas para operaciones con duración desconocida. Siempre prefiere determinado sobre indeterminado — incluso una estimación aproximada ayuda. Muestra porcentaje, tiempo restante o ítems procesados cuando sea posible.
+
+**Actualización en segundo plano.** Actualiza el contenido sin interrumpir al usuario. Muestra un indicador discreto de que hay contenido nuevo disponible ("3 nuevos ítems — toca para cargar") en lugar de mover bruscamente la posición de desplazamiento o insertar contenido sobre el viewport. Stale-while-revalidate: muestra datos en caché de inmediato, actualiza en segundo plano y actualiza la UI sin problemas cuando lleguen datos frescos.
+
+**Manejo de timeout.** Si una operación tarda más de lo esperado, díselo al usuario. Mensajes graduales: 0-3 segundos = no se necesita mensaje para acciones simples. 3-10 segundos = muestra un indicador de progreso. 10-30 segundos = añade contexto ("Esto está tardando más de lo habitual..."). 30+ segundos = ofrece alternativas ("Puedes esperar o te enviaremos un correo cuando esté listo."). Nunca dejes al usuario mirando un spinner indefinidamente sin información.
+
+---
+
+## Formato de entregable
+
+Adapta al alcance. Una revisión de casos límite de un solo componente necesita un inventario de estados. Un robustecimiento de producto completo necesita todo.
+
+```
+## Inventario de estados
+[Matriz: Pantalla/Componente x Estado (predeterminado, vacío, cargando, parcial,
+error, éxito, sin conexión, deshabilitado, desbordamiento)]
+[Para cada estado no predeterminado: lo que el usuario ve, lo que puede hacer,
+cómo se recupera]
+
+## Catálogo de casos límite
+[Organizado por categoría de estrés: contenido, volumen, tiempo, red,
+dispositivo, comportamiento del usuario]
+[Cada caso límite: escenario, comportamiento actual, comportamiento recomendado,
+prioridad]
+
+## Resultados de prueba de estrés
+[Resultados de ejecutar los prompts de prueba de estrés contra el diseño]
+[Pasa / Falla / Sin probar para cada escenario]
+
+## Evaluación de la primera experiencia
+[Análisis del flow de primera ejecución actual]
+[Recomendaciones para onboarding progresivo, enfoque de valor primero,
+datos de muestra]
+
+## Recomendaciones de resiliencia
+[Lista priorizada de mejoras]
+[P0: Estados faltantes que causan confusión al usuario o pérdida de datos]
+[P1: Estados degradados que dañan significativamente la experiencia]
+[P2: Pulido faltante que reduce la confianza o la calidad percibida]
+[P3: Mejoras deseables para el manejo de casos límite]
+```
+
+---
+
+## Voz y enfoque
+
+**Sé paranoico en nombre del usuario.** Tu trabajo es imaginar todo lo que puede salir mal y asegurarte de que el diseño lo maneje. Eres la persona en la sala que dice "pero qué pasa si..." — no para ser difícil, sino porque los usuarios reales encontrarán cada escenario que puedas imaginar y varios que no puedas.
+
+**Prioriza sin piedad.** No todos los casos límite son igualmente probables o igualmente dañinos. Un flow de pago que falla silenciosamente es catastróficamente peor que una página de perfil que trunca un nombre largo. Enfoca tu energía donde el impacto es mayor: flows de tareas centrales, escenarios de pérdida de datos y estados que dejan a los usuarios atascados sin camino de recuperación.
+
+**Sé específico sobre lo que significa "manejarlo".** "Manejar el estado de error" no es una recomendación. "Mostrar un mensaje de error en línea debajo del campo de correo electrónico que diga 'Este correo ya está registrado — ¿iniciar sesión en su lugar?' con un enlace a la página de inicio de sesión" es una recomendación. Define el estado, el mensaje y la acción de recuperación.
+
+**Respeta el tiempo y el contexto del usuario.** Cada estado que diseñes debe ayudar al usuario a avanzar o entender por qué no puede. Los estados vacíos deben guiar. Los estados de error deben sugerir próximos pasos. Los estados de carga deben establecer expectativas. Ningún estado debe ser un callejón sin salida.
+
+---
+
+## Alcance y límites
+
+**Tú eres responsable de:** Casos límite, estados de error, estados de carga, estados vacíos, estados de éxito, estados parciales, estados sin conexión, estados de desbordamiento, estados deshabilitados. Diseño de la primera experiencia. Metodología de prueba de estrés. Patrones de recuperación de errores. Manejo de timeout y latencia. Preparación para internacionalización (diseño técnico, no traducción). Documentación de inventario de estados.
+
+**No eres responsable de:** Modos de falla a nivel de sistema y arquitectura — eso es `$blueprint`. Ellos identifican qué puede fallar a nivel de sistema; tú diseñas lo que el usuario experimenta cuando ocurre. Metodología de accesibilidad y requisitos de tecnología de asistencia — eso es `$incluir`. Compartes territorio en condiciones del mundo real, pero ellos son responsables del marco WCAG y la experiencia con lectores de pantalla. Diseño de flows — eso es `$journey`. Tú sometes a prueba de estrés sus flows, no los diseñas desde cero. Redacción de copy — eso es `$articular`. Tú defines qué debe comunicarse en cada estado; ellos escriben las palabras. Ejecución de localización — eso es `$localizar`. Tú aseguras que el diseño esté técnicamente listo para la localización; ellos se encargan de la adaptación real.
