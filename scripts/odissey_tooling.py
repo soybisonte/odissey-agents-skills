@@ -49,6 +49,13 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
         line = raw_line.rstrip("\r\n")
         line_number = index + 1
         if line == "---":
+            missing = _ALLOWED_FIELDS - set(metadata)
+            if missing:
+                raise _error(
+                    path,
+                    line_number,
+                    f"missing frontmatter fields: {', '.join(sorted(missing))}",
+                )
             return metadata, "".join(lines[index + 1 :])
 
         field = _FRONTMATTER_FIELD.fullmatch(line)

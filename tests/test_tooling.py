@@ -58,6 +58,32 @@ class FrontmatterTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, r"SKILL\.md:4:.*license"):
                 parse_frontmatter(skill_path)
 
+    def test_rejects_frontmatter_without_name(self) -> None:
+        """Accepting metadata without a skill name would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            skill_path = self.write_skill(
+                Path(temporary_directory), "---\ndescription: Valid\n---\n"
+            )
+
+            with self.assertRaisesRegex(ValueError, r"SKILL\.md:3:.*name"):
+                parse_frontmatter(skill_path)
+
+    def test_rejects_frontmatter_without_description(self) -> None:
+        """Accepting metadata without a description would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            skill_path = self.write_skill(Path(temporary_directory), "---\nname: example\n---\n")
+
+            with self.assertRaisesRegex(ValueError, r"SKILL\.md:3:.*description"):
+                parse_frontmatter(skill_path)
+
+    def test_rejects_empty_frontmatter(self) -> None:
+        """Accepting an empty metadata block would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            skill_path = self.write_skill(Path(temporary_directory), "---\n---\n")
+
+            with self.assertRaisesRegex(ValueError, r"SKILL\.md:2:.*name"):
+                parse_frontmatter(skill_path)
+
     def test_parses_scalar_and_folded_descriptions(self) -> None:
         """Ignoring a supported YAML description shape would make this test fail."""
         with TemporaryDirectory() as temporary_directory:
