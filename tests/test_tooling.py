@@ -6,6 +6,7 @@ import sys
 from tempfile import TemporaryDirectory
 import unittest
 
+from scripts.build import OWNERSHIP_HEADER, BuildValidationError, build_repository
 from scripts.odissey_tooling import (
     ValidationIssue,
     parse_frontmatter,
@@ -332,3 +333,116 @@ class CatalogValidationTests(unittest.TestCase):
         self.assertEqual(1, completed.returncode)
         self.assertIn('"description_characters": 501', completed.stdout)
         self.assertIn('"severity": "warning"', completed.stdout)
+
+
+class BuildTests(unittest.TestCase):
+    """Filesystem contracts for the safe, deterministic catalog build."""
+
+    def write_skill(self, root: Path, name: str, body: str = "# Skill\n") -> Path:
+        """Create one valid canonical source skill with deliberately mixed newlines."""
+        skill_path = root / ".agents" / "skills" / name / "SKILL.md"
+        skill_path.parent.mkdir(parents=True)
+        skill_path.write_bytes(
+            f"---\r\nname: {name}\r\ndescription: {name} description\r\n---\r\n{body}".encode(
+                "utf-8"
+            )
+        )
+        return skill_path
+
+    def snapshot(self, root: Path) -> dict[Path, bytes]:
+        """Read all generated files so idempotence is tested as bytes on disk."""
+        output_roots = (
+            root / ".codex" / "agents",
+            root / ".github" / "agents",
+            root / "generated-skills",
+            root / "plugins" / "bbva-odissey" / "skills",
+            root / ".cursor" / "rules",
+        )
+        return {
+            path.relative_to(root): path.read_bytes()
+            for output_root in output_roots
+            if output_root.exists()
+            for path in sorted(output_root.rglob("*"))
+            if path.is_file()
+        }
+
+    def test_build_preserves_unmanaged_github_files_and_creates_output_roots(self) -> None:
+        """Deleting .github or skipping an output root would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "alpha")
+            workflow = root / ".github" / "workflows" / "ci.yml"
+            keep = root / ".github" / "keep.md"
+            workflow.parent.mkdir(parents=True)
+            workflow.write_text("name: CI\n", encoding="utf-8")
+            keep.write_text("keep me\n", encoding="utf-8")
+
+            build_repository(root)
+
+            self.assertEqual("name: CI\n", workflow.read_text(encoding="utf-8"))
+            self.assertEqual("keep me\n", keep.read_text(encoding="utf-8"))
+            for relative_path in (
+                ".codex/agents",
+                ".github/agents",
+                "generated-skills",
+                "plugins/bbva-odissey/skills",
+                ".cursor/rules",
+            ):
+                self.assertTrue((root / relative_path).is_dir(), relative_path)
+            self.assertTrue((root / "generated-skills" / "alpha" / "SKILL.md").is_file())
+            self.assertTrue(
+                (root / "plugins" / "bbva-odissey" / "skills" / "alpha" / "SKILL.md").is_file()
+            )
+
+    def test_build_is_byte_idempotent_and_normalizes_newlines(self) -> None:
+        """Nondeterministic ordering or newline preservation would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "zeta")
+            self.write_skill(root, "alpha", "# Alpha\r\n")
+
+            build_repository(root)
+            first = self.snapshot(root)
+            build_repository(root)
+            second = self.snapshot(root)
+
+            self.assertEqual(first, second)
+            generated = second[Path("generated-skills/alpha/SKILL.md")]
+            self.assertNotIn(b"\r", generated)
+            self.assertIn(OWNERSHIP_HEADER.encode("utf-8"), generated)
+
+    def test_validation_failure_leaves_existing_outputs_unchanged(self) -> None:
+        """Writing before validation completes would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "valid")
+            build_repository(root)
+            before = self.snapshot(root)
+            invalid = root / ".agents" / "skills" / "invalid" / "SKILL.md"
+            invalid.parent.mkdir()
+            invalid.write_text("---\nname: invalid\n---\n", encoding="utf-8")
+
+            with self.assertRaises(BuildValidationError):
+                build_repository(root)
+
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_build_removes_only_managed_subtree_contents(self) -> None:
+        """Removing an unowned sibling would make this ownership-safety test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "alpha")
+            unmanaged = root / ".github" / "keep.md"
+            managed_stale = root / ".github" / "agents" / "stale.agent.md"
+            header_owned = root / ".github" / "obsolete.md"
+            unmanaged.parent.mkdir(parents=True)
+            managed_stale.parent.mkdir()
+            unmanaged.write_text("user owned\n", encoding="utf-8")
+            managed_stale.write_text("user content in managed subtree\n", encoding="utf-8")
+            header_owned.write_text(f"{OWNERSHIP_HEADER}\nold output\n", encoding="utf-8")
+
+            build_repository(root)
+
+            self.assertTrue(unmanaged.exists())
+            self.assertFalse(managed_stale.exists())
+            self.assertTrue(header_owned.exists())
