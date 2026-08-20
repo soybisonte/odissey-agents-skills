@@ -5,8 +5,14 @@ import subprocess
 import sys
 from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
-from scripts.build import OWNERSHIP_HEADER, BuildValidationError, build_repository
+from scripts.build import (
+    OWNERSHIP_HEADER,
+    BuildSafetyError,
+    BuildValidationError,
+    build_repository,
+)
 from scripts.odissey_tooling import (
     ValidationIssue,
     parse_frontmatter,
@@ -446,3 +452,50 @@ class BuildTests(unittest.TestCase):
             self.assertTrue(unmanaged.exists())
             self.assertFalse(managed_stale.exists())
             self.assertTrue(header_owned.exists())
+
+    def test_build_rejects_symlinked_managed_output_parent_without_touching_target(self) -> None:
+        """Following a symlinked .github parent would make this test fail."""
+        with TemporaryDirectory() as repository_directory, TemporaryDirectory() as target_directory:
+            root = Path(repository_directory)
+            external_target = Path(target_directory)
+            self.write_skill(root, "alpha")
+            sentinel = external_target / "agents" / "preserve.txt"
+            sentinel.parent.mkdir()
+            sentinel.write_text("external user data\n", encoding="utf-8")
+            (root / ".github").symlink_to(external_target, target_is_directory=True)
+
+            with self.assertRaises(BuildSafetyError):
+                build_repository(root)
+
+            self.assertEqual("external user data\n", sentinel.read_text(encoding="utf-8"))
+            self.assertFalse((root / ".codex" / "agents").exists())
+
+    def test_invalid_utf8_auxiliary_source_leaves_outputs_unchanged(self) -> None:
+        """Decoding an auxiliary file after cleanup would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            skill = self.write_skill(root, "alpha")
+            build_repository(root)
+            before = self.snapshot(root)
+            auxiliary = skill.parent / "references" / "broken.md"
+            auxiliary.parent.mkdir()
+            auxiliary.write_bytes(b"\xff\xfe")
+
+            with self.assertRaises(BuildValidationError):
+                build_repository(root)
+
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_operational_write_failure_leaves_previous_distribution_unchanged(self) -> None:
+        """Replacing outputs before a write completes would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            self.write_skill(root, "alpha")
+            build_repository(root)
+            before = self.snapshot(root)
+
+            with patch("scripts.build.atomic_write_text", side_effect=OSError("disk full")):
+                with self.assertRaisesRegex(OSError, "disk full"):
+                    build_repository(root)
+
+            self.assertEqual(before, self.snapshot(root))
