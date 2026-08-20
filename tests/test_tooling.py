@@ -292,6 +292,57 @@ class CatalogValidationTests(unittest.TestCase):
         self.assertEqual(10, result.description_characters)
         self.assertEqual([], result.issues)
 
+    def test_repository_root_resolves_to_its_canonical_catalog(self) -> None:
+        """Scanning distributions beside .agents/skills would make this test fail."""
+        with TemporaryDirectory() as temporary_directory:
+            repository = Path(temporary_directory)
+            canonical = repository / ".agents" / "skills"
+            self.write_skill(canonical, "canonical", "name: canonical\ndescription: Valid\n")
+            legacy = repository / "plugins" / "legacy" / "SKILL.md"
+            legacy.parent.mkdir(parents=True)
+            legacy.write_text(
+                "---\nname: legacy\ndescription: Valid\n---\nmcp__claude\n",
+                encoding="utf-8",
+            )
+
+            result = validate_catalog(repository)
+
+        self.assertEqual(canonical, result.root)
+        self.assertEqual(1, result.skill_count)
+        self.assertEqual([], result.issues)
+
+    def test_cli_repository_root_validates_only_the_canonical_catalog(self) -> None:
+        """Recursing into a repository's generated distributions must fail this test."""
+        with TemporaryDirectory() as temporary_directory:
+            repository = Path(temporary_directory)
+            canonical = repository / ".agents" / "skills"
+            self.write_skill(canonical, "canonical", "name: canonical\ndescription: Valid\n")
+            legacy = repository / "plugins" / "legacy" / "SKILL.md"
+            legacy.parent.mkdir(parents=True)
+            legacy.write_text(
+                "---\nname: legacy\ndescription: Valid\n---\nmcp__claude\n",
+                encoding="utf-8",
+            )
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/validate.py",
+                    "--root",
+                    str(repository),
+                    "--format",
+                    "json",
+                ],
+                cwd=Path(__file__).parents[1],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+        self.assertEqual(0, completed.returncode)
+        self.assertIn('"skill_count": 1', completed.stdout)
+        self.assertNotIn("plugins/legacy", completed.stdout)
+
     def test_cli_reports_a_missing_catalog_root_as_an_error(self) -> None:
         """Treating a missing root as an empty catalog would hide a broken invocation."""
         with TemporaryDirectory() as temporary_directory:
@@ -369,6 +420,7 @@ class CanonicalMigrationTests(unittest.TestCase):
     LEGACY_COMMAND = re.compile(
         r"(?<![A-Za-z0-9_])/(?:" + "|".join(SKILL_NAMES) + r")\b"
     )
+    CORRUPTED_SKILL_PATH = re.compile(r"\$(?:" + "|".join(SKILL_NAMES) + r")/")
     HOST_IDENTIFIERS = (
         "mcp__claude",
         "mcp__figma",
@@ -402,6 +454,7 @@ class CanonicalMigrationTests(unittest.TestCase):
         for source_path in source_paths:
             source = source_path.read_text(encoding="utf-8")
             self.assertIsNone(self.LEGACY_COMMAND.search(source), source_path)
+            self.assertIsNone(self.CORRUPTED_SKILL_PATH.search(source), source_path)
             self.assertNotIn(".github/copilot/skills", source, source_path)
             for identifier in self.HOST_IDENTIFIERS:
                 self.assertNotIn(identifier, source, source_path)

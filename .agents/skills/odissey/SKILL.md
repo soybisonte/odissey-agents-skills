@@ -151,7 +151,7 @@ Enruta al tripulante de Odissey basándote en la tarea:
 
 ---
 
-## Documentos de Referencia en `$odissey/references/`
+## Documentos de Referencia en `references/`
 
 Odissey cuenta con guías detalladas en español:
 1. **[diseno-etico.md](references/diseno-etico.md):** Remediación de anti-patrones, marcos de diseño ético y regulaciones.

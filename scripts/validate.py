@@ -222,6 +222,10 @@ def validate_catalog(root: Path) -> CatalogValidationResult:
             ],
         )
 
+    canonical_root = root / ".agents" / "skills"
+    if canonical_root.is_dir():
+        root = canonical_root
+
     skill_paths = sorted(root.rglob("SKILL.md"))
     results = [validate_skill(path) for path in skill_paths]
     return CatalogValidationResult(
