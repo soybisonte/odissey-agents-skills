@@ -1,207 +1,217 @@
-# Measurement Frameworks
+# Marcos de medición
 
-## HEART Framework
+## Índice
 
-Developed by Kerry Rodden, Hilary Hutchinson, and Xin Fu at Google, the HEART framework provides a structured way to define user-centered metrics at any scale — from a single feature to an entire product.
+- [Marco HEART](#marco-heart)
+- [Mapeo Goal-Signal-Metric](#mapeo-goal-signal-metric)
+- [Cultura estadística para diseño](#cultura-estadística-para-diseño)
+- [Diseño de pruebas A/B](#diseño-de-pruebas-ab)
+- [Medición ética](#medición-ética)
 
-### The Five Dimensions
+## Marco HEART
 
-**Happiness** — Subjective user satisfaction, attitudes, and perceived ease of use. Measured through surveys (CSAT, SUS, NPS), in-app satisfaction prompts, and qualitative feedback.
+Desarrollado en Google por Kerry Rodden, Hilary Hutchinson y Xin Fu, el marco HEART proporciona una forma estructurada de definir métricas centradas en las personas a cualquier escala, desde una función hasta un producto completo.
 
-What it catches that other metrics miss: A product can have high task completion rates but low happiness if the process feels tedious, patronizing, or stressful. Happiness metrics capture the emotional quality of the experience.
+### Las cinco dimensiones
 
-What it misses: Happy users aren't necessarily successful users. A product can feel pleasant while failing to deliver actual value. Happiness without task success is entertainment, not utility.
+**Happiness — Satisfacción.** Satisfacción subjetiva, actitudes y facilidad de uso percibida. Se mide mediante encuestas —CSAT, SUS, NPS—, preguntas de satisfacción dentro del producto y comentarios cualitativos.
 
-**Engagement** — The depth and frequency of user interaction with the product. Measured through session frequency, session duration, feature ugalileo, actions per session, content consumption.
+Lo que detecta y otras métricas omiten: un producto puede registrar muchas tareas completadas y aun así generar poca satisfacción si el proceso resulta tedioso, condescendiente o estresante. Esta dimensión captura la calidad emocional de la experiencia.
 
-What it catches: Whether users find the product valuable enough to return to and invest time in. Engagement distinguishes "signed up but never came back" from "uses it daily."
+Lo que no detecta: una persona satisfecha no siempre logra su objetivo. Un producto puede ser agradable y no aportar valor. La satisfacción sin éxito de la tarea es entretenimiento, no utilidad.
 
-What to watch for: Engagement can be gamed with addictive patterns (infinite scroll, notification spam, variable ratio reinforcement). High engagement driven by manipulation is not success — it's exploitation. Always pair engagement metrics with happiness and task success to distinguish healthy engagement from compulsive engagement.
+**Engagement — Interacción.** Profundidad y frecuencia con que se usa el producto. Se mide con frecuencia y duración de sesiones, uso de funciones, acciones por sesión y consumo de contenido.
 
-**Adoption** — New users of a product or feature. Measured through sign-ups, feature activation (first meaningful use, not just account creation), upgrade conversions, new feature discovery.
+Lo que detecta: si el producto aporta valor suficiente para volver e invertir tiempo. Distingue «se registró y no regresó» de «lo usa a diario».
 
-What it catches: Whether growth is happening and whether new features are being discovered and used. Adoption metrics answer: are we reaching new people, and are they finding value?
+Qué vigilar: la interacción puede inflarse mediante patrones adictivos —desplazamiento infinito, exceso de notificaciones o refuerzo de razón variable—. Una cifra alta basada en manipulación no es éxito, sino explotación. Combínala siempre con satisfacción y éxito de tareas para distinguir interacción saludable de consumo compulsivo.
 
-What it misses: Adoption without retention is a leaky bucket. High sign-up rates with low day-7 retention mean the acquisition is working but the product isn't.
+**Adoption — Adopción.** Personas que empiezan a usar un producto o una función. Se mide con registros, activación —primer uso significativo, no solo crear la cuenta—, conversiones de plan y descubrimiento de funciones nuevas.
 
-**Retention** — Users who return over time. Measured through day-1/7/30 retention curves, churn rates, reactivation rates, subscription renewals.
+Lo que detecta: si el crecimiento ocurre y si las funciones nuevas se descubren y utilizan. Responde: ¿llegamos a nuevas personas y encuentran valor?
 
-What it catches: Whether the product delivers sustained value. Retention is the strongest proxy for product-market fit — people who come back found something worth returning for.
+Lo que no detecta: adopción sin retención es un recipiente con fugas. Muchos registros y poca retención al día 7 indican que la adquisición funciona, pero el producto no.
 
-What to watch for: Retention can be artificially inflated by switching costs, data lock-in, or sunk-cost fallacy rather than genuine value. A user who keeps their subscription because cancellation is difficult is retained but not satisfied. Pair retention with happiness metrics to distinguish healthy retention from captive retention.
+**Retention — Retención.** Personas que vuelven a lo largo del tiempo. Se mide mediante curvas de retención en los días 1, 7 y 30, abandono, reactivación y renovación de suscripciones.
 
-**Task Success** — The ability of users to complete their intended tasks efficiently and completely. Measured through task completion rate, time on task, error rate, task abandonment rate, support ticket volume.
+Lo que detecta: si el producto mantiene su valor. La retención es un indicador fuerte del ajuste producto-mercado: quien vuelve encontró un motivo para hacerlo.
 
-What it catches: Whether the product actually works for what users need it to do. Task success is the most direct medir of UX quality — it answers the question "can people use this thing to accomplish their goals?"
+Qué vigilar: costes de cambio, dependencia de los datos o dificultad para cancelar pueden inflarla sin aportar valor genuino. Una persona que conserva una suscripción porque no logra cancelarla está retenida, pero no satisfecha. Combina retención y satisfacción para diferenciar retención saludable de cautividad.
 
-What it misses: Efficiency without satisfaction. A user who completes a task but feels frustrated, confused, or disrespected along the way has a different experience than one who completes it smoothly.
+**Task Success — Éxito de la tarea.** Capacidad para completar de manera correcta y eficiente el objetivo previsto. Se mide con tasa de finalización, tiempo por tarea, errores, abandono y volumen de solicitudes de soporte.
 
-### Applying HEART by Feature Type
+Lo que detecta: si el producto sirve para lo que las personas necesitan. Es la medida más directa de calidad UX: responde «¿pueden usar esto para alcanzar sus objetivos?».
 
-| Feature type | Primary dimension | Secondary dimensions |
-|-------------|------------------|---------------------|
-| Core workflow (checkout, file creation, messaging) | Task success | Happiness, Engagement |
-| Onboarding | Adoption | Task success, Retention (day-1) |
-| Social features | Engagement | Retention, Happiness |
-| Content / discovery | Engagement | Happiness, Adoption (new content areas) |
-| Settings / configuration | Task success | Happiness |
-| Monetization | Adoption (conversion) | Retention (renewal), Happiness |
-| Support / help | Task success (resolution) | Happiness (satisfaction) |
+Lo que no detecta: eficiencia sin satisfacción. Completar una tarea con frustración, confusión o falta de respeto no equivale a completarla con fluidez.
 
----
+### Aplicar HEART según el tipo de función
 
-## Goal-Signal-Metric (GSM) Mapping
-
-HEART tells you what dimensions to medir. GSM tells you how to operationalize each dimension into specific, trackable metrics. Developed as part of the HEART framework at Google.
-
-### The Three Layers
-
-**Goal:** What do you want to accomplish? Articulate in terms of user outcomes, not business outputs. "Users can quickly find relevant content" not "increase pageviews."
-
-**Signal:** What user behavior would indicate the goal is being met (or not met)? Signals are observable behaviors that correlate with goal achievement. "Users successfully find what they're looking for on the first search" is a signal. Signals can be positive (success indicators) or negative (failure indicators).
-
-**Metric:** How do you medir the signal at scale? The metric is the specific, quantifiable medirment that tracks the signal. "Percentage of search sessions where the user clicks a result on the first results page" is a metric.
-
-### GSM Example: Search Feature
-
-| Layer | Content |
-|-------|---------|
-| **Goal** | Users can quickly find relevant content |
-| **Signals (positive)** | User clicks a result, user's session continues after search, user doesn't refine the same query multiple times |
-| **Signals (negative)** | User abandons search without clicking, user immediately searches again with different terms, user contacts support after searching |
-| **Metrics** | Search success rate (% of searches with a result click), refinement rate (% of searches followed by a query change), time to first click, support tickets mentioning "can't find" |
-
-### Common GSM Mistakes
-
-**Starting with metrics instead of goals.** "We should track daily active users" is not a goal. Why do you want to track DAU? What user outcome would a change in DAU indicate? Start with the user goal, then derive the metric.
-
-**Signals that don't actually signal the goal.** Time on page could mean the user is engaged — or it could mean they're lost. Clicks could mean interest — or they could mean the user is hunting for the right link. Always ask: what are the alternative explanations for this signal?
-
-**Metrics without baselines.** "We improved search success rate to 73%" means nothing without knowing the previous rate. "We improved search success rate from 58% to 73% over 6 weeks" tells a story.
-
-**Vanity metrics.** Total registered users, total page views, total downloads — numbers that go up over time regardless of product quality. Prefer rates (completion rate, retention rate, error rate) and per-user metrics (sessions per week, actions per session) that reflect actual experience quality.
+| Tipo de función | Dimensión principal | Dimensiones secundarias |
+|-----------------|---------------------|-------------------------|
+| Flujo principal —pago, creación de archivos, mensajería— | Éxito de la tarea | Satisfacción, Interacción |
+| Incorporación | Adopción | Éxito de la tarea, Retención —día 1— |
+| Funciones sociales | Interacción | Retención, Satisfacción |
+| Contenido / descubrimiento | Interacción | Satisfacción, Adopción —nuevas áreas— |
+| Ajustes / configuración | Éxito de la tarea | Satisfacción |
+| Monetización | Adopción —conversión— | Retención —renovación—, Satisfacción |
+| Soporte / ayuda | Éxito de la tarea —resolución— | Satisfacción |
 
 ---
 
-## Statistical Literacy for Designers
+## Mapeo Goal-Signal-Metric
 
-You don't need to be a statistician. You need to know enough to ask the right questions, catch obvious errors, and have informed conversations with data scientists and analysts.
+HEART indica qué dimensiones medir. Goal-Signal-Metric (GSM) explica cómo convertir cada dimensión en métricas concretas y observables. Se desarrolló como parte de HEART en Google.
 
-### Sample Size
+### Las tres capas
 
-**Why it matters:** A test with too few users can't detect real differences. A test that runs too long wastes time testing something that's already conclusive. Sample size determines the reliability of your conclusions.
+**Goal — Objetivo:** ¿Qué se quiere conseguir? Exprésalo como resultado para las personas, no como resultado de negocio. «Las personas encuentran contenido relevante con rapidez», no «aumentar las páginas vistas».
 
-**Rules of thumb for qualitative research:**
-- Usability testing: 5 users per round (Nielsen). Catches ~85% of major issues. Run multiple rounds, not bigger rounds.
-- Interviews: 12-20 for thematic saturation in a homogeneous group (Guest et al., 2006). More segments = more interviews.
-- Card sorting: 15-20 for open sorts, 30+ for closed sorts with quantitative analysis.
+**Signal — Señal:** ¿Qué comportamiento indicaría que el objetivo se cumple o no? Una señal es observable y se relaciona con el resultado. «La persona encuentra lo que busca en el primer intento» es una señal. Puede ser positiva —indica éxito— o negativa —indica fallo—.
 
-**Rules of thumb for quantitative research:**
-- Surveys: Minimum 30 for basic statistics, 100+ for segmentation, 400+ for population estimates.
-- A/B tests: Use a sample size calculator. Inputs: baseline conversion rate, minimum detectable effect, significance level, power. Don't guess — calculate.
+**Metric — Métrica:** ¿Cómo se cuantifica la señal a escala? Es la medida específica que la representa: «Porcentaje de sesiones de búsqueda en las que se selecciona un resultado de la primera página».
 
-### Statistical Significance
+### Ejemplo GSM: función de búsqueda
 
-**What it means:** The probability that the observed difference between variants is due to chance, not a real effect. Conventionally, p < 0.05 (less than 5% chance the difference is due to random variation).
+| Capa | Contenido |
+|------|-----------|
+| **Objetivo** | Las personas encuentran contenido relevante con rapidez |
+| **Señales positivas** | Seleccionan un resultado, continúan la sesión tras buscar, no reformulan varias veces la misma consulta |
+| **Señales negativas** | Abandonan sin seleccionar, buscan de inmediato con otros términos, contactan con soporte después de buscar |
+| **Métricas** | Tasa de éxito —% de búsquedas con selección—, tasa de reformulación, tiempo hasta la primera selección, solicitudes de soporte que mencionan «no encuentro» |
 
-**What it doesn't mean:** That the result is important, large, or meaningful. A 0.1% improvement in click rate can be statistically significant with a large enough sample. It's a real effect — but is it worth acting on?
+### Errores frecuentes con GSM
 
-**Common error:** Peeking at results before the test reaches its calculated sample size. This inflates the false positive rate dramatically. If you check daily, you'll see "significant" results that aren't real. Set a sample size target, wait until you reach it, then analyze.
+**Empezar por las métricas, no por los objetivos.** «Debemos registrar usuarios activos diarios» no es un objetivo. Pregunta por qué interesa DAU y qué resultado para la persona reflejaría un cambio. Parte del objetivo y deriva la métrica.
 
-### Confidence Intervals
+**Señales que no representan el objetivo.** Mucho tiempo en una página puede indicar interés o desorientación. Muchos clics pueden significar curiosidad o una búsqueda frustrada del enlace correcto. Pregunta siempre qué explicaciones alternativas admite cada señal.
 
-**What they are:** A range that likely contains the true value. "Conversion rate: 4.2%, 95% CI [3.8%, 4.6%]" means we're 95% confident the true rate is between 3.8% and 4.6%.
+**Métricas sin línea de base.** «Mejoramos el éxito de búsqueda al 73 %» dice poco si no se conoce el valor anterior. «Pasó del 58 % al 73 % en seis semanas» permite interpretar el cambio.
 
-**Why designers should care:** Confidence intervals communicate uncertainty. A conversion rate of "4.2%" feels precise. "Between 3.8% and 4.6%" communicates that there's a range of plausible values — and that range might overlap with the other variant's range, meaning the difference might not be real.
-
-**Design implication:** When presenting data to stakeholders, incluir confidence intervals or some expression of uncertainty. "We believe the new design improves conversion by 1-3 percentage points" is more honest and more useful than "the new design improves conversion by 2.1%."
-
-### Effect Size
-
-**What it is:** The magnitude of the difference, independent of sample size. With enough users, you can detect arbitrarily small differences. Effect size tells you whether the difference is large enough to matter.
-
-**For designers:** A statistically significant improvement that's smaller than the user would notice is technically real but practically irrelevant. Ask: would a user experience this difference? If not, the effect size is too small to justify the engineering effort to ship it.
+**Métricas de vanidad.** Total de cuentas, páginas vistas o descargas: números que suelen crecer aunque la calidad no lo haga. Prefiere tasas —finalización, retención, error— y medidas por persona —sesiones por semana, acciones por sesión— que reflejen la experiencia.
 
 ---
 
-## A/B Test Design
+## Cultura estadística para diseño
 
-### Hypothesis Structure
+No hace falta ser especialista en estadística. Sí hace falta saber plantear preguntas, detectar errores evidentes y conversar con profesionales de datos y analítica.
 
-Every A/B test should start with a written hypothesis, not "let's try this and see what happens."
+### Tamaño de muestra
 
-**Format:** "We believe that [change] will cause [effect] because [reasoning]. We'll medir this by [metric] and consider it successful if [threshold]."
+**Por qué importa:** Con muy pocas observaciones, una prueba no puede detectar diferencias reales; si se prolonga más de lo necesario, consume tiempo sin aportar información. El tamaño condiciona la fiabilidad de las conclusiones.
 
-**Example:** "We believe that reducing the checkout flow from 5 steps to 3 steps will increase checkout completion rate because usability testing showed users abandoning at steps 3 and 4 due to form fatigue. We'll medir checkout completion rate and consider a 5% improvement (from 62% to 67%) as the minimum meaningful effect."
+**Referencias prácticas para investigación cualitativa:**
+- Pruebas de usabilidad: 5 personas por ronda —Nielsen—. Es preferible ejecutar varias rondas e iterar a aumentar una sola ronda.
+- Entrevistas: 12–20 para buscar saturación temática en un grupo homogéneo —Guest et al., 2006—. Más segmentos requieren más entrevistas.
+- Clasificación de tarjetas: 15–20 para ejercicios abiertos; 30 o más para cerrados con análisis cuantitativo.
 
-**Why the hypothesis matters:** Without it, you can't distinguish between "the test showed nothing" (null result) and "we didn't know what we were looking for" (undefined success criteria). The hypothesis also prevents post-hoc rationalization — deciding after the test what the "real" metric was.
+Estas cifras son puntos de partida, no garantías universales. Ajusta según diversidad de segmentos, riesgo, complejidad de tareas y variación observada.
 
-### Minimum Detectable Effect (MDE)
+**Referencias prácticas para investigación cuantitativa:**
+- Encuestas: 30 como mínimo para estadísticas básicas, más de 100 para segmentación y más de 400 para ciertas estimaciones poblacionales.
+- Pruebas A/B: usa una calculadora de tamaño. Introduce conversión de base, efecto mínimo detectable, nivel de significación y potencia. No adivines.
 
-Before running a test, decide: what's the smallest improvement that would be worth the effort to ship?
+### Significación estadística
 
-If your baseline conversion rate is 5% and you'd only act on a 10% relative improvement (from 5.0% to 5.5%), your MDE is 0.5 percentage points. This determines how long the test needs to run — smaller effects require larger samples.
+**Qué significa:** Bajo un modelo y unos supuestos determinados, el valor p expresa qué tan compatibles son los datos observados con la hipótesis nula. Se usa de forma convencional `p < 0.05`, pero el umbral debe definirse antes del análisis y no equivale literalmente a «menos de 5 % de probabilidad de que la diferencia sea azar».
 
-**Common mistake:** Running tests to detect effects too small to matter. If you'd ship either variant regardless of a 0.1% difference, don't run a test that requires 500,000 users per variant to detect it. Decide what's actionable first, then calculate the test duration.
+**Qué no significa:** Que el resultado sea importante, grande o útil. Una mejora de 0.1 % en clics puede ser estadísticamente significativa con una muestra enorme y, aun así, no justificar una decisión.
 
-### Test Duration
+**Error frecuente:** Mirar resultados repetidamente y detener la prueba al ver significación, sin un método secuencial previsto. Esto aumenta los falsos positivos. Define tamaño y criterio de parada antes de empezar; espera a cumplirlos y después analiza.
 
-Calculated from: baseline rate, MDE, significance level (typically 0.05), statistical power (typically 0.80), and daily traffic.
+### Intervalos de confianza
 
-**Minimum duration:** One full business cycle (typically one week) even if sample size is reached earlier. Behavior varies by day of week, and a test that ran Monday-Wednesday may not generalize to weekends.
+**Qué son:** Un intervalo calculado por un procedimiento que, al repetirse el muestreo, cubre el parámetro real con una frecuencia determinada. «Conversión: 4.2 %, IC del 95 % [3.8 %, 4.6 %]» comunica un rango compatible con los datos y el método, no una certeza absoluta sobre ese caso único.
 
-**Maximum duration:** If a test hasn't reached significance in 4-6 weeks, the effect is probably too small to matter. Call it, document the null result, and move on.
+**Por qué importan en diseño:** Expresan incertidumbre. «4.2 %» parece exacto; «entre 3.8 % y 4.6 %» recuerda que existen varios valores plausibles. Para comparar variantes, analiza directamente el intervalo de la diferencia o el método estadístico definido; el simple solapamiento de dos intervalos no es una prueba universal.
 
-### What A/B Tests Cannot Tell You
+**Implicación:** Al presentar datos, incluye intervalos o una expresión explícita de incertidumbre. «Estimamos que el diseño mejora la conversión entre 1 y 3 puntos porcentuales» es más honesto y útil que «mejora 2.1 %» sin contexto.
 
-- Why one variant won. The test shows what, not why. Pair with qualitative research for the why.
-- Whether the change is good for users. A variant that increases purchases through manipulation "wins" the A/B test. Metrics don't have morals. You do.
-- Long-term effects. A/B tests medir short-term behavior. A change that boosts conversion this week might erode trust over months.
-- Effects on non-medird outcomes. If you optimize for click-through rate, you might be degrading satisfaction, support load, or long-term retention without knowing it.
+### Tamaño del efecto
+
+**Qué es:** Magnitud de una diferencia, separada conceptualmente del tamaño de muestra. Con suficientes observaciones se detectan diferencias diminutas; el tamaño del efecto indica si son suficientemente grandes para importar.
+
+**Para diseño:** Una mejora estadísticamente detectable que nadie percibiría puede ser técnicamente real y prácticamente irrelevante. Pregunta si cambia la experiencia y si compensa el coste de implementación.
 
 ---
 
-## Ethical Measurement
+## Diseño de pruebas A/B
 
-Metrics are not neutral. The choice of what to medir shapes what gets built, and the wrong metrics can incentivize harmful design.
+### Estructura de la hipótesis
 
-### Goodhart's Law
+Cada prueba debe comenzar con una hipótesis escrita, no con «probemos y veamos».
 
-"When a medir becomes a target, it ceases to be a good medir." — Charles Goodhart (paraphrased by Marilyn Strathern)
+**Formato:** «Creemos que [cambio] provocará [efecto] porque [razonamiento]. Lo mediremos con [métrica] y lo consideraremos exitoso si [umbral]».
 
-**In practice:** If you set "time on page" as a KPI, teams will design to maximize time on page — through longer content, more friction, more steps, or autoplay. The metric goes up, but user experience may go down. The metric stopped measuring what you cared about (engagement) and started measuring what you incentivized (stickiness).
+**Ejemplo:** «Creemos que reducir el pago de cinco pasos a tres aumentará la tasa de finalización, porque las pruebas de usabilidad mostraron abandonos en los pasos 3 y 4 por fatiga de formulario. Mediremos la finalización y consideraremos significativo para el producto un aumento de cinco puntos porcentuales, del 62 % al 67 %».
 
-**The fix:** Use metric bundles, not single metrics. Pair every engagement metric with a satisfaction or task success metric. If time on page goes up but satisfaction goes down, you've found a Goodhart's Law violation. A metric that goes up while its paired check metric goes down is a signal that the optimization is working against users.
+**Por qué importa:** Sin hipótesis no se distingue «la prueba no mostró diferencia» de «no sabíamos qué buscábamos». También evita justificar a posteriori que otra métrica era la importante.
 
-### Engagement vs. Wellbeing
+### Efecto mínimo detectable (MDE)
 
-The technology industry's default success metric — engagement — is structurally misaligned with user wellbeing in many product categories.
+Antes de ejecutar, decide cuál es la mejora mínima que justificaría implementar la variante.
 
-**When engagement aligns with wellbeing:** Productivity tools (more use = more work done), educational products (more use = more learning), health tracking (more use = more health awareness). In these cases, engagement is a reasonable proxy for value.
+Si la conversión base es 5 % y solo actuarías ante una mejora relativa de 10 % —de 5.0 % a 5.5 %—, el MDE es 0.5 puntos porcentuales. Esto determina el tamaño necesario: efectos menores requieren muestras mayores.
 
-**When engagement conflicts with wellbeing:** Social media (more use often correlates with worse mental health outcomes, per Haidt & Twenge), entertainment (compulsive consumption doesn't equal enjoyment), news (doomscrolling is engagement without benefit), gaming (session length optimization can be harmful).
+**Error frecuente:** Diseñar pruebas para detectar diferencias demasiado pequeñas. Si implementarías cualquiera de las variantes ante una diferencia de 0.1 %, no tiene sentido requerir 500,000 personas por variante. Define primero qué resultado permite actuar y después calcula la prueba.
 
-**Alternative metrics for wellbeing:**
-- Session satisfaction (post-session survey: "Was that time well spent?")
-- Odisseyional return rate (users who set out to use the product vs. users pulled in by notifications)
-- Goal completion (did the user accomplish what they came for?)
-- Mindful disengagement (did the user leave when they wanted to, or did they get stuck?)
+### Duración de la prueba
 
-### When Metrics Incentivize Bad UX
+Se calcula a partir de tasa base, MDE, nivel de significación —a menudo 0.05—, potencia —a menudo 0.80— y tráfico diario.
 
-**Conversion rate optimization without guardrails:** Aggressive CRO can push toward manipulative patterns — darker buttons for the business-preferred option, harder-to-find decline buttons, urgency tactics. Add ethical guardrails: track complaint rates, return rates, and support contacts alongside conversion.
+**Duración mínima:** Cubre al menos un ciclo de comportamiento relevante, con frecuencia una semana completa, aunque la muestra se alcance antes. El comportamiento varía por día y una prueba de lunes a miércoles puede no representar el fin de semana.
 
-**Engagement maximization without bounds:** If the product team's bonus depends on DAU, the team will design for DAU — even at the cost of user wellbeing. Create an explicit tension metric: engagement PLUS user satisfaction, not engagement alone.
+**Duración máxima:** No uses cuatro o seis semanas como regla universal para declarar que un efecto «no existe». Si la prueba no alcanza el tamaño previsto o el intervalo sigue siendo demasiado amplio, registra la incertidumbre, revisa viabilidad y decide según el criterio de parada acordado.
 
-**Growth metrics without retention:** Tracking new sign-ups without tracking whether those users find value creates incentives to optimize top-of-funnel at the expense of the product experience. Always pair acquisition metrics with activation and retention metrics.
+### Lo que una prueba A/B no puede explicar
 
-**Support deflection as success:** If you medir success by reducing support tickets, you might create products where users can't find help. Pair support deflection with resolution satisfaction — did the user's problem actually get solved, or did they just give up?
+- **Por qué** ganó una variante. Muestra qué ocurrió, no la causa percibida; combínala con investigación cualitativa.
+- **Si el cambio es bueno para las personas.** Una variante manipuladora puede aumentar compras. Las métricas no tienen valores; el equipo sí.
+- **Efectos a largo plazo.** Una mejora esta semana puede erosionar confianza durante meses.
+- **Resultados no medidos.** Optimizar clics puede empeorar satisfacción, carga de soporte o retención sin que aparezca en la métrica principal.
 
-### Ethical Measurement Principles
+---
 
-1. **Measure outcomes, not just outputs.** Sign-ups are an output; successful task completion is an outcome. Pageviews are an output; finding the answer is an outcome.
-2. **Pair every optimization metric with a check metric.** Conversion rate paired with return rate. Engagement paired with satisfaction. Growth paired with retention.
-3. **Include the user's perspective.** At least one metric in every framework should reflect how the user feels, not just what they do. Behavior without sentiment is half the picture.
-4. **Question who benefits from this metric.** If a metric going up benefits the business but not the user, it's a business metric, not a UX metric. Both are valid; don't confuse them.
-5. **Make metric incentives transparent.** If the team's goals are tied to specific metrics, acknowledge the perverse incentives those metrics create. Awareness doesn't eliminate the bias, but it makes it manageable.
-6. **Review metrics periodically.** Metrics that made sense at launch may not make sense at maturity. A startup optimizes for growth; a mature product optimizes for retention and satisfaction. Update your medirment framework as the product evolves.
+## Medición ética
+
+Las métricas no son neutrales. Elegir qué medir influye en lo que se construye y puede incentivar un diseño dañino.
+
+### Ley de Goodhart
+
+«Cuando una medida se convierte en objetivo, deja de ser una buena medida». — Charles Goodhart, formulación popularizada por Marilyn Strathern.
+
+**En la práctica:** Si «tiempo en página» es un KPI, el equipo puede maximizarlo mediante contenido más largo, pasos innecesarios o reproducción automática. El número sube mientras la experiencia empeora. La métrica deja de aproximar interés y pasa a registrar la fricción incentivada.
+
+**Corrección:** Usa conjuntos de métricas. Combina cada medida de interacción con satisfacción o éxito de tarea. Si el tiempo sube y la satisfacción cae, la optimización probablemente trabaja contra las personas.
+
+### Interacción frente a bienestar
+
+La interacción, métrica predeterminada de buena parte de la industria tecnológica, puede entrar en conflicto con el bienestar según la categoría del producto.
+
+**Cuando se alinean:** Herramientas de productividad —más uso puede representar más trabajo completado—, aprendizaje —más uso puede acompañar más práctica— o seguimiento de salud —más uso puede indicar mayor atención—. Incluso aquí, valida la relación en lugar de asumirla.
+
+**Cuando pueden entrar en conflicto:** Redes sociales, entretenimiento, noticias o juegos, donde el consumo compulsivo no equivale necesariamente a disfrute o beneficio. La duración de sesión aislada no distingue valor de dificultad para detenerse.
+
+**Alternativas orientadas al bienestar:**
+- Satisfacción al terminar: «¿Valió la pena este tiempo?».
+- Retorno intencional: personas que deciden entrar frente a quienes vuelven por una notificación.
+- Objetivo completado: ¿lograron lo que venían a hacer?
+- Desconexión consciente: ¿pudieron salir cuando quisieron?
+
+### Cuando las métricas incentivan una mala UX
+
+**Conversión sin salvaguardas:** La optimización agresiva puede favorecer botones dominantes, rechazos ocultos y urgencia artificial. Añade tasas de quejas, devoluciones y contactos con soporte como controles junto a la conversión.
+
+**Interacción sin límites:** Si los incentivos del equipo dependen de DAU, diseñará para DAU incluso a costa del bienestar. Haz explícita la tensión: interacción más satisfacción, no interacción aislada.
+
+**Crecimiento sin retención:** Medir altas nuevas sin saber si se obtiene valor incentiva la parte superior del embudo y descuida el producto. Combina adquisición con activación y retención.
+
+**Desvío de soporte como éxito:** Reducir solicitudes puede significar que las personas resolvieron su problema o que no encontraron ayuda. Combina la reducción con satisfacción de resolución.
+
+### Principios de medición ética
+
+1. **Mide resultados, no solo productos.** Un alta es un producto; completar una tarea es un resultado. Una página vista es un producto; encontrar la respuesta, un resultado.
+2. **Combina cada optimización con una métrica de control.** Conversión con devoluciones; interacción con satisfacción; crecimiento con retención.
+3. **Incluye la perspectiva humana.** Al menos una métrica debe reflejar cómo se vive la experiencia, no solo qué conducta se registra.
+4. **Pregunta quién se beneficia.** Si una subida beneficia al negocio pero no a la persona, es una métrica de negocio, no de UX. Ambas pueden ser válidas; no las confundas.
+5. **Haz visibles los incentivos.** Si los objetivos del equipo dependen de una métrica, documenta los comportamientos perversos que podría estimular.
+6. **Revisa las métricas periódicamente.** Lo adecuado al lanzar puede no servir en la madurez. Actualiza el marco conforme evoluciona el producto.

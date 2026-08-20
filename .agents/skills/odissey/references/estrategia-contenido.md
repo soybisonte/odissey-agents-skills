@@ -1,228 +1,248 @@
-# Content Strategy
+# Estrategia de contenido
 
-## Voice Framework Methodology
+## Índice
 
-A voice framework is not a list of adjectives. It's a system that produces consistent, recognizable writing across every author, channel, and context in your product. Building one requires methodology, not inspiration.
+- [Metodología del marco de voz](#metodología-del-marco-de-voz)
+- [Matriz de tono](#matriz-de-tono)
+- [Modelado de contenido](#modelado-de-contenido)
+- [Biblioteca de patrones de microcopy](#biblioteca-de-patrones-de-microcopy)
+- [Gobernanza terminológica](#gobernanza-terminológica)
+- [Legibilidad y lenguaje claro](#legibilidad-y-lenguaje-claro)
 
-### Step 1: Brand Attribute Identification
+## Metodología del marco de voz
 
-Start with the brand's core attributes — the 3-5 characteristics that define how the organization wants to be perceived. These come from brand strategy, not from the content team's preferences.
+Un marco de voz no es una lista de adjetivos. Es un sistema que produce una redacción coherente y reconocible entre autores, canales y contextos del producto. Construirlo requiere metodología, no inspiración.
 
-**Process:** Gather stakeholders (product, marketing, executive, support). Ask each: "If our product were a person, how would you describe their personality?" Collect independently, then compare. Where there's alignment, you have a genuine attribute. Where there's divergence, you have a conversation that needs to happen before writing guidelines.
+### Paso 1: Identificar los atributos de marca
 
-**Common pitfall:** Every brand wants to be "innovative, friendly, and trustworthy." These are not differentiating attributes — they're table stakes. Push for specificity. Not "friendly" — "the kind of friend who tells you the truth even when it's uncomfortable." Not "innovative" — "explains complex things simply, like a scientist at a dinner party."
+Comienza por los atributos centrales de la marca: las tres a cinco características que definen cómo quiere ser percibida la organización. Proceden de la estrategia de marca, no de las preferencias del equipo de contenido.
 
-**Output:** 3-5 brand attributes with one-paragraph descriptions that incluir what the attribute means AND what it doesn't mean. Example: "Direct — we get to the point. We don't pad copy with qualifiers or hide bad news behind hedging language. Direct does not mean blunt or cold — we're straightforward because we respect the reader's time, not because we don't care about their feelings."
+**Proceso:** Reúne a las partes interesadas de producto, marketing, dirección y soporte. Pregunta a cada una: «Si nuestro producto fuera una persona, ¿cómo describirías su personalidad?». Recoge las respuestas por separado y compáralas después. Donde haya coincidencia, existe un atributo genuino. Donde haya divergencias, hace falta resolverlas antes de redactar las directrices.
 
-### Step 2: Voice Principles
+**Error común:** Todas las marcas quieren ser «innovadoras, cercanas y fiables». No son atributos diferenciadores, sino requisitos básicos. Exige especificidad. No «cercana», sino «la clase de amistad que te dice la verdad aunque resulte incómoda». No «innovadora», sino «explica cuestiones complejas con sencillez, como un científico durante una cena».
 
-Translate brand attributes into writing principles. Each attribute generates 1-2 specific principles that a writer can act on.
+**Resultado:** Entre tres y cinco atributos de marca, cada uno con un párrafo que explique qué significa y qué no significa. Ejemplo: «Directa: vamos al grano. No llenamos el texto de matices ni ocultamos malas noticias tras expresiones evasivas. Directa no significa brusca ni fría: hablamos con claridad porque respetamos el tiempo de quien lee, no porque ignoremos sus sentimientos».
 
-**Attribute → Principle pattern:**
-- "Direct" → "Lead with the action. If the user needs to do something, start with the verb."
-- "Empathetic" → "Acknowledge the user's situation before providing instructions. Error mesgalileos start with what happened, not what to do."
-- "Expert" → "Use precise terminology when it helps, but always define it in context. Never use jargon as a substitute for explanation."
+### Paso 2: Definir los principios de voz
 
-**Test:** Can a new writer read these principles and produce copy that sounds like your product without seeing any examples? If not, the principles are too vague.
+Convierte los atributos de marca en principios de redacción. Cada atributo genera uno o dos principios concretos que una persona pueda aplicar al escribir.
 
-### Step 3: Tone Spectrum
+**Patrón atributo → principio:**
 
-Voice is constant. Tone shifts by context. A voice framework must define how tone changes across different situations while the voice remains recognizable.
+- «Directa» → «Empieza por la acción. Si la persona debe hacer algo, comienza con el verbo».
+- «Empática» → «Reconoce la situación antes de dar instrucciones. Los mensajes de error empiezan por lo que ocurrió, no por lo que hay que hacer».
+- «Experta» → «Usa terminología precisa cuando ayude, pero defínela en contexto. Nunca sustituyas una explicación por jerga».
 
-Map tone across a spectrum for each of these dimensions:
-- **Formality:** casual ←→ formal
-- **Emotion:** warm ←→ matter-of-fact
-- **Authority:** peer ←→ expert
-- **Complexity:** simple ←→ technical
+**Prueba:** ¿Puede una persona nueva leer estos principios y producir textos que suenen como tu producto sin consultar ejemplos? Si no, los principios son demasiado vagos.
 
-Then map where different product contexts fall on each spectrum. Onboarding might be casual, warm, peer, simple. Legal disclosures might be formal, matter-of-fact, expert, technical. Error mesgalileos might be casual, warm, expert, simple.
+### Paso 3: Crear el espectro de tono
 
-### Step 4: Writing Guidelines
+La voz es constante. El tono cambia según el contexto. El marco debe definir cómo varía el tono en distintas situaciones sin que la voz deje de ser reconocible.
 
-Concrete rules that implement the voice principles. These are the operational layer — the "how to write" instructions.
+Representa el tono como un espectro en cada dimensión:
 
-**Include:**
-- Sentence length targets (aim for 15-20 words average; break up longer sentences)
-- Active vs. passive voice guidance (active for actions, passive acceptable for system states: "Your file was saved" vs. "We saved your file")
-- Pronoun ugalileo (we/you/they — and when to use each)
-- Capitalization conventions (sentence case vs. title case, and where each applies)
-- Punctuation rules (Oxford comma? Exclamation marks? Ellipses?)
-- Vocabulary preferences and prohibited words
-- Inclusive language standards
+- **Formalidad:** informal ←→ formal
+- **Emoción:** cálida ←→ objetiva
+- **Autoridad:** entre pares ←→ experta
+- **Complejidad:** sencilla ←→ técnica
 
----
+Después, ubica cada contexto del producto en los espectros. El onboarding puede ser informal, cálido, entre pares y sencillo. Los avisos legales pueden ser formales, objetivos, expertos y técnicos. Los mensajes de error pueden ser informales, cálidos, expertos y sencillos.
 
-## Tone Matrix
+### Paso 4: Establecer directrices de redacción
 
-The tone matrix maps how voice shifts across product contexts. This is the most practical artifact in the content strategy toolkit — it's what writers actually reference daily.
+Reglas concretas que ponen en práctica los principios de voz. Constituyen la capa operativa: las instrucciones sobre cómo escribir.
 
-| Context | Formality | Emotion | Authority | Complexity | Example |
-|---------|-----------|---------|-----------|------------|---------|
-| **Onboarding** | Casual | Warm, encouraging | Peer | Simple | "Welcome! Let's get your workspace set up. This takes about 2 minutes." |
-| **Success states** | Casual | Celebratory but brief | Peer | Simple | "Done! Your changes are live." |
-| **Error mesgalileos** | Moderate | Empathetic, calm | Expert | Simple | "We couldn't save your changes. Your internet connection dropped — try again when you're back online." |
-| **Empty states** | Casual | Encouraging, helpful | Peer | Simple | "No projects yet. Create your first one to get started." |
-| **Settings/Preferences** | Moderate | Neutral, clear | Expert | Moderate | "Two-factor authentication adds a second verification step when you sign in. We recommend enabling it." |
-| **Legal/Compliance** | Formal | Neutral | Expert | Technical (with plain-language summary) | "We process your data under GDPR Article 6(1)(b) — it's necessary for the service you asked us to provide." |
-| **Destructive actions** | Moderate | Serious, clear | Expert | Simple | "Deleting this workspace removes all projects, files, and mpathfinder access. This can't be undone." |
-| **Help/Documentation** | Moderate | Patient, thorough | Expert | Moderate to technical | "Webhooks send real-time notifications to your server when events happen in your workspace. Here's how to set one up." |
-| **Marketing/Upgrade** | Casual to moderate | Enthusiastic but honest | Peer | Simple | "The Pro plan incluirs unlimited projects and priority support. Here's what changes — and what stays the same." |
-| **Support/Contact** | Moderate | Warm, professional | Peer | Simple | "Stuck on something? Our support team usually responds within an hour." |
+**Incluye:**
+
+- Objetivos de longitud de las oraciones (una media de 15 a 20 palabras; divide las más largas).
+- Directrices sobre voz activa y pasiva (activa para acciones; pasiva aceptable para estados del sistema: «Tu archivo se guardó» frente a «Guardamos tu archivo»).
+- Uso de pronombres (nosotros, tú, ellos; y cuándo utilizar cada uno).
+- Convenciones de mayúsculas (sentence case frente a title case y dónde se aplica cada una).
+- Reglas de puntuación (¿coma de Oxford?, ¿signos de exclamación?, ¿puntos suspensivos?).
+- Vocabulario preferido y palabras prohibidas.
+- Estándares de lenguaje inclusivo.
 
 ---
 
-## Content Modeling
+## Matriz de tono
 
-Content modeling defines the structure of content independently from its presentation. Good content modeling makes content reusable across channels, localizable across languages, and maintainable at scale.
+La matriz muestra cómo cambia la voz en cada contexto del producto. Es el artefacto más práctico del conjunto de herramientas de estrategia de contenido: el que las personas que escriben consultan a diario.
 
-### Structured Content
-
-Every piece of content should be modeled as structured data, not as a blob of formatted text.
-
-**Example: An event**
-- Title (plain text, max 80 characters)
-- Description (rich text, max 500 characters)
-- Short description (plain text, max 140 characters — for cards and previews)
-- Date and time (ISO 8601 — never store as formatted text)
-- Location (structured: venue name, address, coordinates)
-- Category (controlled vocabulary)
-- Image (with alt text — required, not optional)
-- Status (draft, published, cancelled)
-
-**Why structure matters:** A structured event can render as a card, a list item, a calendar entry, a notification, a social media post, or a search result — each using the appropriate fields. A blob of HTML can only render as itself.
-
-### Localization-Ready Content
-
-Content that will be translated needs to be modeled for translation from the start. Retrofitting localization is orders of magnitude more expensive than building it in.
-
-**Rules:**
-- Separate content from presentation. Don't hardcode text in templates, components, or images.
-- Don't concatenate strings. "You have " + count + " mesgalileos" breaks in languages with different word order. Use ICU MesgalileoFormat or equivalent: "{count, plural, one {You have 1 mesgalileo} other {You have # mesgalileos}}".
-- Don't assume text length. German text is typically 30% longer than English. Japanese may be shorter. Design layouts that accommodate variation.
-- Don't embed text in images. It can't be translated, can't be read by screen readers, and can't be searched.
-- Provide context for translators. "Save" the verb is different from "Save" the noun in many languages. String identifiers like `button.save_changes` carry more context than `string_47`.
-
-### Content Reuse
-
-Model content once, use it everywhere. But be deliberate about what's shared and what's unique.
-
-**Shared content:** Legal text, feature descriptions, pricing details — anything that must be consistent across contexts. Change once, update everywhere. Store in a single source.
-
-**Adapted content:** The same information, but with different length or tone for different contexts. An event description might be 500 characters on the detail page and 140 characters on a card. Model both as distinct fields — don't truncate the long version.
-
-**Unique content:** Context-specific text that doesn't make sense anywhere else. An error mesgalileo for a specific form field. A tooltip for a specific feature. Don't over-abstract — not everything needs to be reusable.
+| Contexto | Formalidad | Emoción | Autoridad | Complejidad | Ejemplo |
+|----------|------------|---------|-----------|-------------|---------|
+| **Onboarding** | Informal | Cálida y alentadora | Entre pares | Sencilla | «¡Te damos la bienvenida! Vamos a configurar tu espacio de trabajo. Tardaremos unos 2 minutos». |
+| **Estados de éxito** | Informal | Festiva, pero breve | Entre pares | Sencilla | «Listo. Tus cambios ya están publicados». |
+| **Mensajes de error** | Moderada | Empática y calmada | Experta | Sencilla | «No pudimos guardar los cambios porque se perdió la conexión. Inténtalo de nuevo cuando recuperes internet». |
+| **Estados vacíos** | Informal | Alentadora y útil | Entre pares | Sencilla | «Todavía no hay proyectos. Crea el primero para empezar». |
+| **Ajustes y preferencias** | Moderada | Neutral y clara | Experta | Moderada | «La autenticación de dos factores añade una segunda comprobación al iniciar sesión. Recomendamos activarla». |
+| **Ámbito legal y cumplimiento** | Formal | Neutral | Experta | Técnica, con resumen en lenguaje claro | «Tratamos tus datos conforme al artículo 6(1)(b) del GDPR porque son necesarios para prestar el servicio solicitado». |
+| **Acciones destructivas** | Moderada | Seria y clara | Experta | Sencilla | «Al eliminar este espacio se borrarán sus proyectos, archivos y accesos. Esta acción no se puede deshacer». |
+| **Ayuda y documentación** | Moderada | Paciente y exhaustiva | Experta | De moderada a técnica | «Los webhooks envían avisos en tiempo real a tu servidor cuando ocurre algo en el espacio. Aprende a configurar uno». |
+| **Marketing y mejora de plan** | De informal a moderada | Entusiasta, pero honesta | Entre pares | Sencilla | «El plan Pro incluye proyectos ilimitados y soporte prioritario. Consulta qué cambia y qué se mantiene». |
+| **Soporte y contacto** | Moderada | Cálida y profesional | Entre pares | Sencilla | «¿Necesitas ayuda? El equipo de soporte suele responder en menos de una hora». |
 
 ---
 
-## Microcopy Pattern Library
+## Modelado de contenido
 
-Microcopy is the small text that guides users through interactions. It's the most impactful writing in a product — a single word change in a button label can shift conversion rates by double digits.
+El modelado de contenido define su estructura con independencia de la presentación. Un buen modelo permite reutilizar el contenido entre canales, localizarlo entre idiomas y mantenerlo a escala.
 
-### Tooltips
+### Contenido estructurado
 
-**When to use:** To explain unfamiliar concepts, clarify ambiguous labels, or provide additional context for a decision. NOT as a substitute for a clear label.
+Cada pieza de contenido debe modelarse como datos estructurados, no como un bloque de texto con formato.
 
-**Length:** One to two sentences. If a tooltip needs a paragraph, the feature needs better design, not longer tooltips.
+**Ejemplo: Un evento**
 
-**Trigger:** Hover on desktop (with focus equivalent for keyboard), tap on mobile. Never put essential information in tooltips — they're invisible until triggered.
+- Título (texto sin formato, máximo de 80 caracteres).
+- Descripción (texto enriquecido, máximo de 500 caracteres).
+- Descripción breve (texto sin formato, máximo de 140 caracteres; para tarjetas y vistas previas).
+- Fecha y hora (ISO 8601; nunca se almacenan como texto con formato).
+- Ubicación (estructurada: nombre del lugar, dirección y coordenadas).
+- Categoría (vocabulario controlado).
+- Imagen (con texto alternativo obligatorio, no opcional).
+- Estado (borrador, publicado o cancelado).
 
-**Pattern:** "[What this is/does]. [Why it matters or what to consider]." Example: "Two-factor authentication. Adds a second verification step using your phone when you sign in."
+**Por qué importa la estructura:** Un evento estructurado puede mostrarse como tarjeta, elemento de lista, entrada de calendario, notificación, publicación en redes sociales o resultado de búsqueda, utilizando en cada caso los campos adecuados. Un bloque de HTML solo puede mostrarse tal como está.
 
-### Placeholder Text
+### Contenido preparado para la localización
 
-**What it's for:** Format examples and input hints. "name@company.com" in an email field. "DD/MM/YYYY" in a date field.
+El contenido que se traducirá debe modelarse desde el principio pensando en la traducción. Incorporar la localización a posteriori cuesta órdenes de magnitud más que diseñarla desde el inicio.
 
-**What it's NOT for:** Field labels. Instructions. Anything the user needs to reference while typing. Placeholder text disappears on focus — if the information matters, put it in a persistent label or help text.
+**Reglas:**
 
-**Accessibility note:** Placeholder text typically renders in low contrast, making it hard to read for many users. Never rely on placeholder text as the only source of information.
+- Separa el contenido de la presentación. No codifiques texto de forma fija en plantillas, componentes o imágenes.
+- No concatenes cadenas. «You have » + count + « messages» falla en idiomas con otro orden de palabras. Usa ICU MessageFormat o un equivalente: «{count, plural, one {You have 1 message} other {You have # messages}}».
+- No presupongas la longitud del texto. El alemán suele ocupar un 30 % más que el inglés; el japonés puede ocupar menos. Diseña composiciones que admitan la variación.
+- No incrustes texto en imágenes. No puede traducirse, los lectores de pantalla no pueden leerlo y no se puede buscar.
+- Da contexto a quienes traducen. El verbo «Save» y el sustantivo «Save» son palabras distintas en muchos idiomas. Identificadores como «button.save_changes» aportan más contexto que «string_47».
 
-### Confirmation Mesgalileos
+### Reutilización de contenido
 
-**Success:** What happened + what the user can expect next. "Your payment was processed. You'll receive a confirmation email within a few minutes." Not just "Success!"
+Modela una vez y utiliza en todas partes, pero decide de forma deliberada qué se comparte y qué es único.
 
-**Pending:** What's happening + when to expect resolution. "We're verifying your identity. This usually takes 1-2 business days." Not just "Processing..."
+**Contenido compartido:** Texto legal, descripciones de funciones y detalles de precios; todo lo que deba ser coherente entre contextos. Cambia una vez y se actualiza en todas partes. Guárdalo en una fuente única.
 
-**Failure:** What went wrong + what to do. "Your payment was declined by your bank. Try a different card or contact your bank." Not just "Payment failed."
+**Contenido adaptado:** La misma información con distinta longitud o tono según el contexto. La descripción de un evento puede tener 500 caracteres en la página de detalle y 140 en una tarjeta. Modela ambas como campos distintos; no trunques la versión larga.
 
-### Empty States
-
-The first screen a new user sees is almost always an empty state. It's the product's first impression — and most products waste it.
-
-**Good empty states contain:**
-1. What this area is for (education)
-2. How to add the first item (action)
-3. Why it's worth doing (motivation)
-
-**Example:** "This is your project dashboard. You'll see all your active projects here once you create them. Create your first project to get started." + a prominent "Create Project" button.
-
-**Bad empty states:** A blank page. A lonely icon. "No data." These communicate nothing and leave the user stranded.
-
----
-
-## Terminology Governance
-
-Inconsistent terminology is one of the most common causes of user confusion and one of the easiest to prevent.
-
-### Building a Terminology Glossary
-
-**Identify terms that need governance:** Technical terms, product-specific concepts, feature names, status labels, action verbs. If two writers might use different words for the same thing, it needs a glossary entry.
-
-**For each term, document:**
-- The canonical term (the one we use)
-- Synonyms we don't use (and why — "we say 'workspace,' not 'project space' or 'dashboard'")
-- Definition (in user-facing language, not internal language)
-- Context for use (where this term appears and what it means in each context)
-
-### Naming Conventions
-
-**Actions should be specific verbs.** "Save" not "OK." "Delete permanently" not "Remove." "Send invitation" not "Submit." The button label should tell the user exactly what will happen when they click it.
-
-**Status labels should be past participles or adjectives.** "Sent," "Draft," "Active," "Archived" — states the item is in. Not verbs ("Send," "Archive") which imply actions.
-
-**Consistency across surfaces.** If the mobile app says "Log in" and the website says "Sign in," one of them is wrong. Pick one and enforce it everywhere.
-
-### Jargon Management
-
-**Rules:**
-1. If the user needs a technical term to use the product, define it the first time it appears — in context, not in a glossary page nobody will visit.
-2. If a simpler word exists, use it. "Use" not "utilize." "Start" not "initiate." "End" not "terminate."
-3. Internal terminology never reaches the user. The user doesn't know what "SKU" means, that "KYC" stands for Know Your Customer, or that "RBAC" is role-based access control. Translate.
-4. When technical terms are unavoidable (API, URL, CSV), use them but don't assume understanding. "Download as CSV (a spreadsheet format)" on first appearance.
+**Contenido único:** Texto específico de un contexto que no tiene sentido en ningún otro sitio. Un mensaje de error para un campo concreto. Un tooltip de una función específica. No abstraigas en exceso: no todo necesita ser reutilizable.
 
 ---
 
-## Readability and Plain Language
+## Biblioteca de patrones de microcopy
 
-### Readability Scoring
+El microcopy es el texto breve que guía a los usuarios durante las interacciones. Es la redacción de mayor impacto en un producto: cambiar una sola palabra en la etiqueta de un botón puede modificar las tasas de conversión en porcentajes de dos dígitos.
 
-**Flesch-Kincaid Grade Level** is the most widely used readability metric. It estimates the U.S. school grade level required to understand the text. Target: grade 6-8 for consumer products, grade 8-10 for professional tools, grade 10-12 for expert documentation.
+### Textos de ayuda emergentes (tooltips)
 
-**How to improve readability scores:**
-- Shorter sentences (average 15-20 words)
-- Shorter words (prefer one and two-syllable words)
-- Active voice (subject → verb → object)
-- One idea per sentence
-- Lists instead of long paragraphs
+**Cuándo usarlos:** Para explicar conceptos desconocidos, aclarar etiquetas ambiguas o aportar contexto adicional a una decisión. NO como sustituto de una etiqueta clara.
 
-**Limitations:** Readability scores medir surface features (word length, sentence length), not comprehension. A text can score at grade 6 and still be incomprehensible if the concepts are poorly organizard or the terminology is unfamiliar. Use readability scores as a quick check, not a quality guarantee.
+**Longitud:** Una o dos oraciones. Si un tooltip necesita un párrafo, la función necesita un diseño mejor, no un tooltip más largo.
 
-### Plain Language Principles
+**Activación:** Al pasar el puntero en escritorio, con un equivalente de foco para teclado, y al tocar en móvil. Nunca pongas información esencial en un tooltip: permanece invisible hasta que se activa.
 
-Plain language is not simple language. It's clear language. The goal is that the reader can find what they need, understand what they find, and use that understanding to act.
+**Patrón:** «[Qué es o qué hace]. [Por qué importa o qué hay que considerar]». Ejemplo: «Autenticación de dos factores. Añade una segunda comprobación con tu teléfono al iniciar sesión».
 
-**Federal Plain Language Guidelines (plainlanguage.gov) principles:**
-1. Write for your audience — use their vocabulary, address their needs
-2. Organize for the reader — most important information first
-3. Use short sentences and paragraphs
-4. Use everyday words — avoid jargon, legalese, and unnecessary technical language
-5. Use active voice — "We'll review your application" not "Your application will be reviewed"
-6. Use present tense — "This deletes your account" not "This will delete your account"
-7. Use "you" and "we" — direct address is clearer than third person
-8. Use lists and tables for complex information
-9. Use meaningful headings
+### Texto de marcador de posición
 
-**In product interfaces specifically:**
-- Button labels should be verbs that describe the action: "Save changes," "Create project," "Send mesgalileo"
-- Error mesgalileos should be sentences: subject, verb, solution
-- Instructions should start with the goal, then the steps: "To export your data, go to Settings > Export"
-- Don't use "please" in every instruction — it inflates word count and becomes invisible. Reserve politeness for when you're asking the user to do something inconvenient
+**Para qué sirve:** Ejemplos de formato y pistas de entrada. «name@company.com» en un campo de correo. «DD/MM/YYYY» en un campo de fecha.
+
+**Para qué NO sirve:** Etiquetas de campo, instrucciones ni información que el usuario deba consultar mientras escribe. El texto desaparece al enfocar el campo; si importa, colócalo en una etiqueta persistente o en un texto de ayuda.
+
+**Nota de accesibilidad:** Suele mostrarse con poco contraste, por lo que muchas personas tienen dificultades para leerlo. Nunca dependas de él como única fuente de información.
+
+### Mensajes de confirmación
+
+**Éxito:** Qué sucedió + qué puede esperar el usuario a continuación. «Procesamos tu pago. Recibirás un correo de confirmación en unos minutos». No solo «¡Listo!».
+
+**Pendiente:** Qué está ocurriendo + cuándo cabe esperar que termine. «Estamos verificando tu identidad. Suele tardar entre 1 y 2 días laborables». No solo «Procesando…».
+
+**Fallo:** Qué salió mal + qué hacer. «Tu banco rechazó el pago. Prueba con otra tarjeta o contacta con tu banco». No solo «El pago falló».
+
+### Estados vacíos
+
+La primera pantalla que ve un usuario nuevo casi siempre es un estado vacío. Es la primera impresión del producto y la mayoría la desaprovecha.
+
+**Un buen estado vacío contiene:**
+
+1. Para qué sirve el área (educación).
+2. Cómo añadir el primer elemento (acción).
+3. Por qué vale la pena hacerlo (motivación).
+
+**Ejemplo:** «Este es tu panel de proyectos. Aquí verás los proyectos activos cuando los crees. Crea el primero para empezar», junto con un botón «Crear proyecto» destacado.
+
+**Malos estados vacíos:** Una página en blanco. Un icono solitario. «Sin datos». No comunican nada y dejan al usuario sin salida.
+
+---
+
+## Gobernanza terminológica
+
+La terminología incoherente es una de las causas más habituales de confusión y una de las más fáciles de evitar.
+
+### Cómo construir un glosario terminológico
+
+**Identifica los términos que necesitan gobernanza:** Términos técnicos, conceptos específicos del producto, nombres de funciones, etiquetas de estado y verbos de acción. Si dos personas podrían usar palabras distintas para lo mismo, hace falta una entrada en el glosario.
+
+**Documenta cada término:**
+
+- El término canónico que se utiliza.
+- Los sinónimos que no se utilizan y el motivo: «Usamos “espacio de trabajo”, no “espacio de proyecto” ni “panel”».
+- La definición, en lenguaje dirigido al usuario y no en lenguaje interno.
+- El contexto de uso: dónde aparece y qué significa en cada contexto.
+
+### Convenciones de nomenclatura
+
+**Las acciones deben ser verbos específicos.** «Guardar», no «Aceptar». «Eliminar definitivamente», no «Quitar». «Enviar invitación», no «Enviar formulario». La etiqueta del botón debe decir exactamente qué ocurrirá al pulsarlo.
+
+**Las etiquetas de estado deben ser participios o adjetivos.** «Enviado», «Borrador», «Activo», «Archivado»: estados en los que se encuentra el elemento. No verbos como «Enviar» o «Archivar», que implican acciones.
+
+**Coherencia entre superficies.** Si la aplicación móvil dice «Iniciar sesión» y el sitio web «Acceder», una de las dos opciones es incorrecta. Elige una y úsala en todas partes.
+
+### Gestión de jerga
+
+**Reglas:**
+
+1. Si el usuario necesita un término técnico para utilizar el producto, defínelo la primera vez que aparezca y hazlo en contexto, no en una página de glosario que nadie visitará.
+2. Si existe una palabra más sencilla, úsala: «usar» en vez de «utilizar» cuando encaje, «empezar» en vez de «iniciar» y «terminar» en vez de «finalizar».
+3. La terminología interna nunca debe llegar a la persona. No tiene por qué saber qué significa «SKU», que «KYC» corresponde a Know Your Customer —conoce a tu cliente— ni que «RBAC» es control de acceso basado en roles. Explícala.
+4. Cuando los términos técnicos sean inevitables —API, URL, CSV—, utilízalos sin presuponer que se entienden. En la primera aparición: «Descargar como CSV —un formato de hoja de cálculo—».
+
+---
+
+## Legibilidad y lenguaje claro
+
+### Evaluación de la legibilidad
+
+**Flesch-Kincaid Grade Level** es la métrica de legibilidad más utilizada. Estima el nivel escolar estadounidense necesario para comprender el texto. Objetivo: grados 6 a 8 para productos de consumo, 8 a 10 para herramientas profesionales y 10 a 12 para documentación especializada.
+
+**Cómo mejorar la puntuación de legibilidad:**
+
+- Oraciones más cortas, con una media de 15 a 20 palabras.
+- Palabras más cortas; prioriza las de una o dos sílabas.
+- Voz activa: sujeto → verbo → objeto.
+- Una idea por oración.
+- Listas en vez de párrafos largos.
+
+**Limitaciones:** Las puntuaciones miden características superficiales, como la longitud de las palabras y las oraciones, no la comprensión. Un texto puede obtener un grado 6 y seguir siendo incomprensible si los conceptos están mal organizados o la terminología resulta desconocida. Úsalas como comprobación rápida, no como garantía de calidad.
+
+### Principios de lenguaje claro
+
+El lenguaje claro no es lenguaje simplista: es lenguaje comprensible. Su objetivo es que la persona encuentre lo que necesita, entienda lo que encuentra y pueda actuar a partir de ello.
+
+**Principios de las Federal Plain Language Guidelines (plainlanguage.gov):**
+
+1. Escribe para tu audiencia: utiliza su vocabulario y responde a sus necesidades.
+2. Organiza para quien lee: coloca primero la información más importante.
+3. Utiliza oraciones y párrafos cortos.
+4. Usa palabras cotidianas: evita la jerga, el lenguaje legalista y los tecnicismos innecesarios.
+5. Usa voz activa: «Revisaremos tu solicitud», no «Tu solicitud será revisada».
+6. Usa presente: «Esto elimina tu cuenta», no «Esto eliminará tu cuenta».
+7. Usa «tú» y «nosotros»: dirigirse directamente es más claro que la tercera persona.
+8. Usa listas y tablas para información compleja.
+9. Usa encabezados significativos.
+
+**En las interfaces de producto:**
+
+- Las etiquetas de botón deben ser verbos que describan la acción: «Guardar cambios», «Crear proyecto», «Enviar mensaje».
+- Los mensajes de error deben ser oraciones con sujeto, verbo y solución.
+- Las instrucciones deben comenzar con el objetivo y continuar con los pasos: «Para exportar tus datos, ve a Ajustes > Exportar».
+- No uses «por favor» en todas las instrucciones: aumenta la longitud y termina volviéndose invisible. Reserva la cortesía para cuando pidas algo inconveniente.

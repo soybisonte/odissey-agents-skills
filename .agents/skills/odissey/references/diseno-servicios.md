@@ -1,182 +1,197 @@
-# Service Design
+# Diseño de servicios
 
-## Service Blueprinting Methodology
+## Índice
 
-A service blueprint is a diagram that maps the complete service delivery process — what the customer sees, what the organization does behind the scenes, and how the technical systems support it all. Lynn Shostack introduced the concept in 1984 to address a fundamental problem: services are invisible, and you can't improve what you can't see.
+- [Metodología de blueprint de servicio](#metodología-de-blueprint-de-servicio)
+- [Análisis de momentos de la verdad](#análisis-de-momentos-de-la-verdad)
+- [Mapeo de puntos de contacto](#mapeo-de-puntos-de-contacto)
+- [Identificación de puntos de fallo y diseño de recuperación](#identificación-de-puntos-de-fallo-y-diseño-de-recuperación)
+- [Orquestación de canales](#orquestación-de-canales)
 
-### Shostack's Original Model
+## Metodología de blueprint de servicio
 
-Shostack's original blueprint was deliberately simple: a horizontal timeline of the service process with a "line of visibility" separating what the customer sees from what they don't. Above the line: the customer's experience. Below the line: the backstage processes that produce that experience.
+Un blueprint de servicio es un diagrama que representa el proceso completo de prestación: lo que ve el cliente, lo que hace la organización entre bastidores y cómo los sistemas técnicos sostienen el conjunto. Lynn Shostack introdujo el concepto en 1984 para abordar un problema fundamental: los servicios son invisibles y no se puede mejorar lo que no se ve.
 
-**Why it mattered:** Before Shostack, services were designed through intuition and anecdote. The blueprint made the invisible visible — showing where the service was fragile, where it depended on specific people, and where it failed predictably.
+### Modelo original de Shostack
 
-### Modern Blueprint Layers
+El blueprint original de Shostack era deliberadamente sencillo: una línea temporal horizontal del proceso de servicio y una «línea de visibilidad» que separaba lo que el cliente ve de lo que no ve. Por encima de la línea: la experiencia del cliente. Por debajo: los procesos entre bastidores que la hacen posible.
 
-Contemporary service blueprints expand Shostack's model to five layers, each providing different analytical leverage.
+**Por qué fue importante:** Antes de Shostack, los servicios se diseñaban a partir de la intuición y las anécdotas. El blueprint hizo visible lo invisible: mostró dónde era frágil el servicio, dónde dependía de personas concretas y dónde fallaba de manera predecible.
 
-**Layer 1: Customer Actions**
-What the customer does at each stage of the service. Their decisions, interactions, and movements across channels. This is the user journey — but in a service blueprint, it's one layer of a larger picture, not the whole picture.
+### Capas de un blueprint moderno
 
-Document: What the customer is trying to accomplish, what they physically do, and what channels they use. Note emotional states where you have evidence — but be careful about projecting emotions you haven't researched.
+Los blueprints de servicio contemporáneos amplían el modelo de Shostack a cinco capas, cada una con una capacidad analítica distinta.
 
-**Layer 2: Frontstage (Onstage) Actions**
-What the customer-facing parts of the organization do that the customer can see. The website, the app, the retail store, the call center agent, the email. This is the visible surface of the service.
+**Capa 1: Acciones del cliente**
 
-Document: Every touchpoint the customer interacts with, and every employee action the customer witnesses. The frontstage is where brand perception is formed — it's also where most organizations focus their design effort, sometimes to the exclusion of everything below.
+Lo que hace el cliente en cada etapa del servicio: sus decisiones, interacciones y movimientos entre canales. Es el recorrido del usuario, pero en un blueprint constituye una capa de un panorama mayor, no el panorama completo.
 
-**Layer 3: Backstage Actions**
-What the organization does that the customer can't see but that directly supports the frontstage. The warehouse worker who picks the order. The algorithm that generates recommendations. The support agent who reviews a flagged transaction. The designer who creates the email template.
+Documenta qué intenta conseguir el cliente, qué hace físicamente y qué canales utiliza. Registra estados emocionales cuando tengas evidencia, pero evita proyectar emociones que no hayas investigado.
 
-Document: Every internal action that supports a frontstage interaction. This is where efficiency, consistency, and quality are determined — and where most service failures originate.
+**Capa 2: Acciones en la parte visible (frontstage)**
 
-**Layer 4: Support Processes**
-The systems, tools, and organizational processes that enable backstage actions. CRM systems, inventory management, payment processing, identity verification, internal communication tools. These are typically owned by different teams, different departments, sometimes different companies.
+Lo que hacen las partes de la organización orientadas al cliente y que este puede ver: el sitio web, la aplicación, la tienda, el agente del centro de atención o el correo electrónico. Es la superficie visible del servicio.
 
-Document: The technical systems and organizational processes that backstage actors depend on. This is where cross-functional dependencies live — and where improving one team's process can break another team's workflow.
+Documenta cada punto de contacto con el que interactúa el cliente y cada acción del personal que presencia. En el frontstage se forma la percepción de marca; también es donde muchas organizaciones concentran su esfuerzo de diseño, a veces excluyendo todo lo que ocurre debajo.
 
-**Layer 5: Physical Evidence**
-The tangible artifacts the customer encounters at each stage. The packaging, the receipt, the app notification, the confirmation email, the physical product itself. Physical evidence shapes expectations and creates memories.
+**Capa 3: Acciones entre bastidores (backstage)**
 
-Document: Every artifact the customer receives, sees, or keeps. Physical evidence persists after the interaction ends — it's what the customer takes away.
+Lo que hace la organización sin que el cliente lo vea, pero que respalda directamente el frontstage. La persona del almacén que prepara el pedido. El algoritmo que genera recomendaciones. El agente de soporte que revisa una transacción señalada. El diseñador que crea la plantilla de correo.
 
-### The Lines
+Documenta cada acción interna que sostiene una interacción visible. Aquí se determinan la eficiencia, la coherencia y la calidad, y aquí se originan la mayoría de los fallos del servicio.
 
-Service blueprints are divided by three horizontal lines:
+**Capa 4: Procesos de apoyo**
 
-**Line of Interaction** — Between Customer Actions and Frontstage. Where the customer and the service provider interact directly. Every crossing of this line is a moment of truth.
+Los sistemas, herramientas y procesos organizativos que permiten las acciones entre bastidores: CRM, gestión de inventario, procesamiento de pagos, verificación de identidad y herramientas de comunicación interna. Suelen pertenecer a equipos y departamentos distintos, y en ocasiones a empresas diferentes.
 
-**Line of Visibility** — Between Frontstage and Backstage. What the customer can see vs. what they can't. The strategic question at this line: should we make more of the backstage visible (building trust through transparency) or keep it hidden (reducing complexity)?
+Documenta los sistemas técnicos y los procesos organizativos de los que dependen quienes trabajan entre bastidores. Aquí viven las dependencias entre funciones y aquí una mejora en el proceso de un equipo puede romper el flujo de trabajo de otro.
 
-**Line of Internal Interaction** — Between Backstage and Support Processes. Where human backstage actors interact with technical systems and organizational processes. This line reveals technology dependencies and process bottlenecks.
+**Capa 5: Evidencia física**
 
----
+Los elementos tangibles que encuentra el cliente en cada etapa: el embalaje, el recibo, la notificación de la aplicación, el correo de confirmación o el propio producto físico. La evidencia física configura expectativas y crea recuerdos.
 
-## Moment-of-Truth Analysis
+Documenta cada elemento que el cliente recibe, ve o conserva. La evidencia física perdura después de que termine la interacción: es lo que el cliente se lleva consigo.
 
-Not all touchpoints are equal. Moments of truth (a term coined by Jan Carlzon, then CEO of SAS Airlines, in 1987) are the critical interactions that disproportionately shape the customer's overall perception of the service.
+### Las líneas
 
-### Identifying Moments of Truth
+Los blueprints de servicio se dividen mediante tres líneas horizontales:
 
-A moment of truth has three characteristics:
-1. **High emotional stakes** — The customer cares about the outcome. The anxiety of a medical test result, the anticipation of a delivery, the frustration of a failed payment.
-2. **Perception formation** — The interaction shapes how the customer perceives the entire service. A smooth onboarding creates a halo effect. A botched recovery from an error colors everything.
-3. **Decision influence** — The interaction affects whether the customer continues, recommends, or leaves.
+**Línea de interacción** — Entre las acciones del cliente y el frontstage. Es donde el cliente y quien presta el servicio interactúan directamente. Cada cruce de esta línea es un momento de la verdad.
 
-**First impressions** are always moments of truth. The first time a customer interacts with the service — first visit, first transaction, first support contact — sets expectations for everything that follows.
+**Línea de visibilidad** — Entre el frontstage y el backstage. Separa lo que el cliente puede ver de lo que no. La pregunta estratégica es: ¿deberíamos hacer visible una mayor parte del backstage para generar confianza mediante transparencia o mantenerlo oculto para reducir complejidad?
 
-**Failure moments** are always moments of truth. How the service handles things going wrong reveals its true character. A service that recovers gracefully from failure builds more trust than one that never fails but has no recovery mechanism.
-
-**Peak and end** (Kahneman's Peak-End Rule): People judge experiences primarily by their most intense point (peak) and their ending. A service that's mediocre throughout but ends well is rempathfindered more favorably than one that's consistently good but ends poorly.
-
-### Moment-of-Truth Categories
-
-**Positive moments of truth** — Interactions where the service exceeds expectations. Surprising ease, unexpected delight, proactive problem prevention. These create loyalty and word-of-mouth.
-
-**Negative moments of truth** — Interactions where the service fails to meet expectations. Friction, confusion, delay, rudeness, lack of information. These create churn and negative word-of-mouth (which spreads faster).
-
-**Moment of truth zero (Google's concept)** — The moment a potential customer researches the service before ever interacting with it. Reviews, social media, comparison sites. The experience begins before the service does.
-
-### Designing for Moments of Truth
-
-1. **Identify** — Use customer journey research, support ticket analysis, NPS verbatims, and social media analysis to find which interactions matter most.
-2. **Invest disproportionately** — Moments of truth deserve more design attention, more testing, more polish, and more monitoring than routine interactions.
-3. **Prepare for failure** — Every moment of truth should have a designed failure mode. What happens if the payment doesn't go through? What happens if the delivery is late? What happens if the agent can't solve the problem? The answer should never be "I don't know."
-4. **Measure separately** — Track satisfaction and outcome metrics for moments of truth independently from overall service metrics. A service with high average satisfaction but low moment-of-truth satisfaction has a hidden problem.
+**Línea de interacción interna** — Entre el backstage y los procesos de apoyo. Es donde las personas que actúan entre bastidores interactúan con los sistemas técnicos y los procesos organizativos. Esta línea revela dependencias tecnológicas y cuellos de botella del proceso.
 
 ---
 
-## Touchpoint Mapping
+## Análisis de momentos de la verdad
 
-A touchpoint is any point of contact between the customer and the service. Touchpoint mapping catalogs every touchpoint across every channel and evaluars each for quality, consistency, and strategic importance.
+No todos los puntos de contacto tienen el mismo peso. Los momentos de la verdad —término acuñado en 1987 por Jan Carlzon, entonces director ejecutivo de SAS Airlines— son las interacciones críticas que influyen de forma desproporcionada en la percepción global del servicio.
 
-### Touchpoint Inventory
+### Cómo identificar los momentos de la verdad
 
-**Digital touchpoints:** Website, mobile app, email, SMS, push notifications, chatbot, social media, advertising, search results, app store listing, in-app mesgalileos.
+Un momento de la verdad tiene tres características:
 
-**Human touchpoints:** Call center, in-person staff, live chat agents, account managers, delivery personnel, installation technicians.
+1. **Gran carga emocional** — Al cliente le importa el resultado: la ansiedad ante una prueba médica, la expectativa de una entrega o la frustración por un pago fallido.
+2. **Formación de la percepción** — La interacción condiciona cómo percibe el servicio completo. Un onboarding fluido crea un efecto halo. Una recuperación de errores deficiente empaña todo lo demás.
+3. **Influencia en la decisión** — La interacción afecta a si el cliente continúa, recomienda o abandona.
 
-**Physical touchpoints:** Packaging, product, physical store, printed materials, signage, receipts, business cards.
+**Las primeras impresiones** siempre son momentos de la verdad. La primera interacción con el servicio —primera visita, primera transacción o primer contacto con soporte— establece las expectativas para lo que sigue.
 
-**Environmental touchpoints:** Store layout, office environment, waiting room, parking, physical accessibility.
+**Los fallos** siempre son momentos de la verdad. La manera en que el servicio responde cuando algo sale mal revela su verdadero carácter. Un servicio que se recupera con elegancia genera más confianza que uno que nunca falla, pero carece de un mecanismo de recuperación.
 
-### Touchpoint Evaluation Matrix
+**Pico y final** (regla del pico y el final de Kahneman): Las personas juzgan las experiencias principalmente por su punto de mayor intensidad y por el final. Un servicio mediocre durante todo el recorrido que termina bien se recuerda mejor que otro uniformemente bueno que acaba mal.
 
-For each touchpoint, assess:
+### Categorías de momentos de la verdad
 
-| Dimension | Question |
+**Momentos de la verdad positivos** — Interacciones en las que el servicio supera las expectativas: una facilidad sorprendente, un agrado inesperado o la prevención proactiva de problemas. Generan lealtad y recomendaciones.
+
+**Momentos de la verdad negativos** — Interacciones en las que el servicio no cumple las expectativas: fricción, confusión, demoras, descortesía o falta de información. Generan abandono y comentarios negativos, que se propagan con mayor rapidez.
+
+**Momento cero de la verdad (concepto de Google)** — El momento en que un cliente potencial investiga el servicio antes de interactuar con él: reseñas, redes sociales y sitios de comparación. La experiencia comienza antes que el servicio.
+
+### Cómo diseñar los momentos de la verdad
+
+1. **Identifica** — Utiliza investigación del recorrido del cliente, análisis de incidencias de soporte, comentarios abiertos de NPS y análisis de redes sociales para descubrir qué interacciones importan más.
+2. **Invierte de manera desproporcionada** — Estos momentos merecen más atención de diseño, pruebas, pulido y monitorización que las interacciones rutinarias.
+3. **Prepárate para el fallo** — Cada momento debe tener un modo de fallo diseñado. ¿Qué ocurre si no se procesa el pago? ¿Si la entrega se retrasa? ¿Si el agente no resuelve el problema? La respuesta nunca debe ser «No lo sé».
+4. **Mide por separado** — Sigue las métricas de satisfacción y resultados de estos momentos de forma independiente de las métricas globales. Un servicio con satisfacción media alta, pero satisfacción baja en los momentos de la verdad, tiene un problema oculto.
+
+---
+
+## Mapeo de puntos de contacto
+
+Un punto de contacto es cualquier interacción entre el cliente y el servicio. El mapeo cataloga todos los puntos de contacto de todos los canales y evalúa su calidad, coherencia e importancia estratégica.
+
+### Inventario de puntos de contacto
+
+**Digitales:** Sitio web, aplicación móvil, correo electrónico, SMS, notificaciones push, chatbot, redes sociales, publicidad, resultados de búsqueda, ficha en la tienda de aplicaciones y mensajes dentro de la aplicación.
+
+**Humanos:** Centro de atención telefónica, personal presencial, agentes de chat en vivo, gestores de cuenta, personal de reparto y técnicos de instalación.
+
+**Físicos:** Embalaje, producto, tienda física, materiales impresos, señalización, recibos y tarjetas de visita.
+
+**Ambientales:** Distribución de la tienda, entorno de la oficina, sala de espera, aparcamiento y accesibilidad física.
+
+### Matriz de evaluación de puntos de contacto
+
+Evalúa cada punto de contacto:
+
+| Dimensión | Pregunta |
 |-----------|----------|
-| **Frequency** | How often does this touchpoint occur? Daily, weekly, once? |
-| **Criticality** | If this touchpoint fails, what's the consequence? Minor annoyance or complete service breakdown? |
-| **Emotional impact** | What emotional state is the customer in when they encounter this touchpoint? |
-| **Consistency** | Does this touchpoint deliver the same quality every time? |
-| **Brand alignment** | Does this touchpoint reflect the brand's values and voice? |
-| **Handoff quality** | How well does this touchpoint connect to the previous and next touchpoints? |
+| **Frecuencia** | ¿Con qué frecuencia ocurre: a diario, cada semana o una sola vez? |
+| **Criticidad** | Si falla, ¿cuál es la consecuencia: una molestia menor o la interrupción completa del servicio? |
+| **Impacto emocional** | ¿En qué estado emocional está el cliente cuando llega a este punto? |
+| **Coherencia** | ¿Ofrece la misma calidad cada vez? |
+| **Alineación con la marca** | ¿Refleja los valores y la voz de la marca? |
+| **Calidad de la transferencia** | ¿Cómo conecta con los puntos de contacto anterior y posterior? |
 
-### Cross-Channel Consistency
+### Coherencia entre canales
 
-The most common touchpoint failure isn't a bad individual touchpoint — it's inconsistency between touchpoints. The website says one thing, the app says another, the call center agent says a third. The customer starts a process online and can't continue in the store. The mobile app's features don't match the desktop app's features.
+El fallo más habitual no es un punto de contacto malo, sino la incoherencia entre varios. El sitio web dice una cosa, la aplicación otra y el agente telefónico una tercera. El cliente comienza un proceso en línea y no puede continuarlo en la tienda. Las funciones de la aplicación móvil no coinciden con las de escritorio.
 
-**Designing for cross-channel consistency:**
-- Shared content model: information authored once, displayed across channels
-- Unified customer record: every channel sees the same customer history
-- Consistent terminology: the same action has the same name everywhere
-- Coherent visual identity: adapted for each channel but recognizably the same brand
-- Seamless transitions: start on one channel, continue on another without losing progress
+**Diseña la coherencia entre canales mediante:**
 
----
-
-## Fail Point Identification and Recovery Design
-
-Every service fails. The question is whether the failure was anticipated and designed for, or whether it's a surprise for both the customer and the organization.
-
-### Fail Point Categories
-
-**Process failures** — The defined process doesn't produce the expected outcome. The order was placed but not fulfilled. The verification step timed out. The payment was charged twice. These are predictable and designable.
-
-**People failures** — A human in the service chain makes an error or performs poorly. An agent gives wrong information. A delivery person is rude. A colleague forgets to hand off a task. These are manageable through training, tools, and process design.
-
-**System failures** — Technology breaks. The API goes down. The database loses a record. The email doesn't send. These are inevitable and must be designed around.
-
-**Customer failures** — The customer does something unexpected. Enters wrong information, misunderstands a step, uses the wrong channel. These are not really failures — they're normal human behavior that the service should accommodate.
-
-**External failures** — Forces outside the service's control. Weather, supply chain disruptions, third-party service outages, regulatory changes. These can't be prevented, only prepared for.
-
-### Recovery Design Principles
-
-**Detect early.** The faster you detect a failure, the more options you have for recovery. Monitoring, alerting, and customer feedback loops should surface problems before the customer has to report them.
-
-**Communicate proactively.** If you know something went wrong, tell the customer before they discover it. "Your order is delayed due to weather; new estimated delivery is Thursday" is worlds better than the customer checking tracking on Wednesday and seeing no update.
-
-**Offer resolution, not explanation.** Customers want to know what you're going to do about it, not a detailed explanation of what went wrong. "Here's what happened" should be followed immediately by "Here's what we're doing about it."
-
-**Empower frontline staff.** If the person the customer is talking to can't fix the problem, the recovery has already failed. Service recovery design should give customer-facing employees the authority and tools to resolve common failures without escalation.
-
-**Make it right, then make it better.** Fix the immediate problem (refund, reship, correct the error). Then add something unexpected — a discount, an upgrade, a personal follow-up. Service recovery done well creates more loyalty than no failure at all (the "service recovery paradox," documented by McCollough & Bharadwaj, 1992).
+- Un modelo de contenido compartido: la información se crea una vez y se muestra en todos los canales.
+- Un registro unificado del cliente: cada canal ve el mismo historial.
+- Terminología coherente: la misma acción recibe el mismo nombre en todas partes.
+- Una identidad visual congruente: adaptada a cada canal, pero reconocible como la misma marca.
+- Transiciones fluidas: empezar en un canal y continuar en otro sin perder el progreso.
 
 ---
 
-## Channel Orchestration
+## Identificación de puntos de fallo y diseño de recuperación
 
-Modern services operate across multiple channels. Channel orchestration is the practice of designing how experiences flow across these channels — not as independent silos, but as a coordinated service.
+Todos los servicios fallan. La pregunta es si el fallo se anticipó y se diseñó una respuesta, o si sorprende tanto al cliente como a la organización.
 
-### Orchestration Patterns
+### Categorías de puntos de fallo
 
-**Channel-native:** Each channel offers the complete service experience, adapted to the channel's strengths. The website, app, and physical store each provide the full service. This is resource-intensive but maximizes customer choice.
+**Fallos de proceso** — El proceso definido no produce el resultado esperado. El pedido se realizó, pero no se preparó. El paso de verificación agotó el tiempo. El pago se cobró dos veces. Son predecibles y se puede diseñar para ellos.
 
-**Channel-complementary:** Different channels serve different parts of the journey. Research on the website, purchase in the store, support through the app. Each channel does what it does best. This is efficient but requires clear handoffs.
+**Fallos humanos** — Una persona de la cadena de servicio comete un error o actúa mal. Un agente proporciona información incorrecta. Una persona de reparto es descortés. Un colega olvida transferir una tarea. Pueden gestionarse mediante formación, herramientas y diseño de procesos.
 
-**Channel-primary with fallback:** One channel is the primary experience; others serve as fallbacks for specific situations. "Use the app for everything; call us if you're stuck." This is common for digital-native services.
+**Fallos del sistema** — La tecnología se avería. La API deja de responder. La base de datos pierde un registro. El correo no se envía. Son inevitables y es necesario diseñar respuestas.
 
-**Channel-sequential:** The service moves the customer across channels in a defined sequence. Sign up online, verify by phone, activate in the app. This is common for regulated services (banking, insurance) where different channels serve compliance needs.
+**Fallos del cliente** — El cliente hace algo inesperado: introduce datos incorrectos, no entiende un paso o utiliza otro canal. En realidad no son fallos, sino comportamientos humanos normales que el servicio debe admitir.
 
-### Orchestration Design Principles
+**Fallos externos** — Fuerzas fuera del control del servicio: clima, interrupciones de la cadena de suministro, caídas de terceros o cambios normativos. No se pueden impedir; solo cabe prepararse.
 
-**Don't force channels.** Let customers choose their preferred channel. If someone wants to call instead of using the chatbot, let them. Channel forcing creates frustration even when the forced channel is objectively faster.
+### Principios de diseño de recuperación
 
-**Preserve context across channels.** If a customer starts a process on the website and calls support, the support agent should see what the customer was doing. If a customer adds items to a cart on mobile, the cart should appear on desktop. Context loss across channels is one of the most common service design failures.
+**Detecta pronto.** Cuanto antes detectes el fallo, más opciones tendrás para recuperarte. La monitorización, las alertas y los ciclos de retroalimentación del cliente deben sacar a la luz los problemas antes de que el cliente tenga que notificarlos.
 
-**Design the transitions.** The moment a customer moves from one channel to another is a high-risk moment for confusion and context loss. Design explicit handoff experiences: "Continue this on the app — we've saved your progress" with a clear path to pick up where they left off.
+**Comunica de forma proactiva.** Si sabes que algo salió mal, avisa antes de que el cliente lo descubra. «Tu pedido se ha retrasado por el clima; la nueva entrega estimada es el jueves» es mucho mejor que dejar que consulte el seguimiento el miércoles y no encuentre ninguna actualización.
 
-**Let channels know about each other.** In-store staff should know what the website offers. The chatbot should know the phone number for human support. The app should know about the physical store's hours. Channels that are unaware of each other create a fractured experience.
+**Ofrece una solución, no solo una explicación.** Los clientes quieren saber qué vas a hacer, no recibir una explicación minuciosa del fallo. «Esto es lo que ocurrió» debe ir seguido de inmediato por «Esto es lo que haremos para resolverlo».
 
-**Measure across channels, not within them.** A customer who starts on the website and completes on the phone had a successful journey — but channel-specific metrics would show the website as a "bounce" and the phone as an unattributed conversion. Cross-channel medirment reveals the actual experience.
+**Da capacidad de decisión al personal de primera línea.** Si la persona con la que habla el cliente no puede resolver el problema, la recuperación ya ha fallado. El diseño debe darle autoridad y herramientas para solucionar los fallos habituales sin escalar el caso.
+
+**Corrige primero y mejora después.** Resuelve el problema inmediato (reembolsa, reenvía o corrige el error). Después, añade algo inesperado: un descuento, una mejora o un seguimiento personal. Una buena recuperación genera más lealtad que la ausencia de fallos —la «paradoja de recuperación del servicio», documentada por McCollough y Bharadwaj en 1992—.
+
+---
+
+## Orquestación de canales
+
+Los servicios modernos operan en múltiples canales. La orquestación diseña cómo fluye la experiencia entre ellos, no como silos independientes, sino como un servicio coordinado.
+
+### Patrones de orquestación
+
+**Nativo por canal:** Cada canal ofrece la experiencia completa, adaptada a sus fortalezas. El sitio web, la aplicación y la tienda física prestan el servicio completo. Exige muchos recursos, pero maximiza la capacidad de elección.
+
+**Canales complementarios:** Distintos canales cubren partes diferentes del recorrido. Se investiga en el sitio web, se compra en la tienda y se recibe soporte en la aplicación. Cada canal hace lo que mejor sabe hacer. Es eficiente, pero exige transferencias claras.
+
+**Canal principal con alternativa:** Un canal contiene la experiencia principal y los demás sirven como alternativa en situaciones concretas. «Usa la app para todo; llámanos si necesitas ayuda». Es habitual en servicios nativos digitales.
+
+**Canales secuenciales:** El servicio mueve al cliente por una secuencia definida. Registro en línea, verificación telefónica y activación en la aplicación. Es común en servicios regulados, como banca y seguros, donde cada canal satisface necesidades de cumplimiento distintas.
+
+### Principios de diseño de la orquestación
+
+**No impongas canales.** Deja que los clientes elijan el que prefieran. Si alguien quiere llamar en vez de usar el chatbot, permíteselo. Obligar a usar un canal genera frustración, incluso cuando objetivamente sea más rápido.
+
+**Conserva el contexto entre canales.** Si el cliente comienza un proceso en el sitio web y llama a soporte, el agente debe ver qué estaba haciendo. Si añade artículos al carrito desde el móvil, el carrito debe aparecer en el escritorio. Perder el contexto entre canales es uno de los fallos más comunes del diseño de servicios.
+
+**Diseña las transiciones.** El cambio de canal conlleva un riesgo alto de confusión y pérdida de contexto. Diseña transferencias explícitas: «Continúa en la app; hemos guardado tu progreso», con una ruta clara para retomar el proceso.
+
+**Haz que los canales se conozcan entre sí.** El personal de tienda debe conocer lo que ofrece el sitio web. El chatbot debe saber cuál es el teléfono de soporte. La aplicación debe conocer el horario de la tienda física. Los canales que se ignoran producen una experiencia fragmentada.
+
+**Mide entre canales, no dentro de cada uno.** El cliente que empieza en la web y termina por teléfono completó con éxito el recorrido. Sin embargo, las métricas aisladas registrarían un «rebote» en la web y una conversión sin atribuir por teléfono. La medición entre canales revela la experiencia real.

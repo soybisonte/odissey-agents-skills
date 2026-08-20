@@ -1,219 +1,238 @@
-# Information Architecture
+# Arquitectura de información
 
-## Navigation Patterns
+## Índice
 
-Every navigation pattern is a trade-off between findability, scalability, and cognitive load. There is no universally correct pattern — there's the right pattern for your content, users, and context.
+- [Patrones de navegación](#patrones-de-navegación)
+- [Diseño de taxonomías](#diseño-de-taxonomías)
+- [Modelos mentales](#modelos-mentales)
+- [Orientación espacial](#orientación-espacial)
+- [Modelos de comportamiento de búsqueda](#modelos-de-comportamiento-de-búsqueda)
+- [Metodología de clasificación de tarjetas y prueba de árbol](#metodología-de-clasificación-de-tarjetas-y-prueba-de-árbol)
 
-### Hierarchical (Tree)
+## Patrones de navegación
 
-The most common pattern. Content is organizard in nested categories: top-level → subcategory → item.
+Cada patrón de navegación implica un equilibrio entre facilidad para encontrar contenido, escalabilidad y carga cognitiva. No existe un patrón correcto para todos los casos: existe el patrón adecuado para tu contenido, tus usuarios y tu contexto.
 
-**When it works:** Large content sets with clear categorical relationships. Users have a general sense of what category their item belongs to. Content creators can maintain consistent categorization.
+### Jerárquico (árbol)
 
-**When it fails:** When categories overlap significantly (is a "wireless mouse" in Accessories, Computers, or Peripherals?). When the hierarchy is deeper than 3-4 levels — users lose orientation quickly. When the hierarchy reflects organizational structure rather than user mental models ("Products" → "Business Unit A" → "Division 2" → "Team Alpha's Output").
+Es el patrón más común. El contenido se organiza en categorías anidadas: nivel superior → subcategoría → elemento.
 
-**Watch for:** The "miscellaneous" drawer. If you have a category called "Other" or "General" that keeps growing, your hierarchy isn't working. Also: category names that mean something to the organization but nothing to users.
+**Cuándo funciona:** Conjuntos grandes de contenido con relaciones categóricas claras. Los usuarios tienen una idea general de la categoría a la que pertenece lo que buscan. Quienes crean contenido pueden mantener una categorización coherente.
 
-### Hub-and-Spoke
+**Cuándo falla:** Cuando las categorías se solapan de forma significativa (¿un «ratón inalámbrico» pertenece a Accesorios, Ordenadores o Periféricos?). Cuando la jerarquía supera los tres o cuatro niveles: los usuarios pierden rápidamente la orientación. Cuando refleja la estructura de la organización en lugar de los modelos mentales de los usuarios («Productos» → «Unidad de negocio A» → «División 2» → «Resultado del equipo Alpha»).
 
-A central hub connects to independent sections. Each section is largely self-contained. Users return to the hub to navigate between sections.
+**Presta atención a:** El cajón de «varios». Si tienes una categoría llamada «Otros» o «General» que no deja de crecer, la jerarquía no funciona. También a los nombres de categorías que significan algo para la organización, pero nada para los usuarios.
 
-**When it works:** Mobile apps with distinct functional areas (Mesgalileos, Camera, Profile). Products where tasks are independent — you don't need to combine search results with your shopping cart. Kiosk interfaces and set-top boxes where the input model favors focused navigation.
+### Central y radial (hub-and-spoke)
 
-**When it fails:** When users need to move fluidly between sections. When tasks span multiple sections. When the "hub" becomes a dumping ground for everything that doesn't fit in a spoke.
+Un núcleo central conecta secciones independientes. Cada sección es, en gran medida, autónoma. Los usuarios vuelven al núcleo para navegar entre secciones.
 
-**Watch for:** The desire to add cross-links between spokes. Once spokes start linking to each other extensively, the hub-and-spoke model is fighting the user's actual workflow. Consider switching to a different pattern.
+**Cuándo funciona:** Aplicaciones móviles con áreas funcionales diferenciadas (Mensajes, Cámara, Perfil). Productos cuyas tareas son independientes; por ejemplo, no es necesario combinar los resultados de búsqueda con el carrito. Interfaces de quiosco y decodificadores en las que el modelo de entrada favorece una navegación enfocada.
 
-### Flat
+**Cuándo falla:** Cuando los usuarios necesitan moverse con fluidez entre secciones. Cuando las tareas abarcan varias secciones. Cuando el «núcleo» se convierte en un cajón de sastre para todo lo que no cabe en una sección radial.
 
-All content is at the same level. No hierarchy. Often paired with powerful search/filter.
+**Presta atención a:** El deseo de añadir enlaces cruzados entre secciones radiales. Cuando estas empiezan a enlazarse ampliamente entre sí, el modelo central y radial se opone al flujo de trabajo real del usuario. Considera cambiar de patrón.
 
-**When it works:** Homogeneous content sets (a photo gallery, a list of transactions, a feed of posts). Content that doesn't have natural categories. Products with excellent search infrastructure.
+### Plano
 
-**When it fails:** Diverse content types. Large content sets without strong search/filter. Users who browse rather than search.
+Todo el contenido está al mismo nivel, sin jerarquía. Suele combinarse con funciones potentes de búsqueda y filtrado.
 
-**Watch for:** The illusion of flatness. Many "flat" architectures are actually filtered hierarchies — the user selects filters that create ad-hoc categories. That's fine, but the filter design is now your navigation design.
+**Cuándo funciona:** Conjuntos de contenido homogéneo (una galería de fotos, una lista de transacciones o un feed de publicaciones). Contenido sin categorías naturales. Productos con una infraestructura de búsqueda excelente.
 
-### Faceted
+**Cuándo falla:** Con tipos de contenido diversos. Con conjuntos grandes sin búsqueda ni filtrado sólidos. Con usuarios que exploran en lugar de buscar.
 
-Multiple independent dimensions for filtering the same content set. Users combine facets freely (color + size + price + brand).
+**Presta atención a:** La ilusión de una estructura plana. Muchas arquitecturas «planas» son en realidad jerarquías filtradas: el usuario selecciona filtros que crean categorías ad hoc. No hay problema, pero entonces el diseño de filtros es el diseño de navegación.
 
-**When it works:** E-commerce, search results, large databases with multiple attributes. When different users want to slice the same content differently. When the content has natural, independent attributes.
+### Por facetas
 
-**When it fails:** When facets aren't independent (selecting "red" and "small" leaves zero results because small items don't come in red). When there are too many facets — 15 filter dimensions overwhelm rather than help. When the vocabulary is inconsistent across facets.
+Varias dimensiones independientes permiten filtrar el mismo conjunto de contenido. Los usuarios combinan las facetas libremente (color + talla + precio + marca).
 
-**Watch for:** Empty states. Faceted navigation creates combinatorial explosion — many facet combinations will return zero results. Design for graceful degradation: show result counts per facet before selection, disable facets that would return zero.
+**Cuándo funciona:** Comercio electrónico, resultados de búsqueda y bases de datos grandes con múltiples atributos. Cuando distintos usuarios quieren segmentar el mismo contenido de maneras diferentes. Cuando el contenido tiene atributos naturales e independientes.
 
-### Dashboard
+**Cuándo falla:** Cuando las facetas no son independientes (seleccionar «rojo» y «pequeño» deja cero resultados porque los artículos pequeños no existen en rojo). Cuando hay demasiadas: quince dimensiones de filtrado abruman en vez de ayudar. Cuando el vocabulario no es coherente entre facetas.
 
-Multiple content types displayed simultaneously, typically with summary views that link to detail.
+**Presta atención a:** Los estados vacíos. La navegación por facetas produce una explosión combinatoria: muchas combinaciones devolverán cero resultados. Diseña una degradación elegante; muestra el número de resultados por faceta antes de seleccionarla y desactiva las que devolverían cero.
 
-**When it works:** Monitoring and analytics products. Executive overviews. Products where users need to scan multiple information streams quickly. Return-visit products where users want a status snapshot.
+### Panel de control
 
-**When it fails:** When the dashboard becomes the entire product — dashboards that require scrolling through 15 widgets have become a flat architecture by accident. When every stakeholder demands their metric on the dashboard, resulting in information overload. When the dashboard shows data but doesn't enable action.
+Muestra simultáneamente varios tipos de contenido, normalmente mediante vistas resumidas que enlazan a información detallada.
 
-**Watch for:** Dashboard-driven design, where every new feature gets a widget on the dashboard instead of its own proper location. Also: dashboards that show the same data to everyone when different roles need different views.
+**Cuándo funciona:** Productos de monitorización y analítica. Vistas ejecutivas. Productos en los que los usuarios deben examinar rápidamente varios flujos de información. Productos de uso recurrente en los que se quiere consultar una instantánea del estado.
 
----
+**Cuándo falla:** Cuando el panel se convierte en todo el producto: un panel que obliga a recorrer quince widgets se ha convertido accidentalmente en una arquitectura plana. Cuando cada parte interesada exige incluir su métrica y genera sobrecarga informativa. Cuando muestra datos, pero no permite actuar.
 
-## Taxonomy Design
-
-Taxonomy is the art of naming and grouping things so that users can find them. Get taxonomy wrong and no amount of visual design will save the navigation.
-
-### Top-Down vs. Bottom-Up
-
-**Top-down** starts with organizational logic: What are the major categories? How do they subdivide? This approach works when domain experts understand the structure well and users share that understanding. Risk: imposing a structure that makes sense internally but not to users.
-
-**Bottom-up** starts with content items: What do we have? How do users group these things? What labels do they use? Card sorting is the primary method. This approach discovers the taxonomy users actually want. Risk: producing categories that are too specific or too numerous to function as navigation.
-
-**Best practice:** Start bottom-up (card sorting to understand user mental models), then refine top-down (using domain expertise to fill gaps and resolve edge cases). Neither approach alone produces good taxonomy.
-
-### MECE Principle
-
-Mutually Exclusive, Collectively Exhaustive. Every item belongs in exactly one category, and every item has a category to belong to.
-
-**Mutually Exclusive:** If a user could reasonably place an item in two categories, the categories overlap. Fix by: making categories more specific, merging overlapping categories, or moving to faceted navigation where items can exist on multiple dimensions.
-
-**Collectively Exhaustive:** If items exist that don't fit any category, the taxonomy has gaps. The test: take 50 random content items and try to categorize each one. If you hesitate on more than 10%, the taxonomy needs work.
-
-**Reality:** True MECE is often unachievable for complex domains. When items genuinely belong in multiple categories, consider cross-referencing (the item lives in one place with links from others) or polyhierarchy.
-
-### Polyhierarchy
-
-An item can appear in multiple places in the hierarchy. "Wireless Mouse" appears under both "Computer Accessories" and "Wireless Devices."
-
-**When to use:** When card sorting consistently shows items being placed in multiple categories by different users. When the cost of "missing" an item (user can't find it) is higher than the cost of duplication.
-
-**Risks:** Maintenance complexity (update in one place, forget the other). User confusion if the same item has different metadata or behavior in different locations. Navigation that feels unreliable — "I saw this somewhere else, which is the real one?"
-
-**Mitigation:** Make one location canonical. Other appearances are clearly marked as cross-references. Maintain through automation, not manual duplication.
+**Presta atención a:** El diseño impulsado por el panel, donde cada funcionalidad nueva obtiene un widget en vez de una ubicación adecuada. También a los paneles que muestran los mismos datos a todo el mundo aunque cada rol necesite una vista distinta.
 
 ---
 
-## Mental Models
+## Diseño de taxonomías
 
-A mental model is the user's internal representation of how a system works. It doesn't need to match the actual system model — but the interface needs to match the user's mental model, or the user will fail.
+La taxonomía es el arte de nombrar y agrupar elementos para que los usuarios puedan encontrarlos. Si la taxonomía es incorrecta, ningún diseño visual salvará la navegación.
 
-### Applied Mental Model Theory
+### De arriba abajo frente a de abajo arriba
 
-**The Design of Everyday Things (1988)** distinguishes three models:
-1. **Design model** — How the designer thinks the system works
-2. **System model** — How the system actually works
-3. **User model** — How the user thinks the system works
+El enfoque **de arriba abajo** comienza con la lógica organizativa: ¿cuáles son las categorías principales?, ¿cómo se subdividen? Funciona cuando los expertos del dominio comprenden bien la estructura y los usuarios comparten esa comprensión. Riesgo: imponer una estructura que tiene sentido internamente, pero no para los usuarios.
 
-The interface is the bridge between design model and user model. When they align, the product feels intuitive. When they don't, the product feels broken — even if it works perfectly from a technical standpoint.
+El enfoque **de abajo arriba** comienza con los elementos de contenido: ¿qué tenemos?, ¿cómo agrupan los usuarios estos elementos?, ¿qué etiquetas utilizan? La clasificación de tarjetas es el método principal. Este enfoque descubre la taxonomía que los usuarios realmente esperan. Riesgo: producir demasiadas categorías o categorías demasiado específicas para funcionar como navegación.
 
-**Common misalignments:**
-- Users think "deleting" removes something permanently; the system moves it to trash. (Mild — the system is more forgiving than expected.)
-- Users think "saving" preserves their work; the system auto-saves and "save" does nothing visible. (Confusing — the action has no visible effect.)
-- Users think each browser tab is independent; the system shares session state across tabs. (Dangerous — changes in one tab silently affect another.)
+**Buena práctica:** Empieza de abajo arriba (clasificación de tarjetas para comprender los modelos mentales) y después perfecciona de arriba abajo (con conocimiento del dominio para completar vacíos y resolver casos límite). Ningún enfoque produce por sí solo una buena taxonomía.
 
-**Design implication:** Research mental models before designing navigation, naming, or interaction patterns. Card sorting reveals categorical mental models. Think-aloud usability testing reveals procedural mental models. Both are necessary.
+### Principio MECE
 
----
+Mutuamente excluyentes y colectivamente exhaustivas. Cada elemento pertenece exactamente a una categoría y existe una categoría para cada elemento.
 
-## Wayfinding
+**Mutuamente excluyentes:** Si un usuario podría colocar razonablemente un elemento en dos categorías, estas se solapan. Para corregirlo, hazlas más específicas, combina las que se solapan o adopta una navegación por facetas en la que los elementos puedan existir en varias dimensiones.
 
-Romedi Passini and Paul Arthur's "Wayfinding: People, Signs, and Architecture" (1992) established principles for spatial navigation that translate directly to digital environments.
+**Colectivamente exhaustivas:** Si hay elementos que no caben en ninguna categoría, la taxonomía tiene vacíos. Prueba cincuenta elementos de contenido al azar e intenta clasificar cada uno. Si dudas en más del 10 %, la taxonomía necesita trabajo.
 
-### Core Wayfinding Principles
+**Realidad:** Lograr un MECE estricto suele ser imposible en dominios complejos. Cuando los elementos pertenecen de verdad a varias categorías, considera las referencias cruzadas (el elemento vive en un lugar y recibe enlaces desde otros) o la polijerarquía.
 
-**Orientation:** Users must always know where they are. In physical space: "You Are Here" maps, visible landmarks, floor numbers. In digital space: breadcrumbs, highlighted navigation items, page titles, URL structure. A user who doesn't know where they are can't decide where to go next.
+### Polijerarquía
 
-**Route decision:** At every decision point, users need enough information to choose correctly. In physical space: directional signs at intersections. In digital space: navigation labels, preview text, descriptions. If a user must click to learn whether a link leads somewhere useful, the wayfinding has failed.
+Un elemento puede aparecer en varios puntos de la jerarquía. «Ratón inalámbrico» aparece tanto en «Accesorios para ordenador» como en «Dispositivos inalámbricos».
 
-**Closure:** Users need feedback that they've arrived. In physical space: room numbers, door labels, reception desks. In digital space: page headings that match the link they clicked, content that delivers what the label promised. The disorienting feeling of clicking "Privacy Settings" and landing on a page titled "Account Management" is a closure failure.
+**Cuándo usarla:** Cuando la clasificación de tarjetas muestra de forma consistente que distintos usuarios colocan elementos en varias categorías. Cuando el coste de no encontrar un elemento es mayor que el coste de duplicarlo.
 
-**Progressive disclosure of the environment:** Don't show the entire map at once. Show what's relevant at each decision point. In physical space: building directories show floors, not individual rooms. In digital space: top-level navigation shows categories, not subcategories. Reveal depth as the user navigates deeper.
+**Riesgos:** Complejidad de mantenimiento (actualizar en un lugar y olvidar el otro). Confusión si el mismo elemento tiene metadatos o comportamientos distintos según la ubicación. Una navegación que parece poco fiable: «Lo vi en otro sitio, ¿cuál es el auténtico?».
 
-### Lynch's Spatial Elements
-
-Kevin Lynch's "The Image of the City" (1960) identified five elements people use to navigate physical space. All five apply to digital products:
-
-1. **Paths** — Routes through the environment. In digital: navigation flows, breadcrumbs, sequential processes.
-2. **Edges** — Boundaries between regions. In digital: section dividers, navigation group boundaries, sidebar edges.
-3. **Districts** — Areas with identifiable character. In digital: distinct product sections with consistent visual treatment (the "settings" area looks different from the "content" area).
-4. **Nodes** — Strategic focus points. In digital: landing pages, dashboards, search results pages — places users pass through to reach destinations.
-5. **Landmarks** — Reference points for orientation. In digital: logos, persistent headers, unique page layouts that users rempathfinder and navigate by.
+**Mitigación:** Define una ubicación canónica. Marca claramente las demás apariciones como referencias cruzadas. Mantenlas mediante automatización, no por duplicación manual.
 
 ---
 
-## Search Behavior Models
+## Modelos mentales
 
-Not all search is the same. Marcia Bates' research and Gary Marchionini's framework identify fundamentally different search behaviors that require different design responses.
+Un modelo mental es la representación interna que tiene el usuario sobre el funcionamiento de un sistema. No necesita coincidir con el modelo real del sistema, pero la interfaz sí debe corresponderse con el modelo mental del usuario o este fracasará.
 
-### Known-Item Search
+### Teoría aplicada de modelos mentales
 
-The user knows what they want and knows what it's called. They type a specific query and expect a specific result. Example: searching for "AirPods Pro" on an electronics site.
+**The Design of Everyday Things (1988)** distingue tres modelos:
 
-**Design for:** Speed. Autocomplete. Exact match ranking. Typo tolerance. The user's success metric is: did I find the exact thing, fast?
+1. **Modelo de diseño** — Cómo cree el diseñador que funciona el sistema.
+2. **Modelo del sistema** — Cómo funciona realmente el sistema.
+3. **Modelo del usuario** — Cómo cree el usuario que funciona el sistema.
 
-### Exploratory Search
+La interfaz conecta el modelo de diseño con el del usuario. Cuando coinciden, el producto parece intuitivo. Cuando no, parece averiado, aunque técnicamente funcione a la perfección.
 
-The user has a need but doesn't know the exact solution. They're browsing, comparing, learning. Example: searching for "wireless earbuds" to learn what options exist.
+**Desajustes comunes:**
 
-**Design for:** Browsing. Faceted filtering. Comparison. Rich result previews. Related items. The user's success metric is: did I learn enough to make a decision?
+- Los usuarios creen que «eliminar» borra algo para siempre; el sistema lo mueve a la papelera. (Leve: el sistema perdona más de lo esperado).
+- Los usuarios creen que «guardar» conserva su trabajo; el sistema guarda automáticamente y «guardar» no produce ningún efecto visible. (Confuso: la acción no tiene efecto perceptible).
+- Los usuarios creen que cada pestaña del navegador es independiente; el sistema comparte el estado de sesión entre pestañas. (Peligroso: los cambios de una afectan silenciosamente a otra).
 
-### Re-finding
-
-The user found something before and wants to find it again. Example: "I saw a pair of earbuds last week, they were around $150, I think they were Sony..."
-
-**Design for:** History. Recently viewed. Favorites/bookmarks. Fuzzy search that handles partial recall. The user's success metric is: did I find that thing I saw before?
-
-### Don't-Know-What-I-Don't-Know
-
-The user doesn't know the domain well enough to formulate a useful query. Example: a first-time investor searching a financial platform with no idea what terminology to use.
-
-**Design for:** Guided discovery. Popular searches. Category browsing. Plain-language interpretation. "Did you mean..." suggestions that educate, not just correct.
+**Implicación de diseño:** Investiga los modelos mentales antes de diseñar la navegación, la nomenclatura o los patrones de interacción. La clasificación de tarjetas revela modelos mentales categóricos. Las pruebas de usabilidad con pensamiento en voz alta revelan modelos procedimentales. Ambos son necesarios.
 
 ---
 
-## Card Sort and Tree Test Methodology
+## Orientación espacial
 
-### Running a Card Sort
+El libro de Romedi Passini y Paul Arthur, **Wayfinding: People, Signs, and Architecture** (1992), estableció principios de navegación espacial que se trasladan directamente a los entornos digitales.
 
-**Preparation:**
-1. Select 30-60 content items that represent the full breadth of your content. Too few misses important distinctions; too many fatigues participants.
-2. Write each item on a card (physical or digital — tools like OptimalSort, Maze, or UXtweak work well for remote sorts).
-3. Use real content labels, not internal jargon. If the sort reveals that users don't understand a label, that's a finding.
+### Principios fundamentales de orientación
 
-**Open sort protocol:**
-1. Ask participants to group cards in whatever way makes sense to them. No right answer.
-2. After grouping, ask them to name each group.
-3. Ask about any cards they found difficult to place.
-4. Note: some participants will create many small groups; others will create few large groups. Both patterns are informative.
+**Orientación:** Los usuarios siempre deben saber dónde están. En el espacio físico: mapas de «Usted está aquí», puntos de referencia visibles y números de planta. En el espacio digital: migas de pan, elementos de navegación resaltados, títulos de página y estructura de URL. Quien no sabe dónde está no puede decidir adónde ir después.
 
-**Closed sort protocol:**
-1. Provide pre-defined categories.
-2. Ask participants to place each card in the category where they'd expect to find it.
-3. Record placement and confidence. Low-confidence placements indicate taxonomy problems.
+**Decisión de ruta:** En cada punto de decisión, los usuarios necesitan información suficiente para elegir correctamente. En el espacio físico: señales direccionales en las intersecciones. En el digital: etiquetas de navegación, textos de vista previa y descripciones. Si alguien debe hacer clic para saber si un enlace conduce a algo útil, la orientación ha fallado.
 
-**Analysis:**
-- Generate a similarity matrix showing how often items were grouped together.
-- Use dendrograms or cluster analysis to identify natural groupings.
-- Look for items that consistently end up alone or oscillate between groups — these are your taxonomy's problem children.
-- Compare sort results with your proposed architecture. Where they diverge, the user is right and your architecture needs to adjust.
+**Cierre:** Los usuarios necesitan confirmación de que han llegado. En el espacio físico: números de habitación, rótulos en puertas y mostradores de recepción. En el digital: encabezados que coinciden con el enlace pulsado y contenido que cumple lo prometido por la etiqueta. Hacer clic en «Ajustes de privacidad» y llegar a una página titulada «Gestión de la cuenta» produce un fallo de cierre y desorienta.
 
-### Running a Tree Test
+**Revelación progresiva del entorno:** No muestres todo el mapa a la vez. Muestra lo relevante en cada punto de decisión. En el espacio físico, los directorios de edificios muestran plantas, no habitaciones individuales. En el digital, la navegación de nivel superior muestra categorías, no subcategorías. Revela la profundidad conforme el usuario avanza.
 
-**Preparation:**
-1. Create a text-only representation of your navigation hierarchy. No visual design, no icons, no color.
-2. Write 8-12 tasks that represent common user goals. Example: "Where would you find information about changing your password?"
-3. Each task should have exactly one correct destination.
+### Elementos espaciales de Lynch
 
-**Protocol:**
-1. Show the top level of the tree.
-2. Present a task.
-3. Participant clicks into categories, drilling deeper until they think they've found the right place.
-4. Record: path taken, success/failure, directness (did they backtrack?), time to completion.
+En **The Image of the City** (1960), Kevin Lynch identificó cinco elementos que las personas utilizan para orientarse en el espacio físico. Los cinco se aplican a productos digitales:
 
-**Key metrics:**
-- **Success rate:** What percentage of participants found the correct answer? Below 70% for a task indicates a structural problem.
-- **Directness:** What percentage went straight to the answer without backtracking? Low directness with high eventual success means the label worked but the location wasn't intuitive — users found it by elimination.
-- **First click:** Where did participants click first? If the majority's first click is wrong, the top-level labels or categories are the problem.
+1. **Sendas** — Rutas a través del entorno. En digital: flujos de navegación, migas de pan y procesos secuenciales.
+2. **Bordes** — Límites entre regiones. En digital: separadores de sección, límites de grupos de navegación y bordes de barras laterales.
+3. **Distritos** — Áreas con un carácter identificable. En digital: secciones de producto diferenciadas con un tratamiento visual coherente (el área de «ajustes» se ve distinta del área de «contenido»).
+4. **Nodos** — Puntos estratégicos de concentración. En digital: páginas de destino, paneles y páginas de resultados de búsqueda; lugares por los que los usuarios pasan para llegar a sus destinos.
+5. **Hitos** — Puntos de referencia para orientarse. En digital: logotipos, encabezados persistentes y composiciones de página distintivas que los usuarios recuerdan y usan para navegar.
 
-**Interpreting results:**
-- High success + high directness = the structure works for this task
-- High success + low directness = findable but not intuitive; users had to hunt
-- Low success + varied paths = structural problem; the item isn't where users expect it
-- Low success + consistent wrong path = the item is in the wrong category, and users agree about where it should be (which tells you where to move it)
+---
+
+## Modelos de comportamiento de búsqueda
+
+No todas las búsquedas son iguales. La investigación de Marcia Bates y el marco de Gary Marchionini identifican comportamientos de búsqueda fundamentalmente distintos que exigen respuestas de diseño diferentes.
+
+### Búsqueda de un elemento conocido
+
+El usuario sabe qué quiere y cómo se llama. Introduce una consulta concreta y espera un resultado específico. Ejemplo: buscar «AirPods Pro» en un sitio de electrónica.
+
+**Diseña para:** Velocidad. Autocompletado. Priorización de coincidencias exactas. Tolerancia a errores tipográficos. La métrica de éxito es: ¿encontré rápidamente el elemento exacto?
+
+### Búsqueda exploratoria
+
+El usuario tiene una necesidad, pero no conoce la solución exacta. Explora, compara y aprende. Ejemplo: buscar «auriculares inalámbricos» para conocer las opciones disponibles.
+
+**Diseña para:** Exploración. Filtrado por facetas. Comparación. Vistas previas ricas de resultados. Elementos relacionados. La métrica de éxito es: ¿aprendí lo suficiente para tomar una decisión?
+
+### Reencuentro
+
+El usuario encontró algo antes y quiere volver a encontrarlo. Ejemplo: «La semana pasada vi unos auriculares que costaban unos 150 dólares; creo que eran Sony…».
+
+**Diseña para:** Historial. Vistos recientemente. Favoritos o marcadores. Búsqueda difusa que admita recuerdos parciales. La métrica de éxito es: ¿encontré aquello que había visto?
+
+### No sé lo que no sé
+
+El usuario no conoce el dominio lo suficiente para formular una consulta útil. Ejemplo: alguien que invierte por primera vez busca en una plataforma financiera sin conocer la terminología.
+
+**Diseña para:** Descubrimiento guiado. Búsquedas populares. Exploración por categorías. Interpretación en lenguaje claro. Sugerencias del tipo «¿Querías decir…?» que enseñen, no solo corrijan.
+
+---
+
+## Metodología de clasificación de tarjetas y prueba de árbol
+
+### Cómo realizar una clasificación de tarjetas
+
+**Preparación:**
+
+1. Selecciona entre 30 y 60 elementos que representen toda la amplitud del contenido. Con muy pocos se omiten distinciones importantes; demasiados fatigan a los participantes.
+2. Escribe cada elemento en una tarjeta (física o digital; herramientas como OptimalSort, Maze o UXtweak funcionan bien en remoto).
+3. Usa etiquetas de contenido reales, no jerga interna. Si la clasificación revela que los usuarios no entienden una etiqueta, eso es un hallazgo.
+
+**Protocolo de clasificación abierta:**
+
+1. Pide a los participantes que agrupen las tarjetas del modo que les resulte más lógico. No hay una respuesta correcta.
+2. Después, pídeles que nombren cada grupo.
+3. Pregunta qué tarjetas les resultaron difíciles de colocar.
+4. Ten en cuenta que algunos crearán muchos grupos pequeños y otros pocos grupos grandes. Ambos patrones aportan información.
+
+**Protocolo de clasificación cerrada:**
+
+1. Proporciona categorías predefinidas.
+2. Pide a los participantes que coloquen cada tarjeta donde esperarían encontrarla.
+3. Registra la ubicación y el grado de confianza. Una confianza baja señala problemas de taxonomía.
+
+**Análisis:**
+
+- Genera una matriz de similitud que muestre con qué frecuencia se agruparon juntos los elementos.
+- Utiliza dendrogramas o análisis de clústeres para identificar agrupaciones naturales.
+- Busca elementos que terminen sistemáticamente solos o que oscilen entre grupos: son los casos problemáticos de la taxonomía.
+- Compara los resultados con la arquitectura propuesta. Cuando diverjan, el usuario tiene razón y la arquitectura debe adaptarse.
+
+### Cómo realizar una prueba de árbol
+
+**Preparación:**
+
+1. Crea una representación de la jerarquía de navegación únicamente con texto, sin diseño visual, iconos ni color.
+2. Redacta entre 8 y 12 tareas que representen objetivos habituales. Ejemplo: «¿Dónde encontrarías información para cambiar tu contraseña?».
+3. Cada tarea debe tener exactamente un destino correcto.
+
+**Protocolo:**
+
+1. Muestra el nivel superior del árbol.
+2. Presenta una tarea.
+3. El participante entra en categorías y profundiza hasta creer que ha encontrado el lugar correcto.
+4. Registra el recorrido, éxito o fracaso, directividad (¿tuvo que retroceder?) y tiempo de finalización.
+
+**Métricas clave:**
+
+- **Tasa de éxito:** ¿Qué porcentaje encontró la respuesta correcta? Menos del 70 % en una tarea indica un problema estructural.
+- **Directividad:** ¿Qué porcentaje llegó directamente sin retroceder? Una directividad baja con éxito final alto indica que la etiqueta funcionó, pero la ubicación no era intuitiva: llegaron por eliminación.
+- **Primer clic:** ¿Dónde hicieron clic primero? Si la mayoría se equivoca, el problema está en las etiquetas o categorías del nivel superior.
+
+**Interpretación de resultados:**
+
+- Éxito alto + directividad alta = la estructura funciona para esta tarea.
+- Éxito alto + directividad baja = se puede encontrar, pero no es intuitiva; los usuarios tuvieron que buscar.
+- Éxito bajo + recorridos variados = problema estructural; el elemento no está donde los usuarios esperan.
+- Éxito bajo + recorrido erróneo consistente = el elemento está en la categoría equivocada y los usuarios coinciden en dónde debería estar, lo que indica adónde moverlo.

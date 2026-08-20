@@ -1,212 +1,220 @@
-# Ethical Design
+# Diseño ético
 
-## Anti-Pattern Remediation Guide
+**Última verificación: 2026-08-20**
 
-The master skill catalogs anti-patterns. This document explains how to fix them — and how to design the ethical alternative from the start.
+> **Alcance legal:** Esta es una guía UX, no asesoramiento legal. Antes de convertir cualquier patrón en requisito, el equipo debe verificar con asesoría jurídica cualificada la legislación vigente, la cobertura del producto y de la entidad, las fechas de entrada en vigor y la jurisdicción aplicable. Las normas y su interpretación pueden cambiar después de la fecha indicada.
 
-### Deceptive Patterns → Honest Alternatives
+## Índice
 
-**Bait and Switch → Consistent Delivery.** What you show is what you deliver. If a button says "Download," it downloads. If a link says "Learn more," it teaches. Test by asking: if a user described what just happened, would their description match the label they clicked?
+- [Guía para corregir antipatrones](#guía-para-corregir-antipatrones)
+- [Panorama normativo](#panorama-normativo)
+- [Marcos de diseño ético](#marcos-de-diseño-ético)
+- [Patrones de diseño del consentimiento](#patrones-de-diseño-del-consentimiento)
+- [Fuentes oficiales](#fuentes-oficiales)
 
-**Trick Questions → Plain Language Choices.** Every option should be stateable as an affirmative: "Yes, send me emails" / "No, don't send me emails." Never use double negatives ("Uncheck to not receive..."). Never combine multiple consents into one checkbox. Test by reading the question aloud — if a colleague gets confused, users will too.
+## Guía para corregir antipatrones
 
-**Visual Misdirection → Equal Visual Weight.** When presenting choices, the "decline" or "opt-out" option should be equally visible — same size, same visual weight, same position prominence. The user's preferred choice, not the business's preferred choice, should determine which option they pick. Test: cover the page with your hand and peek — can you see both options equally?
+La habilidad principal cataloga antipatrones. Este documento explica cómo corregirlos y cómo diseñar desde el principio una alternativa respetuosa.
 
-**Hidden Costs → Upfront Pricing.** Show the total cost, including taxes, fees, and shipping, before the user enters any personal information. The Baymard Institute found that 48% of cart abandonment is caused by extra costs shown too late. The fix isn't just ethical — it converts better.
+### Patrones engañosos → Alternativas honestas
 
-**Confirmshaming → Neutral Opt-Out.** Opt-out text should be factual, not emotional. "No thanks" is fine. "No thanks, I hate saving money" is manipulation. The test is simple: would you say the opt-out text to someone's face without feeling embarrassed?
+**Cebo y cambio → Entrega coherente.** Lo que muestras debe ser lo que entregas. Si un botón dice «Descargar», descarga; si un enlace dice «Más información», explica. Prueba el patrón con esta pregunta: si una persona describiera lo que acaba de ocurrir, ¿coincidiría con la etiqueta que pulsó?
 
-**Sneak into Basket → Explicit Additions Only.** Nothing enters a cart, plan, or order without a deliberate user action. Pre-selected add-ons, bundled insurance, and automatic upsells all fail this test. If the user didn't click "add," it shouldn't be there.
+**Preguntas capciosas → Opciones en lenguaje claro.** Cada opción debe poder expresarse de forma afirmativa: «Sí, envíame correos» / «No, no me envíes correos». Evita dobles negaciones como «Desmarca para no dejar de recibir…» y no agrupes varios consentimientos en una casilla. Lee la pregunta en voz alta: si confunde a una persona del equipo, también confundirá a la audiencia.
 
-### Default Manipulation → Respectful Defaults
+**Desvío visual → Peso visual equivalente.** Al presentar alternativas, «rechazar» o «excluirse» debe ser igual de visible: tamaño, peso y prominencia comparables. La preferencia de la persona, no la del negocio, debe determinar la elección. Una prueba rápida consiste en mirar la página de reojo: ¿se distinguen las dos opciones por igual?
 
-**Prechecked Consent → Unchecked by Default.** GDPR requires this explicitly. But beyond regulation — consent means nothing if it's pre-selected. Every consent checkbox should start unchecked. Every permission should start un-granted. The user's first interaction should be a choice, not an override.
+**Costes ocultos → Precio completo desde el principio.** Muestra el coste total disponible —impuestos, comisiones y envío— antes de solicitar información personal. Si algún importe todavía depende de datos posteriores, explica esa dependencia y actualiza el total en cuanto pueda calcularse.
 
-**Opt-Out Burden → Symmetrical Effort.** The effort to leave should mirror the effort to join. If signing up takes one click, cancellation should take one click. The FTC's "click to cancel" rule codifies this, but the principle predates the rule: asymmetric friction is manipulation.
+**Culpabilizar al rechazar → Rechazo neutral.** El texto para rechazar debe ser factual, no emocional. «No, gracias» es válido; «No, gracias, odio ahorrar» manipula. La prueba es sencilla: ¿dirías ese texto cara a cara sin avergonzarte?
 
-**Forced Continuity → Clear Trial Endings.** Before a trial ends: notify the user (email and in-app, not just email). On the transition day: require explicit confirmation before charging. After charging: provide easy refund for the first billing period. Making cancellation hard doesn't create loyal customers — it creates resentful ones who warn others.
+**Introducción furtiva en la cesta → Adiciones explícitas.** Nada debe entrar en una cesta, plan o pedido sin una acción deliberada. Complementos preseleccionados, seguros incluidos y ventas adicionales automáticas incumplen este principio. Si la persona no eligió «Añadir», no debería aparecer.
 
-### Urgency Fabrication → Honest Scarcity
+### Manipulación de valores predeterminados → Valores respetuosos
 
-**Fake Timers → Real Deadlines Only.** If a deadline is real (event starts at 8pm, sale ends Sunday), show it. If there's no real deadline, don't invent one. A timer that resets when the page refreshes is not a deadline — it's a lie.
+**Consentimiento premarcado → Sin marcar por defecto.** Cuando se necesita consentimiento, una selección previa impide que la acción sea inequívoca. Cada casilla opcional debe comenzar sin marcar y cada permiso, sin conceder. La primera interacción debe ser una elección, no la corrección de una decisión ajena.
 
-**Fabricated Scarcity → Actual Inventory.** If you show stock levels, they should be real. "Only 2 left" when you have 2,000 in the warehouse is fraud by implication. If demand genuinely fluctuates, show real-time data. Otherwise, don't show numbers at all.
+**Carga para excluirse → Esfuerzo simétrico.** La dificultad de salir debe ser comparable a la de entrar. Si el alta requiere un clic, el diseño no debe esconder la baja tras varios pasos. Esta es una norma ética de diseño incluso cuando la obligación jurídica concreta varía por jurisdicción.
 
-**Fake Social Proof → Real Activity.** "15 people are viewing this" should reflect actual concurrent viewers, not a random number generator. Fabricated social proof is straightforward deception. Real social proof (verified reviews, actual purchase counts) builds genuine trust.
+**Continuidad forzada → Fin de prueba transparente.** Antes de terminar una prueba, informa por canales adecuados; en el momento de convertirla en pago, muestra con claridad el importe, la periodicidad y el mecanismo de cancelación. Diseña reembolsos y cancelaciones fáciles según las reglas aplicables. Dificultar la salida no crea lealtad: crea resentimiento.
 
-### Addictive Design → Respectful Engagement
+### Urgencia fabricada → Escasez honesta
 
-**Infinite Scroll → Natural Boundaries.** Pagination, "load more" buttons, or session summaries create natural stopping points. This doesn't reduce engagement — it shifts it from compulsive to odisseyional. Instagram's "You're all caught up" is a partial fix; actual pagination is more honest.
+**Temporizadores falsos → Solo plazos reales.** Si el plazo existe —un evento empieza a las 20:00 o una oferta termina el domingo—, muéstralo. Si no existe, no lo inventes. Un contador que se reinicia al recargar la página no es un plazo, es engaño.
 
-**Variable Ratio Reinforcement → Predictable Value.** Notifications should arrive because something meaningful happened, not because the algorithm determined this is the optimal moment to re-engage. Content should be organizard, not randomly dispensed. The value should be in the content, not in the unpredictability of its delivery.
+**Escasez inventada → Inventario real.** Si muestras existencias, deben proceder de datos reales y suficientemente actuales. «Solo quedan 2» cuando hay 2,000 unidades induce una conclusión falsa. Si la demanda fluctúa, explica la actualización; si no puedes respaldar la cifra, no la muestres.
 
-**Streak Manipulation → Progress Without Punishment.** If you track streaks, breaking one should carry no penalty. "You had a 30-day streak! Start a new one?" is fine. "You lost your 30-day streak forever" is manufactured loss aversion. Duolingo's streak freeze is an admission that their streak mechanic creates unhealthy obligation.
+**Prueba social falsa → Actividad real.** «15 personas están viendo esto» debe representar actividad verdadera, no un número aleatorio. Las reseñas verificadas y los recuentos reales construyen confianza; la prueba social fabricada la destruye.
 
----
+### Diseño adictivo → Interacción respetuosa
 
-## Regulatory Landscape
+**Desplazamiento infinito → Límites naturales.** Paginación, «Cargar más» o resúmenes de sesión crean puntos de parada. No eliminan necesariamente la interacción: la convierten en intencional. «Ya estás al día» es una ayuda parcial; un límite real hace más visible la elección de continuar.
 
-### GDPR (EU, 2018)
+**Refuerzo de razón variable → Valor predecible.** Las notificaciones deben llegar porque ocurrió algo significativo, no solo porque un algoritmo calculó el mejor momento para recuperar atención. El contenido debe estar organizado, no dispensarse al azar. El valor debe residir en el contenido, no en la imprevisibilidad de su entrega.
 
-The General Data Protection Regulation is the most comprehensive privacy regulation in force. Key requirements for designers:
-
-**Consent (Article 7, Recitals 32, 42, 43):**
-- Must be freely given — no bundling consent with service access unless data processing is genuinely necessary for the service
-- Must be specific — separate consent for separate purposes
-- Must be informed — plain language, no legalese
-- Must be unambiguous — affirmative action required; silence, pre-ticked boxes, and inactivity do not constitute consent
-- Withdrawal must be as easy as giving consent — no asymmetric flows
-
-**Data Minimization (Article 5(1)(c)):**
-- Collect only what's necessary for the stated purpose
-- Don't collect data "in case we need it later"
-- Design forms to request minimum required fields
-
-**Right to Erasure (Article 17):**
-- Users can request deletion of their data
-- Deletion must be actual, not just hiding the record
-- Design systems need real deletion capabilities, not just soft deletes
-
-**Privacy by Design (Article 25):**
-- Data protection must be built into the design of systems, not bolted on
-- Default settings must be the most privacy-protective option
-- This is a legal requirement, not a best practice
-
-**Enforcement reality:** Fines up to 4% of global annual revenue or 20 million euros, whichever is higher. As of 2024, cumulative GDPR fines exceed 4 billion euros. Meta alone has been fined over 2 billion euros.
-
-### FTC (United States)
-
-The Federal Trade Commission uses its authority under Section 5 (unfair or deceptive acts) to pursue dark patterns.
-
-**Key enforcement actions:**
-- Epic Games / Fortnite (2022): $520M settlement for dark patterns targeting children, including confusing purchase flows and unauthorized charges
-- Amazon Prime (2023): FTC sued over "Iliad" — Amazon's internal name for a cancellation flow deliberately designed to be confusing
-- Age of Empires / Microsoft (2023): Enforcement against manipulative subscription practices
-
-**"Click to Cancel" Rule (2024):**
-- Businesses must make cancellation as easy as sign-up
-- Must get affirmative consent before charging
-- Must provide clear annual reminders for negative-option programs
-- Applies to all negative-option marketing
-
-**FTC approach:** Pattern-based enforcement. If a design practice is widespread and harmful, the FTC may issue a rule. Designers should treat FTC enforcement actions as de facto design standards.
-
-### COPPA (United States, 1998 / Updated 2013)
-
-The Children's Online Privacy Protection Act applies to services directed at children under 13, or services that knowingly collect data from children under 13.
-
-**Design requirements:**
-- Verifiable parental consent before collecting personal information from children
-- No behavioral advertising to children
-- No conditioning participation on data collection beyond what's necessary
-- Clear, prominent, and understandable privacy policies
-- Data retention limits — delete when no longer needed
-
-**Design implication:** If your product might have child users, design the entire data collection pipeline with COPPA in mind from the start. Retrofitting COPPA compliance is far more expensive than building it in.
-
-### California CPRA (2023) and Automated Decision-Making
-
-**Symmetry requirement:** The means by which a consumer opts out of data sale/sharing must be symmetric with the means by which they opted in. If opt-in is one click, opt-out must be one click.
-
-**Do Not Sell/Share:** Must provide a "Do Not Sell or Share My Personal Information" link on the homepage. This is a design requirement — the link must be visible, clear, and functional.
-
-**Automated decision-making:** Consumers have the right to opt out of automated decision-making technology, including profiling. If your product uses algorithms to make decisions about users, they have the right to know and the right to opt out.
-
-### EU Digital Services Act (2024)
-
-**Dark pattern prohibition (Article 25):**
-- Online platforms must not design, organizar, or operate interfaces in a way that deceives, manipulates, or materially distorts users' ability to make free and informed decisions
-- Specific prohibition on: giving more prominence to certain choices, repeatedly requesting users to make choices they've already made, making cancellation harder than sign-up, and making choices non-neutral by default
-
-**Minor protection (Article 28):**
-- Platforms accessible to minors must implement appropriate medirs to ensure a high level of privacy, safety, and security
-- No targeted advertising based on profiling when the platform is aware the user is a minor
-
-**Algorithmic transparency (Articles 27, 38):**
-- Recommendation systems must explain the main parameters used
-- Users must have at least one option not based on profiling
+**Manipulación de rachas → Progreso sin castigo.** Si registras rachas, romper una no debería imponer una pérdida desproporcionada. «Tuviste una racha de 30 días; ¿quieres comenzar otra?» informa. «Perdiste para siempre tu racha de 30 días» fabrica aversión a la pérdida.
 
 ---
 
-## Design Ethics Frameworks
+## Panorama normativo
 
-### Values Sensitive Design (VSD)
+Esta sección registra implicaciones de diseño verificadas en las fuentes oficiales el 2026-08-20. Cada norma se describe por jurisdicción y alcance; no debe extrapolarse a productos o entidades que queden fuera de su cobertura.
 
-Developed by Batya Friedman and colleagues at the University of Washington, VSD is a theoretically grounded approach to the design of technology that accounts for human values in a principled and comprehensive manner throughout the design process.
+### GDPR — Unión Europea / EEE
 
-**Three investigations:**
-1. **Conceptual** — Identify stakeholders (direct and indirect), identify values at stake, research how values might conflict
-2. **Empirical** — Study how stakeholders actually apprehend and experience the technology and the values at stake
-3. **Technical** — Analyze how specific technical properties support or hinder stakeholder values
+El Reglamento General de Protección de Datos debe consultarse en su [texto oficial](https://eur-lex.europa.eu/eli/reg/2016/679/oj). Para diseño, resultan especialmente relevantes:
 
-**Key values VSD researchs:** Human welfare, ownership and property, privacy, freedom from bias, universal usability, trust, autonomy, informed consent, accountability, courtesy, identity, calmness, environmental sustainability.
+**Consentimiento — artículo 7 y considerandos 32, 42 y 43, cuando el consentimiento sea la base aplicable:**
+- Debe ser libre; no se vincula al acceso al servicio si el tratamiento no es necesario para ese servicio.
+- Debe ser específico e informado; propósitos distintos requieren una explicación y una elección adecuadas.
+- Debe expresarse mediante una acción afirmativa inequívoca; el silencio, la inactividad y las casillas premarcadas no bastan.
+- Retirarlo debe ser tan fácil como otorgarlo.
 
-**Application to design:** When making a design decision, identify which human values are at stake, who is affected (including non-users), and how the technical implementation supports or undermines those values. VSD doesn't tell you what to decide — it tells you what to consider.
+**Minimización de datos — artículo 5(1)(c):** Solicita solo los datos adecuados, pertinentes y limitados a lo necesario para el propósito declarado. No añadas campos «por si acaso».
 
-### Design Justice (Costanza-Chock, 2020)
+**Derecho de supresión — artículo 17:** Diseña un mecanismo de solicitud y cumplimiento que refleje condiciones y excepciones del artículo. «Ocultar» un registro no equivale necesariamente a cumplir una supresión.
 
-Design Justice rethinks design processes by centering the people who are most impacted by design decisions, rather than the most powerful stakeholders.
+**Protección de datos desde el diseño y por defecto — artículo 25:** Incorpora las garantías al sistema y configura por defecto solo el tratamiento necesario para cada propósito. El detalle técnico y jurídico depende del contexto y del riesgo.
 
-**Core principles:**
-1. Design to sustain, heal, and empower communities — prioritize impact on the most marginalized
-2. Center the voices of those who are directly impacted by design outcomes
-3. Prioritize design's impact on the community over the designer's odissey
-4. View change as emergent from accountable, accessible, and collaborative processes
-5. See the role of the designer as a facilitator rather than an expert
+### Opciones negativas de la FTC — Estados Unidos
 
-**Application:** When your user research doesn't incluir the most vulnerable users of your product, your design will fail them. When your design team doesn't incluir diverse perspectives, your assumptions will go unchallenged. Design Justice argues that who participates in the design process determines who benefits from the design outcome.
+La situación normativa debe describirse con cuidado:
+
+- La enmienda **Click-to-Cancel de 2024 fue anulada** judicialmente y no es un mandato federal o nacional activo para todo Estados Unidos. No reutilices sus requisitos —por ejemplo, una regla universal de cancelación idéntica al alta— como si siguieran vigentes por esa enmienda.
+- La [Negative Option Rule actual](https://www.ftc.gov/legal-library/browse/rules/negative-option-rule), promulgada en 1973, sigue vigente y tiene un alcance más estrecho, centrado en planes de opción negativa con notificación previa.
+- Pueden seguir siendo aplicables otras normas vigentes según el producto y el canal: la Sección 5 de la FTC Act, ROSCA, la Telemarketing Sales Rule y leyes estatales. Debe analizarse la cobertura concreta de cada una.
+- La FTC abrió en 2026 un [Advance Notice of Proposed Rulemaking (ANPRM)](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option). El ANPRM solicita información, incluso sobre conservar la regla actual, recuperar disposiciones de la norma anulada de 2024 u otras alternativas; no es una regla final ni crea por sí mismo un nuevo mandato.
+
+**Implicación de diseño:** Presenta términos, precio y periodicidad antes de obtener aceptación; registra una decisión afirmativa cuando corresponda; y ofrece una cancelación visible y comprensible. Después, valida con asesoría jurídica los pasos, avisos y tiempos exigibles en cada jurisdicción.
+
+### COPPA — Estados Unidos
+
+La FTC publicó [enmiendas finales a la COPPA Rule en 2025](https://www.ftc.gov/legal-library/browse/federal-register-notices/16-cfr-part-312-coppa-final-rule-amendments). Las [preguntas frecuentes vigentes de la FTC](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions) indican que la regla cubre, entre otros supuestos, a operadores comerciales de sitios y servicios dirigidos a menores de 13 años que recopilan, usan o divulgan información personal, y a ciertos servicios de audiencia general con conocimiento efectivo de esa recopilación. No todo producto que «podría tener menores» queda cubierto de manera idéntica.
+
+**Implicaciones de diseño cuando exista cobertura:**
+- Aviso de privacidad claro y completo, junto con aviso directo a madres, padres o tutores según corresponda.
+- Consentimiento parental verificable antes de ciertas recopilaciones, con las excepciones de la regla.
+- Controles para revisar, suprimir y detener recopilaciones posteriores.
+- Recopilar solo lo razonablemente necesario para participar en una actividad.
+- Retener datos solo durante el tiempo necesario y eliminarlos de forma segura.
+
+Confirma el texto de las enmiendas de 2025, las fechas aplicables y la clasificación concreta del servicio antes de definir el flujo.
+
+### CCPA / CPRA y ADMT — California
+
+Consulta el [centro vigente de leyes y reglamentos de la CPPA](https://cppa.ca.gov/regulations/). Los diseños de avisos, enlaces de exclusión y señales de preferencia deben ajustarse a la cobertura del negocio, el tratamiento y las excepciones aplicables. La [advertencia de cumplimiento de la CPPA sobre patrones oscuros de 2024](https://cppa.ca.gov/pdf/enfadvisory202402.pdf) es una referencia oficial para revisar si la interfaz subvierte o perjudica la elección.
+
+La CPPA adoptó en 2025 regulaciones sobre tecnología automatizada de toma de decisiones (ADMT), entre otros temas, y señaló el **1 de enero de 2026** como fecha de entrada en vigor. La [página oficial de las regulaciones ADMT 2025/2026](https://cppa.ca.gov/regulations/ccpa_updates.html) describe derechos de acceso y exclusión frente a determinados usos cubiertos por la norma. Esto no significa que toda decisión automatizada de cualquier producto permita universalmente la exclusión: hay que verificar definiciones, umbrales, contexto de uso, excepciones y obligaciones específicas.
+
+**Implicación de diseño:** Inventaría dónde interviene ADMT, qué datos usa y qué efecto produce; identifica qué usos están cubiertos; y diseña avisos, acceso y exclusión solo después del análisis jurídico y técnico correspondiente.
+
+### Digital Services Act — Unión Europea
+
+El [texto oficial del Digital Services Act](https://eur-lex.europa.eu/eli/reg/2022/2065/oj) asigna obligaciones distintas según el tipo y tamaño del servicio.
+
+**Diseño de interfaces — artículo 25:** Los proveedores de plataformas en línea cubiertos no deben diseñar, organizar u operar interfaces de modo que engañen o manipulen, o que distorsionen o perjudiquen de forma sustancial la capacidad de tomar decisiones libres e informadas. El artículo y sus actos asociados deben revisarse antes de convertir ejemplos —prominencia, solicitudes repetidas o terminación— en controles de cumplimiento.
+
+**Protección de menores — artículo 28:** Las plataformas en línea accesibles a menores deben aplicar medidas adecuadas y proporcionadas para asegurar un alto nivel de privacidad, seguridad y protección. La prohibición de publicidad basada en perfiles se activa bajo las condiciones de conocimiento razonable descritas en el artículo.
+
+**Sistemas de recomendación — artículos 27 y 38:** El artículo 27 exige explicar en términos claros los parámetros principales de los sistemas de recomendación y las opciones para modificarlos o influir en ellos. La obligación de ofrecer al menos una opción no basada en perfilado del artículo 38 se dirige a plataformas y motores de búsqueda en línea de muy gran tamaño, no a todo servicio digital.
+
+---
+
+## Marcos de diseño ético
+
+### Value Sensitive Design (VSD)
+
+Desarrollado por Batya Friedman y otras personas de la University of Washington, Value Sensitive Design es un enfoque teórico para incorporar valores humanos de manera sistemática durante todo el proceso de diseño tecnológico.
+
+**Tres investigaciones:**
+1. **Conceptual:** Identificar partes interesadas directas e indirectas, los valores en juego y sus posibles conflictos.
+2. **Empírica:** Estudiar cómo las partes interesadas comprenden y experimentan la tecnología y esos valores.
+3. **Técnica:** Analizar cómo propiedades técnicas concretas apoyan o dificultan los valores.
+
+**Valores frecuentes en VSD:** Bienestar humano, propiedad, privacidad, ausencia de sesgo, usabilidad universal, confianza, autonomía, consentimiento informado, rendición de cuentas, cortesía, identidad, calma y sostenibilidad ambiental.
+
+**Aplicación:** Ante una decisión, identifica qué valores están en juego, quién recibe el impacto —incluidas las personas que no usan el producto— y cómo la implementación los respalda o socava. VSD no decide por el equipo; amplía lo que debe considerar.
+
+### Design Justice — Costanza-Chock, 2020
+
+Design Justice replantea el proceso de diseño al centrar a las comunidades más afectadas por las decisiones, en lugar de priorizar a las partes con más poder.
+
+**Principios centrales:**
+1. Diseñar para sostener, sanar y empoderar comunidades, priorizando el impacto sobre las más marginadas.
+2. Centrar las voces de quienes reciben directamente los resultados.
+3. Priorizar el impacto comunitario sobre la intención de quien diseña.
+4. Entender el cambio como resultado de procesos responsables, accesibles y colaborativos.
+5. Concebir a quien diseña como facilitador, no como autoridad única.
+
+**Aplicación:** Si la investigación no incluye a las personas más vulnerables frente al producto, el diseño tenderá a fallarles. Si el equipo no incluye perspectivas diversas, sus supuestos quedarán sin cuestionar. Quién participa condiciona quién se beneficia.
 
 ### Consequence Scanning
 
-Developed by Doteveryone (now the Responsible Technology Institute), Consequence Scanning is a lightweight practice for identifying potential consequences of a product or feature.
+Consequence Scanning, creado por Doteveryone —hoy Responsible Technology Institute—, es una práctica ligera para identificar consecuencias potenciales de un producto o una funcionalidad.
 
-**Process:**
-1. **Describe** the product/feature in plain terms — what it does, who uses it, what data it touches
-2. **Brainstorm consequences** across three dimensions:
-   - Intended consequences (what you're trying to achieve)
-   - Unintended but foreseeable consequences (what might happen that you didn't plan for)
-   - Unintended and unforeseeable consequences (what could happen that nobody predicted)
-3. **Categorize** each consequence: positive, negative, or unclear
-4. **Decide** for each negative consequence: mitigate (design around it), accept (document and monitor), or stop (don't build this)
+**Proceso:**
+1. **Describir** el producto en términos claros: qué hace, quién lo usa y qué datos toca.
+2. **Explorar consecuencias** en tres dimensiones:
+   - Intencionadas: lo que se pretende lograr.
+   - No intencionadas pero previsibles: lo que podría suceder aunque no se haya planeado.
+   - No intencionadas e imprevisibles: lo que nadie anticipó.
+3. **Clasificar** cada consecuencia como positiva, negativa o incierta.
+4. **Decidir** ante cada consecuencia negativa: mitigar —rediseñar—, aceptar —documentar y vigilar— o detener —no construir—.
 
-**When to use it:** Before building new features, during design critiques, when expanding to new markets or user groups, when adding data collection, when changing algorithms or recommendation systems.
+**Cuándo usarlo:** Antes de desarrollar funciones, durante críticas de diseño, al entrar en nuevos mercados o grupos, al recopilar datos nuevos y al cambiar algoritmos o sistemas de recomendación.
 
 ---
 
-## Consent Design Patterns
+## Patrones de diseño del consentimiento
 
-Consent is not a checkbox. It's a design system.
+El consentimiento no es una casilla; es un sistema de decisiones, información, registro y retirada.
 
-### Principles of meaningful consent
+### Principios de un consentimiento significativo
 
-**Informed:** The user understands what they're consenting to. This means plain language, specific descriptions, and concrete examples — not legal abstracts or blanket permissions. "We'll use your location to show nearby restaurants" is informed. "We process data to improve our services" is not.
+**Informado:** La persona entiende qué acepta. Usa lenguaje claro, propósitos concretos y ejemplos; evita abstracciones jurídicas o permisos generales. «Usaremos tu ubicación para mostrar restaurantes cercanos» informa mejor que «Tratamos datos para mejorar nuestros servicios».
 
-**Specific:** Each consent is for one specific purpose. Bundled consent ("By using this service you agree to X, Y, Z, and also W") is not meaningful consent. Separate purposes get separate choices.
+**Específico:** Cada decisión corresponde a un propósito concreto. «Al usar este servicio aceptas X, Y, Z y W» no permite elegir. Separa los propósitos cuando así lo requieran el contexto y la base jurídica.
 
-**Freely given:** The user can say no without losing access to the core service. If saying no makes the product unusable, consent wasn't free — it was coerced. The exception: when data processing is genuinely necessary for the service (you can't use a mapping app without sharing your location).
+**Libre:** Rechazar no debe imponer perjuicios indebidos. Cuando un tratamiento sea realmente necesario para prestar lo solicitado, explica esa necesidad en vez de presentarla como una opción ficticia.
 
-**Revocable:** The user can withdraw consent as easily as they gave it. A consent given with one toggle should be revocable with one toggle, in the same location, with the same effort.
+**Revocable:** Retirar debe resultar tan fácil como otorgar. Si se concede con un interruptor, procura que pueda retirarse en el mismo lugar y con esfuerzo equivalente.
 
-**Timely:** Consent is requested at the moment it's relevant, not in a batch during onboarding. Ask for location permission when the user first accesses a location feature, not during account creation.
+**Oportuno:** Solicita la decisión cuando se vuelve relevante, no en bloque durante el alta. Pide ubicación al activar una función que la necesita y explica para qué.
 
-### Consent interface patterns
+### Patrones de interfaz de consentimiento
 
-**Layered disclosure:** Present a summary first ("We'd like to use your location to show nearby restaurants"), with a path to full detail ("Learn more about how we use location data"). The summary must be accurate and complete enough to make a real decision; the detail is for those who want it.
+**Divulgación por capas:** Presenta primero un resumen fiel —«Queremos usar tu ubicación para mostrar restaurantes cercanos»— y un acceso al detalle. El resumen debe bastar para una decisión real; el detalle amplía, no corrige lo anterior.
 
-**Granular controls:** Separate toggles for separate purposes. Cookie consent should offer granular choices (analytics, marketing, personalization), not just "accept all / reject all." Permission dashboards should show each permission individually with clear descriptions.
+**Controles granulares:** Separa propósitos. Para cookies, ofrece categorías como analítica, marketing o personalización cuando correspondan, además de acciones claras. En paneles de permisos, muestra cada permiso y su explicación.
 
-**Just-in-time consent:** Request permissions when the user encounters the feature that needs them, with context that explains why. "To save your route, we need access to your location" at the moment of saving is far more meaningful than a bare permission prompt during onboarding.
+**Consentimiento justo a tiempo:** Pide el permiso al encontrar la función que lo necesita y aporta contexto: «Para guardar la ruta necesitamos acceso a tu ubicación» comunica más que un aviso aislado durante el alta.
 
-**Consent receipts:** Show the user what they've consented to, when, and how to change it. A privacy dashboard that lists active consents with modification dates and one-click revocation is the gold standard.
+**Comprobantes de consentimiento:** Muestra qué se aceptó, cuándo y cómo cambiarlo. Un panel de privacidad puede listar decisiones activas, fechas de modificación y una forma directa de revocarlas.
 
-**Re-consent for material changes:** When you change how you use data, don't bury it in a terms-of-service update. Re-request consent for the specific change, with clear explanation of what changed and why.
+**Nueva decisión ante cambios materiales:** Si cambia de manera material el uso de datos, no lo escondas en una actualización de términos. Determina con asesoría jurídica si hace falta una nueva elección y explica qué cambió y por qué.
 
-### Common consent failures
+### Fallos frecuentes del consentimiento
 
-- Consent walls that block the entire service until the user agrees to non-essential data processing
-- "Accept all" buttons that are visually dominant while "Manage preferences" is small and gray
-- Consent flows that take one click to accept but seven clicks to customize
-- Withdrawal paths hidden in account settings behind three layers of navigation
-- Pre-checked consent boxes (illegal under GDPR, deceptive everywhere)
-- Bundled consent that combines essential service terms with optional marketing consent
-- Consent prompts that appear on every visit because rejection isn't stored (deliberately or through incompetence)
+- Muros que bloquean todo el servicio hasta aceptar tratamientos no esenciales.
+- Botones «Aceptar todo» dominantes mientras «Gestionar preferencias» aparece pequeño y tenue.
+- Un clic para aceptar y muchos para personalizar o retirar.
+- Rutas de retirada ocultas tras varias capas de ajustes.
+- Casillas premarcadas cuando se requiere una acción afirmativa.
+- Consentimiento agrupado que mezcla términos esenciales y marketing opcional.
+- Avisos repetidos en cada visita porque la negativa no se conserva.
+
+---
+
+## Fuentes oficiales
+
+Verificadas el 2026-08-20:
+
+- [FTC: ANPRM de 2026 sobre opciones negativas y referencia a la regla de 2024 anulada](https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option)
+- [FTC: página vigente de la Negative Option Rule](https://www.ftc.gov/legal-library/browse/rules/negative-option-rule)
+- [FTC: enmiendas finales de COPPA de 2025](https://www.ftc.gov/legal-library/browse/federal-register-notices/16-cfr-part-312-coppa-final-rule-amendments)
+- [FTC: guía vigente de cumplimiento de COPPA](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions)
+- [EUR-Lex: texto oficial del GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+- [EUR-Lex: texto oficial del Digital Services Act](https://eur-lex.europa.eu/eli/reg/2022/2065/oj)
+- [CPPA: centro vigente de leyes y reglamentos](https://cppa.ca.gov/regulations/)
+- [CPPA: advertencia de 2024 sobre patrones oscuros](https://cppa.ca.gov/pdf/enfadvisory202402.pdf)
+- [CPPA: regulaciones ADMT adoptadas en 2025 y vigentes desde 2026](https://cppa.ca.gov/regulations/ccpa_updates.html)

@@ -1,194 +1,207 @@
-# Accessibility Foundations
+# Fundamentos de accesibilidad
 
-## WCAG 2.2 for Designers
+Esta guía traduce los estándares de accesibilidad en decisiones prácticas de diseño. No sustituye una auditoría técnica ni determina por sí sola las obligaciones legales de un producto.
 
-The Web Content Accessibility Guidelines are organizard around four principles: Perceivable, Operable, Understandable, Robust (POUR). Most designers encounter WCAG as a compliance checklist. That's the wrong frame. WCAG is a design specification — it tells you what your design must achieve for the full spectrum of human ability.
+## Índice
 
-### Perceivable
+- [WCAG 2.2 para diseño](#wcag-22-para-diseño)
+- [Panorama de tecnologías de asistencia](#panorama-de-tecnologías-de-asistencia)
+- [Diseño del flujo para lectores de pantalla](#diseño-del-flujo-para-lectores-de-pantalla)
+- [Diseño de navegación por teclado](#diseño-de-navegación-por-teclado)
+- [Accesibilidad cognitiva](#accesibilidad-cognitiva)
+- [Diseño inclusivo más allá de la discapacidad](#diseño-inclusivo-más-allá-de-la-discapacidad)
 
-Information and interface components must be presentable to users in ways they can perceive. This means: not everyone sees, not everyone hears, not everyone processes information the same way.
+## WCAG 2.2 para diseño
 
-**Text alternatives (1.1):** Every non-text element that conveys information needs a text equivalent. Images need alt text. Icons need labels. Charts need data tables or summaries. Video needs captions and audio description. The question is always: if this visual element disappeared, would the user lose information?
+[WCAG 2.2](https://www.w3.org/TR/WCAG22/) es una Recomendación del W3C. Organiza la accesibilidad web alrededor de cuatro principios: perceptible, operable, comprensible y robusto (POUR, por sus siglas en inglés). Conviene leerla como una especificación verificable que orienta lo que el diseño debe lograr para un espectro amplio de capacidades humanas, no como una mera lista de control.
 
-**How designers get this wrong:** Decorative images with verbose alt text (screen readers will read "stock photo of a diverse team collaborating in a modern office" for every page — exhausting). Informative images with empty alt text. Complex charts with alt text that says "chart" instead of describing the data. Icons without any programmatic label. The fix is odisseyional alt text: describe what the image communicates, not what it depicts.
+WCAG define tres niveles de conformidad —A, AA y AAA—, pero el nivel objetivo y la obligación legal aplicable dependen del producto, el contrato, el sector y la jurisdicción. WCAG no es por sí misma la ley en todos los países. Confirma con especialistas en accesibilidad y asesoría jurídica qué versión, nivel, alcance y normativa corresponden a cada lanzamiento.
 
-**Time-based media (1.2):** Video needs captions (synchronized text of spoken content) and audio description (narration of visual content). Audio needs transcripts. Live content needs real-time captions. This isn't just for deaf users — captions serve anyone in a noisy or quiet environment.
+### Perceptible
 
-**Adaptable (1.3):** Information structure must be programmatic, not just visual. A heading that's bold and large but coded as a `<div>` is invisible to screen readers. A data table that's built with positioned divs instead of `<table>` elements loses its row/column relationships. Design decisions about hierarchy, grouping, and sequence must be implementable as semantic structure.
+La información y los componentes de la interfaz deben presentarse de formas que las personas puedan percibir. No todo el mundo ve, oye o procesa información de la misma manera.
 
-**Distinguishable (1.4):** Contrast ratios: 4.5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold), 3:1 for UI components and graphics. These are minimums — aim higher for body text. Color must not be the only means of conveying information — a red error border needs an icon or text too, because not everyone perceives red. Text must be resizable to 200% without loss of content or functionality.
+**Alternativas textuales (1.1):** Todo elemento no textual que comunique información necesita un equivalente en texto. Las imágenes requieren texto alternativo; los iconos, una etiqueta; los gráficos, una tabla de datos o un resumen; y el video, subtítulos y audiodescripción. La pregunta de diseño es: si desapareciera este elemento visual, ¿se perdería información?
 
-**New in 2.2 — Dragging movements (2.5.7):** Any functionality that uses dragging must have a non-dragging alternative. Drag-to-reorder must also offer move-up/move-down buttons or an alternative input method.
+**Errores frecuentes de diseño:** Añadir descripciones extensas a imágenes decorativas —un lector de pantalla tendría que repetir en cada página «fotografía de archivo de un equipo diverso colaborando en una oficina moderna»—; dejar vacío el texto alternativo de imágenes informativas; describir un gráfico solo como «gráfico» sin explicar los datos; o usar iconos sin nombre accesible. La solución es un texto alternativo intencional: describe lo que la imagen comunica, no solo lo que representa.
 
-### Operable
+**Medios temporales (1.2):** El video necesita subtítulos —texto sincronizado del contenido hablado— y audiodescripción —narración del contenido visual—. El audio necesita transcripción y el contenido en directo, subtitulado en tiempo real. Esto no beneficia solo a personas sordas: los subtítulos ayudan a cualquiera que esté en un entorno ruidoso o que necesite silencio.
 
-Users must be able to operate the interface through multiple input methods — not just mouse and touch.
+**Adaptable (1.3):** La estructura de la información debe ser programática, no solo visual. Un encabezado grande y en negrita implementado como `<div>` es invisible como encabezado para un lector de pantalla. Una tabla de datos creada con elementos posicionados en lugar de `<table>` pierde las relaciones entre filas y columnas. Las decisiones de jerarquía, agrupación y secuencia deben poder implementarse con estructura semántica.
 
-**Keyboard accessible (2.1):** Everything must work with a keyboard. Every interactive element must be focusable and activatable. No keyboard traps — users must be able to navigate away from any component. Custom keyboard shortcuts must not conflict with browser or assistive technology shortcuts.
+**Distinguible (1.4):** Los mínimos de contraste son 4.5:1 para texto normal y 3:1 para texto grande —al menos 18 pt, aproximadamente 24 px CSS, o 14 pt, aproximadamente 18.66 px CSS, en negrita—. WCAG 1.4.11 establece 3:1 para la información visual necesaria de componentes de interfaz y objetos gráficos, con sus excepciones. Para cuerpo de texto, procura superar el mínimo. El color no debe ser el único medio para comunicar información: un borde rojo de error también necesita icono o texto. El texto debe poder ampliarse al 200 % sin perder contenido ni funcionalidad.
 
-**Enough time (2.2):** If content has a time limit, users must be able to turn off, adjust, or extend the limit. Session timeouts need warnings and extension options. Auto-updating content needs pause/stop controls. Moving or auto-playing content must be stoppable.
+**Novedad de 2.2 — Movimientos de arrastre (2.5.7):** Toda función que dependa de arrastrar debe ofrecer una alternativa sin arrastre. Por ejemplo, reordenar mediante arrastre también debe admitir botones para subir o bajar, u otro método de entrada.
 
-**Seizures and physical reactions (2.3):** No content that flashes more than three times per second. This isn't theoretical — flashing content can trigger seizures in people with photosensitive epilepsy. Motion animations should be reducible (respect prefers-reduced-motion).
+### Principio operable
 
-**Navigable (2.4):** Provide a skip navigation link (first focusable element, links to main content). Use descriptive page titles. Focus order must be logical and predictable — typically matching visual reading order. Link text must make sense out of context ("Read more" fails this; "Read our accessibility policy" passes). Headings and labels must be descriptive.
+La interfaz debe poder manejarse con varios métodos de entrada, no solo con ratón o pantalla táctil.
 
-**New in 2.2 — Focus not obscured (2.4.11):** When a component receives keyboard focus, it must not be entirely hidden by other content (sticky headers, modals, toasts). At least partially visible.
+**Accesible por teclado (2.1):** Todo debe funcionar con teclado. Cada elemento interactivo debe recibir foco y poder activarse. No debe haber trampas de teclado: la persona tiene que poder salir de cualquier componente. Los atajos personalizados no deben entrar en conflicto con el navegador ni con las tecnologías de asistencia.
 
-**New in 2.2 — Target size (2.5.8):** Interactive targets must be at least 24x24 CSS pixels, with certain exceptions (inline links, native browser controls). This benefits motor-impaired users, touch users, and everyone with large fingers on small screens.
+**Tiempo suficiente (2.2):** Si el contenido tiene límite de tiempo, debe poder desactivarse, ajustarse o ampliarse. Los cierres de sesión requieren aviso y opción de extensión. El contenido que se actualiza automáticamente necesita controles para pausar o detener. Cualquier contenido en movimiento o reproducción automática debe poder detenerse.
 
-### Understandable
+**Convulsiones y reacciones físicas (2.3):** Evita contenido que parpadee más de tres veces por segundo. No es un riesgo teórico: puede provocar convulsiones fotosensibles. Permite reducir las animaciones de movimiento y respeta `prefers-reduced-motion`.
 
-Content and interface behavior must be understandable to the user.
+**Navegable (2.4):** Incluye un enlace para saltar al contenido principal como primer elemento enfocable. Usa títulos de página descriptivos. El orden del foco debe ser lógico y predecible, normalmente igual al orden visual de lectura. El texto de los enlaces debe comprenderse en contexto: «Más información» resulta ambiguo; «Lee nuestra política de accesibilidad» comunica el destino. Los encabezados y etiquetas también deben ser descriptivos.
 
-**Readable (3.1):** Set the language of the page (lang attribute). Identify changes in language within the page. Define unusual words, abbreviations, and jargon. These seem like developer concerns, but they're design decisions — the designer decides what terminology to use and how to explain it.
+**Novedad de 2.2 — Foco no oculto, mínimo (2.4.11):** Cuando un componente recibe foco de teclado, otros contenidos —cabeceras fijas, modales o avisos— no deben ocultarlo por completo. Al menos una parte debe permanecer visible.
 
-**Predictable (3.2):** Components that look the same should work the same, everywhere in the product. Navigation should be consistent across pages. Changes of context (opening a new window, submitting a form, changing focus) should only happen when users expect them — not on focus, not on input without warning.
+**Novedad de 2.2 — Tamaño del objetivo, mínimo (2.5.8):** Los objetivos interactivos deben medir al menos 24 × 24 píxeles CSS, con las excepciones previstas por el criterio, como ciertos enlaces en línea o controles nativos. Esto ayuda a personas con discapacidad motriz y a cualquiera que use una pantalla pequeña.
 
-**Input assistance (3.3):** Errors must be identified and described in text. Labels and instructions must be provided for user input. Error suggestions must offer correction when possible. Important submissions (financial, legal, data modification) must be reversible, verified, or confirmed.
+### Comprensible
 
-**New in 2.2 — Redundant entry (3.3.7):** Don't ask users to re-enter information they've already provided in the same process. If shipping and billing address are the same, offer a checkbox instead of making them type it twice. Autocomplete where possible.
+El contenido y el comportamiento de la interfaz deben poder entenderse.
 
-**New in 2.2 — Accessible authentication (3.3.8):** Authentication should not require cognitive function tests (puzzles, memory tasks) unless an alternative is provided. Support password managers, passkeys, and copy-paste for verification codes.
+**Legible (3.1):** Declara el idioma de la página con el atributo `lang` e identifica los cambios de idioma dentro de ella. Define palabras inusuales, abreviaturas y jerga. Aunque su implementación sea técnica, la elección y explicación de términos es una decisión de diseño.
 
-### Robust
+**Predecible (3.2):** Los componentes que se ven iguales deben funcionar igual en todo el producto. La navegación debe ser consistente entre páginas. Los cambios de contexto —abrir otra ventana, enviar un formulario o mover el foco— solo deben suceder cuando se esperan, nunca al recibir foco ni al introducir datos sin aviso.
 
-Content must be robust enough that it can be reliably interpreted by a wide variety of user agents, including assistive technologies. This is primarily an implementation concern, but designers influence it through component choices and specification clarity.
+**Ayuda para la entrada (3.3):** Identifica y describe los errores con texto. Proporciona etiquetas e instrucciones para cada entrada y, cuando sea posible, sugiere cómo corregirla. En envíos importantes —financieros, jurídicos o de modificación de datos— permite revertir, comprobar o confirmar la operación según el criterio aplicable.
 
----
+**Novedad de 2.2 — Entrada redundante (3.3.7):** No solicites de nuevo información que la persona ya proporcionó durante el mismo proceso, salvo las excepciones del criterio. Si las direcciones de envío y facturación coinciden, ofrece una opción para reutilizarlas.
 
-## Assistive Technology Landscape
+**Novedad de 2.2 — Autenticación accesible, mínimo (3.3.8):** La autenticación no debe exigir pruebas de función cognitiva —acertijos o tareas de memoria— sin una alternativa adecuada. Admite gestores de contraseñas, llaves de acceso y copiar y pegar códigos de verificación.
 
-Designing for accessibility requires understanding how people actually use assistive technology — not just checking boxes.
+### Robusto
 
-### Screen Readers
-
-Software that converts on-screen content to speech or braille. Major screen readers: JAWS (Windows, professional contexts), NVDA (Windows, free and open source), VoiceOver (macOS/iOS, built-in), TalkBack (Android, built-in), Narrator (Windows, built-in).
-
-**How people use them:** Not by reading every word on the screen. Experienced screen reader users navigate by headings (H key), landmarks (D key in JAWS), links (Tab), and form elements. They skim structure first, then dive into content. A page without proper headings and landmarks is like a printed page without any formatting — technically readable, practically unusable.
-
-**Common misconception:** "Screen reader users are blind." Many screen reader users have partial vision and use the screen reader in combination with magnification or high contrast. Design for the combination, not the assumption.
-
-### Switch Access
-
-Users who can't use a mouse, touchscreen, or standard keyboard use switches — physical buttons, sips and puffs, eye-tracking, head movements — to navigate sequentially through interactive elements. Every focusable element is visited in order.
-
-**Design implication:** The number of interactive elements on a page directly impacts switch users. A page with 50 clickable elements requires 50 switch presses to reach the last one. Group related actions. Provide skip mechanisms. Make the most common actions reachable first.
-
-### Voice Control
-
-Software that allows users to navigate and interact by speaking commands. Dragon NaturallySpeaking (professional), Voice Control (macOS/iOS), Voice Access (Android).
-
-**Design implication:** Voice control users say what they see — "click Submit," "click the search button." If a button's visible label doesn't match its programmatic name, voice commands fail. Ensure visible labels match accessible names exactly.
-
-### Magnification
-
-Software or OS features that enlarge portions of the screen. Used by people with low vision who can see but need larger content.
-
-**Design implication:** At 200% zoom, users see roughly one quarter of the original viewport. At 400%, one sixteenth. Layout must reflow — content that requires horizontal scrolling at zoom levels up to 400% fails WCAG 1.4.10. Think of magnification as a very narrow viewport, not a zoomed-in version of the full page.
+El contenido debe poder interpretarse de manera fiable por una amplia variedad de agentes de usuario, incluidas las tecnologías de asistencia. Es principalmente una cuestión de implementación, pero el diseño influye mediante la elección de componentes y la claridad de las especificaciones.
 
 ---
 
-## Screen Reader Flow Design
+## Panorama de tecnologías de asistencia
 
-### Reading Order
+Diseñar con accesibilidad exige entender cómo se usan realmente las tecnologías de asistencia, no solo marcar casillas.
 
-Screen readers process the DOM in source order. Visual position (CSS) can differ from source order, creating a mismatch between what sighted users see and what screen reader users hear.
+### Lectores de pantalla
 
-**Rule:** Visual order and source order must match. If a card shows a title, then an image, then a description, the source order should be title → image → description — not image → title → description with CSS repositioning.
+Son programas que convierten el contenido visual en voz o braille. Entre los principales están JAWS —Windows, frecuente en contextos profesionales—, NVDA —Windows, gratuito y de código abierto—, VoiceOver —integrado en macOS e iOS—, TalkBack —integrado en Android— y Narrator —integrado en Windows—.
 
-**Common failure:** CSS Grid and Flexbox make it easy to reorder visually while leaving the source in a different order. This creates a disconnect that confuses screen reader users AND keyboard users (Tab order follows source order by default).
+**Cómo se utilizan:** Las personas con experiencia no escuchan necesariamente cada palabra. Navegan por encabezados —tecla H—, regiones —tecla D en JAWS—, enlaces —Tab— y controles de formulario. Primero recorren la estructura y después profundizan en el contenido. Una página sin encabezados ni regiones apropiadas es como una hoja impresa sin formato: técnicamente legible, pero poco utilizable.
 
-### Landmarks
+**Idea equivocada común:** «Quien usa un lector de pantalla es ciego». Muchas personas tienen visión parcial y combinan el lector con ampliación o alto contraste. Diseña para esa combinación, no para una suposición única.
 
-ARIA landmarks define the major sections of a page: banner, navigation, main, complementary, contentinfo, search, form. Screen reader users can jump between landmarks to navigate the page structure.
+### Acceso mediante conmutadores
 
-**Minimum landmarks:** Every page should have a `<main>` landmark, a `<nav>` landmark for primary navigation, and a `<header>` / `<footer>`. Multiple navigation landmarks need unique labels: "Primary navigation," "Footer navigation."
+Quienes no pueden usar ratón, pantalla táctil o teclado convencional pueden utilizar conmutadores: botones físicos, dispositivos de soplido y succión, seguimiento ocular o movimientos de cabeza. La navegación avanza de forma secuencial por los elementos interactivos.
 
-### Live Regions
+**Implicación de diseño:** La cantidad de elementos interactivos afecta de forma directa. Llegar al último de 50 controles puede requerir 50 activaciones. Agrupa acciones relacionadas, proporciona mecanismos de salto y coloca primero las acciones más habituales.
 
-Content that updates dynamically (notifications, chat mesgalileos, status changes, real-time data) needs to announce itself to screen readers using ARIA live regions.
+### Control por voz
 
-**aria-live="polite":** Announce when the screen reader is idle. Use for non-urgent updates (status mesgalileos, search result counts).
+Permite navegar e interactuar mediante comandos hablados. Algunos ejemplos son Dragon NaturallySpeaking, Voice Control de macOS/iOS y Voice Access de Android.
 
-**aria-live="assertive":** Interrupt current speech to announce. Use for urgent information (error alerts, time-sensitive warnings). Use sparingly — frequent assertive announcements make the interface unusable.
+**Implicación de diseño:** Las personas dicen lo que ven: «pulsa Enviar» o «pulsa el botón de búsqueda». Si la etiqueta visible no coincide con el nombre accesible, el comando puede fallar. Haz que ambos coincidan.
 
-**role="alert":** Implicitly assertive. Use for error mesgalileos and critical warnings. An element with role="alert" will be announced immediately when its content changes or when it's added to the DOM.
+### Ampliación
 
-**role="status":** Implicitly polite. Use for status mesgalileos and non-critical updates. "Your file was saved successfully" is a status, not an alert.
+El software o las funciones del sistema operativo amplían partes de la pantalla para personas con baja visión.
 
----
-
-## Keyboard Navigation Design
-
-### Focus Management
-
-**Focus must be visible.** The default browser focus ring is ugly but functional. If you replace it with a custom style, the custom style must be at least as visible — 2px solid outline with sufficient contrast against the background. Removing focus styles (outline: none without replacement) is an accessibility failure.
-
-**Focus must be logical.** Tab order should follow visual reading order: left to right, top to bottom (in LTR languages). Using tabindex values greater than 0 to force a non-standard order creates confusion for keyboard and screen reader users.
-
-**Focus must be managed during UI changes.** When a modal opens, focus moves to the modal. When it closes, focus returns to the trigger. When content is deleted, focus moves to the next logical element. When an inline edit completes, focus moves to the saved content. Every dynamic UI change needs a focus management plan.
-
-### Tab Order
-
-**Focusable elements:** Links, buttons, form inputs, textareas, selects, and elements with tabindex="0". Only interactive elements should be in the tab order. Non-interactive elements (headings, paragraphs, divs) should not be made focusable unless they serve as custom interactive widgets.
-
-**Skip links:** The first focusable element on the page should be a "Skip to main content" link. This saves keyboard and screen reader users from tabbing through the entire navigation on every page. The skip link should be visually hidden until focused (visible when it matters, invisible when it doesn't).
-
-### Keyboard Patterns for Custom Components
-
-Native HTML elements (buttons, links, inputs) come with built-in keyboard behavior. Custom components need manual keyboard implementation following WAI-ARIA Authoring Practices.
-
-**Tabs:** Arrow keys move between tabs. Tab key moves to the tab panel content. Home/End keys move to first/last tab.
-
-**Menus:** Arrow keys move between items. Enter/Space activates. Escape closes. Type-ahead selects items by first letter.
-
-**Modals/Dialogs:** Focus trapped inside while open. Escape closes. Focus returns to trigger on close. Background content is inert (aria-hidden="true" or the inert attribute).
-
-**Tree views:** Arrow keys navigate. Right arrow expands a node. Left arrow collapses or moves to parent. Enter activates.
+**Implicación de diseño:** Con un zoom del 200 % se ve aproximadamente una cuarta parte del área original; al 400 %, cerca de una dieciseisava parte. El diseño debe refluir: exigir desplazamiento horizontal al ampliar hasta el 400 % incumple WCAG 1.4.10 en los supuestos del criterio. Piensa en la ampliación como un viewport muy estrecho, no como una versión agrandada de la pantalla completa.
 
 ---
 
-## Cognitive Accessibility
+## Diseño del flujo para lectores de pantalla
 
-Accessibility isn't only about sensory and motor ability. Cognitive and learning disabilities affect more people than all physical disabilities combined.
+### Orden de lectura
 
-### Plain Language
+Los lectores de pantalla procesan el DOM en el orden de origen. La posición visual definida con CSS puede diferir y generar una desconexión entre lo que ve una persona y lo que escucha otra.
 
-Use simple, direct language. Short sentences. Common words. Consistent terminology. Define technical terms in context. This benefits everyone but is essential for users with cognitive disabilities, learning disabilities, low literacy, or non-native language proficiency.
+**Regla:** El orden visual y el de origen deben coincidir. Si una tarjeta muestra título, imagen y descripción, el origen debe seguir título → imagen → descripción, no imagen → título → descripción con reposicionamiento CSS.
 
-### Consistent Patterns
+**Fallo común:** CSS Grid y Flexbox facilitan reordenar visualmente el contenido sin modificar el origen. Esto confunde tanto a quienes usan lector de pantalla como a quienes navegan con teclado, porque Tab sigue por defecto el orden de origen.
 
-Do the same thing the same way everywhere. If "delete" is the word in one place, don't use "remove" in another. If the primary action is on the right in one dialog, it should be on the right in all dialogs. Consistency reduces the cognitive load of learning and rempathfindering interface behavior.
+### Regiones
 
-### Error Prevention
+Las regiones ARIA definen las grandes áreas de una página: `banner`, `navigation`, `main`, `complementary`, `contentinfo`, `search` y `form`. Los lectores de pantalla permiten saltar entre ellas para recorrer la estructura.
 
-Prevent errors before they happen rather than reporting them after. Constrain inputs (datepickers instead of free-text date fields). Provide smart defaults. Show real-time formatting examples. Disable invalid combinations. For consequential actions, show a preview before committing.
+**Regiones mínimas:** Cada página necesita una región `<main>`, una `<nav>` para la navegación principal y `<header>` / `<footer>`. Si existen varias regiones de navegación, cada una requiere una etiqueta única, por ejemplo «Navegación principal» y «Navegación del pie».
 
-### Simplify Processes
+### Regiones activas
 
-Break multi-step processes into clear, named stages with progress indicators. Allow saving progress and returning later. Don't require users to hold information in memory across steps. Show summaries before final submission.
+El contenido que cambia de forma dinámica —notificaciones, mensajes de chat, estados o datos en tiempo real— debe anunciarse con regiones activas ARIA.
+
+**`aria-live="polite"`:** Anuncia cuando el lector queda libre. Úsalo para actualizaciones no urgentes, como estados o recuentos de resultados.
+
+**`aria-live="assertive"`:** Interrumpe la voz actual. Resérvalo para información urgente, como alertas de error o avisos con límite de tiempo. Las interrupciones frecuentes vuelven inutilizable la interfaz.
+
+**`role="alert"`:** Es implícitamente asertivo. Úsalo para errores y avisos críticos. Se anuncia de inmediato cuando cambia o se incorpora al DOM.
+
+**`role="status"`:** Es implícitamente cortés. Úsalo para estados y actualizaciones no críticas. «El archivo se guardó correctamente» es un estado, no una alerta.
 
 ---
 
-## Inclusive Design Beyond Disability
+## Diseño de navegación por teclado
 
-Accessibility standards address permanent disability. Inclusive design goes further — designing for the full range of human diversity, including situational and temporary impairment.
+### Gestión del foco
 
-### Situational Impairment
+**El foco debe ser visible.** El indicador predeterminado del navegador puede no encajar con la estética, pero funciona. Si lo sustituyes, el estilo nuevo debe ser igual o más perceptible, por ejemplo un contorno sólido de 2 px con contraste suficiente. Quitar `outline` sin alternativa es un fallo de accesibilidad.
 
-- **One-handed use:** Carrying a child, holding a subway pole, arm in a sling. Touch targets and gestures should work one-handed.
-- **Bright sunlight:** Outdoor use makes low-contrast text invisible. Sufficient contrast isn't just for low vision — it's for Tuesday afternoon on a park bench.
-- **Noisy environments:** Audio content is useless on a construction site or in a crowded bar. Captions and visual indicators serve everyone in these contexts.
-- **Divided attention:** Driving (please don't), cooking, watching kids. Interfaces used during divided attention need to be operable with minimal visual engagement.
+**El foco debe ser lógico.** El orden de Tab debe seguir el orden visual de lectura: de izquierda a derecha y de arriba abajo en idiomas LTR. Forzar otro orden con valores de `tabindex` mayores que 0 genera confusión para teclado y lector de pantalla.
 
-### Low Literacy
+**El foco debe gestionarse ante cambios de interfaz.** Al abrir un modal, pasa el foco al modal; al cerrarlo, devuélvelo al control que lo abrió. Tras eliminar contenido, muévelo al siguiente elemento lógico. Al terminar una edición en línea, llévalo al contenido guardado. Cada cambio dinámico necesita un plan de foco.
 
-Over 50% of U.S. adults read below a 6th-grade level (NAAL, 2003). Globally, 773 million adults lack basic literacy skills (UNESCO). Designing for low literacy means: short sentences, common words, visual cues alongside text, numbered steps for instructions, and avoiding dense paragraphs.
+### Orden de tabulación
 
-### Older Devices and Low Bandwidth
+**Elementos enfocables:** Enlaces, botones, entradas de formulario, áreas de texto, selectores y elementos con `tabindex="0"`. Solo los controles interactivos deben estar en el orden de Tab. No hagas enfocables encabezados, párrafos o `div` salvo que implementen un componente interactivo personalizado.
 
-Not everyone has a current-generation smartphone or fast internet. A significant portion of the global population accesses the internet on 3G or slower connections, on devices with limited memory and processing power. Accessibility means designing for these conditions: smaller page weights, progressive enhancement, functional offline states, and interfaces that work without JavaScript when possible.
+**Enlaces de salto:** El primer elemento enfocable debe ser «Saltar al contenido principal». Evita recorrer toda la navegación en cada página. Puede permanecer visualmente oculto hasta recibir foco: visible cuando hace falta, discreto el resto del tiempo.
 
-### Aging
+### Patrones de teclado para componentes personalizados
 
-Age-related changes affect vision (presbyopia, reduced contrast sensitivity), hearing (high-frequency loss), motor control (reduced precision, slower response time), and cognition (slower processing, reduced working memory). These are not disabilities — they're the universal human trajectory. Design for the user your product's audience will become, not just the user they are today. Larger text, higher contrast, larger touch targets, simpler navigation, and forgiving error handling serve the aging population — and make the product better for everyone.
+Los elementos HTML nativos —botones, enlaces y entradas— incorporan comportamiento de teclado. Los componentes personalizados deben implementarlo de acuerdo con WAI-ARIA Authoring Practices.
+
+**Pestañas:** Las flechas se desplazan entre pestañas; Tab lleva al panel; Inicio/Fin mueve a la primera o última.
+
+**Menús:** Las flechas recorren elementos; Enter/Espacio activa; Escape cierra; la escritura anticipada selecciona por las primeras letras.
+
+**Modales y diálogos:** Mientras están abiertos, el foco permanece dentro; Escape cierra; al cerrar, el foco regresa al control de origen. El contenido de fondo queda inerte mediante el atributo `inert` o una técnica apropiada.
+
+**Vistas de árbol:** Las flechas navegan; derecha expande un nodo; izquierda lo contrae o va al padre; Enter activa.
+
+---
+
+## Accesibilidad cognitiva
+
+La accesibilidad no se limita a capacidades sensoriales o motrices. Las discapacidades cognitivas y de aprendizaje también condicionan el uso del producto.
+
+### Lenguaje claro
+
+Usa lenguaje directo, frases breves, palabras frecuentes y terminología consistente. Define los términos técnicos en contexto. Esto beneficia a todo el mundo y es esencial para personas con discapacidades cognitivas o de aprendizaje, alfabetización limitada o menor dominio del idioma.
+
+### Patrones consistentes
+
+Haz lo mismo de la misma manera en todo el producto. Si una acción se llama «Eliminar» en un lugar, no la llames «Quitar» en otro. Si la acción principal está a la derecha en un diálogo, mantén esa convención. La consistencia reduce la carga de aprendizaje y de recordar cómo funciona la interfaz.
+
+### Prevención de errores
+
+Prevén antes de informar. Restringe entradas —por ejemplo, un selector de fecha en lugar de texto libre—, proporciona valores predeterminados útiles, muestra ejemplos de formato en contexto y desactiva combinaciones inválidas. Para acciones con consecuencias, ofrece una vista previa antes de confirmar.
+
+### Simplificación de procesos
+
+Divide los procesos largos en etapas claras y con nombre, acompañadas de indicadores de progreso. Permite guardar y continuar después. No obligues a retener información en la memoria entre pasos. Muestra un resumen antes del envío final.
+
+---
+
+## Diseño inclusivo más allá de la discapacidad
+
+Los estándares cubren muchas barreras asociadas con discapacidades permanentes. El diseño inclusivo amplía la mirada a la diversidad humana, incluidas las limitaciones situacionales y temporales.
+
+### Limitaciones situacionales
+
+- **Uso con una mano:** Cargar a un bebé, sujetarse en el transporte o llevar un brazo en cabestrillo. Objetivos táctiles y gestos deben funcionar con una sola mano.
+- **Luz solar intensa:** El texto con poco contraste desaparece en exteriores. Un contraste suficiente también ayuda una tarde cualquiera en un parque.
+- **Entornos ruidosos:** El audio no sirve en una obra o un bar lleno. Subtítulos e indicadores visuales ayudan en esos contextos.
+- **Atención dividida:** Cocinar o cuidar menores reduce la atención disponible. Las interfaces usadas en estas situaciones deben requerir la mínima atención visual posible. No diseñes para fomentar el uso durante la conducción.
+
+### Alfabetización limitada
+
+Diseñar para distintos niveles de alfabetización implica usar frases breves, palabras comunes, apoyos visuales junto al texto, pasos numerados y párrafos poco densos. No presupongas un nivel de lectura a partir del país, la profesión o la edad; valida con la audiencia real.
+
+### Dispositivos antiguos y ancho de banda limitado
+
+No todo el mundo dispone de un teléfono reciente ni de una conexión rápida. La accesibilidad también implica páginas ligeras, mejora progresiva, estados sin conexión funcionales e interfaces que, cuando sea viable, mantengan las tareas esenciales sin JavaScript.
+
+### Envejecimiento
+
+La edad puede modificar la visión —presbicia y menor sensibilidad al contraste—, la audición —pérdida de frecuencias altas—, el control motor —menor precisión y respuesta más lenta— y la cognición —procesamiento más lento y menor memoria de trabajo—. Diseña para la persona en la que se convertirá la audiencia, no solo para la que es hoy. Texto mayor, contraste alto, objetivos táctiles amplios, navegación sencilla y errores fáciles de corregir mejoran el producto para todo el mundo.

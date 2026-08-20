@@ -1,230 +1,240 @@
-# Interaction Patterns
+# Patrones de interacción
 
-## Form Design Principles
+## Índice
 
-Forms are where users exchange value with your product. Every unnecessary field, confusing label, or unhelpful error mesgalileo is friction between the user and their goal. The research on form design is extensive and remarkably consistent.
+- [Principios de diseño de formularios](#principios-de-diseño-de-formularios)
+- [Máquinas de estados para interfaces](#máquinas-de-estados-para-interfaces)
+- [Patrones de validación](#patrones-de-validación)
+- [Bucles de retroalimentación](#bucles-de-retroalimentación)
+- [Divulgación progresiva](#divulgación-progresiva)
+- [Patrones de deshacer y rehacer](#patrones-de-deshacer-y-rehacer)
+- [Salvaguardas para acciones destructivas](#salvaguardas-para-acciones-destructivas)
 
-### One Thing Per Page
+## Principios de diseño de formularios
 
-The Government Digital Service (GDS) pattern, validated across millions of transactions: each screen asks one question or collects one piece of information. Not one form field — one conceptual unit.
+Los formularios son el lugar donde las personas intercambian valor con un producto. Cada campo innecesario, etiqueta ambigua o error poco útil añade fricción entre la persona y su objetivo. La investigación sobre formularios es extensa y notablemente consistente.
 
-**Why it works:** Reduces cognitive load. Each page has a clear purpose. Error recovery is simpler — the error is on this page, about this thing. Progress feels tangible. Mobile performance improves (less content per load). Analytics are more granular (you know exactly where drop-off occurs).
+### Una cosa por página
 
-**When to bend it:** Closely related fields that users think of as one concept (first name + last name, city + state + zip). Editing flows where users need to see multiple fields to understand context. Expert tools where speed matters more than guidance.
+El patrón de Government Digital Service (GDS), utilizado en millones de trámites, propone que cada pantalla solicite una pregunta o unidad conceptual. No significa necesariamente un único campo.
 
-**When not to bend it:** Checkout flows. Registration. Any flow where drop-off is a risk. Any flow used on mobile.
+**Por qué funciona:** Reduce la carga cognitiva, da un propósito claro a cada página y simplifica la recuperación de errores: el problema está aquí y trata de esta cuestión. El avance se percibe, el rendimiento móvil puede mejorar y la analítica localiza con precisión el abandono.
 
-### Inline Validation Timing
+**Cuándo flexibilizarlo:** Campos estrechamente relacionados que se entienden como un concepto —nombre y apellidos; ciudad, estado y código postal—; edición que necesita contexto simultáneo; o herramientas expertas donde prima la velocidad.
 
-When to validate is as important as how to validate. Get the timing wrong and validation becomes harassment.
+**Cuándo no flexibilizarlo sin evidencia:** Pago, registro y otros flujos con riesgo de abandono, especialmente en móvil. Prueba el diseño con la audiencia real antes de condensar.
 
-**Validate on blur (leaving a field), not on keystroke.** Validating while the user is still typing is hostile — they haven't finished their input and you're already telling them it's wrong. Luke Wroblewski's research (2009) confirmed that inline validation improves completion rates, but only when triggered after the user leaves the field.
+### Momento de la validación en línea
 
-**Exception: password strength.** Real-time feedback on password requirements is one of the few cases where keystroke-level validation helps, because the user is building toward a goal and needs to know the criteria as they type.
+Cuándo validar importa tanto como cómo hacerlo. Un momento incorrecto convierte la ayuda en acoso.
 
-**Exception: character counts.** If a field has a maximum length, show the remaining count as the user types. Don't wait until they've written a paragraph to tell them the limit is 140 characters.
+**Valida al salir del campo, no con cada tecla.** Mostrar un error mientras todavía se escribe puede resultar hostil: la entrada aún no está terminada. La investigación de Luke Wroblewski —2009— mostró mejoras con validación en línea cuando la respuesta llegaba en el momento adecuado. Para la mayoría de campos, valida en `blur`.
 
-**Validate once, then validate on change.** After a field shows an error, re-validate on every change so the error disappears the moment the input becomes valid. Don't make users re-submit the form to discover they've fixed the error.
+**Excepción: fortaleza de contraseña.** La retroalimentación en tiempo real ayuda a construir una entrada que cumpla criterios visibles.
 
-### Field Grouping
+**Excepción: recuento de caracteres.** Si existe límite, muestra el espacio restante mientras se escribe. No esperes a que se redacte un párrafo para revelar que el máximo era 140.
 
-Related fields should be visually and semantically grouped. Ungrouped forms feel longer than they are.
+**Después del primer error, valida al cambiar.** Una vez visible el error, vuelve a validar con cada cambio para retirarlo en cuanto la entrada sea válida. No obligues a enviar otra vez para descubrir que ya se corrigió.
 
-**Use fieldsets for conceptual groups:** Personal information, payment details, shipping address — each is a group. The `<fieldset>` element with a `<legend>` provides both visual grouping and accessibility structure.
+### Agrupación de campos
 
-**Limit visible fields.** If a form has 20 fields but only 6 are relevant based on previous answers, show 6. Conditional visibility reduces perceived complexity without hiding options. The user sees a short form that adapts, not a long form that wastes their time.
+Los campos relacionados deben agruparse visual y semánticamente. Un formulario sin grupos parece más largo de lo que es.
 
-**Single-column layout.** Matteo Penzo's eye-tracking research (2006) and Baymard Institute's studies consistently show that single-column forms outperform multi-column forms. Users scan vertically; multi-column layouts create ambiguous reading order and increase completion time.
+**Usa `fieldset` para grupos conceptuales:** Información personal, datos de pago y dirección de envío son grupos. `<fieldset>` y `<legend>` aportan agrupación visual y estructura accesible.
 
-### Smart Defaults
+**Limita los campos visibles.** Si hay 20 pero solo seis corresponden según respuestas previas, muestra seis. La visibilidad condicional reduce complejidad percibida sin eliminar opciones: el formulario se adapta al contexto.
 
-Default values should serve the user's most likely odissey, not the business's preferred outcome.
+**Diseño en una columna.** Los estudios de seguimiento ocular de Matteo Penzo —2006— y de Baymard Institute suelen favorecer formularios de una columna. Las personas recorren verticalmente; varias columnas pueden volver ambiguo el orden y aumentar el tiempo. Valida la excepción en interfaces densas o expertas.
 
-**Good defaults:** Country pre-filled from IP geolocation. Date pre-filled to today. Quantity defaulting to 1. Shipping address copied from billing address with one click.
+### Valores predeterminados inteligentes
 
-**Bad defaults:** Pre-selected premium tier. Pre-checked marketing consent. Default to most expensive option. Privacy settings defaulting to "share with everyone."
+Los valores iniciales deben servir a la intención más probable de la persona, no al resultado preferido del negocio.
 
-**The test:** If 80% of users would choose this value, it's a good default. If the default primarily benefits the business, it's manipulation (see the anti-pattern catalog).
+**Buenos valores:** País sugerido por geolocalización de IP con posibilidad de corregirlo; fecha de hoy; cantidad 1; opción para copiar la dirección de facturación a envío.
 
----
+**Malos valores:** Plan prémium preseleccionado, consentimiento de marketing marcado, opción más cara por defecto o privacidad en «compartir con todo el mundo».
 
-## State Machines for UI
-
-Every interactive component exists in multiple states. Enumerating those states before building prevents the most common class of UI bugs: the states nobody designed for.
-
-### Universal Component States
-
-**Default/Resting** — The component as it appears before any interaction. This is what the user sees first. It must communicate: what is this, and what can I do with it?
-
-**Hover** — Mouse cursor is over the component. Must communicate: this is interactive, something will happen if you click. Not applicable to touch interfaces — never put essential information in hover states.
-
-**Focus** — Component has keyboard focus. Must be visually distinct from hover AND default. This is a hard accessibility requirement — users navigating by keyboard need to know where they are.
-
-**Active/Pressed** — User is in the process of activating (mouse down, touch start). Must provide immediate tactile feedback that the action is registering.
-
-**Disabled** — Component exists but can't be activated. Must communicate: this exists, but you can't use it right now (and ideally, why). Disabled states that provide no explanation for why they're disabled are a common frustration.
-
-**Loading** — Component is processing. Must communicate: your action was received, we're working on it, here's how long it might take.
-
-**Success** — Action completed successfully. Must communicate: it worked, here's the result.
-
-**Error** — Action failed. Must communicate: it didn't work, here's why, here's what to do about it.
-
-**Empty** — Component has no content to display. Must communicate: this is where [thing] will appear, here's how to add the first one. Empty states are one of the most neglected states in product design.
-
-### Form Field States
-
-Form fields add additional states:
-
-**Placeholder** — Hint text visible when the field is empty. Use for format examples ("DD/MM/YYYY"), not labels. Placeholder text disappears on focus, so if the user needs the information while typing, it's in the wrong place.
-
-**Filled** — Field contains user input. This should look different from placeholder — users need to distinguish "I typed this" from "this is a hint."
-
-**Read-only** — Field displays a value that can't be edited. Different from disabled — read-only values are informational; disabled fields are temporarily unavailable.
-
-**Valid** — Input passes validation. Whether to show positive validation is a design choice — showing green checkmarks after every field can feel patronizing. Reserve positive validation for fields where success isn't obvious (password strength, username availability).
-
-**Invalid** — Input fails validation. Must show what's wrong and how to fix it. "Invalid input" is not an error mesgalileo. "Email must incluir an @ symbol" is.
-
-### Button States
-
-**Primary action** — The main action the user is here to perform. Visually prominent. One primary action per screen (or per form section in long forms).
-
-**Secondary action** — Alternative actions (Cancel, Save Draft, Reset). Visually subordinate to primary. Should not be styled in a way that makes them easy to confuse with the primary action.
-
-**Destructive action** — Actions that can't be undone (Delete, Remove, Revoke). Visually distinct — red is conventional but not sufficient. Should require confirmation proportional to the consequence.
+**Prueba:** Si la gran mayoría elegiría el valor y cambiarlo es sencillo, puede ser útil. Si beneficia sobre todo al negocio o oculta una decisión, es manipulación.
 
 ---
 
-## Validation Patterns
+## Máquinas de estados para interfaces
 
-### When to Validate
+Todo componente interactivo existe en varios estados. Enumerarlos antes de construir previene una clase frecuente de errores: los estados que nadie diseñó.
 
-| Timing | Use when | Example |
-|--------|----------|---------|
-| **On blur** | Most fields. Validate when the user leaves the field. | Email format, required fields |
-| **On change (after first error)** | After an error is shown, re-validate on each change so the error clears immediately when fixed. | Password requirements |
-| **On submit** | Complex cross-field validation that depends on multiple fields together. | "End date must be after start date" |
-| **Real-time** | User is building toward a visible goal. | Password strength meter, character count |
-| **Server-side (async)** | Validation requires a network call. | Username availability, address verification |
+### Estados universales de un componente
 
-### Error Mesgalileo Design
+**Predeterminado / reposo:** Antes de interactuar. Debe comunicar qué es y qué se puede hacer.
 
-**Structure:** What went wrong + how to fix it. Always both. Never just one.
+**Hover:** El puntero está encima. Debe señalar que es interactivo y anticipar una acción. No existe de la misma forma en táctil; nunca escondas información esencial solo en `hover`.
 
-- Bad: "Invalid input"
-- Bad: "Error in field 3"
-- Good: "Email address must incluir an @ symbol — for example: name@company.com"
-- Good: "This username is taken. Try adding numbers or try: maria_designer, maria.d"
+**Foco:** El componente tiene foco de teclado. Debe distinguirse de `hover` y del estado base. Es un requisito de accesibilidad para saber dónde se está.
 
-**Position:** Adjacent to the field, not at the top of the form. If the user has to scroll to find which field has an error, the error mesgalileo has failed its purpose.
+**Activo / pulsado:** La activación está en curso —`mousedown` o inicio táctil—. Necesita respuesta inmediata que confirme el registro de la acción.
 
-**Timing:** Appear when the error is detected. Disappear when the error is fixed. Don't wait for form submission to clear resolved errors.
+**Deshabilitado:** Existe, pero no puede activarse. Debe comunicar la indisponibilidad y, cuando sea útil, su causa. Un control deshabilitado sin explicación genera frustración.
 
-**Tone:** Neutral and helpful. Never blame the user. "You entered an invalid email" puts fault on the user. "Please enter an email address in the format name@example.com" puts focus on the solution.
+**Carga:** Está procesando. Debe confirmar que recibió la acción, que continúa trabajando y cuánto podría tardar si se conoce.
 
-**Accessibility:** Error mesgalileos must be programmatically associated with their fields (aria-describedby). Screen readers need to announce errors when they appear (use aria-live regions or role="alert" for form-level summaries).
+**Éxito:** La acción terminó. Debe comunicar que funcionó y cuál fue el resultado.
 
----
+**Error:** Falló. Debe explicar qué ocurrió, por qué si se conoce y cómo continuar.
 
-## Feedback Loops
+**Vacío:** No hay contenido. Debe explicar qué aparecerá y cómo crear el primer elemento. Es uno de los estados más olvidados.
 
-Users need to know that the system heard them and is responding. Silence is the enemy of trust.
+### Estados de los campos de formulario
 
-### Optimistic UI
+Los campos añaden estados propios:
 
-Update the interface immediately as if the action succeeded, then reconcile with the server. If the server rejects the action, roll back gracefully.
+**Placeholder:** Sugerencia visible mientras está vacío. Úsala para ejemplos de formato —«DD/MM/AAAA»—, no como etiqueta. Desaparece al escribir; si la información debe consultarse durante la entrada, colócala en una etiqueta o ayuda persistente.
 
-**When to use:** Low-stakes actions with high success rates. Toggling a favorite, sending a chat mesgalileo, reordering a list. The action will almost certainly succeed, and the 200ms delay for server confirmation feels sluggish.
+**Relleno:** Contiene información introducida. Debe distinguirse del placeholder para no confundir datos y sugerencias.
 
-**When not to use:** Financial transactions. Actions that affect other users. Anything where the rollback would be confusing or harmful. If "oops, that didn't actually work" would cause real problems, wait for confirmation.
+**Solo lectura:** Muestra un valor no editable. No equivale a deshabilitado: el primero informa; el segundo representa indisponibilidad temporal.
 
-**Rollback design:** If the optimistic update needs to be reversed, explain what happened. "Mesgalileo couldn't be sent — tap to retry" is clear. Silently removing the mesgalileo the user thought they sent is not.
+**Válido:** Supera la validación. Mostrar confirmación positiva es opcional; una marca verde tras cada campo puede resultar condescendiente. Resérvala para casos donde el éxito no es evidente —fortaleza de contraseña o disponibilidad de nombre—.
 
-### Skeleton Screens
+**Inválido:** No supera la validación. Debe indicar qué falla y cómo corregirlo. «Entrada no válida» no ayuda; «El correo debe incluir @» sí.
 
-Show the structure of the page before the content loads. Placeholder shapes in the positions where content will appear.
+### Estados de los botones
 
-**Why they work:** Luke Wroblewski and Google's research shows skeleton screens reduce perceived load time compared to spinners. Users see progress — the page is "filling in" — rather than waiting for a blank-then-full transition.
+**Acción principal:** La tarea central de la pantalla. Visualmente prominente. Procura una por pantalla, o una por sección en formularios largos.
 
-**When to use:** Content pages, feeds, dashboards — anywhere the layout is predictable but the content is dynamic. Not appropriate for forms or transactional pages where the structure itself is unknown.
+**Acción secundaria:** Alternativas como Cancelar, Guardar borrador o Restablecer. Subordinadas visualmente y sin confundirse con la principal.
 
-**Implementation detail:** Skeleton shapes should match the actual content layout. A skeleton that looks nothing like the loaded page creates a jarring transition that's worse than no skeleton.
-
-### Progress Indicators
-
-**Determinate** (you know how long it will take): Use a progress bar with percentage. Show the user how far through the process they are and, ideally, how long remains.
-
-**Indeterminate** (you don't know how long): Use a spinner or pulsing animation. Be honest — if you don't know how long, don't fake a progress bar. But do provide context: "Uploading your file..." is better than a naked spinner.
-
-**Multi-step** (sequential process): Show the steps and highlight the current one. Users need to know: how many steps are there, which one am I on, can I go back, can I save and continue later?
+**Acción destructiva:** No puede deshacerse —Eliminar, Revocar—. Debe distinguirse, pero el color rojo no basta. Requiere confirmación proporcional a la consecuencia.
 
 ---
 
-## Progressive Disclosure
+## Patrones de validación
 
-Show what's needed now. Reveal what's needed next. Hide what's rarely needed but make it findable.
+### Cuándo validar
 
-### Patterns
+| Momento | Cuándo usarlo | Ejemplo |
+|---------|---------------|---------|
+| **Al salir (`blur`)** | En la mayoría de campos, tras completar la entrada. | Formato de correo, campos obligatorios |
+| **Al cambiar, después del error** | Una vez visible, para retirarlo inmediatamente al corregir. | Requisitos de contraseña |
+| **Al enviar** | Validación compleja que relaciona varios campos. | «La fecha final debe ser posterior a la inicial» |
+| **En tiempo real** | Cuando se construye hacia un objetivo visible. | Fortaleza de contraseña, recuento de caracteres |
+| **En servidor / asíncrona** | Cuando hace falta una llamada de red. | Disponibilidad de nombre, validación de dirección |
 
-**Stepped flows:** Break complex tasks into sequential steps. Each step focuses on one decision or one type of information. The user sees only the current step, with awareness of the overall process (step indicator, progress bar).
+### Diseño de mensajes de error
 
-**Expandable sections:** Group advanced or optional information behind expand/collapse controls. The label should be descriptive enough that users know what's inside without expanding. "Advanced options" is better than "More."
+**Estructura:** Qué ocurrió + cómo resolverlo. Incluye siempre ambas partes.
 
-**Contextual help:** Tooltips, info icons, and inline help that provide explanation on demand. Good for technical concepts or unusual fields. Bad when used as a substitute for clear labels.
+- Mal: «Entrada no válida».
+- Mal: «Error en el campo 3».
+- Bien: «El correo debe incluir @; por ejemplo, nombre@empresa.com».
+- Bien: «Este nombre ya está ocupado. Añade números o prueba maria_diseno o maria.d».
 
-**Feature disclosure:** In complex tools, show core features by default and surface advanced features as the user demonstrates proficiency. This is distinct from hiding features — the path to discovery should be visible.
+**Posición:** Junto al campo, no solo en la parte superior. Si hace falta desplazarse para encontrar el origen, el mensaje no cumple su función. En formularios largos, un resumen superior puede complementar los mensajes locales.
 
-### Anti-Patterns in Progressive Disclosure
+**Momento:** Aparece al detectar el error y desaparece al corregirlo. No esperes al siguiente envío para retirar errores resueltos.
 
-**Mystery meat navigation:** Icons or labels so abstract that users can't predict what they'll find. Progressive disclosure requires clear signals about what's hidden.
+**Tono:** Neutral y útil. Evita culpar. «Introdujiste un correo incorrecto» señala a la persona; «Introduce un correo con el formato nombre@ejemplo.com» centra la solución.
 
-**Required information behind disclosure:** If the user needs the information to complete their task, it shouldn't be behind a "show more" toggle. Progressive disclosure is for optional and contextual information.
-
-**Inconsistent depth:** Some sections expand to reveal one item; others reveal 15. Users build expectations about the depth behind disclosure controls. Consistency matters.
-
----
-
-## Undo/Redo Patterns
-
-Undo is not a feature. It's a safety net that makes every other interaction less stressful.
-
-### Implementation Approaches
-
-**Immediate undo (toast/snackbar):** For quick, low-stakes actions. "Mesgalileo archived — Undo." The undo window is typically 5-10 seconds. After that, the action becomes permanent. Gmail's undo-send is the canonical example.
-
-**History-based undo:** For document editing and creative tools. Maintain a stack of actions. Users can undo sequentially (Ctrl+Z) or browse the history. Each state should be named descriptively ("Changed font to Helvetica," not "Action 47").
-
-**Version history:** For long-lived documents and collaborative work. Periodic snapshots with timestamps and authorship. Users can browse, compare, and restore previous versions. Google Docs' version history is well-implemented; the key is that versions are named by time and author, not arbitrary version numbers.
-
-**Trash/Archive:** For deletion. Move items to a recoverable location rather than deleting permanently. Provide a clear emptying schedule ("Trash empties after 30 days") so users understand the safety window.
-
-### Design Principles for Undo
-
-- Make it discoverable. If users don't know undo exists, it doesn't function as a safety net.
-- Make the window clear. If undo expires, tell users when.
-- Make the scope clear. Does undo reverse the last action? The last 5 actions? Everything since last save?
-- In collaborative contexts, undo should affect only the user's own actions, not other collaborators'.
+**Accesibilidad:** Asocia programáticamente el mensaje con su campo mediante `aria-describedby` o la técnica semántica apropiada. Los lectores deben anunciar los errores al aparecer; utiliza regiones `aria-live` o `role="alert"` para resúmenes según la urgencia, sin interrumpir en exceso.
 
 ---
 
-## Destructive Action Safeguards
+## Bucles de retroalimentación
 
-Actions that can't be undone need friction proportional to their consequences.
+Las personas necesitan saber que el sistema recibió su acción y responde. El silencio destruye confianza.
 
-### Friction Hierarchy
+### Interfaz optimista
 
-**Level 1 — Visual distinction:** Make the destructive button red or otherwise visually distinct from safe actions. This is the minimum — necessary but not sufficient for important actions.
+Actualiza de inmediato como si la acción hubiera funcionado y después reconcilia con el servidor. Si el servidor la rechaza, revierte de manera comprensible.
 
-**Level 2 — Confirmation dialog:** "Are you sure you want to delete this project? This action cannot be undone." Include what will be lost. A generic "Are you sure?" carries no information.
+**Cuándo usarla:** Acciones de bajo riesgo y alta probabilidad de éxito: marcar favorito, enviar un chat o reordenar. El retraso de 200 ms para confirmar puede sentirse innecesario.
 
-**Level 3 — Deliberate action:** Require the user to type a confirmation phrase. "Type DELETE to permanently remove this repository." GitHub's repository deletion uses this pattern. Reserve for actions with severe consequences.
+**Cuándo no usarla:** Transacciones financieras, acciones que afectan a otras personas o situaciones en las que la reversión resulte dañina. Si «en realidad no funcionó» tendría consecuencias, espera confirmación.
 
-**Level 4 — Cooling period:** For the most consequential actions (account deletion, data export for deletion), implement a waiting period. "Your account will be deleted in 14 days. You can cancel deletion any time before then." GDPR supports this pattern — the right to erasure doesn't require instant deletion.
+**Diseño de reversión:** Explica la corrección: «No se pudo enviar el mensaje; pulsa para reintentar». Eliminar en silencio algo que parecía enviado no es aceptable.
 
-### Safeguard Design Principles
+### Pantallas esqueleto
 
-- Name the consequence. "Delete project" is less clear than "Delete project and all 47 files inside it."
-- Show what will be lost. A preview of the data being destroyed makes the decision concrete.
-- Offer alternatives. "You can also archive this project, which hides it without deleting it."
-- Don't ask for confirmation on reversible actions. Confirming "are you sure?" on every action trains users to click through without reading. Save confirmation for genuinely destructive actions. For everything else, provide undo.
+Muestran la estructura antes de que llegue el contenido mediante formas provisionales en su posición futura.
+
+**Por qué funcionan:** Investigaciones y práctica de Luke Wroblewski y Google indican que pueden reducir el tiempo de espera percibido frente a indicadores aislados. La página parece llenarse en lugar de saltar de vacía a completa.
+
+**Cuándo usarlas:** Páginas de contenido, feeds y paneles con estructura predecible y datos dinámicos. No siempre resultan apropiadas en formularios o transacciones donde la propia estructura depende de la respuesta.
+
+**Detalle de implementación:** Las formas deben corresponder a la disposición final. Un esqueleto sin relación con el contenido produce una transición más brusca que no mostrarlo.
+
+### Indicadores de progreso
+
+**Determinado:** Si se conoce la duración o avance, usa una barra con porcentaje o unidades. Muestra cuánto se completó y, si puede estimarse con fiabilidad, cuánto queda.
+
+**Indeterminado:** Si se desconoce, usa un spinner o pulso. No inventes un porcentaje. Aporta contexto: «Subiendo tu archivo…» comunica más que una animación sola.
+
+**De varios pasos:** Muestra las etapas y destaca la actual. Hay que entender cuántas faltan, cuál está activa, si se puede volver y si es posible guardar para continuar.
+
+---
+
+## Divulgación progresiva
+
+Muestra lo necesario ahora, revela lo siguiente cuando corresponde y oculta lo poco frecuente sin volverlo imposible de encontrar.
+
+### Patrones
+
+**Flujos por etapas:** Divide tareas complejas en pasos. Cada uno se centra en una decisión o tipo de información, mientras un indicador mantiene visible el proceso general.
+
+**Secciones expandibles:** Coloca información avanzada u opcional tras controles de expandir/contraer. La etiqueta debe anticipar el contenido. «Opciones avanzadas» comunica más que «Más».
+
+**Ayuda contextual:** Tooltips, iconos de información y ayuda en línea explican bajo demanda. Sirven para conceptos técnicos o campos poco habituales; no sustituyen etiquetas claras.
+
+**Descubrimiento gradual de funciones:** En herramientas complejas, muestra lo esencial y presenta funciones avanzadas conforme aumenta el dominio. No equivale a esconderlas: la ruta de descubrimiento debe ser visible.
+
+### Antipatrones de divulgación progresiva
+
+**Navegación de contenido misterioso:** Iconos o etiquetas tan abstractos que no permiten predecir el destino. La divulgación necesita señales claras sobre lo oculto.
+
+**Información obligatoria escondida:** Si hace falta para completar la tarea, no debe estar tras «Mostrar más». Reserva la divulgación para información opcional o contextual.
+
+**Profundidad inconsistente:** Una sección revela un elemento y otra quince. Las personas construyen expectativas sobre estos controles; la consistencia reduce sorpresa y exploración innecesaria.
+
+---
+
+## Patrones de deshacer y rehacer
+
+Deshacer no es solo una función: es una red de seguridad que reduce el estrés del resto de interacciones.
+
+### Estrategias de implementación
+
+**Deshacer inmediato —toast o snackbar—:** Para acciones rápidas y de bajo riesgo. «Mensaje archivado — Deshacer». La ventana suele durar 5–10 segundos; después, la acción se consolida. Undo Send de Gmail es un ejemplo conocido.
+
+**Historial de acciones:** Para edición y herramientas creativas. Conserva una pila para deshacer con `Ctrl+Z` o recorrer el historial. Nombra los estados de forma descriptiva: «Cambió la fuente a Helvetica», no «Acción 47».
+
+**Historial de versiones:** Para documentos duraderos y colaboración. Guarda instantáneas con fecha y autoría; permite comparar y restaurar. El historial de Google Docs funciona bien porque identifica las versiones por momento y persona, no por números arbitrarios.
+
+**Papelera / archivo:** Para eliminación. Mueve a un lugar recuperable antes de borrar de forma permanente. Comunica el plazo: «La papelera se vacía después de 30 días».
+
+### Principios para deshacer
+
+- Hazlo descubrible. Si nadie sabe que existe, no protege.
+- Explica la ventana. Si caduca, indica cuándo.
+- Define el alcance. ¿Revierte la última acción, varias o todo desde el último guardado?
+- En colaboración, debería afectar solo a las acciones propias, no a las de otras personas, salvo que el modelo explique claramente otra cosa.
+
+---
+
+## Salvaguardas para acciones destructivas
+
+Las acciones irreversibles necesitan fricción proporcional a sus consecuencias.
+
+### Jerarquía de fricción
+
+**Nivel 1 — Distinción visual:** Diferencia el control destructivo de las acciones seguras. El rojo es convencional, pero no suficiente ni universal. Es el mínimo para consecuencias pequeñas.
+
+**Nivel 2 — Diálogo de confirmación:** «¿Quieres eliminar este proyecto? Se perderán sus 47 archivos y no podrás recuperarlos». Incluye la consecuencia; «¿Seguro?» no informa.
+
+**Nivel 3 — Acción deliberada:** Pide escribir una frase: «Escribe ELIMINAR para borrar definitivamente este repositorio». GitHub utiliza este patrón al eliminar repositorios. Resérvalo para consecuencias graves.
+
+**Nivel 4 — Periodo de espera:** En acciones de máxima consecuencia —como eliminar una cuenta— puede ofrecerse una ventana de cancelación: «Se eliminará en 14 días; puedes cancelar antes». Confirma con las personas responsables de privacidad y cumplimiento si el plazo es compatible con las obligaciones aplicables; no asumas que una norma lo permite en todos los casos.
+
+### Principios de las salvaguardas
+
+- Nombra la consecuencia. «Eliminar el proyecto y sus 47 archivos» es más claro que «Eliminar proyecto».
+- Muestra lo que se perderá. Una vista previa vuelve concreta la decisión.
+- Ofrece alternativas. «También puedes archivar el proyecto, lo que lo oculta sin borrarlo».
+- No confirmes acciones reversibles. Preguntar «¿Seguro?» siempre enseña a avanzar sin leer. Reserva la confirmación para lo realmente destructivo; en lo demás, ofrece deshacer.
