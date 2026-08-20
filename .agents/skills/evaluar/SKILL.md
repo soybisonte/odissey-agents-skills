@@ -1,6 +1,6 @@
 ---
 name: evaluar
-description: >
+description: >-
   Usa cuando haya que auditar, criticar o valorar sistemáticamente una experiencia existente mediante revisión heurística, recorrido cognitivo, usabilidad o detección de antipatrones. Diagnostica y prioriza problemas UX; no sustituye el diseño desde cero de un flujo nuevo.
 ---
 

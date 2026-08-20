@@ -1,6 +1,6 @@
 ---
 name: organizar
-description: >
+description: >-
   Usa cuando el problema sea cómo estructurar y encontrar información: arquitectura de información, taxonomía, navegación, jerarquía, etiquetado, mapas del sitio, búsqueda, card sorting, tree testing o wayfinding. Diseña la organización subyacente; no las transiciones de un flujo ni el copy de la interfaz.
 ---
 

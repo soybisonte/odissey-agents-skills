@@ -1,6 +1,6 @@
 ---
 name: spec
-description: >
+description: >-
   Usa cuando una solución de diseño ya definida deba convertirse en una especificación o handoff preciso para ingeniería: comportamientos, estados, casos límite, assets, matrices de copy, criterios verificables y documentación interfuncional. No aplica al discovery ni a la investigación inicial.
 ---
 

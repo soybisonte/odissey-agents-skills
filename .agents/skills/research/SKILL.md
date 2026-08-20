@@ -1,6 +1,6 @@
 ---
 name: research
-description: >
+description: >-
   Usa cuando haya que comprender a las personas mediante evidencia primaria: planes y guiones de entrevistas, encuestas, pruebas de usabilidad, estudios de diario, indagación contextual o síntesis de hallazgos. Investiga preguntas definidas; no fija por sí sola el alcance estratégico del producto.
 ---
 

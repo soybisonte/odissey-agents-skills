@@ -1,6 +1,6 @@
 ---
 name: articular
-description: >
+description: >-
   Usa cuando las palabras de una interfaz sean el problema — botones, etiquetas, errores, estados vacíos, onboarding, tooltips, voz, tono o modelos de contenido. Cubre UX writing y estrategia de contenido; no decide el flujo, la arquitectura de información ni la presentación visual.
 ---
 

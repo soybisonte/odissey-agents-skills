@@ -1,6 +1,6 @@
 ---
 name: blueprint
-description: >
+description: >-
   Usa cuando haya que entender o rediseñar el sistema detrás de una experiencia mediante service blueprints, mapas de ecosistema, frontstage, backstage, procesos, actores, soportes o dependencias. Se centra en la maquinaria operativa y técnica del servicio, no en las transiciones visibles entre pantallas.
 ---
 

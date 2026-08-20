@@ -61,9 +61,9 @@ def _error(path: Path, line: int, message: str) -> ValueError:
 def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
     """Return supported SKILL.md metadata and its remaining Markdown body.
 
-    The intentionally small YAML subset accepts scalar values and the folded
-    ``>`` form for descriptions.  Every malformed construct identifies its
-    source file and line.
+    The intentionally small YAML subset accepts scalar values and the ``>``
+    and ``>-`` folded forms for descriptions.  Every malformed construct
+    identifies its source file and line.
     """
     path = Path(path)
     lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
@@ -98,7 +98,7 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str]:
         if value is None or not value.strip():
             raise _error(path, line_number, f"missing value for '{key}'")
 
-        if value == ">":
+        if value in {">", ">-"}:
             if key != "description":
                 raise _error(path, line_number, "only description may use folded text")
             folded_lines: list[str] = []

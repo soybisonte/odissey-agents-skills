@@ -1,6 +1,6 @@
 ---
 name: idear
-description: >
+description: >-
   Usa cuando un problema de diseño esté atascado, mal encuadrado o necesite pensamiento expansivo antes de converger: lluvia de ideas, conexiones entre dominios, cuestionamiento de supuestos o alternativas inusuales. Es un modo transversal de exploración, no el cierre de una especificación ya decidida.
 ---
 

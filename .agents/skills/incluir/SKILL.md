@@ -1,6 +1,6 @@
 ---
 name: incluir
-description: >
+description: >-
   Usa cuando una experiencia deba ser accesible e inclusiva para personas con distintas capacidades: WCAG, teclado, lector de pantalla, foco, contraste, texto alternativo, objetivos táctiles, accesibilidad cognitiva o motora. Se centra en barreras de acceso y uso; no en adaptar el producto a otra cultura.
 ---
 

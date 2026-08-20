@@ -1,6 +1,6 @@
 ---
 name: journey
-description: >
+description: >-
   Usa cuando haya que diseñar u optimizar cómo una persona recorre una experiencia de extremo a extremo: tareas multipaso, secuencias de pantallas, onboarding, registro, checkout, colaboración o journeys multicanal. Se centra en el flujo y las interacciones; para taxonomía y navegación global usa Organizar.
 ---
 

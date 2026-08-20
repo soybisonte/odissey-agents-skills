@@ -1,6 +1,6 @@
 ---
 name: localizar
-description: >
+description: >-
   Usa cuando una experiencia deba adaptarse a otro país, idioma o cultura: expansión internacional, i18n, escritura RTL, formatos locales, señales de confianza, pagos o supuestos culturales. Replantea más que la traducción; para cambiar de plataforma dentro del mismo mercado usa Trasponer.
 ---
 

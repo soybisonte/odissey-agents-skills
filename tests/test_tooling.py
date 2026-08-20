@@ -128,6 +128,18 @@ class FrontmatterTests(unittest.TestCase):
         self.assertEqual("Scalar description", scalar_metadata["description"])
         self.assertEqual("First line second line", folded_metadata["description"])
 
+    def test_parses_chomped_folded_description(self) -> None:
+        """Rejecting YAML's strip-chomp indicator would break safe metadata parsing."""
+        with TemporaryDirectory() as temporary_directory:
+            skill_path = self.write_skill(
+                Path(temporary_directory),
+                "---\nname: example\ndescription: >-\n  First line\n  second line\n---\n",
+            )
+
+            metadata, _ = parse_frontmatter(skill_path)
+
+        self.assertEqual("First line second line", metadata["description"])
+
     def test_resolves_relative_markdown_links_and_reports_broken_ones(self) -> None:
         """Resolving links from another directory or hiding failures breaks this test."""
         with TemporaryDirectory() as temporary_directory:
@@ -522,8 +534,8 @@ class SkillRoutingTests(unittest.TestCase):
             lines = skill_path.read_text(encoding="utf-8").splitlines()
             closing_delimiter = lines.index("---", 1)
             frontmatter_lines = lines[1:closing_delimiter]
-            self.assertIn("description: >", frontmatter_lines, skill_path)
-            description_index = frontmatter_lines.index("description: >")
+            self.assertIn("description: >-", frontmatter_lines, skill_path)
+            description_index = frontmatter_lines.index("description: >-")
             description_lines = frontmatter_lines[description_index + 1 :]
 
             self.assertTrue(description_lines, skill_path)

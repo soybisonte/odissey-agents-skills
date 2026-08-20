@@ -1,6 +1,6 @@
 ---
 name: odissey
-description: >
+description: >-
   Usa como punto de entrada al iniciar o reorientar trabajo de UX y diseño de producto, establecer el contexto del proyecto o decidir qué disciplina especializada de Odissey corresponde. También aplica a intención de diseño, ética y pensamiento sistémico; no a cambios técnicos aislados.
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: trasponer
-description: >
+description: >-
   Usa cuando una experiencia deba replantearse entre plataformas o contextos — web, móvil, TV, kiosco, voz o embebido — y cambien la interacción, la prioridad o la continuidad multidispositivo. Va más allá de hacerla responsive; para adaptar idioma, país o cultura usa Localizar.
 ---
 

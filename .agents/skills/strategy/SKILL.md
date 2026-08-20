@@ -1,6 +1,6 @@
 ---
 name: strategy
-description: >
+description: >-
   Usa cuando un problema de producto sea ambiguo y necesite encuadre antes de diseñar: síntesis de evidencia, definición de audiencia, oportunidades, hipótesis, alcance, briefs, alineación de stakeholders o análisis competitivo. No sustituye la ejecución de un plan de investigación ya definido.
 ---
 
