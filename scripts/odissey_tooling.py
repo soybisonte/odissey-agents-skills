@@ -21,9 +21,34 @@ class ValidationIssue:
     path: Path
     line: int
     message: str
+    severity: str = "error"
+    rule: str = "validation"
+    remediation: str = "Review this source location and correct the reported problem."
 
     def __str__(self) -> str:
-        return f"{self.path}:{self.line}: {self.message}"
+        return (
+            f"{self.path}:{self.line}: {self.severity} [{self.rule}]: {self.message} "
+            f"Remediation: {self.remediation}"
+        )
+
+
+@dataclass(frozen=True)
+class SkillValidationResult:
+    """Validation outcome and metadata budget for one ``SKILL.md`` file."""
+
+    path: Path
+    description_characters: int
+    issues: list[ValidationIssue]
+
+
+@dataclass(frozen=True)
+class CatalogValidationResult:
+    """Validation outcome and metadata budget for a catalog root."""
+
+    root: Path
+    skill_count: int
+    description_characters: int
+    issues: list[ValidationIssue]
 
 
 def _error(path: Path, line: int, message: str) -> ValueError:
